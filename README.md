@@ -732,3 +732,23 @@
 * How to set pip install package index ?
   * Edit ~/.pip/pip.conf to set index-url / extra-index-url
   * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
+* Abstract base class v.s. Interface ?
+  * Interfaces in Python: Protocols and ABCs · Abu Ashraf Masnun
+  * There’s no interface keyword in Python. The Java / C# way of using interfaces is not available here. In the dynamic language world, things are more implicit. We’re more focused on how an object behaves, rather than it’s type/class.
+  * PEP 3119 -- Introducing Abstract Base Classes | Python.org
+    * https://www.python.org/dev/peps/pep-3119/
+  * collections.abc — Abstract Base Classes for Containers — Python 3.8.0 documentation
+    * https://docs.python.org/3/library/collections.abc.html#module-collections.abc
+  * 3. Data model — Python 3.8.0 documentation
+    * https://docs.python.org/3/reference/datamodel.html?highlight=__str__#object.__str__
+    * Called by str(object) and the built-in functions format() and print() to compute the “informal” or nicely printable string representation of an object. The return value must be a string object.
+  * Built-in Types — Python 3.8.0 documentation
+    * https://docs.python.org/3/library/stdtypes.html#str
+    * class str(object=b'', encoding='utf-8', errors='strict')
+  * Duck typing - Wikipedia
+    * https://en.wikipedia.org/wiki/Duck_typing
+    * Duck typing in computer programming is an application of the duck test—"If it walks like a duck and it quacks like a duck, then it must be a duck"—to determine if an object can be used for a particular purpose. With normal typing, suitability is determined by an object's type. In duck typing, an object's suitability is determined by the presence of certain methods and properties, rather than the type of the object itself.[1]
+  * oop - How do I implement interfaces in python? - Stack Overflow
+    * https://stackoverflow.com/questions/2124190/how-do-i-implement-interfaces-in-python
+  * Difference between abstract class and interface in Python - Stack Overflow
+    * https://stackoverflow.com/questions/372042/difference-between-abstract-class-and-interface-in-python
