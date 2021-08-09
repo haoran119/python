@@ -937,3 +937,87 @@
   * Print lists in Python (4 Different Ways) - GeeksforGeeks
   * https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
   * https://github.com/haoran119/python/blob/cd05dd3d79480c527d38822b5bccf4879a471563/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20print%20lists.py
+* How to create and initialise list with repeated N times ?
+  * x = [5]
+  * print(x * 5)　　// [5, 5, 5, 5, 5]
+  * print([x] * 5)　// [[5], [5], [5], [5], [5]]
+  * Create List of Single Item Repeated n Times in Python - Stack Overflow
+    * https://stackoverflow.com/questions/3459098/create-list-of-single-item-repeated-n-times-in-python/3459131
+    * [e] * n
+  * [ [ 1 for x in range(n) ] for x in range(m) ]
+* How to remove duplicates in lists ?
+  * python - Removing duplicates in lists - Stack Overflow
+    * https://stackoverflow.com/questions/7961363/removing-duplicates-in-lists
+    * list(set(t))
+  * 5. Data Structures — Python 3.7.0 documentation
+    * https://docs.python.org/3/tutorial/datastructures.html#sets
+    * Python also includes a data type for sets. A set is an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.
+* How to print dictionary / list on multiple lines with pprint?
+  * pprint — Data pretty printer — Python 3.7.4 documentation
+    * https://docs.python.org/3.7/library/pprint.html
+  * python - pprint dictionary on multiple lines - Stack Overflow
+    * https://stackoverflow.com/questions/20171392/pprint-dictionary-on-multiple-lines
+  * 如何美观地打印 Python 对象？这个标准库可以简单实现
+    * https://mp.weixin.qq.com/s/ePlvdBu8VsS5xnqimv71CQ
+* What's defaultdict ?
+  * collections — Container datatypes — Python 3.8.5 documentation
+  * https://docs.python.org/3/library/collections.html?highlight=defaultdict#collections.defaultdict
+  * class collections.defaultdict([default_factory[, ...]])
+  * Returns a new dictionary-like object. defaultdict is a subclass of the built-in dict class. It overrides one method and adds one writable instance variable. The remaining functionality is the same as for the dict class and is not documented here.
+  * The first argument provides the initial value for the default_factory attribute; it defaults to None. All remaining arguments are treated the same as if they were passed to the dict constructor, including keyword arguments.
+* What's deque ?
+  * collections — Container datatypes — Python 3.8.2 documentation
+    * https://docs.python.org/3/library/collections.html?highlight=deque#deque-objects
+    * class collections.deque([iterable[, maxlen]])
+    * Returns a new deque object initialized left-to-right (using append()) with data from iterable. If iterable is not specified, the new deque is empty.
+    * pop()
+      * Remove and return an element from the right side of the deque. If no elements are present, raises an IndexError.
+    * popleft()
+      * Remove and return an element from the left side of the deque. If no elements are present, raises an IndexError.
+  * queue — A synchronized queue class — Python 3.8.2 documentation
+    * https://docs.python.org/3/library/queue.html
+    * The queue module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming when information must be exchanged safely between multiple threads. The Queue class in this module implements all the required locking semantics.
+  * python - Queue.Queue vs. collections.deque - Stack Overflow
+    * https://stackoverflow.com/questions/717148/queue-queue-vs-collections-deque
+    * Queue.Queue and collections.deque serve different purposes. Queue.Queue is intended for allowing different threads to communicate using queued messages/data, whereas collections.deque is simply intended as a datastructure. That's why Queue.Queue has methods like put_nowait(), get_nowait(), and join(), whereas collections.deque doesn't. Queue.Queue isn't intended to be used as a collection, which is why it lacks the likes of the in operator.
+    * It boils down to this: if you have multiple threads and you want them to be able to communicate without the need for locks, you're looking for Queue.Queue; if you just want a queue or a double-ended queue as a datastructure, use collections.deque.
+* What's namedtuple ?
+  * collections — Container datatypes — Python 3.8.0 documentation
+    * https://docs.python.org/3/library/collections.html#collections.namedtuple
+    * collections.namedtuple(typename, field_names, *, rename=False, defaults=None, module=None)
+    * Returns a new tuple subclass named typename. The new subclass is used to create tuple-like objects that have fields accessible by attribute lookup as well as being indexable and iterable. Instances of the subclass also have a helpful docstring (with typename and field_names) and a helpful __repr__() method which lists the tuple contents in a name=value format.
+    * collections — Container datatypes — Python 3.8.2 documentation
+      * https://docs.python.org/3.8/library/collections.html?highlight=namedtuple#collections.somenamedtuple._replace
+      * somenamedtuple._replace(**kwargs)
+      * Return a new instance of the named tuple replacing specified fields with new values
+* How to use enumerations ?
+  * enum — Support for enumerations — Python 3.8.1 documentation
+    * https://docs.python.org/3/library/enum.html?highlight=enum#enum.Enum
+  * Design and History FAQ — Python 3.8.1 documentation
+    * https://docs.python.org/3/faq/design.html?highlight=switch%20case#why-isn-t-there-a-switch-or-case-statement-in-python
+* How to check type of object ?
+  * x = isinstance(5, int)
+  * Built-in Functions — Python 3.7.4 documentation
+    * https://docs.python.org/3/library/functions.html#isinstance
+  * Python isinstance() Function
+    * https://www.w3schools.com/python/ref_func_isinstance.asp
+* How to check if object has an attribute ?
+  * Built-in Functions — Python 3.8.5 documentation
+    * hasattr(object, name)
+    * https://docs.python.org/3/library/functions.html#hasattr
+    * The arguments are an object and a string. The result is True if the string is the name of one of the object’s attributes, False if not. (This is implemented by calling getattr(object, name) and seeing whether it raises an AttributeError or not.)
+  * How to know if an object has an attribute in Python - Stack Overflow
+    * https://stackoverflow.com/questions/610883/how-to-know-if-an-object-has-an-attribute-in-python
+* How to check if file exists ?
+  * os.path — Common pathname manipulations — Python 3.7.2 documentation
+    * https://docs.python.org/3/library/os.path.html?highlight=isfile#os.path.isfile
+    * os.path.isfile(path)
+    * Return True if path is an existing regular file. This follows symbolic links, so both islink() and isfile() can be true for the same path.
+  * Python: Check if a File or Directory Exists
+    * https://stackabuse.com/python-check-if-a-file-or-directory-exists/
+    * Checking if a File Exists
+      * os.path.isfile()
+    * Checking if a Directory Exists
+      * os.path.isdir()
+    * Checking if Either Exist
+      * os.path.exists()
