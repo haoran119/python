@@ -626,3 +626,37 @@
 * [用 Python 做一个动态可视化的交互大屏](https://mp.weixin.qq.com/s/H6K1K-LE7IM6-6Vp2v8U4Q)
 * [1行代码实现Python数据分析：图表美观清晰，自带对比功能](https://mp.weixin.qq.com/s/0T0e0lwx6bUOhGHr2J1Clg)
   * https://github.com/fbdesignpro/sweetviz
+
+### FINANCE
+
+* [用 Python 获取股市交易数据](https://mp.weixin.qq.com/s/fPSIu4Czj5TxVAn9JEmV_Q)
+  * Tushare 是一个免费、开源的 Python 财经数据接口包。主要实现对股票等金融数据从数据采集、清洗加工到数据存储的过程，能够为金融分析人员提供快速、整洁、和多样的便于分析的数据，为他们在数据获取方面极大地减轻工作量，使他们更加专注于策略和模型的研究与实现上。
+* [用 Python 告诉你可转债打新能赚钱吗](https://mp.weixin.qq.com/s/xd8FDVKzVtaQejK8tGYrYw)
+* [穿越熊市？用 Python 自制指数估值图](https://mp.weixin.qq.com/s/ka9DCqAOjSpID0lbMrBKSg)
+  * 对于以定投指数的方式理财的朋友，最需要关注的指标便是各个指数的估值，在指数低估时买入，高估时卖出，那如何制作一张估值图来跟踪指数的估值情况呢？本文就从0到1介绍如何用Matplotlib画一张漂亮的指数估值图。
+* [做时间的朋友，必须知道收益咋算](https://mp.weixin.qq.com/s/RAGr3DH-YLf8iApwWjAdMA)
+  * https://github.com/Tacombel/XIRR.py
+  * https://github.com/xiaolai/spreadsheets-for-investors
+  * 年化复合回报 15% 意味着什么
+  * 定投的收益
+  * 定期不定额的收益率
+  * 不定期不定额的收益率
+* [定投改变命运？python 帮你解答(https://mp.weixin.qq.com/s/Jep0BGkmi0c_-9k4TkB3gA)
+  * http://quotes.money.163.com/old/#HS
+* [用 Python 创建一个比特币价格预警应用](https://mp.weixin.qq.com/s/qRMHlFVvviCwTX69MkQiVg)
+  * 用 Python 发送电子邮件
+  * 从 coinbase 交易所 API 中提取数据
+  * 用 Python 在终端中隐藏密码
+  * 在Time模块中使用超时功能
+* [用苹果股价详解量化分析的4种基本操作](https://mp.weixin.qq.com/s/_6yXPJZx97pcbN5e_MMDaw)
+  * 笔者今天就介绍一下Python在量化分析中的一些基本使用操作。今天讲的操作共有4种，都是我们经常用到的，而这4种操作都要用到pandas库，因为是量化分析，所以也要用到一些股票数据，我们就用“宇宙第一大股”苹果公司的股票数据来作为演示。
+  * 首先还是导入各种库。
+  * 这里我们稍微介绍一下yfinance，yfinance是使用Yahoo! Finance数据源的一个库，这个库的优点是下载速度快（没有被墙）、免费，同时导出来的数据就是pandas.DataFrame格式，非常好用。然后就是下载我们所需的苹果公司的股票数据
+  * 有了数据，我们就开始介绍一下这4种基本操作。
+    * 一、rolling window
+    * 二、expanding window
+    * 三、exponentially weighted moving window
+    * 四、shift
+* [酱香科技！用 Python 分析白酒类基金有多赚钱！](https://mp.weixin.qq.com/s/lNk79g2UK7vzSlIBac2Qcw)
+  * 从采集基金数据然后进行分析
+  * [招商中证白酒指数](https://danjuanapp.com/funding/161725?channel=1300100141)
