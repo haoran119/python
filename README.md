@@ -660,3 +660,22 @@
 * [酱香科技！用 Python 分析白酒类基金有多赚钱！](https://mp.weixin.qq.com/s/lNk79g2UK7vzSlIBac2Qcw)
   * 从采集基金数据然后进行分析
   * [招商中证白酒指数](https://danjuanapp.com/funding/161725?channel=1300100141)
+
+### GAME
+
+* [Python实现五子棋人机对战 | CSDN博文精选](https://mp.weixin.qq.com/s/SSdJW4aMgmv4wgJ02dr2MQ)
+  * https://github.com/junxiaosong/AlphaZero_Gomoku
+* [500行代码，教你用python写个微信飞机大战](https://mp.weixin.qq.com/s/IHAn_1cLCc-QQ3FWQIeaNQ)
+  * https://github.com/MiracleYoung/You-are-Pythonista/tree/master/PythonExercise/App/plan_game
+* [手把手教你用Python实现“坦克大战”，附详细代码！](https://mp.weixin.qq.com/s/50iI6bfrZWnH7ASx9prqzA)
+* [如何用 Python 实现超级玛丽的界面和状态机？](https://mp.weixin.qq.com/s/cOttH0PJKxJK2Y8dz3CLxQ)
+  * https://blog.csdn.net/marble_xu/article/details/96427946
+* [如何用 Python 实现超级玛丽的人物行走和碰撞检测？](https://mp.weixin.qq.com/s/GKx8cLRyJLUjlF92FZF9rQ)
+  * https://blog.csdn.net/marble_xu/article/details/100022385
+* [用 Python 实现植物大战僵尸代码！](https://mp.weixin.qq.com/s/w25oZEwPmTaBlrgvxBmG5Q)
+  * https://blog.csdn.net/marble_xu/article/details/103100614
+* [不到 150 行代码写一个 Python 版的贪吃蛇](https://mp.weixin.qq.com/s/ERVwKAOjB5M0yk-aCjQUCQ)
+* [Python 小技之繁花盛开](https://mp.weixin.qq.com/s/vvXGXfMO1VSD3v8Mo3MVUQ)
+  * 实现思路主要是利用之前学过的 Python 绘图模块 Turtle，Turtle 详细学习课程请参考趣玩 Python 之绘制基本图形 再结合随机函数生成任意的一棵树，樱花树主要组成部分有树干和花瓣以及飘落的花瓣构成。
+* [用 Python 实现黑客帝国中的数字雨落既视感](https://mp.weixin.qq.com/s/95MKJwOzPcJCb_4Sn7RqBA)
+  * 代码的实现还是比较简单，基本就是使用 pygame 库创建窗口，再定义数字的生成并让其不断的在窗口上面显示
