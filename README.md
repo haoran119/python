@@ -359,3 +359,52 @@
 * [30 个 Python 的最佳实践、小贴士和技巧](https://mp.weixin.qq.com/s/B2jFB_m36_yaocsr3ZR-HQ)
   * https://towardsdatascience.com/30-python-best-practices-tips-and-tricks-caefb9f8c5f5
 * [几个 Python“小伎俩” | 内附代码](https://mp.weixin.qq.com/s/xM18GPGS794juIAzw2--IA)
+
+## BEST PRACTICE
+
+* [为什么有些高级开发不喜欢 Python？ (qq.com)](https://mp.weixin.qq.com/s/dVhGmbpOPYR5A1RvOFgalw)
+  * [Why Some Senior Developers Don’t Like Python | by Mohammed Ayar | Better Programming](https://betterprogramming.pub/why-some-senior-developers-dont-like-python-974c5361fff2)
+  * 动态类型
+  * 全局解释器锁
+  * 空白的敏感度
+  * 空白的敏感度
+* [Python编写循环的两个建议 | 鹅厂实战](https://mp.weixin.qq.com/s/Vh2pwcI_PjtoagaVmz2dHw)
+  * https://github.com/piglei/one-python-craftsman
+  * 什么是“地道”的循环？
+    * enumerate() 所代表的编程思路
+  * 建议1：使用函数修饰被迭代对象来优化循环
+    * 使用 product 扁平化多层嵌套循环
+    * 使用 islice 实现循环内隔行处理
+    * 使用 takewhile 替代 break 语句
+    * 使用生成器编写自己的修饰函数
+  * 建议2：按职责拆解循环体内复杂代码块
+    * 复杂循环体如何应对新需求
+    * 使用生成器函数解耦循环体
+  * 总结
+    * 使用函数修饰被循环对象本身，可以改善循环体内的代码
+    * itertools 里面有很多工具函数都可以用来改善循环
+    * 使用生成器函数可以轻松定义自己的修饰函数
+    * 循环内部，是一个极易发生“代码膨胀”的场地
+    * 请使用生成器函数将循环内不同职责的代码块解耦出来，获得更好的灵活性
+* [Python循环这样写，高效节省内存](https://mp.weixin.qq.com/s/rQtaQAjkDGnK8fmirE0O8w)
+* [8个Python高效数据分析的技巧](https://mp.weixin.qq.com/s/l178i--vWqUaCdO99JG2pw)
+  * https://towardsdatascience.com/python-for-data-science-8-concepts-you-may-have-forgotten-i-did-825966908393
+* [7 个 Python 特殊技巧，有效提升数分效率！](https://mp.weixin.qq.com/s/nn-3GGhQwzgGf-qGS7TINg)
+* [使用类型注解让 Python 代码更易读](https://mp.weixin.qq.com/s/SG7sybPIVM65JSP6BZT_4Q)
+  * https://github.com/Germey/TypingTest
+* [分享8点有用的Python编程建议](https://mp.weixin.qq.com/s/LtOUArQWA3BIdqFBjMkYcA)
+  * 项目文件事先做好归档
+  * 永远不要手动修改源数据并且做好备份
+  * 做好路径的正确配置
+  * 代码必要的地方做好备注与说明
+  * 加速你的Python循环代码
+  * 可视化你的循环代码进度
+  * 使用高效的异常捕获工具
+  * 要多考虑代码健壮性
+* [为什么Python不用设计模式？](https://mp.weixin.qq.com/s/HMZ0UJCGOS4GihjX_A5iNw)
+* [动态类型一时爽，代码重构火葬场？](https://mp.weixin.qq.com/s/xjYK2f_ejVhshhn69uo7Cg)
+* [Python 10大谬论](https://mp.weixin.qq.com/s/4UdLgFsZkt_Q_mdGOGHe4w)
+* [给 Python 初学者的四条忠告](https://mp.weixin.qq.com/s/hAMzBoU1uscUiBywiyuJ4A)
+  * https://blog.csdn.net/xufive/article/details/102709538
+* [详解Python虚拟环境的原理及使用](https://mp.weixin.qq.com/s/kTyanAzsaiaieae8cpUwqg)
+  * 本文先介绍虚拟环境的基础知识以及使用方法，然后再深入介绍虚拟环境背后的工作原理。
