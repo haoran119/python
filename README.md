@@ -313,6 +313,6 @@
 * [18式优雅你的Python](https://mp.weixin.qq.com/s/iiG3Jarc_bIzcvz1-lmmhg)
 * [改善Python程序的91个建议 - Python编程](https://mp.weixin.qq.com/s/SU6TXpU3iiL8TZQO6dk02A)
   * https://zhuanlan.zhihu.com/p/32817459
-* 符合语言习惯的 Python 优雅编程技巧 - 超级数学建模(https://mp.weixin.qq.com/s/rE5OEFwwFxJNb_Omwmqvzw)
+* [符合语言习惯的 Python 优雅编程技巧](https://mp.weixin.qq.com/s/rE5OEFwwFxJNb_Omwmqvzw)
   * http://lovesoo.org/pythonic-python-programming.html?amhgxy=ov4fk
 * [优雅编写Python3的62个小贴士](https://mp.weixin.qq.com/s/xkxpZo_8HixRlXU8PtMK7w)
