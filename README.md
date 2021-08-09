@@ -790,7 +790,7 @@
     * However, you might actually be looking for information about the current interpreter's word size, which will be the same as the machine's word size in most cases. That information is still available in Python 3 as sys.maxsize, which is the maximum value representable by a signed word. Equivalently, it's the size of the largest possible list or in-memory sequence.
   * sys — System-specific parameters and functions — Python 3.8.2 documentation
     * https://docs.python.org/3/library/sys.html#sys.maxsize
-    * An integer giving the maximum value a variable of type Py_ssize_t can take. It’s usually 2**31 - 1 on a 32-bit platform and 2**63 - 1 on a 64-bit platform.
+    * An integer giving the maximum value a variable of type Py_ssize_t can take. It’s usually 2\*\*31 - 1 on a 32-bit platform and 2\*\*63 - 1 on a 64-bit platform.
 * zip
   * https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip
   * Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
