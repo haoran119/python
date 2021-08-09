@@ -556,3 +556,36 @@
 * [如何用 Python 构建机器学习模型？ (qq.com)](https://mp.weixin.qq.com/s/c-Sl7n_ceawz6AHm5Mtw0w)
   * 该 Notebook 包含了用于创建主要机器学习算法所需的代码模板。在 scikit-learn 中，我们已经准备好了几个算法。只需调整参数，给它们输入数据，进行训练，生成模型，最后进行预测。
   * https://github.com/haoran119/python/blob/1703d4e453ed815710a777edd80089196b3b5968/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/%E5%A6%82%E4%BD%95%E7%94%A8%20Python%20%E6%9E%84%E5%BB%BA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B.py
+
+* [不足 20 行 Python 代码，高效实现 k-means 均值聚类算法！](https://mp.weixin.qq.com/s/HCqzwwyA-EnDQpPsSUr8og)
+  * https://blog.csdn.net/xufive/article/details/101448969
+* [使用Python进行机器学习的假设检验（附链接&代码）](https://mp.weixin.qq.com/s/iC6I66_bBEHlnwZMEZsN_Q)
+  * https://towardsdatascience.com/hypothesis-testing-in-machine-learning-using-python-a0dc89e169ce
+* [Python 自然语言处理：轻松上手文本分类](https://mp.weixin.qq.com/s/ucPwBW5H-KBUPwCYEeFrug)
+  * https://github.com/percent4/cnews_text_classification
+* [用 Python 自制序列标注平台](https://mp.weixin.qq.com/s/CmlqkE0k8ccIVlz-hwrW2w)
+  * https://github.com/percent4/entity_tagging_platform
+* [用 Python 实现英文单词纠错功能](https://mp.weixin.qq.com/s/QeSYWq5bWzjN2atblkmFZw)
+  * https://github.com/percent4/-word-
+* [利用 50 行 Python 代码构建一个在线文本生成器！](https://mp.weixin.qq.com/s/HZmt38QfowwfpYhFxPx0aA)
+  * https://towardsdatascience.com/build-a-text-generator-web-app-in-under-50-lines-of-python-9b63d47edabb
+* [如何创建一个百分百懂你的产品推荐系统 | 深度教程（附代码详解）](https://mp.weixin.qq.com/s/Sj0fpz9xLOmJFjW4a7OcWQ)
+* [如何通过 Python 和 OpenCV 实现目标数量监控？](https://mp.weixin.qq.com/s/pUGTKXplXgKtikH1Zh0tRA)
+* [让二次元妹子动起来，用一张图生成动态虚拟主播](https://mp.weixin.qq.com/s/TgZ3KidFlioFvCpgSsdO9A)
+  * https://pkhungurn.github.io/talking-head-anime/
+* [用 Python 图像识别打造一个小狗分类器](https://mp.weixin.qq.com/s/il3Ou5wCMq0h2chP7Dnn1Q)
+* [3行代码，搞定AI自动抠图](https://mp.weixin.qq.com/s/naSRo2heiACI0hTOSUZu9g)
+* [Python中的图像增强技术](https://mp.weixin.qq.com/s/vqyaSK-Uis0vZrxu-KDMyw)
+  * https://towardsdatascience.com/data-augmentation-techniques-in-python-f216ef5eed69
+* [AI图像智能修复老照片](https://mp.weixin.qq.com/s/BlrViDMRKm8Hdj9nvkzxvQ)
+  * 所使用的的python库有cv2库，目的是用来读取图片，处理图片像素值和保存图片等；numpy用来对读取过来的像素值矩阵进行运算。
+* [用 Python 制作了一个朋友圈机器人](https://mp.weixin.qq.com/s/3OHpnKS9BrkoYIjF20ojvg)
+* [19 行代码能搭建一个微信机器人](https://mp.weixin.qq.com/s/HP9zfgpHywaLi3NUPyFT5A)
+  * wxpy 是一个封装好的微信个人号接口，在 itchat 的基础上，通过大量接口优化提升了模块的易用性。
+* [当语音助手遇到机器人](https://mp.weixin.qq.com/s/I_hoLoLVPc0kfTCyMdSTag)
+  * 图灵机器人（http://www.tuling123.com/）和 Siri 语音助手完成一次有趣的对话。
+  * 使用到的技术有：
+    * 图灵机器人（http://www.tuling123.com/）的 API 接口
+    * 百度 AI开放平台的语音合成接口、OCR文字识别接口
+    * ImageGrab 截图
+    * 文件传输
