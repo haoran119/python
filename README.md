@@ -593,8 +593,8 @@
 ### DATA SCIENCE
 
 * [《Python中神奇的第三方库：Faker》](https://mp.weixin.qq.com/s/1tk4xeWvwZ5oNhzaywgDgA)
-* [Python中第三方库-Faker](https://blog.csdn.net/mall_lucy/article/details/108655317)
-* 开发项目的时，为了测试常需要造假数据，经常要尽量的模拟真实环境，通常要费大量手工而且造出来的数据，而且通常手工造出来的看起来也很别扭，费时又费事，有没有更好的办法？有，这里给大家介绍一个“专业造数“库Faker，满足你对模拟数据的所有需求。
+  * [Python中第三方库-Faker](https://blog.csdn.net/mall_lucy/article/details/108655317)
+  * 开发项目的时，为了测试常需要造假数据，经常要尽量的模拟真实环境，通常要费大量手工而且造出来的数据，而且通常手工造出来的看起来也很别扭，费时又费事，有没有更好的办法？有，这里给大家介绍一个“专业造数“库Faker，满足你对模拟数据的所有需求。
 * [【实战】使用 Python 分析 14 亿条数据](https://mp.weixin.qq.com/s/SUI3Gs5pUCVBrlsCqpdW0g)
   * https://juejin.im/post/5aceae206fb9a028d2084fea
 * [用 Python 绘制污染物玫瑰图](https://mp.weixin.qq.com/s/c3QMfbrkVgZhZ8BAvlqSgA)
