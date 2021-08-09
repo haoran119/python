@@ -1133,3 +1133,40 @@
   * https://github.com/haoran119/python/blob/b69260423d5abfefbf53b83c2a77d9962d4765cd/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20parse%20arguments%20for%20command-line%20options.py
 * How to use multiprocessing ?
   * [multiprocessing — Process-based parallelism — Python 3.9.5 documentation](https://docs.python.org/3/library/multiprocessing.html)
+
+## FIX OF ERRORS
+
+* How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
+  * Check the indentation for other class member functions prior to plot_all()
+* How to fix ModuleNotFoundError: No module named 'a.b' when from a.b.c import d ?
+  * Check if there is __init.py__ under /a
+How to fix NameError: name 'var' is not defined when define var in try statement and use it in catch / finally statement ?
+  * Declare the var before try statement with var = None
+  * python - Using a variable in a try,catch,finally statement without declaring it outside - Stack Overflow
+    * https://stackoverflow.com/questions/17195569/using-a-variable-in-a-try-catch-finally-statement-without-declaring-it-outside
+  * python - How to make a variable inside a try/except block public? - Stack Overflow
+    * https://stackoverflow.com/questions/25666853/how-to-make-a-variable-inside-a-try-except-block-public
+* How to fix sqlite3.OperationalError: database is locked ?
+  * SQLite is lightweight database and need to use, e.g. PostgrsSQL, for large number of connections. If the cache db file is in locked even if with one job, use the below cmds to recover it.
+  * sqlite3 — DB-API 2.0 interface for SQLite databases — Python 3.7.4 documentation
+    * https://docs.python.org/3.7/library/sqlite3.html
+    * SQLite is a C library that provides a lightweight disk-based database that doesn’t require a separate server process and allows accessing the database using a nonstandard variant of the SQL query language. Some applications can use SQLite for internal data storage. It’s also possible to prototype an application using SQLite and then port the code to a larger database such as PostgreSQL or Oracle.
+  * SQLite Frequently Asked Questions
+    * https://www.sqlite.org/faq.html
+  * Python SQLite: database is locked - Stack Overflow
+    * https://stackoverflow.com/questions/2740806/python-sqlite-database-is-locked
+    * $ fuser cache.db
+    * $ mv cache.db-journal _cache.db-journal
+    * $ sqlite3 cache.db "pragma integrity_check;"
+      * ok
+    * $ sqlite3 cache.db ".backup cache.db.bak"
+    * $ rm cache.db
+    * $ sqlite3 cache.db.bak ".schema"
+* How to fix TypeError: slice indices must be integers or None or have an __index__ method ?
+  * b = ['a', 'aa', 'aaa', 'b', 'c']
+  * d = [c for c in b if c.startswith( 'a', 'b' )]
+  * It's due to lack of parenthese. Change to 
+  * d = [c for c in b if c.startswith( ('a', 'b') )]
+* How to fix TypeError: 'int' object does not support indexing ?
+  * [python - TypeError: 'int' object does not support indexing - Stack Overflow](https://stackoverflow.com/questions/18345825/typeerror-int-object-does-not-support-indexing)
+  * You should pass query parameters to execute() as a tuple (an iterable, strictly speaking), (some_id,) instead of some_id
