@@ -589,3 +589,40 @@
     * 百度 AI开放平台的语音合成接口、OCR文字识别接口
     * ImageGrab 截图
     * 文件传输
+
+### DATA SCIENCE
+
+* [《Python中神奇的第三方库：Faker》](https://mp.weixin.qq.com/s/1tk4xeWvwZ5oNhzaywgDgA)
+* [Python中第三方库-Faker](https://blog.csdn.net/mall_lucy/article/details/108655317)
+* 开发项目的时，为了测试常需要造假数据，经常要尽量的模拟真实环境，通常要费大量手工而且造出来的数据，而且通常手工造出来的看起来也很别扭，费时又费事，有没有更好的办法？有，这里给大家介绍一个“专业造数“库Faker，满足你对模拟数据的所有需求。
+* [【实战】使用 Python 分析 14 亿条数据](https://mp.weixin.qq.com/s/SUI3Gs5pUCVBrlsCqpdW0g)
+  * https://juejin.im/post/5aceae206fb9a028d2084fea
+* [用 Python 绘制污染物玫瑰图](https://mp.weixin.qq.com/s/c3QMfbrkVgZhZ8BAvlqSgA)
+  * https://yishuihancheng.blog.csdn.net/
+* [用 Python 测算气象预报的空报率与漏报率](https://mp.weixin.qq.com/s/DiWXmYhm9IaeIqJVQaP3sg)
+* [用 Python 观察台风气候](https://mp.weixin.qq.com/s/nStp7O9lznPeI1oTASgPZg)
+* [用 Python 带你看各国 GDP 变迁](https://mp.weixin.qq.com/s/ILguXQZVAPcFqt7-7p3caA)
+  * https://data.worldbank.org/
+* [万字长文 | 超全代码详解Python制作精美炫酷图表教程](https://mp.weixin.qq.com/s/SFzAszv_T2yrSKbJYrd0gw)
+  * https://towardsdatascience.com/plotting-with-python-c2561b8c0f1f
+* [用 Python 分析今年考研形势](https://mp.weixin.qq.com/s/1fABS9C3w87bWHxZ4SC_mQ)
+* [用 Python 读取气象环境数据并绘图](https://mp.weixin.qq.com/s/RWPhPiYmJovxgfSrKOhAEg)
+* [用Python数据分析了北京积分落户名单](https://mp.weixin.qq.com/s/0jBZY8-LryScevzWv7z0-g)
+  * https://github.com/zpw1995/aotodata/tree/master/bj_luohu
+* [如何用 Python 画出新型冠状病毒疫情地图？](https://mp.weixin.qq.com/s/DjBIu4851l0a_vN_aEjo7Q)
+* [Python 硬核分析我国 14 亿人口，发现三大危机！](https://mp.weixin.qq.com/s/IFKYGMbxWbNTylBnE7zYBg)
+* https://github.com/pig6/china_population
+* [怎么用 Python 画出好看的词云图？](https://mp.weixin.qq.com/s/Tuzfh9aKTN7_Fxt8YJ4q-w)
+* [Python 竟能绘制出如此酷炫的三维图](https://mp.weixin.qq.com/s/tBl3iI-dfJcV4om0aJBnbA)
+  * https://jalammar.github.io/visual-numpy/
+* [用 Python 分析各国足球俱乐部排名](https://mp.weixin.qq.com/s/wakUY9phwcv1WPLo99og4A)
+* [用 Python 对淘宝用户行为进行分析](https://mp.weixin.qq.com/s/CWTAhpu6VLsia1iCoLiuAA)
+  * 本数据报告以淘宝app平台为数据集，通过行业的指标对淘宝用户行为进行分析，从而探索淘宝用户的行为模式，具体指标包括：日PV和日UV分析，付费率分析，复购行为分析，漏斗流失分析和用户价值RFM分析。
+* [Python 制作动态图表，看全球疫情变化趋势](https://mp.weixin.qq.com/s/h3XaV7QfrcDMaUji1Y19Gw)
+* [Python 招聘岗位数据可视化](https://mp.weixin.qq.com/s/lDiyXf9ORkDeD6akeqKEVA)
+* [用Python分析了《青春有你2》](https://mp.weixin.qq.com/s/FRpE3EHP0GLYls1EUL8vAw)
+* [用 Python 做了一个全球疫情数据大屏](https://mp.weixin.qq.com/s/IbdEnZmG6UjCZvNVGWJcxg)
+  * 爬虫模块负责从腾讯新闻获取数据，之后存入 Redis。Flask 是一个 Web 框架，负责 URL 和后台函数的映射，以及数据的传输。换言之，也就是从 Redis 中获取到原始数据，然后整理成相应的格式之后传递给前端页面，前端页面在拿到数据之后，调用百度的 ECharts 来实现图表的展示即可。
+* [用 Python 做一个动态可视化的交互大屏](https://mp.weixin.qq.com/s/H6K1K-LE7IM6-6Vp2v8U4Q)
+* [1行代码实现Python数据分析：图表美观清晰，自带对比功能](https://mp.weixin.qq.com/s/0T0e0lwx6bUOhGHr2J1Clg)
+  * https://github.com/fbdesignpro/sweetviz
