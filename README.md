@@ -156,3 +156,11 @@
 * [为什么 Python 没有 main 函数？](https://mp.weixin.qq.com/s/Nr1nD6qKKRd-C55PCV-sGw)
   * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
 * [IPython 中常用的魔法命令](https://mp.weixin.qq.com/s/5ZyfyR9r9zBod6ZP7scewA)
+
+### 迭代器与生成器
+
+* [Python 迭代器与生成器 - Python编程](https://mp.weixin.qq.com/s/cT0vqLAvqOc5FNnx6Iu_iw)
+  * http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html
+* [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
+* [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
+* [彻底理解Python中的yield](https://mp.weixin.qq.com/s/WuecDf_10XFQotUyweubNQ)
