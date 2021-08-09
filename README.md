@@ -34,6 +34,7 @@
   * 4.7.5. Lambda Expressions
     * https://docs.python.org/3/tutorial/controlflow.html?highlight=lambda#lambda-expressions
     * Small anonymous functions can be created with the lambda keyword.
+  * https://github.com/haoran119/python/blob/d8d0841e46f42aa474a4108a441007607955bc8f/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/4.7.5.%20Lambda%20Expressions.py
 
 ## RESOURCES
 
