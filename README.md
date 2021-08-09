@@ -1089,3 +1089,45 @@
     * https://mp.weixin.qq.com/s/bc-Puk4AVc1XxusrbSwaHg
     * re模块主要定义了9个常量、12个函数、1个异常，每个常量和函数都会通过实际代码案例讲解，让大家能更直观的了解其作用！
   * https://github.com/haoran119/python/blob/66ca8ad50b905265dcb232de2437bd10c5372943/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20use%20Regular%20Expression%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.py
+* How to use logging ?
+  * Logging HOWTO — Python 3.7.0 documentation
+    * https://docs.python.org/3.7/howto/logging.html#basic-logging-tutorial
+  * 16.6. logging — Logging facility for Python — Python 3.7.0 documentation
+    * https://docs.python.org/3.7/library/logging.html#logging.debug
+    * https://docs.python.org/3.7/library/logging.html#logging.info
+    * https://docs.python.org/3.7/library/logging.html#logging.warning
+    * https://docs.python.org/3.7/library/logging.html#logging.error
+    * https://docs.python.org/3.7/library/logging.html#logging.exception
+    * https://docs.python.org/3.7/library/logging.html#logging.basicConfig
+    * https://docs.python.org/3.7/library/logging.html?highlight=shutdown#logging.shutdown
+    * logging.basicConfig( filename=output.replace('html', 'log'), filemode='w',  format='[%(asctime)s] \n%(message)s',  datefmt='%Y-%m-%d %H:%M:%S',  level=logging.DEBUG )
+    * logging.getLogger(name=None)
+      * https://docs.python.org/3.7/library/logging.html?highlight=getlogger#logging.getLogger　　
+      * Return a logger with the specified name or, if name is None, return a logger which is the root logger of the hierarchy. If specified, the name is typically a dot-separated hierarchical name like ‘a’, ‘a.b’ or ‘a.b.c.d’. Choice of these names is entirely up to the developer who is using logging.
+      * All calls to this function with a given name return the same logger instance. This means that logger instances never need to be passed between different parts of an application.
+  * Logging Cookbook — Python 3.7.0 documentation
+    * https://docs.python.org/3/howto/logging-cookbook.html
+  * Good logging practice in Python – Fang's coding note
+    * https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/
+  * For the issue setLevel() doesn't work logger.setLevel(logging.DEBUG) , fix it with logging.basicConfig(level=logging.DEBUG).
+  * To set logging level with variable e.g. loglevel
+    * https://docs.python.org/3/howto/logging.html#logging-to-a-file
+    * logging.basicConfig(level=getattr(logging, loglevel.upper()))
+* How to measure execution time of code ?
+  * timeit — Measure execution time of small code snippets — Python 3.8.0 documentation
+    * https://docs.python.org/3.8/library/timeit.html
+* How to import module from parent directory ?
+  * import sys
+  * sys.path.append('..')
+  * from A import B
+  * python - Importing modules from parent folder - Stack Overflow
+    * https://stackoverflow.com/questions/714063/importing-modules-from-parent-folder
+  * [学了半天，import 到底在干啥？](https://mp.weixin.qq.com/s/FN__-XO_-htH36jPLiiTZg)
+* How to parse arguments for command-line options ?
+  * 15.4. argparse — Parser for command-line options, arguments and sub-commands — Python 2.7.16 documentation
+    * https://docs.python.org/2.7/library/argparse.html?highlight=arg%20parse#the-add-argument-method
+  * python - What's the best way to parse command line arguments? - Stack Overflow
+    * https://stackoverflow.com/questions/20063/whats-the-best-way-to-parse-command-line-arguments
+  * python - Why use argparse rather than optparse? - Stack Overflow
+    * https://stackoverflow.com/questions/3217673/why-use-argparse-rather-than-optparse
+  * https://github.com/haoran119/python/blob/b69260423d5abfefbf53b83c2a77d9962d4765cd/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20parse%20arguments%20for%20command-line%20options.py
