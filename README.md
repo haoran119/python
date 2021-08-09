@@ -423,3 +423,24 @@
       * The next reason not to use type() is the lack of support for inheritance.
   * 不必要的 lambda 表达式
   * NotImplemented错误
+
+### 运行速度
+
+* [为什么Python这么慢？ - Python编程](https://mp.weixin.qq.com/s/Wa-rMPIhGyb9JZt2g1YLHw)
+  * https://hackernoon.com/why-is-python-so-slow-e5074b6fe55b
+* [一行代码让 Python 的运行速度提高100倍](https://mp.weixin.qq.com/s?__biz=MzUyODg4Nzk2MQ==&mid=2247490550&amp;idx=4&amp;sn=3a18cd95623880fd108ac0492bd9ec15&source=41#wechat_redirect)
+  * https://mp.weixin.qq.com/s/Vm0BKSljCzMMgRmIBbpxdQ
+* [24式加速你的Python](https://mp.weixin.qq.com/s/oEQOHLRdDkjOVzZhuIFeLg)
+* [十步，教你把Python运行速度提升 30%](https://mp.weixin.qq.com/s/PJq0G8ae2H66QRCEs9FNrg)
+  * https://towardsdatascience.com/making-python-programs-blazingly-fast-c1cd79bd1b32
+* [如何加速Python代码？](https://mp.weixin.qq.com/s/QWH9qhKzECX-1rqDLfZyhw)
+  * https://towardsdatascience.com/how-to-speed-up-your-python-code-d31927691012
+  * 首先考虑优化你的算法和代码。
+  * 如果原始速度可以解决你的问题，请考虑使用 PyPy。
+  * 对 IO 密集型软件使用 threading 库和 asyncio。
+  * 使用 multiprocessing 库解决 CPU 密集型问题。
+  * 如果所有这些措施还不够的话，可以利用 Hadoop 等云计算平台进行扩展规模。
+* [【进阶】[] 与 list() 哪个快？为什么快？快多少呢？](https://mp.weixin.qq.com/s/VndSpfOYFrrM_a2tzdOGDg)
+* [] 是 list() 的三倍快
+* list() 比 [] 执行步骤多
+* list() 的速度提升
