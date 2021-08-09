@@ -679,3 +679,21 @@
   * 实现思路主要是利用之前学过的 Python 绘图模块 Turtle，Turtle 详细学习课程请参考趣玩 Python 之绘制基本图形 再结合随机函数生成任意的一棵树，樱花树主要组成部分有树干和花瓣以及飘落的花瓣构成。
 * [用 Python 实现黑客帝国中的数字雨落既视感](https://mp.weixin.qq.com/s/95MKJwOzPcJCb_4Sn7RqBA)
   * 代码的实现还是比较简单，基本就是使用 pygame 库创建窗口，再定义数字的生成并让其不断的在窗口上面显示
+
+### IO / DATABASE / FILE
+
+* [利用 tornado 实现表格文件预览](https://mp.weixin.qq.com/s/NVAzXKP801mfAfNRMvCjBw)
+  * https://github.com/percent4/csv_file_review
+* [Python 处理分析 128 张 Excel 表格竟不到3秒？| 附数据集](https://mp.weixin.qq.com/s/ZhWomp6LDgHHjf9Tr1dzvg)
+  * https://github.com/seizeeveryday/DA-cases/tree/master/Python%2Bexcel
+* [我用Python做了一份PDF报告 - Python编程](https://mp.weixin.qq.com/s/uzeBsCkCWCYmLdnZPQ-HBA)
+* [将Python字符串生成PDF](https://mp.weixin.qq.com/s/5R6t_oiOOV7qG4YkdLcpvA)
+* [pdfkit | 自动化利器，生成PDF就靠它了](https://mp.weixin.qq.com/s/9OhS6hjpn6e0XAaATQOeXg)
+* [用 Python 操作 Word 文档](https://mp.weixin.qq.com/s/awN9gLqVn_s-STRzhioPXQ)
+* [用 Python 实现文件自动归类](https://mp.weixin.qq.com/s/Ech_OeoDdYkd1ZmNjRIm_w)
+* [用Python一键批量将任意结构的CSV文件导入MySQL数据库。](https://mp.weixin.qq.com/s/ouuk4o739tlzF6b5cNjUwQ)
+* [5个案例让Python输出漂亮的表格！](https://mp.weixin.qq.com/s/8uxc2t53N_j_mRPYbiG0sA)
+  * https://linuxops.org/blog/python/prettytable.html
+  * prettytable可以打印出美观的表格，并且对中文支持相当好
+* [Python与MySQL数据库的交互实战](https://mp.weixin.qq.com/s/9D2bi_1W6fjMxI3jaH2teA)
+  * https://blog.csdn.net/weixin_41261833/article/details/103832017
