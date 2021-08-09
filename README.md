@@ -36,14 +36,14 @@
     * Small anonymous functions can be created with the lambda keyword.
   * https://github.com/haoran119/python/blob/d8d0841e46f42aa474a4108a441007607955bc8f/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/4.7.5.%20Lambda%20Expressions.py
 * [深入浅出带你学Python冲击年薪30万【马哥教育】_腾讯课堂](https://ke.qq.com/course/134017)
-* Python哲学
-  * import this
-* Python使用引用计数记录所有变量的引用数
-  * 当变量引用数变为0，它就可以被垃圾回收GC。
-  * 计数增加：赋值给其他变量就增加引用计数。E.g. x = 3; y = x;
-  * 计数减少：
-    * 函数运行结束时，局部变量就被自动销毁，对象引用计数减少；
-    * 变量被赋值给其他变量。x = 3; y = x; x = 4;
+  * Python哲学
+    * import this
+  * Python使用引用计数记录所有变量的引用数
+    * 当变量引用数变为0，它就可以被垃圾回收GC。
+    * 计数增加：赋值给其他变量就增加引用计数。E.g. x = 3; y = x;
+    * 计数减少：
+      * 函数运行结束时，局部变量就被自动销毁，对象引用计数减少；
+      * 变量被赋值给其他变量。x = 3; y = x; x = 4;
 
 ## RESOURCES
 
@@ -94,6 +94,7 @@
 * [Python三十年技术演变史](https://mp.weixin.qq.com/s/xFWpAXWJ4m78bZHYcc3VzQ)
 * [全面的 Python 重点](https://mp.weixin.qq.com/s/TFPI0hdlbcHVVO0id6tT4A)
   * https://segmentfault.com/a/1190000018737045
+* [【Python入门只需20分钟】从安装到数据抓取、存储原来这么简单 - 旺旺笔记 - 博客园](https://www.cnblogs.com/zhaww/p/9517514.html)
 
 ## BASIC
 
