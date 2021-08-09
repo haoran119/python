@@ -641,7 +641,7 @@
   * 定投的收益
   * 定期不定额的收益率
   * 不定期不定额的收益率
-* [定投改变命运？python 帮你解答(https://mp.weixin.qq.com/s/Jep0BGkmi0c_-9k4TkB3gA)
+* [定投改变命运？python 帮你解答](https://mp.weixin.qq.com/s/Jep0BGkmi0c_-9k4TkB3gA)
   * http://quotes.money.163.com/old/#HS
 * [用 Python 创建一个比特币价格预警应用](https://mp.weixin.qq.com/s/qRMHlFVvviCwTX69MkQiVg)
   * 用 Python 发送电子邮件
