@@ -334,7 +334,7 @@
   * https://github.com/brennerm/PyTricks
 * [Python 开发中有哪些高级技巧？](https://mp.weixin.qq.com/s/6ierUk69wmooZcLKL3-XZw)
 * [18 个 Python 高效编程技巧](https://mp.weixin.qq.com/s/2Bxc5u0X_NQtLuXbVvPfzQ)
-* [10招玩转Python](https://mp.weixin.qq.com/s/WxYMY_b-5UPMD4KWPWIH9A
+* [10招玩转Python](https://mp.weixin.qq.com/s/WxYMY_b-5UPMD4KWPWIH9A)
 * [学Python，从列表推导到zip()函数，这五种技巧应知应会](https://mp.weixin.qq.com/s/GDC3GeTPXspInK_1DPyuVA)
   * https://towardsdatascience.com/python-tricks-101-what-every-new-programmer-should-know-c512a9787022
 * [10 个不为人知的Python冷知识](https://mp.weixin.qq.com/s/NysJHFlw57Br_k1cpYTmMA)
