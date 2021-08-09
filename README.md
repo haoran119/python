@@ -200,3 +200,88 @@
 * [Python 常见的17个错误分析](https://mp.weixin.qq.com/s/_OZH8o9rHaha0TmCboCCJA)
   * https://www.oschina.net/question/89964_62779
   * https://inventwithpython.com/blog/2012/07/09/16-common-python-runtime-errors-beginners-find/
+
+### 面向对象
+
+* [Python 面向对象编程](https://mp.weixin.qq.com/s/IFRloykz9Nnb3N94CQpieg)
+  * http://www.langzi.fun/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html
+  * 面向过程编程
+  * 面向对象编程
+  * 类的基本用法
+  * 类与实例
+  * 调用类的三种方法
+    * 实例方法
+    * 静态方法
+    * 类方法
+  * 类的特性
+    * 封装
+    * 继承
+    * 多态
+  * 魔法方法
+    * \_\_doc\_\_
+      * 说明性文档和信息。Python自建，无需自定义。　　
+    * \_\_init\_\_
+      * 实例化方法，通过类创建实例时，自动触发执行。　　
+    * \_\_module\_\_ / \_\_class\_\_
+      * module 表示当前操作的对象在属于哪个模块。
+      * class 表示当前操作的对象属于哪个类。
+      * 这两者也是Python内建，无需自定义。　　
+    * \_\_del\_\_
+      * 析构方法，当对象在内存中被释放时，自动触发此方法。
+      * 注：此方法一般无须自定义，因为Python自带内存分配和释放机制，除非你需要在释放的时候指定做一些动作。析构函数的调用是由解释器在进行垃圾回收时自动触发执行的。
+    * \_\_call\_\_
+      * 如果为一个类编写了该方法，那么在该类的实例后面加括号，可会调用这个方法。
+      * 注：构造方法的执行是由类加括号执行的，即：对象 = 类名()，而对于call() 方法，是由对象后加括号触发的，即：对象() 或者 类()()
+      * 可以用Python内建的callable()函数进行测试，判断一个对象是否可以被执行。
+    * \_\_dict\_\_
+      * 列出类或对象中的所有成员！非常重要和有用的一个属性，Python自建，无需用户自己定义。　　
+    * \_\_str\_\_
+      * 如果一个类中定义了str()方法，那么在打印对象时，默认输出该方法的返回值。这也是一个非常重要的方法，需要用户自己定义。　　
+    * \_\_getitem\_\_ / \_\_setitem\_\_ / \_\_delitem\_\_
+      * 取值、赋值、删除这“三剑客”的套路，在Python中，我们已经见过很多次了，比如前面的@property装饰器。
+      * Python中，标识符后面加圆括号，通常代表执行或调用方法的意思。而在标识符后面加中括号[]，通常代表取值的意思。Python设计了getitem()、setitem()、delitem()这三个特殊成员，用于执行与中括号有关的动作。它们分别表示取值、赋值、删除数据。
+      * 如果有一个类同时定义了这三个魔法方法，那么这个类的实例的行为看起来就像一个字典一样
+    * \_\_iter\_\_
+      * 这是迭代器方法！列表、字典、元组之所以可以进行for循环，是因为其内部定义了 iter()这个方法。如果用户想让自定义的类的对象可以被迭代，那么就需要在类中定义这个方法，并且让该方法的返回值是一个可迭代的对象。当在代码中利用for循环遍历对象时，就会调用类的这个iter()方法。　　
+    * \_\_len\_\_
+      * 在Python中，如果你调用内置的len()函数试图获取一个对象的长度，在后台，其实是去调用该对象的len()方法
+      * Python的list、dict、str等内置数据类型都实现了该方法，但是你自定义的类要实现len方法需要好好设计。
+    * \_\_repr\_\_
+      * 这个方法的作用和str()很像，两者的区别是str()返回用户看到的字符串，而repr()返回程序开发者看到的字符串，也就是说，repr()是为调试服务的。通常两者代码一样。
+    * \_\_add\_\_ / \_\_sub\_\_ / \_\_mul\_\_ / \_\_div\_\_ / \_\_mod\_\_ / \_\_pow\_\_
+      * 这些都是算术运算方法，需要你自己为类设计具体运算代码。有些Python内置数据类型，比如int就带有这些方法。Python支持运算符的重载，也就是重写。　　
+    * \_\_cmp\_\_
+      * 比较运算
+    * \_\_author\_\_
+      * 作者信息　　
+    * \_\_slots\_\_
+      * Python作为一种动态语言，可以在类定义完成和实例化后，给类或者对象继续添加随意个数或者任意类型的变量或方法，这是动态语言的特性。
+      * 但是！如果我想限制实例可以添加的变量怎么办？可以使slots限制实例的变量，比如，只允许Foo的实例添加name和age属性。
+      * 需要提醒的是，slots定义的属性仅对当前类的实例起作用，对继承了它的子类是不起作用的。想想也是这个道理，如果你继承一个父类，却莫名其妙发现有些变量无法定义，那不是大问题么？如果非要子类也被限制，除非在子类中也定义slots，这样，子类实例允许定义的属性就是自身的slots加上父类的slots。
+  * 成员保护与访问机制
+    * 私有成员
+    * 使用get-set-del方法操作私有成员
+  * Propety装饰器
+  * 常用的调用方法
+  * 使用装饰器
+  * 更加减半的使用property()函数
+* [简单理解python面向对象及装饰器](https://mp.weixin.qq.com/s/jaoMUy5okkMZ9QOYK-og1Q)
+  * 一、类
+  * 二、继承
+  * 三、多态
+  * 四、封装
+  * 五、装饰器
+  * 六、闭包
+    * @property：@property把类方法改成类属性，实现存取器
+    * @classmethod：可以用来定义类方法（不用实例就可以调用）
+    * @staticmethod：主要是方便将外部函数集成到类体中，并且用staticmethod包装的方法可以内部调用,也可以通过类访问或类实例化访问。
+* [如何理解 Python 中的面向对象编程？](https://mp.weixin.qq.com/s/Jy1toECgoQyzJwCnEjQz-g)
+  * https://www.blog.duomly.com/object-oriented-programming-in-python/
+* [没看完这11 条，别说你精通 Python 装饰器](https://mp.weixin.qq.com/s/5hmauIKOTS1vqHbhE12KkA)
+* [5分钟全面掌握 Python 装饰器](https://mp.weixin.qq.com/s/Dx887iB-jn-BMdj3F1vHDQ)
+* [读懂 Python 装饰器](https://mp.weixin.qq.com/s/pezg8naU4Afkf8DTm_m13w)
+* [Python中的元编程：一个关于修饰器和元类的简单教程](https://mp.weixin.qq.com/s/bV7g9ugGmFjojGDMIc_kpQ)
+  * https://medium.com/better-programming/meta-programming-in-python-7fb94c8c7152
+* [如何将 Python 的一个类方法变为多个方法？](https://mp.weixin.qq.com/s/WPbtNQoMbMWVmD2IGOw8Rg)
+* [写 Python 代码不可不知的函数式编程技术](https://mp.weixin.qq.com/s/cTUmjl8-laztpUSfSCW1hQ)
+  * https://medium.com/better-programming/introduction-to-functional-programming-in-python-3d26cd9cbfd7
