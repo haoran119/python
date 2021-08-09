@@ -532,7 +532,7 @@
 * [用 Python 批量下载百度图片](https://mp.weixin.qq.com/s/q-obSiAt1Rs28itlKU2FiA)
 * [用 Python 处理 B 站下载视频](https://mp.weixin.qq.com/s/dCTIUNeDQ_HeZqWQr0hesA)
 * [如何用 Python 快速抓取 Google 搜索？](https://mp.weixin.qq.com/s/-GUgWH06Wy7pCzNbMjinXg)
-  * [https://hackernoon.com/how-to-scrape-google-with-python-bo7d2tal
+  * [https://hackernoon.com/how-to-scrape-google-with-python-bo7d2tal)
   * [https://github.com/getlinksc/scrape_google
 * [我用Python找到了隔壁蹭网妹子的QQ号](https://mp.weixin.qq.com/s/QKjc1nZo18PGq7j0K6sTIg)
 * [用 Python 编写一个天气查询应用](https://mp.weixin.qq.com/s/iciMycq-HpwZj-LSE60NQQ)
