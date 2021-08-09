@@ -761,3 +761,66 @@
     * https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way.
 * 如何多行字符串拼接?
   * https://github.com/haoran119/python/blob/e98be0d3dedb64f4440fe620ca47edbcde0e75a1/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/%E5%A6%82%E4%BD%95%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5.py
+* Comparisons
+  * 6. Expressions — Python 3.7.4 documentation
+    * https://docs.python.org/3/reference/expressions.html#comparisons
+    * Unlike C, all comparison operations in Python have the same priority, which is lower than that of any arithmetic, shifting or bitwise operation. Also unlike C, expressions like a < b < c have the interpretation that is conventional in mathematics
+    * Comparisons can be chained arbitrarily, e.g., x < y <= z is equivalent to x < y and y <= z, except that y is evaluated only once (but in both cases z is not evaluated at all when x < y is found to be false).
+* Conditional Expressions
+  * 6. Expressions — Python 3.7.0 documentation
+    * https://docs.python.org/3/reference/expressions.html?highlight=conditional%20expressions#conditional-expressions
+    * x = 1 if y == 1 else 0
+    * 注意Python中没有三元运算符 y == 1 ? 1 : 0
+  * 1 PEP 308: Conditional Expressions
+    * https://docs.python.org/2.5/whatsnew/pep-308.html
+* How to display a decimal in scientific notation ?
+  * '{:.2e}'.format(0.456) = '4.56e-01'
+  * '{:.2f}'.format(0.456) = '0.46'
+  * python - Display a decimal in scientific notation - Stack Overflow
+    * https://stackoverflow.com/questions/6913532/display-a-decimal-in-scientific-notation
+* What's the infinity number ?
+  * float('inf')
+  * Built-in Types — Python 3.7.4 documentation
+    * https://docs.python.org/3/library/stdtypes.html?highlight=float%20inf
+    * float also accepts the strings “nan” and “inf” with an optional prefix “+” or “-” for Not a Number (NaN) and positive or negative infinity.
+  * sys.maxsize
+  * python - Maximum and Minimum values for ints - Stack Overflow
+    * https://stackoverflow.com/questions/7604966/maximum-and-minimum-values-for-ints
+    * In Python 3, this question doesn't apply. The plain int type is unbounded.
+    * However, you might actually be looking for information about the current interpreter's word size, which will be the same as the machine's word size in most cases. That information is still available in Python 3 as sys.maxsize, which is the maximum value representable by a signed word. Equivalently, it's the size of the largest possible list or in-memory sequence.
+  * sys — System-specific parameters and functions — Python 3.8.2 documentation
+    * https://docs.python.org/3/library/sys.html#sys.maxsize
+    * An integer giving the maximum value a variable of type Py_ssize_t can take. It’s usually 2**31 - 1 on a 32-bit platform and 2**63 - 1 on a 64-bit platform.
+* zip
+  * https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip
+  * Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
+* How to convert dictionary to list ?
+  * Converting Python Dictionary to List - Stack Overflow
+    * https://stackoverflow.com/questions/1679384/converting-python-dictionary-to-list
+  * 4. Built-in Types — Python 3.6.6rc1 documentation
+    * https://docs.python.org/3/library/stdtypes.html?highlight=items#dict.items
+    * https://docs.python.org/3/library/stdtypes.html?highlight=items#dictionary-view-objects
+  * 5. Data Structures — Python 3.8.3 documentation
+    * https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
+* How to convert list to string ?
+  * stest = str(['test1', 'test2', 'test3']).strip('[]')
+  * 4. Built-in Types — Python 3.6.6rc1 documentation
+    * https://docs.python.org/3/library/stdtypes.html?highlight=str#text-sequence-type-str
+    * https://docs.python.org/3/library/stdtypes.html?highlight=str#str.strip
+  * python - TypeError: cannot concatenate 'str' and 'list' objects in email - Stack Overflow
+    * https://stackoverflow.com/questions/26521899/typeerror-cannot-concatenate-str-and-list-objects-in-email
+* How to convert list to tuple ?
+  * tuple( list_obj )
+  * Python | Convert a list into a tuple - GeeksforGeeks
+    * https://www.geeksforgeeks.org/python-convert-a-list-into-a-tuple/
+    * tuple(list)
+    * tuple(i for i in list)
+    * (*list, )
+* How to check if a list contains elements of another list ?
+  * check = all(item in List1 for item in List2)
+  * check = any(item in List1 for item in List2)
+  * Check if Python List Contains Elements of Another List
+    * https://www.techbeamers.com/program-python-list-contains-elements/
+  * Built-in Functions — Python 3.7.4 documentation
+    * https://docs.python.org/3/library/functions.html?highlight=any#any
+    * https://docs.python.org/3/library/functions.html?#all
