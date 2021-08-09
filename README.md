@@ -611,7 +611,7 @@
   * https://github.com/zpw1995/aotodata/tree/master/bj_luohu
 * [如何用 Python 画出新型冠状病毒疫情地图？](https://mp.weixin.qq.com/s/DjBIu4851l0a_vN_aEjo7Q)
 * [Python 硬核分析我国 14 亿人口，发现三大危机！](https://mp.weixin.qq.com/s/IFKYGMbxWbNTylBnE7zYBg)
-* https://github.com/pig6/china_population
+  * https://github.com/pig6/china_population
 * [怎么用 Python 画出好看的词云图？](https://mp.weixin.qq.com/s/Tuzfh9aKTN7_Fxt8YJ4q-w)
 * [Python 竟能绘制出如此酷炫的三维图](https://mp.weixin.qq.com/s/tBl3iI-dfJcV4om0aJBnbA)
   * https://jalammar.github.io/visual-numpy/
