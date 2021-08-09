@@ -933,3 +933,7 @@
     * https://stackoverflow.com/questions/23177439/python-checking-if-a-dictionary-is-empty-doesnt-seem-to-work
   * python - How do I check if a list is empty? - Stack Overflow
     * https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty
+* How to print lists ?
+  * Print lists in Python (4 Different Ways) - GeeksforGeeks
+  * https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
+  * https://github.com/haoran119/python/blob/cd05dd3d79480c527d38822b5bccf4879a471563/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20print%20lists.py
