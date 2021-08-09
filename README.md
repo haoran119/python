@@ -316,3 +316,46 @@
 * [符合语言习惯的 Python 优雅编程技巧](https://mp.weixin.qq.com/s/rE5OEFwwFxJNb_Omwmqvzw)
   * http://lovesoo.org/pythonic-python-programming.html?amhgxy=ov4fk
 * [优雅编写Python3的62个小贴士](https://mp.weixin.qq.com/s/xkxpZo_8HixRlXU8PtMK7w)
+
+### TIPS
+
+* [@Python 程序员，如何最大化提升编码效率？](https://mp.weixin.qq.com/s/_-vCTkryiP2gq_IdX6pL8w)
+  * https://towardsdatascience.com/five-python-tricks-you-need-to-learn-today-9dbe03c790ab
+* [这些Python代码技巧，你肯定还不知道](https://mp.weixin.qq.com/s/UWd4hpeZztHmpHmmlftvlQ)
+  * https://www.freecodecamp.org/news/an-a-z-of-useful-python-tricks-b467524ee747/
+* [wtfPython—Python中一些奇妙的代码](https://mp.weixin.qq.com/s/B--tL_s8-eWF-x9ilCbvdQ)
+  * http://yaoyaoblog.xyz/2017/09/04/wtfPython%E2%80%94Python%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A6%99%E7%9A%84%E4%BB%A3%E7%A0%81/
+* [15个Pythonic的代码示例](https://mp.weixin.qq.com/s/vZcJ__SCcdLk2JopMx_yqA)
+* [7个案例15分钟让你了解Python套路](https://mp.weixin.qq.com/s/8GQ8gP4S4yA7FmlLhbuiBA)
+  * https://www.jianshu.com/p/36ae91c38279
+* [Python带我飞：50个有趣而又鲜为人知的Python特性](https://mp.weixin.qq.com/s/ULy82R1DYdbx0MH4xD22IA)
+  * https://github.com/leisurelicht/wtfpython-cn
+* [Python中实用却不常见的小技巧](https://hackernoon.com/python-tricks-101-2836251922e0)
+  * https://github.com/brennerm/PyTricks
+* [Python 开发中有哪些高级技巧？](https://mp.weixin.qq.com/s/6ierUk69wmooZcLKL3-XZw)
+* [18 个 Python 高效编程技巧](https://mp.weixin.qq.com/s/2Bxc5u0X_NQtLuXbVvPfzQ)
+* [10招玩转Python](https://mp.weixin.qq.com/s/WxYMY_b-5UPMD4KWPWIH9A
+* [学Python，从列表推导到zip()函数，这五种技巧应知应会](https://mp.weixin.qq.com/s/GDC3GeTPXspInK_1DPyuVA)
+  * https://towardsdatascience.com/python-tricks-101-what-every-new-programmer-should-know-c512a9787022
+* [10 个不为人知的Python冷知识](https://mp.weixin.qq.com/s/NysJHFlw57Br_k1cpYTmMA)
+* [Python的高级特征你知多少](https://mp.weixin.qq.com/s/VBiQ2X7Y93h51GkIosC_Vw)
+* [26个Python实用技巧](https://mp.weixin.qq.com/s/ttuB63_N5SQdOhIwLFGYgg)
+  * https://mp.weixin.qq.com/s/lPZTVURxfdRVYqIMUfnsBw
+  * https://www.freecodecamp.org/news/an-a-z-of-useful-python-tricks-b467524ee747/
+* [Python 有哪些不一样的技巧](https://mp.weixin.qq.com/s/w0OHrozLrD_n6v47Cit6BA)
+* [即学即用的30段Python实用代码](https://mp.weixin.qq.com/s/KHj_j9PShDU7MFg6m15mBQ)
+  * https://towardsdatascience.com/30-helpful-python-snippets-that-you-can-learn-in-30-seconds-or-less-69bb49204172
+* [每30秒学会一个Python小技巧](https://mp.weixin.qq.com/s/woVJXAI_8Gm7rIlaa6j7RQ)
+  * https://github.com/30-seconds/30-seconds-of-python
+* [Python的 5 种高级用法](https://mp.weixin.qq.com/s/_9LWP5K7mZckjghCRn6FPQ)
+  * https://towardsdatascience.com/5-advanced-features-of-python-and-how-to-use-them-73bffa373c84
+* [Python 的 20 个操作](https://mp.weixin.qq.com/s/WQHokL69JZIHdQ9j9fGJUw)
+  * https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124
+* [Python技巧小贴士](https://mp.weixin.qq.com/s/SnUgTGvkZtsPwA7pkwEexA)
+  * https://towardsdatascience.com/python-tips-and-trick-you-havent-already-seen-37825547544f
+* [Python 十大语法](https://mp.weixin.qq.com/s/q_AiXIERqkq8wzEngMMxlQ)
+* [20 个 Python 技巧](https://mp.weixin.qq.com/s/04BEb-rWp3igpzp1Av1hoA)
+  * https://dev.to/duomly/20-useful-python-tips-and-tricks-you-should-know-3h8c
+* [30 个 Python 的最佳实践、小贴士和技巧](https://mp.weixin.qq.com/s/B2jFB_m36_yaocsr3ZR-HQ)
+  * https://towardsdatascience.com/30-python-best-practices-tips-and-tricks-caefb9f8c5f5
+* [几个 Python“小伎俩” | 内附代码](https://mp.weixin.qq.com/s/xM18GPGS794juIAzw2--IA)
