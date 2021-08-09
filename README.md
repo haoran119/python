@@ -164,3 +164,39 @@
 * [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
 * [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
 * [彻底理解Python中的yield](https://mp.weixin.qq.com/s/WuecDf_10XFQotUyweubNQ)
+
+### 模块
+
+* [深入探讨Python的import机制：实现远程导入模块 | CSDN博文精选](https://mp.weixin.qq.com/s/Sx_WyKUpoZrnFtV9epAfpg)
+* [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
+* [四种高性能数据类型，Python collections助你优化代码、简洁任务](https://mp.weixin.qq.com/s/17xwTlwJi1ckht3wGk5ttA)
+  * https://levelup.gitconnected.com/introducing-high-performance-datatypes-in-python-with-the-collections-library-3d8c334827a5
+* [原来 collections 这么好用](https://mp.weixin.qq.com/s/BJ9FoirMv8RHr3ieZB0mDA)
+  * [Python-collections模块](https://blog.csdn.net/mall_lucy/article/details/108822795)
+  * collections模块：实现了特定目标的容器，以提供Python标准内建容器 dict、list、set、tuple 的替代选择。
+  * Counter：字典的子类，提供了可哈希对象的计数功能。
+  * defaultdict：字典的子类，提供了一个工厂函数，为字典查询提供了默认值。
+  * OrderedDict：字典的子类，保留了他们被添加的顺序。
+  * namedtuple：创建命名元组子类的工厂函数。
+  * deque：类似列表容器，实现了在两端快速添加(append)和弹出(pop)。
+  * ChainMap：类似字典的容器类，将多个映射集合到一个视图里面。
+* [你常常看到的 __init__.py 到底是个啥？](https://mp.weixin.qq.com/s/5RW_wd1J9RsyX99Zbm_G0g)
+  * 综上，__init__.py 会在 import 的时候被执行，而空的 __init__.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 __init__.py 还是很有必要的哟。
+* [Python编程中的if __name__ == 'main' 的作用和原理](https://mp.weixin.qq.com/s/SXTo0h2ExujAQdWnLWggdg)
+  * https://zhuanlan.zhihu.com/p/34112508
+  * __name__ 是当前模块名，当模块被直接运行时模块名为 __main__ 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。
+
+### IO / FILE
+
+* [Python 数据形态及IO操作](https://mp.weixin.qq.com/s/97v0k_hWdgJeppx1oF7Vxw)
+* [Python处理CSV、JSON和XML数据的简便方法](https://mp.weixin.qq.com/s/1PyeBLIJNzswO3zd-mHiTQ)
+  * https://towardsdatascience.com/the-easy-way-to-work-with-csv-json-and-xml-in-python-5056f9325ca9
+
+### 错误和异常
+
+* [学习笔记之Python Debug ( pdb ) - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10437091.html)
+* [一文教你读懂 Python 中的异常信息](https://mp.weixin.qq.com/s/6cAuUpZgj5kZ-1KM7-ZV_Q)
+  * https://realpython.com/python-traceback/
+* [Python 常见的17个错误分析](https://mp.weixin.qq.com/s/_OZH8o9rHaha0TmCboCCJA)
+  * https://www.oschina.net/question/89964_62779
+  * https://inventwithpython.com/blog/2012/07/09/16-common-python-runtime-errors-beginners-find/
