@@ -1030,3 +1030,31 @@
   * Python list directory, subdirectory, and files - Stack Overflow
     * https://stackoverflow.com/questions/2909975/python-list-directory-subdirectory-and-files
   * https://github.com/haoran119/python/blob/b754b5ae1339443d9c5fc9d54cf7b9de1349cc12/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20iterate%20directory%20for%20files.py 
+* How to input and output file ?
+  * 7. Input and Output — Python 3.7.4 documentation
+    * https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects
+    * https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json
+    * For reading lines from a file, you can loop over the file object. This is memory efficient, fast, and leads to simple code
+  * Python3 File 方法 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-file-methods.html
+  * python - How to read a file line-by-line into a list? - Stack Overflow
+    * https://stackoverflow.com/questions/3277503/how-to-read-a-file-line-by-line-into-a-list
+  * Python dump dict to json file - Stack Overflow
+    * https://stackoverflow.com/questions/17043860/python-dump-dict-to-json-file
+  * Python Dictionary to CSV - Stack Overflow
+    * https://stackoverflow.com/questions/8331469/python-dictionary-to-csv
+  * [Python JSON: Read, Write, Parse JSON (With Examples) (programiz.com)](https://www.programiz.com/python-programming/json)
+  * [Python File I/O: Read and Write Files in Python (programiz.com)](https://www.programiz.com/python-programming/file-operation)
+  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.load)
+    * json.load(fp, *, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
+    * Deserialize fp (a .read()-supporting text file or binary file containing a JSON document) to a Python object using this conversion table.
+  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.dump)
+    * json.dump(obj, fp, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)
+    * Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object) using this conversion table.
+    * If specified, default should be a function that gets called for objects that can’t otherwise be serialized. It should return a JSON encodable version of the object or raise a TypeError. If not specified, TypeError is raised.
+    * If sort_keys is true (default: False), then the output of dictionaries will be sorted by key.
+  * How to write datetime object to json file ?
+    * [python - How to overcome "datetime.datetime not JSON serializable"? - Stack Overflow](https://stackoverflow.com/questions/11875770/how-to-overcome-datetime-datetime-not-json-serializable/36142844#36142844)
+      * $ json.dumps(my_dictionary, indent=4, sort_keys=True, default=str) 
+    * [How to write a datetime object to JSON in Python (kite.com)](https://www.kite.com/python/answers/how-to-write-a-datetime-object-to-json-in-python#)
+      * Call datetime.datetime.isoformat() to convert datetime.datetime into a ISO date format, which is compatible with JSON.
