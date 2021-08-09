@@ -752,3 +752,12 @@
     * https://stackoverflow.com/questions/2124190/how-do-i-implement-interfaces-in-python
   * Difference between abstract class and interface in Python - Stack Overflow
     * https://stackoverflow.com/questions/372042/difference-between-abstract-class-and-interface-in-python
+* How to use type annotations ?
+  * typing — Support for type hints — Python 3.9.0 documentation
+    * https://docs.python.org/3/library/typing.html
+    * Note: The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
+    * def greeting(name: str) -> str: ...
+  * Using Python's Type Annotations - DEV
+    * https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way.
+* 如何多行字符串拼接?
+  * https://github.com/haoran119/python/blob/e98be0d3dedb64f4440fe620ca47edbcde0e75a1/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/%E5%A6%82%E4%BD%95%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5.py
