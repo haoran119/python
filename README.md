@@ -450,3 +450,45 @@
 * [Python技巧 | 一行代码减少一半内存占用](https://mp.weixin.qq.com/s/0nTQ_oL2WWn8gytjqvn7SA)
 * [如何降低 Python 的内存消耗量？](https://mp.weixin.qq.com/s/I4fNWX5sw6sAbRoyXiNNpw)
 * [Python 内存分配时的小秘密](https://mp.weixin.qq.com/s/ZKscctriK6Hqw_MHwpQWIg)
+
+### 资源库工具
+
+* [Python算法实现资源汇总](https://mp.weixin.qq.com/s/1ODoGvRXQ0quk58rVPj4yQ)
+  * https://github.com/TheAlgorithms/Python
+* [那些有趣/用的 Python 库](https://mp.weixin.qq.com/s/gj6Dn5TLBoz_rqTeqYGduw)
+* [140种Python标准库、第三方库和外部工具都有了](https://mp.weixin.qq.com/s/Qp12DRURa2I9AVjQ7gpxVw)
+* [介绍几款 Python 类型检查工具](https://mp.weixin.qq.com/s/IvYJkpAmWJ-3ZEHtZzRiCQ)
+  * pyright
+* [Python中的两个测试工具](https://mp.weixin.qq.com/s/IUCoUkws923ojK__HPe3kA)
+  * unittest: 一个通用的测试框架
+  * doctest: 一个更简单的模块，是为检查文档而设计的，但也非常适合用来编写单元测试
+* [用 coverage 模块提高 Python 开发效率](https://mp.weixin.qq.com/s/fP_mQtQnrssdzOOw6yPzQA)
+  * Test with Coverage
+  * Mock　
+* [Python 中更优雅的日志记录方案](https://mp.weixin.qq.com/s/XOcyUbgIrCXEAYH2p3Zo5Q)
+  * https://loguru.readthedocs.io/en/stable/index.html
+  * logging
+  * loguru
+* [如何编写完美的 Python 命令行程序？](https://mp.weixin.qq.com/s/sAS_NE8sIpw9ROOWSd60zw)
+  * https://www.sicara.ai/blog/2018-12-18-perfect-command-line-interfaces-python
+  * 我建议你遵循以下四条规则：
+    * 尽可能提供默认参数值
+    * 所有错误情况必须处理（例如，参数缺失，类型错误，找不到文件）
+    * 所有参数和选项必须有文档
+    * 不是立即完成的任务应当显示进度条
+  * sys.argv
+  * argparse
+  * click
+* [wxPython：Python首选的GUI库 | CSDN博文精选](https://mp.weixin.qq.com/s/pJIuKgZC1o757iwkrt3uUQ)
+* [一份不可多得的数据科学与机器学习Python库](https://mp.weixin.qq.com/s/nkAKDx5OHx2Ld4Vo_RCXTQ)
+* [收藏 | 34 个优秀好用的Python开源框架](https://mp.weixin.qq.com/s/Aa7gsmxE1-kBSsToaR4ltA)
+  * https://github.com/Mybridge/amazing-python-2019
+  * https://medium.mybridge.co/34-amazing-python-open-source-libraries-for-the-past-year-v-2019-93d6ee11aceb
+* [Python 依赖库管理哪家强？pip、pipreqs、pigar、pip-tools、pipdeptree](https://mp.weixin.qq.com/s/8kg7bgS0i4cPgKRwPKPOmA)
+* [学习 Python，这 22 个包怎能不掌握？](https://mp.weixin.qq.com/s/vdDXAQlV94NdFBMb3eMF9w)
+  * https://medium.com/better-programming/the-22-most-used-python-packages-in-the-world-7020a904b2e
+* [3 个 Python 第三方模块的使用简介 ](https://mp.weixin.qq.com/s/PQqx6C0Ls-4YKCB0st2Ouw)
+  * 本文将会介绍3个Python第三方模块的使用方法，它们分别是tqdm， pyyaml和traceback模块，各自的用途描述如下：
+  * tqdm: 可以显示循环的进度条;
+  * pyyaml：Python操作YAML文件的库；
+  * tracebak：详细追踪错误信息的库。
