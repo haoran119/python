@@ -1059,3 +1059,32 @@
     * [How to write a datetime object to JSON in Python (kite.com)](https://www.kite.com/python/answers/how-to-write-a-datetime-object-to-json-in-python#)
       * Call datetime.datetime.isoformat() to convert datetime.datetime into a ISO date format, which is compatible with JSON.
   * https://github.com/haoran119/python/blob/c47e7b70db20a0eb7aff785806555f886c02f2cc/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20input%20and%20output%20file.py
+* How to use try ... except ... finally statement for exception ?
+  * 8.4. The try statement - 8. Compound statements — Python 3.7.4 documentation
+    * https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
+  * Manually raising (throwing) an exception in Python - Stack Overflow
+    * https://stackoverflow.com/questions/2052390/manually-raising-throwing-an-exception-in-python　　
+* How to define custom exception ?
+  * How to Define Custom Exceptions in Python? (With Examples)
+    * https://www.programiz.com/python-programming/user-defined-exception
+* How to use Regular Expression 正则表达式 ？
+  * Python3 正则表达式 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-reg-expressions.html
+  * re — Regular expression operations — Python 3.7.4 documentation
+    * https://docs.python.org/3.7/library/re.html#module-re
+  * Regular Expression HOWTO — Python 3.7.4 documentation
+    * https://docs.python.org/3/howto/regex.html
+  * regex - Get all unnamed groups in a Python match object - Stack Overflow
+    * https://stackoverflow.com/questions/30293064/get-all-unnamed-groups-in-a-python-match-object
+  * regex - Extracting 2 strings from regular expression Python - Stack Overflow
+    * https://stackoverflow.com/questions/23658156/extracting-2-strings-from-regular-expression-python
+  * regex - Python extract pattern matches - Stack Overflow
+    * https://stackoverflow.com/questions/15340582/python-extract-pattern-matches
+  * Python 正则表达式 re 模块简明笔记
+    * https://mp.weixin.qq.com/s/8M_xiHMNB1a93ZunpxMsLg
+    * https://funhacks.net/2016/12/27/regular_expression/
+  * Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript
+    * https://regex101.com/
+  * Python正则表达式
+    * https://mp.weixin.qq.com/s/bc-Puk4AVc1XxusrbSwaHg
+    * re模块主要定义了9个常量、12个函数、1个异常，每个常量和函数都会通过实际代码案例讲解，让大家能更直观的了解其作用！
