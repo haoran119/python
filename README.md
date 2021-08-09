@@ -408,3 +408,18 @@
   * https://blog.csdn.net/xufive/article/details/102709538
 * [详解Python虚拟环境的原理及使用](https://mp.weixin.qq.com/s/kTyanAzsaiaieae8cpUwqg)
   * 本文先介绍虚拟环境的基础知识以及使用方法，然后再深入介绍虚拟环境背后的工作原理。
+
+### 坑
+
+* [Python 初学者常犯的5个错误，布尔型竟是整型的子类](https://mp.weixin.qq.com/s/RbITs-ekT2OJ41kA9RX9CA)
+  * https://deepsource.io/blog/python-common-mistakes/
+  * 可变的缺省参数
+  * 将 assert 声明语句作为保证条件
+  * 使用 isinstance 代替 type 
+    * [type and isinstance in Python - GeeksforGeeks](https://www.geeksforgeeks.org/type-isinstance-python/)
+      * If you’re checking to see if an object has a certain type, you want isinstance() as it checks to see if the object passed in the first argument is of the type of any of the type objects passed in the second argument. Thus, it works as expected with subclassing and old-style classes, all of which have the legacy type object instance.
+      * type(), on the other hand, simply returns the type object of an object and comparing what it returns to another type object will only yield True when you use the exact same type object on both sides.
+      * In Python, it’s preferable to use Duck Typing( type checking be deferred to run-time, and is implemented by means of dynamic typing or reflection) rather than inspecting the type of an object.
+      * The next reason not to use type() is the lack of support for inheritance.
+  * 不必要的 lambda 表达式
+  * NotImplemented错误
