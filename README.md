@@ -723,3 +723,12 @@
   * prettytable可以打印出美观的表格，并且对中文支持相当好
 * [Python与MySQL数据库的交互实战](https://mp.weixin.qq.com/s/9D2bi_1W6fjMxI3jaH2teA)
   * https://blog.csdn.net/weixin_41261833/article/details/103832017
+
+## Q & A
+
+* What's package and module ?
+  * Python 提供了一个办法，把这些定义存放在文件中，为一些脚本或者交互式的解释器实例使用，这个文件被称为模块。模块是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用 python 标准库的方法。
+  * 包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。在导入一个包的时候，Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录。目录只有包含一个叫做 __init__.py 的文件才会被认作是一个包，主要是为了避免一些滥俗的名字（比如叫做 string）不小心的影响搜索路径中的有效模块。
+* How to set pip install package index ?
+  * Edit ~/.pip/pip.conf to set index-url / extra-index-url
+  * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
