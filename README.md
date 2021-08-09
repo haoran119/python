@@ -69,3 +69,54 @@
 * [Python三十年技术演变史](https://mp.weixin.qq.com/s/xFWpAXWJ4m78bZHYcc3VzQ)
 * [全面的 Python 重点](https://mp.weixin.qq.com/s/TFPI0hdlbcHVVO0id6tT4A)
   * https://segmentfault.com/a/1190000018737045
+
+## BASIC
+
+* [Python 为什么不支持 i++ 自增语法，不提供 ++ 操作符？ (qq.com)](https://mp.weixin.qq.com/s/gs3aZucOxXkeMGmP0H9fuA)
+* [Python 字符串拼接总结 - Python编程](https://mp.weixin.qq.com/s/ovB8rsRvcjF-M5z2d5je8A)
+  * https://segmentfault.com/a/1190000015475309
+* [Python字符串用法大全](https://mp.weixin.qq.com/s/yMVrjmOYp7opYB0Nvx47Dw)
+* [Python字符串处理的8招秘籍](https://mp.weixin.qq.com/s/x_0Ahm-q8FAxAvJoUWnsEQ)
+* [10 个 Python 字符串处理技巧](https://mp.weixin.qq.com/s/iaT30IyPT8NSQ42d3oVpVA)
+  1. 空格剥离
+  2. 字符串拆分
+  3. 将列表元素合成字符串
+  4. 字符串反转
+  5. 大小写转换
+  6. 检查是否有字符串成员
+  7. 子字符串替换
+  8. 组合多个列表的输出
+  9. 同字母异序词检查
+  10. 回文检查
+* [如何优雅的操作Python字典 - 程序员大咖](https://mp.weixin.qq.com/s/mWjzDm9XNNnFiJGYhzpivA)
+  * https://www.linuxzen.com/python-you-ya-de-cao-zuo-zi-dian.html
+* [干货|理解Python列表和元组](https://mp.weixin.qq.com/s/U-ctO-brjwxpm0LbLTB-dw)
+* [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
+  * https://maida6244.xyz/
+* [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
+* [Python 69个内置函数分8类总结](https://mp.weixin.qq.com/s/2ZFZ8olllPnrQ4wtCPPkMA)
+  * https://docs.python.org/3/library/functions.html
+  * 1、内置函数
+  * 2、类型相关
+  * 3、数理统计相关
+  * 4、进制转换
+  * 5、面向对象相关
+  * 6、迭代器相关
+  * 7、map函数
+  * 8、排序相关
+  * 9 其他
+* [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
+* [Python高阶函数使用总结](https://mp.weixin.qq.com/s/xtO8NDq3lVacsT5Z7eQXmw)
+  * 本文结合各种实际的例子详细讲解了Python5个内建高阶函数的使用，能够帮助理解Python的数据结构和提高数据处理的效率，这5个函数分别是：
+    * map
+    * reduce
+    * filter
+    * sorted/sort
+    * zip
+* [Python | 掌握 Lambda 函数，四不要](https://mp.weixin.qq.com/s/tWibBZGcX4PtEKo0a1bvzQ)
+  * https://github.com/xitu/gold-miner/blob/master/article/2020/master-python-lambda-functions-with-these-4-donts.md
+    1. 不要返回任何值
+    2. 不要忘记更好的选择
+    3. 不要将它赋值给变量
+    4. 不要忘记列表推导式
+* [条件语句的七种写法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247522923&idx=4&sn=04c0072a03765c7741f459cd0807d9b7&source=41#wechat_redirect)
