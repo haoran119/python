@@ -1021,3 +1021,12 @@
       * os.path.isdir()
     * Checking if Either Exist
       * os.path.exists()
+* How to iterate directory for files ?
+  * os — Miscellaneous operating system interfaces — Python 3.7.4 documentation
+    * https://docs.python.org/3/library/os.html?highlight=os%20walk#os.walk
+    * Generate the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
+  * Python3 OS 文件/目录方法 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-os-file-methods.html
+  * Python list directory, subdirectory, and files - Stack Overflow
+    * https://stackoverflow.com/questions/2909975/python-list-directory-subdirectory-and-files
+  * https://github.com/haoran119/python/blob/b754b5ae1339443d9c5fc9d54cf7b9de1349cc12/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20iterate%20directory%20for%20files.py 
