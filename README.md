@@ -1134,7 +1134,7 @@
 * How to use multiprocessing ?
   * [multiprocessing — Process-based parallelism — Python 3.9.5 documentation](https://docs.python.org/3/library/multiprocessing.html)
 
-## FIX OF ERRORS
+### FIX OF ERRORS
 
 * How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
   * Check the indentation for other class member functions prior to plot_all()
