@@ -824,3 +824,8 @@
   * Built-in Functions — Python 3.7.4 documentation
     * https://docs.python.org/3/library/functions.html?highlight=any#any
     * https://docs.python.org/3/library/functions.html?#all
+* How to change values in a list with for loop ?
+  * enumerate
+  * Change values in a list using a for loop (python) - Stack Overflow
+    * https://stackoverflow.com/questions/54974579/change-values-in-a-list-using-a-for-loop-python
+  * https://github.com/haoran119/python/blob/081816091c1372991cd1542028710399aa67de99/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20change%20values%20in%20a%20list%20with%20for%20loop.py
