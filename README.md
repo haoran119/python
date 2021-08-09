@@ -285,3 +285,17 @@
 * [如何将 Python 的一个类方法变为多个方法？](https://mp.weixin.qq.com/s/WPbtNQoMbMWVmD2IGOw8Rg)
 * [写 Python 代码不可不知的函数式编程技术](https://mp.weixin.qq.com/s/cTUmjl8-laztpUSfSCW1hQ)
   * https://medium.com/better-programming/introduction-to-functional-programming-in-python-3d26cd9cbfd7
+
+### 多线程
+
+* [浅谈 Python 中的多线程 - Python编程](https://mp.weixin.qq.com/s/7dLKlCUumx9NS-Zmv8iSvA)
+* [理解python多线程和多进程](https://mp.weixin.qq.com/s/pjoSXrpjvxvOHDmWAhYfFA)
+* [深入理解python多线程和多进程](https://mp.weixin.qq.com/s/w0dZrtv8ogdtxO8FT2LrEg)
+* [入门 | 三行Python代码，让数据预处理速度提高2到6倍](https://mp.weixin.qq.com/s/DgKuNIa_m-CsXWgHIz_3rQ)
+  * https://towardsdatascience.com/heres-how-you-can-get-a-2-6x-speed-up-on-your-data-pre-processing-with-python-847887e63be5
+* [Python 线程为什么要搞个 setDaemon ？](https://mp.weixin.qq.com/s/tRaQftWQNzE2a_ZKDLGE4w)
+
+### 编码
+
+* [一文透彻掌握 Python 编码问题](https://mp.weixin.qq.com/s/CFDH58dwU3ilMn1axJVccg)
+* [一图看懂 Python 2 / Python 3 编码 | CSDN 博文精选](https://mp.weixin.qq.com/s/V9fM7G5c0JirQezoZAJVaw)
