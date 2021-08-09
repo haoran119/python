@@ -19,6 +19,21 @@
 * [学习笔记之Python爬虫 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/10470560.html)
 * [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
 * [学习笔记之盘一盘 Python 系列 1 & 2 - 入门篇 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11289321.html)
+* [《Python入门必备指南》之如何系统地自学 Python？_腾讯课堂](https://ke.qq.com/course/217064)
+  * 通过实例知道下list，dict实际使用中一些技巧
+  * 了解web编程的学习线路图，知识网络
+  * get(key[, default])
+    * https://docs.python.org/3/library/stdtypes.html?highlight=get#dict.get
+    * Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError. 
+  * sorted(iterable, *, key=None, reverse=False)
+    * https://docs.python.org/3/library/functions.html?highlight=sorted#sorted
+    * Return a new sorted list from the items in iterable.
+  * items()
+    * https://docs.python.org/3/library/stdtypes.html?highlight=items#dict.items
+    * Return a new view of the dictionary’s items ((key, value) pairs). See the documentation of view objects.
+  * 4.7.5. Lambda Expressions
+    * https://docs.python.org/3/tutorial/controlflow.html?highlight=lambda#lambda-expressions
+    * Small anonymous functions can be created with the lambda keyword.
 
 ## RESOURCES
 
