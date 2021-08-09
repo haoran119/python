@@ -1058,3 +1058,4 @@
       * $ json.dumps(my_dictionary, indent=4, sort_keys=True, default=str) 
     * [How to write a datetime object to JSON in Python (kite.com)](https://www.kite.com/python/answers/how-to-write-a-datetime-object-to-json-in-python#)
       * Call datetime.datetime.isoformat() to convert datetime.datetime into a ISO date format, which is compatible with JSON.
+  * https://github.com/haoran119/python/blob/c47e7b70db20a0eb7aff785806555f886c02f2cc/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20input%20and%20output%20file.py
