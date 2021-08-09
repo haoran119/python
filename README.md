@@ -492,3 +492,61 @@
   * tqdm: 可以显示循环的进度条;
   * pyyaml：Python操作YAML文件的库；
   * tracebak：详细追踪错误信息的库。
+
+## APPLICATION
+
+* [用 Python 打包自己的库到 PYPI](https://mp.weixin.qq.com/s/9SdWsoJFJYDjkJal_QDocg)
+  * https://www.zhihu.com/people/mai-da-3/activities
+* [用 Pyinstaller 打包文件为应用程序](https://mp.weixin.qq.com/s/FuUds4jqj4o1GHEzCrz7Fw)
+* [Python打包成exe](https://mp.weixin.qq.com/s/W3-Bty8jENedFWad06KnCA)
+* [详细指南 | 如何在Github发布Python开源包](https://mp.weixin.qq.com/s/FTcGjx6YLmuldAKp03dhAQ)
+  * https://www.freecodecamp.org/news/from-a-python-project-to-an-open-source-package-an-a-to-z-guide-c34cb7139a22/
+* [Python 中自动导入缺失的库](https://mp.weixin.qq.com/s/NYbovYS6z6j40ifnEfEEKA)
+* [用 Python 写一个安卓 APP](https://mp.weixin.qq.com/s/NTxNPZRci_b7zhZgU2MrGw)
+  * https://blog.51cto.com/youerning/1733534
+* [轻轻松松用Python写APP](https://mp.weixin.qq.com/s/CiJxNHQ8CjDO_8V3vK0bEw)
+  * https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace
+* [用Python把Linux命令写一遍](https://mp.weixin.qq.com/s/71fLATw5LStdknIk2PqHRQ)
+* [“堆”的 Python 实现与应用总结](https://mp.weixin.qq.com/s/cvUGuDSp_fb-kjHRe_zBPA)
+  * https://zhuanlan.zhihu.com/p/85518062
+* [如何用 Python 快速开发一个区块链数据结构？](https://mp.weixin.qq.com/s/m7hZY93ponge6dy2fvTzAg)
+* [一文读懂Python复杂网络分析库networkx | CSDN博文精选](https://mp.weixin.qq.com/s/WYM7k9gddAndlLBuQWTbSA)
+* [实战：基于技术分析的Python算法交易](https://mp.weixin.qq.com/s/J-ZwLl_CzvaRHZjKvTA3iw)
+* [开发必学的验证码，教你从零写一个验证码](https://mp.weixin.qq.com/s/XGhpxP4rTg_JeRkYZX2EzA)
+  * https://github.com/MiracleYoung/You-are-Pythonista/tree/master/PythonExercise/App/captcha_project
+* [用 Python 生成炫酷二维码及解析](https://mp.weixin.qq.com/s/V2g6DICFkVDOg-kI3QmnrA)
+  * 我们通过 Python 生成以及识别二维码需要用到的库为：qrcode、myqr、zxing，安装通过 pip install qrcode/myqr/zxing 即可。
+* [生成自定义二维码，5行Python代码就搞定](https://mp.weixin.qq.com/s/VyhoFRVu9KXOuMezouY6Og)
+  * [https://towardsdatascience.com/generate-qrcode-with-python-in-5-lines-42eda283f325
+* [万字干货 | Python后台开发的高并发场景优化解决方案](https://mp.weixin.qq.com/s/BHiM-mv7HXSmIY2KRf480g)
+* [仅仅50行Python，就可以在手机端看电脑桌面！](https://mp.weixin.qq.com/s/k02vPOwgdFgeZ9K4_dmJvw)
+* [用 Python 偷偷抓取了她的行踪](https://mp.weixin.qq.com/s/H6mxILglgko01GLqe7VRyQ)
+  * https://github.com/xingag/spider_python/tree/master/%E8%8E%B7%E5%8F%96%E5%A5%B3%E5%8F%8B%E7%9A%84%E4%BD%8D%E7%BD%AE
+* [谁偷偷删了你的微信？别慌！Python 帮你都揪出来了](https://mp.weixin.qq.com/s/iNkS550-8-Oj55x9Ye7Ykg)
+* [使用Python假装装黑客，批量破解朋友的网站密码](https://mp.weixin.qq.com/s/ZqSvVZiZC7ehcMvRAZ4unw)
+* [用Python可以算出了你的身份证号码](https://mp.weixin.qq.com/s/AuQu7rlDU8pkKv3F0SZffQ)
+  * https://github.com/zpw1995/aotodata/blob/master/interest/ID_card/ID_card.py
+* [用 Python 自动监测 GitHub 项目更新](https://mp.weixin.qq.com/s/_nkx_cCKxz0VrfgGvWDcrA)
+* [不到 50 行 Python 代码，做个刮刮卡](https://mp.weixin.qq.com/s/4WGYs4GMjObQZlObM2KkNQ)
+* [用Python做个海量小姐姐素描图](https://mp.weixin.qq.com/s/JIPdPBCurXMTcaPprWuZvw)
+* [用 Python 批量下载百度图片](https://mp.weixin.qq.com/s/q-obSiAt1Rs28itlKU2FiA)
+* [用 Python 处理 B 站下载视频](https://mp.weixin.qq.com/s/dCTIUNeDQ_HeZqWQr0hesA)
+* [如何用 Python 快速抓取 Google 搜索？](https://mp.weixin.qq.com/s/-GUgWH06Wy7pCzNbMjinXg)
+  * [https://hackernoon.com/how-to-scrape-google-with-python-bo7d2tal
+  * [https://github.com/getlinksc/scrape_google
+* [我用Python找到了隔壁蹭网妹子的QQ号](https://mp.weixin.qq.com/s/QKjc1nZo18PGq7j0K6sTIg)
+* [用 Python 编写一个天气查询应用](https://mp.weixin.qq.com/s/iciMycq-HpwZj-LSE60NQQ)
+* [大象装进冰箱要几步？Python 来解答](https://mp.weixin.qq.com/s/S5OWsuY1hT1qATadZ0v_kA)
+* [用 Python 制作家用防盗工具](https://mp.weixin.qq.com/s/6RE1fwKF8gndI3Bnhb8UgA)
+* [用 Python 制作“除夕夜倒计时”海报](https://mp.weixin.qq.com/s/MIhViQrYOca8QlQ7QEfoZw)
+  * https://github.com/wwtm/gitpython_examples
+* [Python GUI开发，效率提升10倍的方法！](https://mp.weixin.qq.com/s/tRKEbBwjDtGWR4VTAfEqPg)
+  * https://github.com/PySimpleGUI/PySimpleGUI
+* [用Python计算颜值数](https://mp.weixin.qq.com/s/d4r3oMReYCUBjUwCbAzE5w)
+  * 现在很多拍照软件都有颜值测试及年龄识别功能，经过研究，发现 Python 也能实现，今天主要用 PyQt4 做个可视化工具，然后调用百度人脸识别api，识别出人脸的性别、年龄及颜值
+* [用 Python 发一封邮件](https://mp.weixin.qq.com/s/wXAfYIdGxukKSstiFxLi4g)
+* [用Python唱一首程序员版“惊雷”](https://mp.weixin.qq.com/s/CGFkdviDXu3-YEQTNywY7A)
+* [如何用 Python 制作地球仪？](https://mp.weixin.qq.com/s/I6B5CDKRf8QDftAcIa_o_w)
+  * 写在前面的话：在之前的文章 Python 图表利器 pyecharts 中有介绍了 pyecharts 的安装及使用,详细教程请到 官网 学习
+  * pyecharts 功能很强大，只需要导入相应的模块就配置相应的选项即可生成对应的超文本文件，使用浏览器访问即可！具体实例请见下文
+* [90行代码让微信开屏地球转起来](https://mp.weixin.qq.com/s/azBohOz_5mybLV32MSlaXQ)
