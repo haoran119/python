@@ -35,6 +35,15 @@
     * https://docs.python.org/3/tutorial/controlflow.html?highlight=lambda#lambda-expressions
     * Small anonymous functions can be created with the lambda keyword.
   * https://github.com/haoran119/python/blob/d8d0841e46f42aa474a4108a441007607955bc8f/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/4.7.5.%20Lambda%20Expressions.py
+* [深入浅出带你学Python冲击年薪30万【马哥教育】_腾讯课堂](https://ke.qq.com/course/134017)
+* Python哲学
+  * import this
+* Python使用引用计数记录所有变量的引用数
+  * 当变量引用数变为0，它就可以被垃圾回收GC。
+  * 计数增加：赋值给其他变量就增加引用计数。E.g. x = 3; y = x;
+  * 计数减少：
+    * 函数运行结束时，局部变量就被自动销毁，对象引用计数减少；
+    * 变量被赋值给其他变量。x = 3; y = x; x = 4;
 
 ## RESOURCES
 
