@@ -1,4 +1,6 @@
 # python
+https://www.cnblogs.com/pegasus923/p/4006785.html
+
 learning-notes/src/python at master · haoran119/learning-notes (github.com)
 
 Welcome to Python.org
