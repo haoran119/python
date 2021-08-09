@@ -299,3 +299,20 @@
 
 * [一文透彻掌握 Python 编码问题](https://mp.weixin.qq.com/s/CFDH58dwU3ilMn1axJVccg)
 * [一图看懂 Python 2 / Python 3 编码 | CSDN 博文精选](https://mp.weixin.qq.com/s/V9fM7G5c0JirQezoZAJVaw)
+
+## PYTHONIC STYLE
+
+### STYLE GUIDE
+
+* [学习笔记之Python最简编码规范 - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10387079.html)
+* [代码整洁之道-编写 Pythonic 代码](https://mp.weixin.qq.com/s/uYzO63krMt-_ztmf4SmI2w)
+* [写出漂亮 Python 代码的 20条准则](https://mp.weixin.qq.com/s/2I8clKTGDPbmR1fTOLWaZQ)
+  * https://medium.com/better-programming/how-to-make-python-programming-more-elegant-and-decent-4b5962695aa9
+* [Python 编码风格指南](https://mp.weixin.qq.com/s/JnrLSfQfH4CGAZSK_rnumg)
+* [Python 简洁编码之道](https://mp.weixin.qq.com/s/UeOkqf37HQH-RQZbpJAiDQ)
+* [18式优雅你的Python](https://mp.weixin.qq.com/s/iiG3Jarc_bIzcvz1-lmmhg)
+* [改善Python程序的91个建议 - Python编程](https://mp.weixin.qq.com/s/SU6TXpU3iiL8TZQO6dk02A)
+  * https://zhuanlan.zhihu.com/p/32817459
+* 符合语言习惯的 Python 优雅编程技巧 - 超级数学建模(https://mp.weixin.qq.com/s/rE5OEFwwFxJNb_Omwmqvzw)
+  * http://lovesoo.org/pythonic-python-programming.html?amhgxy=ov4fk
+* [优雅编写Python3的62个小贴士](https://mp.weixin.qq.com/s/xkxpZo_8HixRlXU8PtMK7w)
