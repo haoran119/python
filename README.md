@@ -829,3 +829,107 @@
   * Change values in a list using a for loop (python) - Stack Overflow
     * https://stackoverflow.com/questions/54974579/change-values-in-a-list-using-a-for-loop-python
   * https://github.com/haoran119/python/blob/081816091c1372991cd1542028710399aa67de99/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20change%20values%20in%20a%20list%20with%20for%20loop.py
+* How to check if substring exists ?
+  * if "substring" in test_string:
+  * if s.startswith(("a", "b")):
+  * 6. Expressions — Python 3.7.2rc1 documentation - Membership test operations
+    * https://docs.python.org/3/reference/expressions.html#membership-test-details
+  * Built-in Types — Python 3.7.2rc1 documentation
+    * str.startswith(prefix[, start[, end]])
+    * Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
+  * Does Python have a string 'contains' substring method? - Stack Overflow
+    * https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method
+    * if "blah" not in somestring: 
+* How to replace characters / substring in a string ?
+  * 'www.example.com'.strip('cmowz.')
+  * str.replace('html', 'log')
+  * Pay attention that strip will only remove the leading and trailing characters.
+  * Built-in Types — Python 3.7.1 documentation - str.strip([chars])
+    * https://docs.python.org/3/library/stdtypes.html?highlight=strip#str.strip
+    * Return a copy of the string with the leading and trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix or suffix; rather, all combinations of its values are stripped
+  * str.replace(old, new[, count])
+    * https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace
+    * Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced.
+* How to sort string ?
+  * [How to sort the letters in a string alphabetically in Python - Stack Overflow](https://stackoverflow.com/questions/15046242/how-to-sort-the-letters-in-a-string-alphabetically-in-python)
+  * ''.join(sorted(a))
+* Two types usage of for loop ?
+  * python - "for loop" with two variables? - Stack Overflow
+    * https://stackoverflow.com/questions/18648626/for-loop-with-two-variables
+* datetime operation
+  * Get date of the datetime instance
+    * 8.1. datetime — Basic date and time types — Python 3.6.6rc1 documentation
+      * https://docs.python.org/3/library/datetime.html#datetime.date
+  * timedelta Objects - datetime — Basic date and time types — Python 3.7.2 documentation
+    * https://docs.python.org/3/library/datetime.html#timedelta-objects
+    * class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
+  * [Python datetime to string without microsecond component - Stack Overflow](https://stackoverflow.com/questions/7999935/python-datetime-to-string-without-microsecond-component)
+    * $ datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    * 8.1. datetime — Basic date and time types — Python 3.3.7 documentation
+      * https://docs.python.org/3.3/library/datetime.html#datetime.datetime.strftime
+  * How to increment the day in datetime? Python - Stack Overflow
+    * https://stackoverflow.com/questions/3240458/how-to-increment-the-day-in-datetime-python
+    * date += datetime.timedelta(days=1)
+  * datetime — Basic date and time types — Python 3.8.6rc1 documentation
+    * https://docs.python.org/3.8/library/datetime.html#datetime.datetime.utcfromtimestamp
+    * classmethod datetime.utcfromtimestamp(timestamp)
+    * Return the UTC datetime corresponding to the POSIX timestamp, with tzinfo None. (The resulting object is naive.)
+  * Examples of Usage: datetime
+    * [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#examples-of-usage-datetime)
+    * [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#strftime-strptime-behavior)
+      * strftime() and strptime() Behavior
+    * [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#datetime.datetime.strptime)
+      * classmethod datetime.strptime(date_string, format)
+      * Return a datetime corresponding to date_string, parsed according to format.
+    * [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#datetime.datetime.strftime)
+      * datetime.strftime(format)
+      * Return a string representing the date and time, controlled by an explicit format string.
+* How to find the min value in dictionary ?
+  * min(d.items(), key=lambda x: x[1])
+  * min(d.items(), key=d.get)
+  * min(d.values())
+  * min(d.keys())
+  * python - Get the key corresponding to the minimum value within a dictionary - Stack Overflow
+    * https://stackoverflow.com/questions/3282823/get-the-key-corresponding-to-the-minimum-value-within-a-dictionary
+    * min(d, key=d.get)
+  * python - Getting key with maximum value in dictionary? - Stack Overflow
+    * https://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary
+  * 2. Built-in Functions — Python 3.7.0 documentation
+    * https://docs.python.org/3/library/functions.html?highlight=min#min
+    * https://docs.python.org/3/library/stdtypes.html?highlight=dictionary#dict.get
+      * get(key[, default])
+      * Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError.
+  * Python3 min() 函数 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-func-number-min.html
+  * Python3 字典 get() 方法 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-att-dictionary-get.html
+* How to iterate over a dictionary ?
+  * for key in dict
+  * for value in dict.values()
+  * for key, value in dict.items()
+  * Iterate over a dictionary in Python - GeeksforGeeks
+    * https://www.geeksforgeeks.org/iterate-over-a-dictionary-in-python/
+  * Python3 字典 in 操作符 | 菜鸟教程　　
+    * https://www.runoob.com/python3/python3-att-dictionary-in-html.html
+    * Python 字典 in 操作符用于判断键是否存在于字典中，如果键在字典 dict 里返回 true，否则返回 false。
+* How to delete an item from dictionary ?
+  * Built-in Types — Python 3.8.2 documentation
+    * https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+    * del d[key]
+      * Remove d[key] from d. Raises a KeyError if key is not in the map.
+    * pop(key[, default])
+      * If key is in the dictionary, remove it and return its value, else return default. If default is not given and key is not in the dictionary, a KeyError is raised.
+  * Dictionary Tutorials & Notes | Python | HackerEarth
+    * https://www.hackerearth.com/practice/python/working-with-data/dictionary/tutorial/
+  * python - Delete a dictionary item if the key exists - Stack Overflow
+    * mydict.pop("key", None)
+* How to check if dictionary/list/string/tuple is empty ?
+  * PEP 8 -- Style Guide for Python Code | Python.org
+    * https://www.python.org/dev/peps/pep-0008/
+    * For sequences, (strings, lists, tuples), use the fact that empty sequences are false.
+    * Yes: if not seq: / if seq:
+    * No: if len(seq): / if not len(seq):
+  * Python: Checking if a 'Dictionary' is empty doesn't seem to work - Stack Overflow
+    * https://stackoverflow.com/questions/23177439/python-checking-if-a-dictionary-is-empty-doesnt-seem-to-work
+  * python - How do I check if a list is empty? - Stack Overflow
+    * https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty
