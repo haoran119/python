@@ -11,7 +11,7 @@
   * Python允许像数学的常用写法那样连着写两个比较运行符。比如a < b < c与a < b and b < c等价。C++的结果与Python不一样，首先它会先计算a < b，根据两者的大小获得0或者1两个值之一，然后再与c进行比较。
   * Python拥有一个强大的标准库。Python语言的核心只包含数字、字符串、列表、字典、文件等常见类型和函数，而由Python标准库提供了系统管理、网络通信、文本处理、数据库接口、图形系统、XML处理等额外的功能。
 
-##
+## NOTES
 
 * [面试总结之Python - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/9487170.html)
 * [学习笔记之Python开发环境 IDE ( Anaconda / PyCharm ) - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/8915306.html)
@@ -20,7 +20,7 @@
 * [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
 * [学习笔记之盘一盘 Python 系列 1 & 2 - 入门篇 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11289321.html)
 
-##
+## RESOURCES
 
 * [Python3 教程 | 菜鸟教程](http://www.runoob.com/python3/python3-tutorial.html)
 * [Python 入门指南 — Python tutorial 3.6.0 documentation](http://www.pythondoc.com/pythontutorial3/index.html)
@@ -120,3 +120,39 @@
     3. 不要将它赋值给变量
     4. 不要忘记列表推导式
 * [条件语句的七种写法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247522923&idx=4&sn=04c0072a03765c7741f459cd0807d9b7&source=41#wechat_redirect)
+
+## ADVANCE
+
+* [5张图理解Python中的浅拷贝与深拷贝](https://mp.weixin.qq.com/s/em4OBWLdTqC7jdvyCs7Jhg)
+* [图解 Python 中深浅拷贝](https://mp.weixin.qq.com/s/TtGFFDTKdPwCYj7gmIdp_Q)
+  * https://blog.csdn.net/mall_lucy/article/details/104531218
+  * 赋值运算
+  * 浅copy
+    * 浅copy：会在内存中新开辟一个空间，存放这个copy的列表，但是列表里面的内容还是沿用之前对象的内存地址。
+  * 深copy
+    * 深copy：会在内存中开辟新空间，将原列表以及列表里面的可变数据类型重新创建一份，不可变数据类型则沿用之前的。
+  * 为什么Python默认的拷贝方式是浅拷贝？
+    * 时间角度：浅拷贝花费时间更少。
+    * 空间角度：浅拷贝花费内存更少。
+    * 效率角度：浅拷贝只拷贝顶层数据，一般情况下比深拷贝效率高。
+  * 总结：
+    * 不可变对象在赋值时会开辟新空间。
+    * 可变对象在赋值时，修改一个的值，另一个也会发生改变。
+    * 深、浅拷贝对不可变对象拷贝时，不开辟新空间，相当于赋值操作。
+    * 浅拷贝在拷贝时，只拷贝第一层中的引用，如果元素是可变对象，并且被修改，那么拷贝的对象也会发生变化。
+    * 深拷贝在拷贝时，会逐层进行拷贝，直到所有的引用都是不可变对象为止。
+    * Python 有多种方式实现浅拷贝，copy模块的copy 函数 ，对象的 copy 函数 ，工厂方法，切片等。
+    * 大多数情况下，编写程序时，都是使用浅拷贝，除非有特定的需求。
+    * 浅拷贝的优点：拷贝速度快，占用空间少，拷贝效率高。
+* [Python 程序员如何防止数据被修改？](https://mp.weixin.qq.com/s/V8x6clZRK6k9T2rXwj2aDQ)
+* [Python 进阶：全面解读高级特性之切片](https://mp.weixin.qq.com/s/afhvyDGjt8U2XzHCZHOJJA)
+* [聊一聊 Python 中的闭包](https://mp.weixin.qq.com/s/qYKNGqItnSXq0-Zq2kMCKA)
+  * https://segmentfault.com/a/1190000007321972
+* [聊一聊 Python 中的“垃圾”回收](https://mp.weixin.qq.com/s/P3G5InQxq_kw4QUlhsXRCg)
+  * https://www.heroyf.club/2019/10/24/python_gc/
+* [Python 中 -m 的典型用法、原理解析与发展演变](https://mp.weixin.qq.com/s/tD3eSb2WdOPN_dKAQ9d6Ag)
+* [Python中的*args和**kwargs是什么？该如何使用？](https://mp.weixin.qq.com/s/s7PFVE_wcAMZaRUds2MJDQ) 
+  * https://medium.com/better-programming/what-are-args-and-kwargs-in-python-6aaf9e3cad73
+* [为什么 Python 没有 main 函数？](https://mp.weixin.qq.com/s/Nr1nD6qKKRd-C55PCV-sGw)
+  * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
+* [IPython 中常用的魔法命令](https://mp.weixin.qq.com/s/5ZyfyR9r9zBod6ZP7scewA)
