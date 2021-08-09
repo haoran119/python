@@ -441,6 +441,12 @@
   * 使用 multiprocessing 库解决 CPU 密集型问题。
   * 如果所有这些措施还不够的话，可以利用 Hadoop 等云计算平台进行扩展规模。
 * [【进阶】[] 与 list() 哪个快？为什么快？快多少呢？](https://mp.weixin.qq.com/s/VndSpfOYFrrM_a2tzdOGDg)
-* [] 是 list() 的三倍快
-* list() 比 [] 执行步骤多
-* list() 的速度提升
+  * [] 是 list() 的三倍快
+  * list() 比 [] 执行步骤多
+  * list() 的速度提升
+
+### 内存
+
+* [Python技巧 | 一行代码减少一半内存占用](https://mp.weixin.qq.com/s/0nTQ_oL2WWn8gytjqvn7SA)
+* [如何降低 Python 的内存消耗量？](https://mp.weixin.qq.com/s/I4fNWX5sw6sAbRoyXiNNpw)
+* [Python 内存分配时的小秘密](https://mp.weixin.qq.com/s/ZKscctriK6Hqw_MHwpQWIg)
