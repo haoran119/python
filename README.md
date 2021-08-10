@@ -946,6 +946,16 @@
     * https://stackoverflow.com/questions/3459098/create-list-of-single-item-repeated-n-times-in-python/3459131
     * [e] * n
   * [ [ 1 for x in range(n) ] for x in range(m) ]
+  * [How do I create a multidimensional list?](https://docs.python.org/3/faq/programming.html#how-do-i-create-a-multidimensional-list)
+    * The reason is that replicating a list with * doesn’t create copies, it only creates references to the existing objects. The *3 creates a list containing 3 references to the same list of length two. Changes to one row will show in all rows, which is almost certainly not what you want.
+    * The suggested approach is to create a list of the desired length first and then fill in each element with a newly created list
+    * Or, you can use an extension that provides a matrix datatype; NumPy is the best known.
+    * YES: A = [[None] * w for i in range(h)]
+    * NO: A = [[None] * 2] * 3
+    * https://docs.python.org/3/library/stdtypes.html?highlight=list#typesseq-common
+      * What has happened is that [[]] is a one-element list containing an empty list, so all three elements of [[]] * 3 are references to this single empty list. Modifying any of the elements of lists modifies this single list. 
+      * YES: lists = [[] for i in range(3)]
+      * NO: lists = [[]] * 3
 * How to remove duplicates in lists ?
   * python - Removing duplicates in lists - Stack Overflow
     * https://stackoverflow.com/questions/7961363/removing-duplicates-in-lists
