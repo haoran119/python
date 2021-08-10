@@ -12,7 +12,7 @@
 
 ## NOTES
 
-* [python/面试总结之Python.md at main · haoran119/python](https://github.com/haoran119/python/blob/main/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BPython.md)
+* [python/面试总结之Python at main · haoran119/python](https://github.com/haoran119/python/tree/main/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BPython)
 * [学习笔记之Python开发环境 IDE ( Anaconda / PyCharm ) - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/8915306.html)
 * [学习笔记之Python 3 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/10825575.html)
 * [学习笔记之Python爬虫 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/10470560.html)
