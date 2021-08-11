@@ -28,6 +28,12 @@
   * sorted(iterable, *, key=None, reverse=False)
     * https://docs.python.org/3/library/functions.html?highlight=sorted#sorted
     * Return a new sorted list from the items in iterable.
+    * key specifies a function of one argument that is used to extract a comparison key from each element in iterable (for example, key=str.lower). The default value is None (compare the elements directly).
+    * reverse is a boolean value. If set to True, then the list elements are sorted as if each comparison were reversed.
+    * Use functools.cmp_to_key() to convert an old-style cmp function to a key function.
+    * [functools — Higher-order functions and operations on callable objects — Python 3.9.6 documentation](https://docs.python.org/3/library/functools.html#functools.cmp_to_key)
+    * [key function - Glossary — Python 3.9.6 documentation](https://docs.python.org/3/glossary.html#term-key-function)
+    * [Sorting HOW TO — Python 3.9.6 documentation](https://docs.python.org/3/howto/sorting.html#sortinghowto)
   * items()
     * https://docs.python.org/3/library/stdtypes.html?highlight=items#dict.items
     * Return a new view of the dictionary’s items ((key, value) pairs). See the documentation of view objects.
