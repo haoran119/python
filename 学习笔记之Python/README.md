@@ -25,15 +25,18 @@
   * get(key[, default])
     * https://docs.python.org/3/library/stdtypes.html?highlight=get#dict.get
     * Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError. 
-  * sorted(iterable, *, key=None, reverse=False)
-    * https://docs.python.org/3/library/functions.html?highlight=sorted#sorted
+  * [sorted(iterable, *, key=None, reverse=False)](https://docs.python.org/3/library/functions.html?highlight=sorted#sorted)
     * Return a new sorted list from the items in iterable.
     * key specifies a function of one argument that is used to extract a comparison key from each element in iterable (for example, key=str.lower). The default value is None (compare the elements directly).
     * reverse is a boolean value. If set to True, then the list elements are sorted as if each comparison were reversed.
     * Use functools.cmp_to_key() to convert an old-style cmp function to a key function.
     * [functools — Higher-order functions and operations on callable objects — Python 3.9.6 documentation](https://docs.python.org/3/library/functools.html#functools.cmp_to_key)
+      * Transform an old-style comparison function to a key function. Used with tools that accept key functions (such as sorted(), min(), max(), heapq.nlargest(), heapq.nsmallest(), itertools.groupby()). This function is primarily used as a transition tool for programs being converted from Python 2 which supported the use of comparison functions.
+      * A comparison function is any callable that accept two arguments, compares them, and returns a negative number for less-than, zero for equality, or a positive number for greater-than. A key function is a callable that accepts one argument and returns another value to be used as the sort key. 
     * [key function - Glossary — Python 3.9.6 documentation](https://docs.python.org/3/glossary.html#term-key-function)
+      * A key function or collation function is a callable that returns a value used for sorting or ordering. For example, locale.strxfrm() is used to produce a sort key that is aware of locale specific sort conventions.
     * [Sorting HOW TO — Python 3.9.6 documentation](https://docs.python.org/3/howto/sorting.html#sortinghowto)
+      * Python lists have a built-in list.sort() method that modifies the list in-place. There is also a sorted() built-in function that builds a new sorted list from an iterable.
   * items()
     * https://docs.python.org/3/library/stdtypes.html?highlight=items#dict.items
     * Return a new view of the dictionary’s items ((key, value) pairs). See the documentation of view objects.
