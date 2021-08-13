@@ -226,6 +226,14 @@
   * The API below differs from textbook heap algorithms in two aspects: (a) We use zero-based indexing. This makes the relationship between the index for a node and the indexes for its children slightly less obvious, but is more suitable since Python uses zero-based indexing. (b) Our pop method returns the smallest item, not the largest (called a “min heap” in textbooks; a “max heap” is more common in texts because of its suitability for in-place sorting).
   * These two make it possible to view the heap as a regular Python list without surprises: heap[0] is the smallest item, and heap.sort() maintains the heap invariant!
   * To create a heap, use a list initialized to [], or you can transform a populated list into a heap via function heapify().
+  * heapq.heappush(heap, item)
+    * Push the value item onto the heap, maintaining the heap invariant.
+  * heapq.heappop(heap)
+    * Pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To access the smallest item without popping it, use heap[0].
+  * heapq.heappushpop(heap, item)
+    * Push item on the heap, then pop and return the smallest item from the heap. The combined action runs more efficiently than heappush() followed by a separate call to heappop().
+  * heapq.heapify(x)
+    * Transform list x into a heap, in-place, in linear time.
 
 ### IO / FILE
 
