@@ -211,8 +211,10 @@
   * collections模块：实现了特定目标的容器，以提供Python标准内建容器 dict、list、set、tuple 的替代选择。
   * Counter：字典的子类，提供了可哈希对象的计数功能。
     * [class collections.Counter([iterable-or-mapping])](https://docs.python.org/3/library/collections.html#collections.Counter)
-    * A Counter is a dict subclass for counting hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values. Counts are allowed to be any integer value including zero or negative counts. The Counter class is similar to bags or multisets in other languages.
-    * Elements are counted from an iterable or initialized from another mapping (or counter) 
+      * A Counter is a dict subclass for counting hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values. Counts are allowed to be any integer value including zero or negative counts. The Counter class is similar to bags or multisets in other languages.
+      * Elements are counted from an iterable or initialized from another mapping (or counter) 
+      * most_common([n])
+        * Return a list of the n most common elements and their counts from the most common to the least. If n is omitted or None, most_common() returns all elements in the counter. Elements with equal counts are ordered in the order first encountered
   * defaultdict：字典的子类，提供了一个工厂函数，为字典查询提供了默认值。
   * OrderedDict：字典的子类，保留了他们被添加的顺序。
   * namedtuple：创建命名元组子类的工厂函数。
