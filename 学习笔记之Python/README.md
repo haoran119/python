@@ -107,11 +107,12 @@
 ## BASIC
 
 * [Python 为什么不支持 i++ 自增语法，不提供 ++ 操作符？ (qq.com)](https://mp.weixin.qq.com/s/gs3aZucOxXkeMGmP0H9fuA)
-* [Python 字符串拼接总结 - Python编程](https://mp.weixin.qq.com/s/ovB8rsRvcjF-M5z2d5je8A)
+* Python 字符串拼接总结
   * https://segmentfault.com/a/1190000015475309
   * [2.4.3. Formatted string literals - 2. Lexical analysis — Python 3.9.6 documentation](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
     * A formatted string literal or f-string is a string literal that is prefixed with 'f' or 'F'. These strings may contain replacement fields, which are expressions delimited by curly braces {}. While other string literals always have a constant value, formatted strings are really expressions evaluated at run time.
     * See also [PEP 498](https://www.python.org/dev/peps/pep-0498/) for the proposal that added formatted string literals, and [str.format()](https://docs.python.org/3/library/stdtypes.html#str.format), which uses a related format string mechanism.
+  * [Efficient String Concatenation in Python](https://waymoot.org/home/python_string/)
   * 注意Python中list是可变对象，而str是不可变对象。fun1比fun2更高效。
 ```sh
 def fun1(s: str) -> str:
@@ -126,7 +127,6 @@ def fun2(s: str) -> str:
         results += s[i]  # 每次拼接都要新建一个字符串，申请N次内存
     return results
 ```
-  * [Efficient String Concatenation in Python](https://waymoot.org/home/python_string/)
 * [Python字符串用法大全](https://mp.weixin.qq.com/s/yMVrjmOYp7opYB0Nvx47Dw)
 * [Python字符串处理的8招秘籍](https://mp.weixin.qq.com/s/x_0Ahm-q8FAxAvJoUWnsEQ)
 * [10 个 Python 字符串处理技巧](https://mp.weixin.qq.com/s/iaT30IyPT8NSQ42d3oVpVA)
