@@ -94,7 +94,6 @@
     *   最后一张图整理了面向对象编程，弄清楚面向对象的基本概念，继承与多态、结构组织以及对象的性质、访问限制等重点，对于python就算是入门了。
 * [Python语法有多简单？一张图就能学会！](https://mp.weixin.qq.com/s/Nqiz6uInH7hHZoERuWWkfQ)
   * https://github.com/coodict/python3-in-one-pic
-* [学习Python必备的8本书 - Python编程](https://mp.weixin.qq.com/s/r5ErQ7wh5wgN8sUYGiKJtg)
 * [Python 语法速览与实战清单 - Python编程](https://mp.weixin.qq.com/s/RVbPKNmXg6EpsvXUDRoFNg)
   * https://segmentfault.com/a/1190000012129654
 * [Python 教程：从零到大师 - Python编程](https://mp.weixin.qq.com/s/jZ2ChI7xLCrehgFJP77xww)
