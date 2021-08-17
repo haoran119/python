@@ -886,6 +886,12 @@
 * How to sort string ?
   * [How to sort the letters in a string alphabetically in Python - Stack Overflow](https://stackoverflow.com/questions/15046242/how-to-sort-the-letters-in-a-string-alphabetically-in-python)
   * ''.join(sorted(a))
+* How to split string ?
+  * [str.split(sep=None, maxsplit=-1) - Built-in Types — Python 3.9.6 documentation](https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split) 
+    * Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).
+    * If sep is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings (for example, '1,,2'.split(',') returns ['1', '', '2']). The sep argument may consist of multiple characters (for example, '1<>2<>3'.split('<>') returns ['1', '2', '3']). Splitting an empty string with a specified separator returns [''].
+  * [python中split()和split(' ')的区别 - 少年与python - 博客园](https://www.cnblogs.com/python-coder/p/10073329.html)
+    * split()的时候，多个空格当成一个空格；split(' ')的时候，多个空格都要分割，每个空格分割出来空。
 * Two types usage of for loop ?
   * python - "for loop" with two variables? - Stack Overflow
     * https://stackoverflow.com/questions/18648626/for-loop-with-two-variables
