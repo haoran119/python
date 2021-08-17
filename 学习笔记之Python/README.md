@@ -113,6 +113,7 @@
     * A formatted string literal or f-string is a string literal that is prefixed with 'f' or 'F'. These strings may contain replacement fields, which are expressions delimited by curly braces {}. While other string literals always have a constant value, formatted strings are really expressions evaluated at run time.
     * See also [PEP 498](https://www.python.org/dev/peps/pep-0498/) for the proposal that added formatted string literals, and [str.format()](https://docs.python.org/3/library/stdtypes.html#str.format), which uses a related format string mechanism.
   * 注意Python中list是可变对象，而str是不可变对象。fun1比fun2更高效。
+```sh
 > def fun1(s: str) -> str:
 >   results = []
 >   for i in range(len(s)):
@@ -124,6 +125,7 @@
 >   for i in range(len(s)):
 >       results += s[i]  # 每次拼接都要新建一个字符串，申请N次内存
 >   return results
+```
 
 * [Python字符串用法大全](https://mp.weixin.qq.com/s/yMVrjmOYp7opYB0Nvx47Dw)
 * [Python字符串处理的8招秘籍](https://mp.weixin.qq.com/s/x_0Ahm-q8FAxAvJoUWnsEQ)
