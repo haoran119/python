@@ -126,7 +126,7 @@ def fun2(s: str) -> str:
         results += s[i]  # 每次拼接都要新建一个字符串，申请N次内存
     return results
 ```
-
+  * [Efficient String Concatenation in Python](https://waymoot.org/home/python_string/)
 * [Python字符串用法大全](https://mp.weixin.qq.com/s/yMVrjmOYp7opYB0Nvx47Dw)
 * [Python字符串处理的8招秘籍](https://mp.weixin.qq.com/s/x_0Ahm-q8FAxAvJoUWnsEQ)
 * [10 个 Python 字符串处理技巧](https://mp.weixin.qq.com/s/iaT30IyPT8NSQ42d3oVpVA)
