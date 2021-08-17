@@ -114,17 +114,17 @@
     * See also [PEP 498](https://www.python.org/dev/peps/pep-0498/) for the proposal that added formatted string literals, and [str.format()](https://docs.python.org/3/library/stdtypes.html#str.format), which uses a related format string mechanism.
   * 注意Python中list是可变对象，而str是不可变对象。fun1比fun2更高效。
 ```sh
-> def fun1(s: str) -> str:
->   results = []
->   for i in range(len(s)):
->       results.append(s[i])  # 仅需在列表尾部添加元素
->   return ''.join(results)  # 申请一次内存
+def fun1(s: str) -> str:
+    results = []
+    for i in range(len(s)):
+        results.append(s[i])  # 仅需在列表尾部添加元素
+    return ''.join(results)  # 申请一次内存
 
-> def fun2(s: str) -> str:
->   results = ''
->   for i in range(len(s)):
->       results += s[i]  # 每次拼接都要新建一个字符串，申请N次内存
->   return results
+def fun2(s: str) -> str:
+    results = ''
+    for i in range(len(s)):
+        results += s[i]  # 每次拼接都要新建一个字符串，申请N次内存
+    return results
 ```
 
 * [Python字符串用法大全](https://mp.weixin.qq.com/s/yMVrjmOYp7opYB0Nvx47Dw)
