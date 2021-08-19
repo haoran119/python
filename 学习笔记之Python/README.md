@@ -94,10 +94,8 @@
     *   最后一张图整理了面向对象编程，弄清楚面向对象的基本概念，继承与多态、结构组织以及对象的性质、访问限制等重点，对于python就算是入门了。
 * [Python语法有多简单？一张图就能学会！](https://mp.weixin.qq.com/s/Nqiz6uInH7hHZoERuWWkfQ)
   * https://github.com/coodict/python3-in-one-pic
-* [Python 语法速览与实战清单 - Python编程](https://mp.weixin.qq.com/s/RVbPKNmXg6EpsvXUDRoFNg)
-  * https://segmentfault.com/a/1190000012129654
-* [Python 教程：从零到大师 - Python编程](https://mp.weixin.qq.com/s/jZ2ChI7xLCrehgFJP77xww)
-  * https://learnku.com/python/t/22976/python-tutorials-from-zero-to-master-suitable-for-experienced-developers
+* [Python 语法速览与实战清单](https://segmentfault.com/a/1190000012129654)
+* [Python 教程：从零到大师](https://learnku.com/python/t/22976/python-tutorials-from-zero-to-master-suitable-for-experienced-developers)
   * https://www.freecodecamp.org/news/learning-python-from-zero-to-hero-120ea540b567/
 * [Python三十年技术演变史](https://mp.weixin.qq.com/s/xFWpAXWJ4m78bZHYcc3VzQ)
 * [全面的 Python 重点](https://mp.weixin.qq.com/s/TFPI0hdlbcHVVO0id6tT4A)
@@ -211,8 +209,7 @@ def fun2(s: str) -> str:
 
 ### 迭代器与生成器
 
-* [Python 迭代器与生成器 - Python编程](https://mp.weixin.qq.com/s/cT0vqLAvqOc5FNnx6Iu_iw)
-  * http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html
+* [Python 迭代器与生成器](http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html)
 * [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
 * [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
 * [彻底理解Python中的yield](https://mp.weixin.qq.com/s/WuecDf_10XFQotUyweubNQ)
@@ -359,7 +356,6 @@ def fun2(s: str) -> str:
 
 ### 多线程
 
-* [浅谈 Python 中的多线程 - Python编程](https://mp.weixin.qq.com/s/7dLKlCUumx9NS-Zmv8iSvA)
 * [理解python多线程和多进程](https://mp.weixin.qq.com/s/pjoSXrpjvxvOHDmWAhYfFA)
 * [深入理解python多线程和多进程](https://mp.weixin.qq.com/s/w0dZrtv8ogdtxO8FT2LrEg)
 * [入门 | 三行Python代码，让数据预处理速度提高2到6倍](https://mp.weixin.qq.com/s/DgKuNIa_m-CsXWgHIz_3rQ)
@@ -382,8 +378,7 @@ def fun2(s: str) -> str:
 * [Python 编码风格指南](https://mp.weixin.qq.com/s/JnrLSfQfH4CGAZSK_rnumg)
 * [Python 简洁编码之道](https://mp.weixin.qq.com/s/UeOkqf37HQH-RQZbpJAiDQ)
 * [18式优雅你的Python](https://mp.weixin.qq.com/s/iiG3Jarc_bIzcvz1-lmmhg)
-* [改善Python程序的91个建议 - Python编程](https://mp.weixin.qq.com/s/SU6TXpU3iiL8TZQO6dk02A)
-  * https://zhuanlan.zhihu.com/p/32817459
+* [改善Python程序的91个建议](https://zhuanlan.zhihu.com/p/32817459)
 * [符合语言习惯的 Python 优雅编程技巧](https://mp.weixin.qq.com/s/rE5OEFwwFxJNb_Omwmqvzw)
   * http://lovesoo.org/pythonic-python-programming.html?amhgxy=ov4fk
 * [优雅编写Python3的62个小贴士](https://mp.weixin.qq.com/s/xkxpZo_8HixRlXU8PtMK7w)
@@ -497,8 +492,7 @@ def fun2(s: str) -> str:
 
 ### 运行速度
 
-* [为什么Python这么慢？ - Python编程](https://mp.weixin.qq.com/s/Wa-rMPIhGyb9JZt2g1YLHw)
-  * https://hackernoon.com/why-is-python-so-slow-e5074b6fe55b
+* [为什么Python这么慢?](https://hackernoon.com/why-is-python-so-slow-e5074b6fe55b)
 * [一行代码让 Python 的运行速度提高100倍](https://mp.weixin.qq.com/s?__biz=MzUyODg4Nzk2MQ==&mid=2247490550&amp;idx=4&amp;sn=3a18cd95623880fd108ac0492bd9ec15&source=41#wechat_redirect)
   * https://mp.weixin.qq.com/s/Vm0BKSljCzMMgRmIBbpxdQ
 * [24式加速你的Python](https://mp.weixin.qq.com/s/oEQOHLRdDkjOVzZhuIFeLg)
@@ -757,7 +751,6 @@ def fun2(s: str) -> str:
   * https://github.com/percent4/csv_file_review
 * [Python 处理分析 128 张 Excel 表格竟不到3秒？| 附数据集](https://mp.weixin.qq.com/s/ZhWomp6LDgHHjf9Tr1dzvg)
   * https://github.com/seizeeveryday/DA-cases/tree/master/Python%2Bexcel
-* [我用Python做了一份PDF报告 - Python编程](https://mp.weixin.qq.com/s/uzeBsCkCWCYmLdnZPQ-HBA)
 * [将Python字符串生成PDF](https://mp.weixin.qq.com/s/5R6t_oiOOV7qG4YkdLcpvA)
 * [pdfkit | 自动化利器，生成PDF就靠它了](https://mp.weixin.qq.com/s/9OhS6hjpn6e0XAaATQOeXg)
 * [用 Python 操作 Word 文档](https://mp.weixin.qq.com/s/awN9gLqVn_s-STRzhioPXQ)
