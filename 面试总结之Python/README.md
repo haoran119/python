@@ -4,7 +4,7 @@
 * [百度大牛总结十条Python面试题陷阱，看看你是否会中招 (toutiao.com)](https://www.toutiao.com/i6550223737344492039/?wid=1621651237098)
 * Python练手题
   * [python 题_yang_bingo的博客-CSDN博客](https://blog.csdn.net/yang_bingo/article/details/80285205)
-* [Python面试攻略（coding篇）- Python编程](https://blog.csdn.net/u013205877/article/details/77542837)
+* [Python面试攻略（coding篇）](https://blog.csdn.net/u013205877/article/details/77542837)
   * [taizilongxu/interview_python: 关于Python的面试题 (github.com)](https://github.com/taizilongxu/interview_python)
 * [2018年最常见的Python面试题&答案（上篇） (juejin.cn)](https://juejin.cn/post/6844903654143557646)
 * [100+Python编程题给你练~（附答案） (qq.com)](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247523362&idx=4&sn=31ce0678907d603c3ddc92eb4e665f34&source=41#wechat_redirect)
