@@ -3,6 +3,10 @@
 * [[ZZ]知名互联网公司Python的16道经典面试题及答案 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/8674215.html)
 * [全面的Python重点](https://mp.weixin.qq.com/s/UN2RNV8LXXlLIZ3G3Zpukw)
   * https://segmentfault.com/a/1190000018737045
+  * a in s or b in s or c in s简写
+  `
+  any(i in s for i in [a,b,c])
+  `
 * [百度大牛总结十条Python面试题陷阱，看看你是否会中招 (toutiao.com)](https://www.toutiao.com/i6550223737344492039/?wid=1621651237098)
 * [Python面试攻略（coding篇）](https://blog.csdn.net/u013205877/article/details/77542837)
   * [taizilongxu/interview_python: 关于Python的面试题 (github.com)](https://github.com/taizilongxu/interview_python)
