@@ -17,6 +17,10 @@
   ```
   print([[x for x in range(1,101)][i:i+3] for i in range(0,100,3)])
   ```
+  * yield from与yield的区别：
+    * yield from跟的是一个可迭代对象，而yield后面没有限制
+    * GeneratorExit生成器停止时触发
+    * [In practice, what are the main uses for the new "yield from" syntax in Python 3.3? - Stack Overflow](https://stackoverflow.com/questions/9708902/in-practice-what-are-the-main-uses-for-the-new-yield-from-syntax-in-python-3)
 * [百度大牛总结十条Python面试题陷阱，看看你是否会中招 (toutiao.com)](https://www.toutiao.com/i6550223737344492039/?wid=1621651237098)
 * [Python面试攻略（coding篇）](https://blog.csdn.net/u013205877/article/details/77542837)
   * [taizilongxu/interview_python: 关于Python的面试题 (github.com)](https://github.com/taizilongxu/interview_python)
