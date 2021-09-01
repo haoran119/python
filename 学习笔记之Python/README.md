@@ -483,7 +483,9 @@ def fun2(s: str) -> str:
   * https://deepsource.io/blog/python-common-mistakes/
   * 可变的缺省参数
   * 将 assert 声明语句作为保证条件
-  * 使用 isinstance 代替 type 
+  * 使用 isinstance 代替 type
+    * type 和 isinstance 都能检查某个对象的类别是什么。但是它们间有非常重要的区别，isinstance 在解析目标类型时，它会关注继承关系，而 type 并不会。正因为这个区别，isinstance 在某些时候并不是我们所想的那样。
+    * 因为布尔类型的变量在 Python 中是 int 的子类，isinstance(num, int) 同样会得出 True，这并不是我们想要的。在特定的类别中，使用 type 可能更加正确。
     * [type and isinstance in Python - GeeksforGeeks](https://www.geeksforgeeks.org/type-isinstance-python/)
       * If you’re checking to see if an object has a certain type, you want isinstance() as it checks to see if the object passed in the first argument is of the type of any of the type objects passed in the second argument. Thus, it works as expected with subclassing and old-style classes, all of which have the legacy type object instance.
       * type(), on the other hand, simply returns the type object of an object and comparing what it returns to another type object will only yield True when you use the exact same type object on both sides.
