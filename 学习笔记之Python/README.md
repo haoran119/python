@@ -214,7 +214,6 @@ def fun2(s: str) -> str:
 * [Python 迭代器与生成器](http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html)
 * [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
 * [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
-* [彻底理解Python中的yield](https://mp.weixin.qq.com/s/WuecDf_10XFQotUyweubNQ)
 
 ### 模块
 
