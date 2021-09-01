@@ -5,9 +5,9 @@
   * https://segmentfault.com/a/1190000018737045
   * a in s or b in s or c in s简写
 
-`
-any(i in s for i in [a,b,c])
-`
+  `
+  any(i in s for i in [a,b,c])
+  `
 
 * [百度大牛总结十条Python面试题陷阱，看看你是否会中招 (toutiao.com)](https://www.toutiao.com/i6550223737344492039/?wid=1621651237098)
 * [Python面试攻略（coding篇）](https://blog.csdn.net/u013205877/article/details/77542837)
