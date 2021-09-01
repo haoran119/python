@@ -7,6 +7,12 @@
   ```
   any(i in s for i in [a,b,c])
   ```
+  * set集合运用
+  ```
+  {1, 2}.issubset({1, 2, 3}) #判断是否是其子集
+  {1, 2, 3}.issuperset({1, 2})
+  {1, 2}.isdisjoint({1, 3}) #判断两个set交集是否为空,是空集则为True
+  ```
 * [百度大牛总结十条Python面试题陷阱，看看你是否会中招 (toutiao.com)](https://www.toutiao.com/i6550223737344492039/?wid=1621651237098)
 * [Python面试攻略（coding篇）](https://blog.csdn.net/u013205877/article/details/77542837)
   * [taizilongxu/interview_python: 关于Python的面试题 (github.com)](https://github.com/taizilongxu/interview_python)
