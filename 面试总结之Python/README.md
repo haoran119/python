@@ -3,6 +3,12 @@
 * [[ZZ]知名互联网公司Python的16道经典面试题及答案 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/8674215.html)
 * [全面的Python重点](https://mp.weixin.qq.com/s/UN2RNV8LXXlLIZ3G3Zpukw)
   * https://segmentfault.com/a/1190000018737045
+  * python变量名的解析机制(LEGB)(Local -> Enclosing -> Global -> Built-in)
+    * 本地作用域(Local)
+    * 当前作用域被嵌入的本地作用域(Enclosing locals)
+    * 全局/模块作用域(Global)
+    * 内置作用域(Built-in)
+    * [Python Variable Scope with Local & Non-local Examples - DataCamp](https://www.datacamp.com/community/tutorials/scope-of-variables-python)
   * a in s or b in s or c in s简写
   ```
   any(i in s for i in [a,b,c])
