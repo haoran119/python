@@ -1064,9 +1064,12 @@ def fun2(s: str) -> str:
     * https://www.w3schools.com/python/ref_func_isinstance.asp
 * How to check if object has an attribute ?
   * Built-in Functions — Python 3.8.5 documentation
-    * hasattr(object, name)
-    * https://docs.python.org/3/library/functions.html#hasattr
-    * The arguments are an object and a string. The result is True if the string is the name of one of the object’s attributes, False if not. (This is implemented by calling getattr(object, name) and seeing whether it raises an AttributeError or not.)
+    * [hasattr(object, name)](https://docs.python.org/3/library/functions.html#hasattr)
+      * The arguments are an object and a string. The result is True if the string is the name of one of the object’s attributes, False if not. (This is implemented by calling getattr(object, name) and seeing whether it raises an AttributeError or not.)
+    * [object.__getattr__(self, name)](https://docs.python.org/3/reference/datamodel.html#object.__getattr__)
+      * Called when the default attribute access fails with an AttributeError (either __getattribute__() raises an AttributeError because name is not an instance attribute or an attribute in the class tree for self; or __get__() of a name property raises AttributeError). This method should either return the (computed) attribute value or raise an AttributeError exception.
+    * [object.__getattribute__(self, name)](https://docs.python.org/3/reference/datamodel.html#object.__getattribute__)
+      * Called unconditionally to implement attribute accesses for instances of the class. If the class also defines __getattr__(), the latter will not be called unless __getattribute__() either calls it explicitly or raises an AttributeError. This method should return the (computed) attribute value or raise an AttributeError exception. In order to avoid infinite recursion in this method, its implementation should always call the base class method with the same name to access any attributes it needs, for example, object.__getattribute__(self, name).
   * How to know if an object has an attribute in Python - Stack Overflow
     * https://stackoverflow.com/questions/610883/how-to-know-if-an-object-has-an-attribute-in-python
 * How to check if file exists ?
