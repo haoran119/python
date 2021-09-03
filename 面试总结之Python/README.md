@@ -1,5 +1,6 @@
 # 面试总结之Python
 
+* [Time Complexity](https://wiki.python.org/moin/TimeComplexity)
 * [[ZZ]知名互联网公司Python的16道经典面试题及答案 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/8674215.html)
 * [全面的Python重点](https://mp.weixin.qq.com/s/UN2RNV8LXXlLIZ3G3Zpukw)
   * https://segmentfault.com/a/1190000018737045
