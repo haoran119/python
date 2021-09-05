@@ -634,6 +634,7 @@ if __name__ == '__main__':
   * 常用的调用方法
   * 使用装饰器
   * 更加减半的使用property()函数
+* [盘一盘 Python 系列特别篇 - 面向对象编程](https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247488340&idx=1&sn=572a046a414e830e209e8ea1c7cc92e0&chksm=e890905ddfe7194b2478fa00075469b83d997133290aef42d6c2af0db3aca1b46a6543823e11&scene=21#wechat_redirect)
 * [简单理解python面向对象及装饰器](https://mp.weixin.qq.com/s/jaoMUy5okkMZ9QOYK-og1Q)
   * 一、类
   * 二、继承
