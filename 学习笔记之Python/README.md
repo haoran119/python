@@ -252,6 +252,7 @@ if __name__ == '__main__':
   * Iterators terminating on the shortest input sequence:
 
 | Iterator | Arguments | Results | Example | 
+| - | - | - | - |
 | accumulate() | p [,func] | p0, p0+p1, p0+p1+p2, … | accumulate([1,2,3,4,5]) --> 1 3 6 10 15 | 
 | chain() | p, q, … | p0, p1, … plast, q0, q1, … | chain('ABC', 'DEF') --> A B C D E F | 
 | chain.from_iterable() | iterable | p0, p1, … plast, q0, q1, … | chain.from_iterable(['ABC', 'DEF']) --> A B C D E F | 
@@ -268,6 +269,7 @@ if __name__ == '__main__':
   * Combinatoric iterators:
 
 | Iterator | Arguments | Results | Examples | Results |
+| - | - | - | - | - |
 | product() | p, q, … [repeat=1] | cartesian product, equivalent to a nested for-loop | product('ABCD', repeat=2) | AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
 | permutations() | p[, r] | r-length tuples, all possible orderings, no repeated elements | permutations('ABCD', 2) | AB AC AD BA BC BD CA CB CD DA DB DC
 | combinations() | p, r | r-length tuples, in sorted order, no repeated elements | combinations('ABCD', 2) | AB AC AD BC BD CD
