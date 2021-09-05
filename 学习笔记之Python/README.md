@@ -214,6 +214,26 @@ def fun2(s: str) -> str:
 * [Python 迭代器与生成器](http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html)
 * [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
 * [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
+```python
+def incrementor(n: int):
+    count = 0
+
+    while count < n:
+        yield count
+        count += 1
+
+
+if __name__ == '__main__':
+    print(list(incrementor(3)))  # [0, 1, 2]
+
+    my_incrementor = incrementor(3)
+
+    print(my_incrementor)   # <generator object incrementor at 0x7fe9fd886350>
+    print(next(my_incrementor))  # 0
+    print(next(my_incrementor))  # 1
+    print(next(my_incrementor))  # 2
+    print(next(my_incrementor))  # Traceback (most recent call last): ... StopIteration
+```
 
 ### 模块
 
