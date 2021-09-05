@@ -170,8 +170,12 @@ if __name__ == '__main__':
     print("{} : {}".format(person, my_dict[person]))    # <__main__.Person object at 0x7f8cd0473ed0> : 123
 ```
 * [干货|理解Python列表和元组](https://mp.weixin.qq.com/s/U-ctO-brjwxpm0LbLTB-dw)
+* [list.remove(x) - 5. Data Structures — Python 3.9.7 documentation](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
+  * Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
+  * [Python list remove() - GeeksforGeeks](https://www.geeksforgeeks.org/python-list-remove/)
 ```python
 a = [1, 2, 2, 3, 4]
+b = [1, 2, 2, 3, 4]
 
 
 def even(x):
@@ -180,9 +184,19 @@ def even(x):
 
 for item in a:
     if even(item):
+        # just remove the first occurrence
         a.remove(item)
 
 print(a)    # [1, 2, 3]
+
+
+for item in b:
+    if even(item):
+        # remove all occurrence in list
+        while item in b:
+            b.remove(item)
+
+print(b)    # [1, 3]
 ```
 * [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
   * https://maida6244.xyz/
