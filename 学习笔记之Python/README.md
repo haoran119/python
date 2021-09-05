@@ -497,10 +497,37 @@ if __name__ == '__main__':
     * @staticmethod：主要是方便将外部函数集成到类体中，并且用staticmethod包装的方法可以内部调用,也可以通过类访问或类实例化访问。
 * [如何理解 Python 中的面向对象编程？](https://mp.weixin.qq.com/s/Jy1toECgoQyzJwCnEjQz-g)
   * https://www.blog.duomly.com/object-oriented-programming-in-python/
-* [What is MRO in Python?](https://www.educative.io/edpresso/what-is-mro-in-python)
-  * Method Resolution Order
-  * MRO is a concept used in inheritance. It is the order in which a method is searched for in a classes hierarchy and is especially useful in Python because Python supports multiple inheritance.
-  * In Python, the MRO is from bottom to top and left to right. This means that, first, the method is searched in the class of the object. If it’s not found, it is searched in the immediate super class. In the case of multiple super classes, it is searched left to right, in the order by which was declared by the developer.
+* [9.5.1. Multiple Inheritance - 9. Classes — Python 3.9.7 documentation](https://docs.python.org/3/tutorial/classes.html?highlight=method%20resolution%20order#multiple-inheritance)
+  * For most purposes, in the simplest cases, you can think of the search for attributes inherited from a parent class as depth-first, left-to-right, not searching twice in the same class where there is an overlap in the hierarchy. Thus, if an attribute is not found in DerivedClassName, it is searched for in Base1, then (recursively) in the base classes of Base1, and if it was not found there, it was searched for in Base2, and so on.
+  * [method resolution order - Glossary — Python 3.9.7 documentation](https://docs.python.org/3/glossary.html#term-method-resolution-order)
+    * Method Resolution Order is the order in which base classes are searched for a member during lookup. See [The Python 2.3 Method Resolution Order](https://www.python.org/download/releases/2.3/mro/) for details of the algorithm used by the Python interpreter since the 2.3 release.
+  * [What is MRO in Python?](https://www.educative.io/edpresso/what-is-mro-in-python)
+    * Method Resolution Order
+    * MRO is a concept used in inheritance. It is the order in which a method is searched for in a classes hierarchy and is especially useful in Python because Python supports multiple inheritance.
+    * In Python, the MRO is from bottom to top and left to right. This means that, first, the method is searched in the class of the object. If it’s not found, it is searched in the immediate super class. In the case of multiple super classes, it is searched left to right, in the order by which was declared by the developer.
+```python
+class A:
+    def method(self):
+        print("A.method() called")
+
+
+class B:
+    def method(self):
+        print("B.method() called")
+
+
+class C(A, B):
+    pass
+
+
+class D(C, B):
+    pass
+
+
+d = D()
+d.method()  # A.method() called
+print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>]
+```
 * [没看完这11 条，别说你精通 Python 装饰器](https://mp.weixin.qq.com/s/5hmauIKOTS1vqHbhE12KkA)
 * [5分钟全面掌握 Python 装饰器](https://mp.weixin.qq.com/s/Dx887iB-jn-BMdj3F1vHDQ)
 * [读懂 Python 装饰器](https://mp.weixin.qq.com/s/pezg8naU4Afkf8DTm_m13w)
