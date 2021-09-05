@@ -170,6 +170,20 @@ if __name__ == '__main__':
     print("{} : {}".format(person, my_dict[person]))    # <__main__.Person object at 0x7f8cd0473ed0> : 123
 ```
 * [干货|理解Python列表和元组](https://mp.weixin.qq.com/s/U-ctO-brjwxpm0LbLTB-dw)
+```python
+a = [1, 2, 2, 3, 4]
+
+
+def even(x):
+    return x % 2 == 0
+
+
+for item in a:
+    if even(item):
+        a.remove(item)
+
+print(a)    # [1, 2, 3]
+```
 * [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
   * https://maida6244.xyz/
 * [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
