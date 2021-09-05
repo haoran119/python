@@ -270,6 +270,7 @@ if __name__ == '__main__':
 | zip_longest() | p, q, … | (p[0], q[0]), (p[1], q[1]), … | zip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D-
 
   * Combinatoric iterators:
+
 | Iterator | Arguments | Results | Examples | Results |
 | - | - | - | - | - |
 | product() | p, q, … [repeat=1] | cartesian product, equivalent to a nested for-loop | product('ABCD', repeat=2) | AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
