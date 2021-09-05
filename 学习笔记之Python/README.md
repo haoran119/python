@@ -142,6 +142,33 @@ def fun2(s: str) -> str:
   10. 回文检查
 * [如何优雅的操作Python字典 - 程序员大咖](https://mp.weixin.qq.com/s/mWjzDm9XNNnFiJGYhzpivA)
   * https://www.linuxzen.com/python-you-ya-de-cao-zuo-zi-dian.html
+```python
+"""
+Implement a class to be used a key in dictionary
+"""
+
+
+class Person:
+    def __init__(self, first_name, last_name) -> None:
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def full_name(self):
+        return "{} {}".format(self.first_name, self.last_name)
+
+    def __hash__(self) -> int:
+        return hash((self.first_name, self.last_name))
+
+    def __eq__(self, o: object) -> bool:
+        return self.first_name == o.first_name and self.last_name == o.last_name
+
+
+if __name__ == '__main__':
+    person = Person('David', 'B')
+    my_dict = {person: '123'}
+
+    print("{} : {}".format(person, my_dict[person]))    # <__main__.Person object at 0x7f8cd0473ed0> : 123
+```
 * [干货|理解Python列表和元组](https://mp.weixin.qq.com/s/U-ctO-brjwxpm0LbLTB-dw)
 * [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
   * https://maida6244.xyz/
