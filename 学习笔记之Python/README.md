@@ -113,6 +113,9 @@
     * try、except、finally、raise都是与异常有关的关键词，用法如下：
       * try：在try...except块中使用，它定义了一个代码块，并在没有问题的情况下执行块。如果包含任何错误，可以为不同的错误类型定义不同的块。
       * except：在try... except块中使用。如果try块引发错误，并在有问题的情况下执行对应的代码块。
+      * [8. Errors and Exceptions — Python 3.9.7 documentation](https://docs.python.org/3/tutorial/errors.html)
+        * The try … except statement has an optional else clause, which, when present, must follow all except clauses. It is useful for code that must be executed if the try clause does not raise an exception.
+        * You can use the else keyword to define a block of code to be executed if no errors were raised
       * finally：在try...except块中使用。它定义了一个代码块，当try...except...else块结束时，该代码块将运行。无论try块是否引发错误，都将执行finally代码块。
       * raise：raise关键字用于引发异常，可以定义引发哪种错误，以及向用户显示错误信息。
     ```python
