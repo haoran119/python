@@ -270,6 +270,16 @@ print(b)    # [1, 3]
 
 * [盘一盘 Python 系列特别篇 - 两大利「器」](https://mp.weixin.qq.com/s/o9REZiT-k-6UTcSnqCfCMQ)
   * 主要介绍 Python 里的两大利「器」，生成器 (generator) 和迭代器 (iterator)。
+  * 生成器
+    * 定义生成器 (generator) 有两种方法：
+      * 使用函数 (function) 
+      * 使用表达式 (expression)
+    * 如何来看生成器里的元素呢？有两种方法：1. 转换成 list；2. 用 next()。
+    * 总结：生成器可以用生成函数 (generator function) 来定义，记住要用 yield 而不是 return。
+    * 总结：生成器可以用生成表达式 (generator expression) 来定义，记住和列表解析式很像，将 [] 改成 () 即可。
+    * 生成器 vs 列表
+      * 生成器好在哪里？好就好在生成器是按需求调用 (call-by-need) 的，你需要调用一个值，我就 yield 一个值，然后用 next() 更新内部状态，等待你下次调用。这套流程也称作惰性求值 (lazy evaluation)，目的是最小化计算机要做的工作。
+      * 在大规模数据时，一次性处理往往抵消而且不方便，而惰性求值解决了这个问题，它把计算的具体步骤延迟到了要实际用该数据的时候。
 * [Python 迭代器与生成器](http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html)
 * [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
 * [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
