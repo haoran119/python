@@ -242,9 +242,10 @@ if __name__ == '__main__':
 * [itertools — Functions creating iterators for efficient looping - Python 3.9.7 documentation](https://docs.python.org/3/library/itertools.html)
   * This module implements a number of iterator building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
 Infinite iterators:
-Iterator | Arguments | Results | Example
-- | - | - | -
-count() | start, [step] | start, start+step, start+2*step, … | count(10) --> 10 11 12 13 14 ...
+
+| Iterator | Arguments | Results | Example |
+| - | - | - | - |
+| count() | start, [step] | start, start+step, start+2*step, … | count(10) --> 10 11 12 13 14 ... |
 
 cycle()
 
