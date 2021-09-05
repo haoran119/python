@@ -107,6 +107,81 @@
 
 ## BASIC
 
+* [Python 关键字知识点大放送](https://mp.weixin.qq.com/s/l8cxp-SPO6NCRmrSvseyAw)
+  * ![image](https://user-images.githubusercontent.com/34557994/132124927-684e0dc0-a4a1-4aee-9efc-10b8a560fb65.png)
+  * 7、try、except、finally、raise
+    * try、except、finally、raise都是与异常有关的关键词，用法如下：
+      * try：在try...except块中使用，它定义了一个代码块，并在没有问题的情况下执行块。如果包含任何错误，可以为不同的错误类型定义不同的块。
+      * except：在try... except块中使用。如果try块引发错误，并在有问题的情况下执行对应的代码块。
+      * finally：在try...except块中使用。它定义了一个代码块，当try...except...else块结束时，该代码块将运行。无论try块是否引发错误，都将执行finally代码块。
+      * raise：raise关键字用于引发异常，可以定义引发哪种错误，以及向用户显示错误信息。
+    ```python
+    def func(x):
+        try:
+            100 // x
+        except:
+            print("ZeroDivisionError: division by zero(除数不能是0)")
+        else:
+            print(f"结果是：{str(100 // x)}")
+        finally:
+            print("无论如何，都会执行！")
+
+    func(10)  # 结果是：10 
+    func(0)   # 无论如何，都会执行！
+    ```
+  * 11、lambda
+    * lambda关键字用于创建一个 “匿名函数”。
+    ```python
+    x = lambda a: a + 8
+    x(2)  # 10
+    ```
+  * 13、global、nonlocal
+    * global关键字用于创建一个全局变量。nonlocal关键字用于声明一个非局部变量，用于标识外部作用域的变量。
+    ```python
+    # 定义一个函数:
+    def func():
+        global x
+        x = "函数中的变量"
+
+    # 执行函数:
+    func()
+
+    # x定义在函数中，按说这里打印x会报错，我们看看
+    print(x)  # 函数中的变量
+    ```
+  * 14、in、is
+    * is：用于判断两个变量是否是同一个对象，如果两个对象是同一对象，则返回True，否则返回False。要与== 区别开来，使用==运算符判断两个变量是否相等。
+    ```python
+    x = 2.0
+    y = 2.0
+    x is y  # False
+    x == y  # True
+    ```
+  * 15、None
+    * None关键字用于定义一个空值（根本没有值），与0，False或空字符串不同。None是其自身的数据类型（NoneType），只能为None。
+  * 16、assert
+    * 调试代码时，使用assert关键字。主要用于测试代码中的条件是否为True，如果为False，将引发AssertionError。
+    ```python
+    x = 666
+
+    assert x == 666
+    assert x == 888,"x应该等于666，你的输入有误！"  # AssertionError: x应该等于666，你的输入有误！
+    ```
+  * 17、with
+    * with常和open使用，用于读取或写入文件。
+    ```python
+    with open("哈哈.txt","r") as f:
+        print(f.read())
+    ```
+  * 18、yield
+    * yield关键字结束一个函数，返回一个生成器，用于从函数依次返回值。
+    ```python
+    def f():
+        yield 5
+
+    print(f())  # <generator object f at 0x7facfc885f50>
+    print(next(f()))    # 5
+    ```
 * [Python 为什么不支持 i++ 自增语法，不提供 ++ 操作符？ (qq.com)](https://mp.weixin.qq.com/s/gs3aZucOxXkeMGmP0H9fuA)
 * [盘一盘 Python 系列特别篇 - 格式化 String](https://mp.weixin.qq.com/s/jTiZOazn66nK6CU1SAtpTw)
 * Python 字符串拼接总结
