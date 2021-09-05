@@ -108,6 +108,7 @@
 ## BASIC
 
 * [Python 为什么不支持 i++ 自增语法，不提供 ++ 操作符？ (qq.com)](https://mp.weixin.qq.com/s/gs3aZucOxXkeMGmP0H9fuA)
+* [盘一盘 Python 系列特别篇 - 格式化 String](https://mp.weixin.qq.com/s/jTiZOazn66nK6CU1SAtpTw)
 * Python 字符串拼接总结
   * https://segmentfault.com/a/1190000015475309
   * [2.4.3. Formatted string literals - 2. Lexical analysis — Python 3.9.6 documentation](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
@@ -267,6 +268,8 @@ print(b)    # [1, 3]
 
 ### 迭代器与生成器
 
+* [盘一盘 Python 系列特别篇 - 两大利「器」](https://mp.weixin.qq.com/s/o9REZiT-k-6UTcSnqCfCMQ)
+  * 主要介绍 Python 里的两大利「器」，生成器 (generator) 和迭代器 (iterator)。
 * [Python 迭代器与生成器](http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html)
 * [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
 * [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
@@ -350,6 +353,7 @@ if __name__ == '__main__':
   * namedtuple：创建命名元组子类的工厂函数。
   * deque：类似列表容器，实现了在两端快速添加(append)和弹出(pop)。
   * ChainMap：类似字典的容器类，将多个映射集合到一个视图里面。
+* [盘一盘 Python 系列特别篇 - Collection](https://mp.weixin.qq.com/s/C_bSgxE_1wIPhcqIF7w74w)
 * [你常常看到的 \_\_init\_\_.py 到底是个啥？](https://mp.weixin.qq.com/s/5RW_wd1J9RsyX99Zbm_G0g)
   * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
 * [Python编程中的if \_\_name\_\_ == 'main' 的作用和原理](https://mp.weixin.qq.com/s/SXTo0h2ExujAQdWnLWggdg)
@@ -416,6 +420,8 @@ if __name__ == '__main__':
 ### 错误和异常
 
 * [学习笔记之Python Debug ( pdb ) - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10437091.html)
+* [盘一盘 Python 系列特别篇 - 错误类型](https://mp.weixin.qq.com/s/PBaDdLcYxDso2V4aZcFXpA)
+* [盘一盘 Python 系列特别篇 - 异常处理](https://mp.weixin.qq.com/s/94O3Kz__8UQZoZtQ-WyOcQ)
 * [一文教你读懂 Python 中的异常信息](https://mp.weixin.qq.com/s/6cAuUpZgj5kZ-1KM7-ZV_Q)
   * https://realpython.com/python-traceback/
 * [Python 常见的17个错误分析](https://mp.weixin.qq.com/s/_OZH8o9rHaha0TmCboCCJA)
@@ -529,6 +535,7 @@ d = D()
 d.method()  # A.method() called
 print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>]
 ```
+* [盘一盘 Python 系列特别篇 - 装饰器](https://mp.weixin.qq.com/s/ZWGZLur6_bdgZaIp_XzOxA)
 * [没看完这11 条，别说你精通 Python 装饰器](https://mp.weixin.qq.com/s/5hmauIKOTS1vqHbhE12KkA)
 * [5分钟全面掌握 Python 装饰器](https://mp.weixin.qq.com/s/Dx887iB-jn-BMdj3F1vHDQ)
 * [读懂 Python 装饰器](https://mp.weixin.qq.com/s/pezg8naU4Afkf8DTm_m13w)
@@ -1333,6 +1340,7 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * How to use Regular Expression 正则表达式 ？
   * Python3 正则表达式 | 菜鸟教程
     * http://www.runoob.com/python3/python3-reg-expressions.html
+  * [盘一盘 Python 系列特别篇 - 正则表达式](https://mp.weixin.qq.com/s/Tewaynja3ggkcpzAli-1YQ)
   * re — Regular expression operations — Python 3.7.4 documentation
     * https://docs.python.org/3.7/library/re.html#module-re
   * Regular Expression HOWTO — Python 3.7.4 documentation
