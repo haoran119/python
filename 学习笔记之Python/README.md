@@ -282,7 +282,7 @@ print(b)    # [1, 3]
   * https://maida6244.xyz/
 * [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
 * [Python 69个内置函数分8类总结](https://mp.weixin.qq.com/s/2ZFZ8olllPnrQ4wtCPPkMA)
-  * https://docs.python.org/3/library/functions.html
+  * [Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html)
   * 1、内置函数
   * 2、类型相关
   * 3、数理统计相关
@@ -292,6 +292,8 @@ print(b)    # [1, 3]
   * 7、map函数
   * 8、排序相关
   * 9 其他
+* [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
+  * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
 * [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
 * [Python高阶函数使用总结](https://mp.weixin.qq.com/s/xtO8NDq3lVacsT5Z7eQXmw)
   * 本文结合各种实际的例子详细讲解了Python5个内建高阶函数的使用，能够帮助理解Python的数据结构和提高数据处理的效率，这5个函数分别是：
