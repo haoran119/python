@@ -114,7 +114,7 @@
     * See also [PEP 498](https://www.python.org/dev/peps/pep-0498/) for the proposal that added formatted string literals, and [str.format()](https://docs.python.org/3/library/stdtypes.html#str.format), which uses a related format string mechanism.
   * [Efficient String Concatenation in Python](https://waymoot.org/home/python_string/)
   * 注意Python中list是可变对象，而str是不可变对象。fun1比fun2更高效。
-```sh
+```python
 def fun1(s: str) -> str:
     results = []
     for i in range(len(s)):
@@ -257,6 +257,43 @@ def fun2(s: str) -> str:
 
 ### IO / FILE
 
+* [3.3.9. With Statement Context Managers - 3. Data model — Python 3.9.7 documentation](https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers)
+  * A context manager is an object that defines the runtime context to be established when executing a with statement. The context manager handles the entry into, and the exit from, the desired runtime context for the execution of the block of code. Context managers are normally invoked using the with statement (described in section The with statement), but can also be used by directly invoking their methods.
+  * Typical uses of context managers include saving and restoring various kinds of global state, locking and unlocking resources, closing opened files, etc.
+  * object.__enter__(self)
+    * Enter the runtime context related to this object. The with statement will bind this method’s return value to the target(s) specified in the as clause of the statement, if any.
+  * object.__exit__(self, exc_type, exc_value, traceback)
+    * Exit the runtime context related to this object. The parameters describe the exception that caused the context to be exited. If the context was exited without an exception, all three arguments will be None.
+    * If an exception is supplied, and the method wishes to suppress the exception (i.e., prevent it from being propagated), it should return a true value. Otherwise, the exception will be processed normally upon exit from this method.
+    * Note that __exit__() methods should not reraise the passed-in exception; this is the caller’s responsibility.
+  * [8.5. The with statement - 8. Compound statements — Python 3.9.7 documentation](https://docs.python.org/3/reference/compound_stmts.html#the-with-statement)
+    * The with statement is used to wrap the execution of a block with methods defined by a context manager (see section With Statement Context Managers). This allows common try…except…finally usage patterns to be encapsulated for convenient reuse.
+  * [Context Manager in Python - GeeksforGeeks](https://www.geeksforgeeks.org/context-manager-in-python/)
+```python
+class ContextManager:
+    def __init__(self, file_name) -> None:
+        print('Entry of __init__()')
+        self.file_name = file_name
+
+    def __enter__(self):
+        print('Entry of __enter__()')
+        self.file = open(self.file_name, 'w')
+        return self.file
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print('Entry of __exit__()')
+        self.file.close()
+
+
+if __name__ == '__main__':
+    # Entry of __init__()
+    # Entry of __enter__()
+    # With statement block
+    # Entry of __exit__()
+    with ContextManager('my_file.txt') as xfile:
+        print('With statement block')
+        xfile.write('hello world')
+```
 * [Python 数据形态及IO操作](https://mp.weixin.qq.com/s/97v0k_hWdgJeppx1oF7Vxw)
 * [Python处理CSV、JSON和XML数据的简便方法](https://mp.weixin.qq.com/s/1PyeBLIJNzswO3zd-mHiTQ)
   * https://towardsdatascience.com/the-easy-way-to-work-with-csv-json-and-xml-in-python-5056f9325ca9
