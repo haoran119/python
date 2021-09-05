@@ -241,8 +241,11 @@ if __name__ == '__main__':
 * [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
 * [itertools — Functions creating iterators for efficient looping - Python 3.9.7 documentation](https://docs.python.org/3/library/itertools.html)
   * This module implements a number of iterator building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
+  * [itertools.permutations(iterable, r=None)](https://docs.python.org/3/library/itertools.html#itertools.permutations)
+    * Return successive r length permutations of elements in the iterable.
+    * [Permutation and Combination in Python - GeeksforGeeks](https://www.geeksforgeeks.org/permutation-and-combination-in-python/)
   * Infinite iterators:
-
+  
 | Iterator | Arguments | Results | Example |
 | - | - | - | - |
 | count() | start, [step] | start, start+step, start+2*step, … | count(10) --> 10 11 12 13 14 ... |
@@ -267,7 +270,6 @@ if __name__ == '__main__':
 | zip_longest() | p, q, … | (p[0], q[0]), (p[1], q[1]), … | zip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D-
 
   * Combinatoric iterators:
-
 | Iterator | Arguments | Results | Examples | Results |
 | - | - | - | - | - |
 | product() | p, q, … [repeat=1] | cartesian product, equivalent to a nested for-loop | product('ABCD', repeat=2) | AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
