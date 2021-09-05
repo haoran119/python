@@ -899,6 +899,11 @@ if __name__ == '__main__':
   * Duck typing - Wikipedia
     * https://en.wikipedia.org/wiki/Duck_typing
     * Duck typing in computer programming is an application of the duck test—"If it walks like a duck and it quacks like a duck, then it must be a duck"—to determine if an object can be used for a particular purpose. With normal typing, suitability is determined by an object's type. In duck typing, an object's suitability is determined by the presence of certain methods and properties, rather than the type of the object itself.[1]
+  * 鸭子类型 - 维基百科，自由的百科全书
+    * 鸭子类型（英语：duck typing）在程序设计中是动态类型的一种风格。在这种风格中，一个对象有效的语义，不是由继承自特定的类或实现特定的接口，而是由"当前方法和属性的集合"决定。
+    * 在鸭子类型中，关注点在于对象的行为，能作什么；而不是关注对象所属的类型。
+    * 鸭子类型通常得益于"不"测试方法和函数中参数的类型，而是依赖文档、清晰的代码和测试来确保正确使用。
+    * 在常规类型中，我们能否在一个特定场景中使用某个对象取决于这个对象的类型，而在鸭子类型中，则取决于这个对象是否具有某种属性或者方法——即只要具备特定的属性或方法，能通过鸭子测试，就可以使用。
   * oop - How do I implement interfaces in python? - Stack Overflow
     * https://stackoverflow.com/questions/2124190/how-do-i-implement-interfaces-in-python
   * Difference between abstract class and interface in Python - Stack Overflow
