@@ -763,6 +763,7 @@ if __name__ == '__main__':
   * 使用装饰器
   * 更加减半的使用property()函数
 * [盘一盘 Python 系列特别篇 - 面向对象编程](https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247488340&idx=1&sn=572a046a414e830e209e8ea1c7cc92e0&chksm=e890905ddfe7194b2478fa00075469b83d997133290aef42d6c2af0db3aca1b46a6543823e11&scene=21#wechat_redirect)
+  * [View code](https://github.com/haoran119/python/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/%E7%9B%98%E4%B8%80%E7%9B%98%20Python%20%E7%B3%BB%E5%88%97%E7%89%B9%E5%88%AB%E7%AF%87%20-%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.py)
   * 第一章 - 对象初体验
     * 1.1 整型 int
       * 在 C++ 和 Java 里，整数只是一个基础 (primitive) 类型，而在 Python 里，整数是一个类，可以用来创建很多整数型对象。
