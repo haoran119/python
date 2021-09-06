@@ -37,22 +37,23 @@
     def singleton(cls):
         instances = {}
 
-        def getinstance(*args, **kw):
+        def wrapper(*args, **kwargs):
             if cls not in instances:
-                instances[cls] = cls(*args, **kw)
+                instances[cls] = cls(*args, **kwargs)
             return instances[cls]
 
-        return getinstance
+        return wrapper
 
 
     @singleton
-    class MyClass2:
-        def foo(self):
-            print('MyClass2.foo()')
+    class Foo(object):
+        pass
 
 
-    my_class = MyClass2()
-    my_class.foo()  # MyClass2.foo()
+    foo1 = Foo()
+    foo2 = Foo()
+
+    print(foo1 is foo2)     # True
     ```
   * 24 Python垃圾回收机制
     * Python GC主要使用引用计数（reference counting）来跟踪和回收垃圾。在引用计数的基础上，通过“标记-清除”（mark and sweep）解决容器对象可能产生的循环引用问题，通过“分代回收”（generation collection）以空间换时间的方法提高垃圾回收效率。
