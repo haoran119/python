@@ -31,30 +31,6 @@
 * [百度大牛总结十条Python面试题陷阱，看看你是否会中招 (toutiao.com)](https://www.toutiao.com/i6550223737344492039/?wid=1621651237098)
 * [Python面试攻略（coding篇）](https://blog.csdn.net/u013205877/article/details/77542837)
   * [taizilongxu/interview_python: 关于Python的面试题 (github.com)](https://github.com/taizilongxu/interview_python)
-  * 16 单例模式
-    * 3 装饰器版本
-    ```python
-    def singleton(cls):
-        instances = {}
-
-        def wrapper(*args, **kwargs):
-            if cls not in instances:
-                instances[cls] = cls(*args, **kwargs)
-            return instances[cls]
-
-        return wrapper
-
-
-    @singleton
-    class Foo(object):
-        pass
-
-
-    foo1 = Foo()
-    foo2 = Foo()
-
-    print(foo1 is foo2)     # True
-    ```
   * 24 Python垃圾回收机制
     * Python GC主要使用引用计数（reference counting）来跟踪和回收垃圾。在引用计数的基础上，通过“标记-清除”（mark and sweep）解决容器对象可能产生的循环引用问题，通过“分代回收”（generation collection）以空间换时间的方法提高垃圾回收效率。
 * [2018年最常见的Python面试题&答案（上篇） (juejin.cn)](https://juejin.cn/post/6844903654143557646)
@@ -79,3 +55,47 @@
   * [python 题_yang_bingo的博客-CSDN博客](https://blog.csdn.net/yang_bingo/article/details/80285205)
 * [100+Python编程题给你练~（附答案） (qq.com)](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247523362&idx=4&sn=31ce0678907d603c3ddc92eb4e665f34&source=41#wechat_redirect)
   * [Python-programming-exercises/100+ Python challenging programming exercises.txt at master · zhiwehu/Python-programming-exercises (github.com)](https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt)
+  * Python如何实现单例模式?
+    * 使用装饰器
+    ```python
+    def singleton(cls):
+        instances = {}
+
+        def wrapper(*args, **kwargs):
+            if cls not in instances:
+                instances[cls] = cls(*args, **kwargs)
+            return instances[cls]
+
+        return wrapper
+
+
+    @singleton
+    class Foo(object):
+        pass
+
+
+    foo1 = Foo()
+    foo2 = Foo()
+
+    print(foo1 is foo2)     # True
+    ```
+    * 使用基类
+      * New 是真正创建实例对象的方法，所以重写基类的new 方法，以此保证创建对象的时候只生成一个实例
+    ```python
+    class Singleton:
+        def __new__(cls, *args, **kwargs):
+            if not hasattr(cls, '_instance'):
+                cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)
+
+            return cls._instance
+
+
+    class Foo(Singleton):
+        pass
+
+
+    foo1 = Foo()
+    foo2 = Foo()
+
+    print(foo1 is foo2)     # True
+    ```
