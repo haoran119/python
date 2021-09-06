@@ -576,6 +576,17 @@ if __name__ == '__main__':
   * deque：类似列表容器，实现了在两端快速添加(append)和弹出(pop)。
   * ChainMap：类似字典的容器类，将多个映射集合到一个视图里面。
 * [盘一盘 Python 系列特别篇 - Collection](https://mp.weixin.qq.com/s/C_bSgxE_1wIPhcqIF7w74w)
+  * 我们在【盘一盘 Python 下】一贴介绍过 5 种类型的容器型（container）数据，分别是字符串（string）、列表（list）、元组（tuple）、字典（dictionary）和集合（set）。
+  * 今天我们来介绍除上面 5 个之外的容器型数据，统称 Collection，见下图。
+  * ![image](https://user-images.githubusercontent.com/34557994/132177945-18502039-6b02-4fec-8ed6-ab369c524663.png)
+  * 上图中的 UserDict, UserList 和 UserString 只是字典、列表和字符串的一个简单封装，而 frozenset 就是“元素不可修改”的集合，它们平时使用的频率很少，因此略过不讲。
+  * 本帖只介绍 6 种使用较多（和上面 4 种较少的相比而言）的 Collection，它们是
+    * namedtuple
+    * defaultdict
+    * Counter
+    * deque
+    * ChainMap
+    * OrderedDict
 * [你常常看到的 \_\_init\_\_.py 到底是个啥？](https://mp.weixin.qq.com/s/5RW_wd1J9RsyX99Zbm_G0g)
   * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
 * [Python编程中的if \_\_name\_\_ == 'main' 的作用和原理](https://mp.weixin.qq.com/s/SXTo0h2ExujAQdWnLWggdg)
