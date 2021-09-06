@@ -55,47 +55,47 @@
   * [python 题_yang_bingo的博客-CSDN博客](https://blog.csdn.net/yang_bingo/article/details/80285205)
 * [100+Python编程题给你练~（附答案） (qq.com)](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247523362&idx=4&sn=31ce0678907d603c3ddc92eb4e665f34&source=41#wechat_redirect)
   * [Python-programming-exercises/100+ Python challenging programming exercises.txt at master · zhiwehu/Python-programming-exercises (github.com)](https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt)
-  * Python如何实现单例模式?
-    * 使用装饰器
-    ```python
-    def singleton(cls):
-        instances = {}
+* Python如何实现单例模式?
+  * 使用装饰器
+  ```python
+  def singleton(cls):
+      instances = {}
 
-        def wrapper(*args, **kwargs):
-            if cls not in instances:
-                instances[cls] = cls(*args, **kwargs)
-            return instances[cls]
+      def wrapper(*args, **kwargs):
+          if cls not in instances:
+              instances[cls] = cls(*args, **kwargs)
+          return instances[cls]
 
-        return wrapper
-
-
-    @singleton
-    class Foo(object):
-        pass
+      return wrapper
 
 
-    foo1 = Foo()
-    foo2 = Foo()
-
-    print(foo1 is foo2)     # True
-    ```
-    * 使用基类
-      * New 是真正创建实例对象的方法，所以重写基类的new 方法，以此保证创建对象的时候只生成一个实例
-    ```python
-    class Singleton:
-        def __new__(cls, *args, **kwargs):
-            if not hasattr(cls, '_instance'):
-                cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)
-
-            return cls._instance
+  @singleton
+  class Foo(object):
+      pass
 
 
-    class Foo(Singleton):
-        pass
+  foo1 = Foo()
+  foo2 = Foo()
+
+  print(foo1 is foo2)     # True
+  ```
+  * 使用基类
+    * New 是真正创建实例对象的方法，所以重写基类的new 方法，以此保证创建对象的时候只生成一个实例
+  ```python
+  class Singleton:
+      def __new__(cls, *args, **kwargs):
+          if not hasattr(cls, '_instance'):
+              cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)
+
+          return cls._instance
 
 
-    foo1 = Foo()
-    foo2 = Foo()
+  class Foo(Singleton):
+      pass
 
-    print(foo1 is foo2)     # True
-    ```
+
+  foo1 = Foo()
+  foo2 = Foo()
+
+  print(foo1 is foo2)     # True
+  ```
