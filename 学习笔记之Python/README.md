@@ -809,6 +809,8 @@ if __name__ == '__main__':
       * 现在完善子类 Developer，但是 __init__ 方法里面的代码重复。
       * 怎么精简？用 super 方法。见图第 6 行的 super().__init__() 就是在利用父类里的对象构造函数，而我们只用处理对于 Developer 对象的新字段
       * 因此它的构造函数 __init__ 有一个参数是 employee，初始值为 None。为什么不用空列表 [] 当初始值呢？原因就是列表是可变的 (mutable)。
+      * 函数 isinstance(a, A) 是检查 a 是不是 A 的一个实例。
+      * 函数 issubclass(A, B) 是检查 A 是不是 B 的一个子类。
     * 2.8 魔法方法
       * 魔法方法 (magic method) 的方法名前后被双下划线 (dunder) 所包围，构造函数 __init__ 就是最常见的魔法方法。
       * 其实所有类都是 object 类的子类，而 object 类里有两个重要的魔法方法，__repr__ 和 __str__，任何 object 的子类都会继承这两个方法。
