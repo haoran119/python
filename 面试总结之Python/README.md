@@ -5,8 +5,8 @@
 * [全面的Python重点](https://mp.weixin.qq.com/s/UN2RNV8LXXlLIZ3G3Zpukw)
   * https://segmentfault.com/a/1190000018737045
   * python变量名的解析机制(LEGB)(Local -> Enclosing -> Global -> Built-in)
-    * 本地作用域(Local)
-    * 当前作用域被嵌入的本地作用域(Enclosing locals)
+    * 本地作用域(Local)(e.g. 函数内部作用域)
+    * 当前作用域被嵌入的本地作用域(Enclosing locals)(e.g. 函数内部与内嵌函数之间)
     * 全局/模块作用域(Global)
     * 内置作用域(Built-in)
     * [Python Variable Scope with Local & Non-local Examples - DataCamp](https://www.datacamp.com/community/tutorials/scope-of-variables-python)
@@ -31,10 +31,6 @@
 * [百度大牛总结十条Python面试题陷阱，看看你是否会中招 (toutiao.com)](https://www.toutiao.com/i6550223737344492039/?wid=1621651237098)
 * [Python面试攻略（coding篇）](https://blog.csdn.net/u013205877/article/details/77542837)
   * [taizilongxu/interview_python: 关于Python的面试题 (github.com)](https://github.com/taizilongxu/interview_python)
-  * 17 Python中的作用域
-    * Python 中，一个变量的作用域总是由在代码中被赋值的地方所决定的。
-    * 当 Python 遇到一个变量的话他会按照这样的顺序进行搜索：
-      * 本地作用域（Local）→当前作用域被嵌入的本地作用域（Enclosing locals）→全局/模块作用域（Global）→内置作用域（Built-in）
   * 24 Python垃圾回收机制
     * Python GC主要使用引用计数（reference counting）来跟踪和回收垃圾。在引用计数的基础上，通过“标记-清除”（mark and sweep）解决容器对象可能产生的循环引用问题，通过“分代回收”（generation collection）以空间换时间的方法提高垃圾回收效率。
 * [2018年最常见的Python面试题&答案（上篇） (juejin.cn)](https://juejin.cn/post/6844903654143557646)
