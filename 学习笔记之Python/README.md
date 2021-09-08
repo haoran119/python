@@ -186,6 +186,19 @@
     print(next(f()))    # 5
     ```
 * [Python 为什么不支持 i++ 自增语法，不提供 ++ 操作符？ (qq.com)](https://mp.weixin.qq.com/s/gs3aZucOxXkeMGmP0H9fuA)
+* [6.12. Assignment expressions - 6. Expressions — Python 3.9.7 documentation](https://docs.python.org/3/reference/expressions.html?highlight=walrus#assignment-expressions)
+  * assignment_expression ::=  [identifier ":="] expression
+  * An assignment expression (sometimes also called a “named expression” or “walrus”) assigns an expression to an identifier, while also returning the value of the expression.
+  * One common use case is when handling matched regular expressions:
+  ```python
+  if matching := pattern.search(data):
+      do_something(matching)
+  ```
+  * Or, when processing a file stream in chunks:
+  ```python
+  while chunk := file.read(9000):
+      process(chunk)
+  ```   
 * [盘一盘 Python 系列特别篇 - 格式化 String](https://mp.weixin.qq.com/s/jTiZOazn66nK6CU1SAtpTw)
 * Python 字符串拼接总结
   * https://segmentfault.com/a/1190000015475309
