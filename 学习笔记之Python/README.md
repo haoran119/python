@@ -210,8 +210,31 @@ def fun2(s: str) -> str:
 * [Python字符串用法大全](https://mp.weixin.qq.com/s/yMVrjmOYp7opYB0Nvx47Dw)
 * [Python字符串处理的8招秘籍](https://mp.weixin.qq.com/s/x_0Ahm-q8FAxAvJoUWnsEQ)
 * [10 个 Python 字符串处理技巧](https://mp.weixin.qq.com/s/iaT30IyPT8NSQ42d3oVpVA)
+  * [Text Sequence Type — str - Built-in Types — Python 3.9.7 documentation](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+    * [String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+  * [string — Common string operations — Python 3.9.7 documentation](https://docs.python.org/3/library/string.html)
   1. 空格剥离
+  ```python
+  s = '    This is a sentence with whitespace.   '
+
+  print('Strip leading whitespace: "{}"'.format(s.lstrip()))   # Strip leading whitespace: "This is a sentence with whitespace.   "
+  print('Strip trailing whitespace: "{}"'.format(s.rstrip()))  # Strip trailing whitespace: "    This is a sentence with whitespace."
+  print('Strip all whitespace: "{}"'.format(s.strip()))        # Strip all whitespace: "This is a sentence with whitespace."
+
+  s = 'This is a sentence with unwanted characters.AAAAAAAA'
+  print('Strip unwanted characters: "{}"'.format(s.rstrip('A')))  # Strip unwanted characters: "This is a sentence with unwanted characters."
+  ```
   2. 字符串拆分
+  ```python
+  s = ' KDnuggets is a fantastic resource '
+  print(s.split())    # ['KDnuggets', 'is', 'a', 'fantastic', 'resource']
+
+  s = 'these,words,are,separated,by,comma'
+  print('"," separated split -> {}'.format(s.split(',')))     # "," separated split -> ['these', 'words', 'are', 'separated', 'by', 'comma']
+
+  s = 'abacbdebfgbhhgbabddba'
+  print('"b" separated split -> {}'.format(s.split('b')))     # "b" separated split -> ['a', 'ac', 'de', 'fg', 'hhg', 'a', 'dd', 'a']
+  ```
   3. 将列表元素合成字符串
   4. 字符串反转
   5. 大小写转换
