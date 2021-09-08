@@ -236,13 +236,97 @@ def fun2(s: str) -> str:
   print('"b" separated split -> {}'.format(s.split('b')))     # "b" separated split -> ['a', 'ac', 'de', 'fg', 'hhg', 'a', 'dd', 'a']
   ```
   3. 将列表元素合成字符串
+  ```python
+  s = ['KDnuggets', 'is', 'a', 'fantastic', 'resource']
+  print('"{}"'.format(' '.join(s)))   # "KDnuggets is a fantastic resource"
+
+  s = ['Eleven', 'Mike', 'Dustin', 'Lucas', 'Will']
+  print('"{}"'.format(' and '.join(s)))   # "Eleven and Mike and Dustin and Lucas and Will"
+  ```
   4. 字符串反转
+  ```python
+  s = 'abcde'
+
+  print(s[::-1])  # edcba
+  print(reversed(s))  # <reversed object at 0x7f869db73c50>
+  print(''.join(reversed(s)))     # edcba
+  ```
   5. 大小写转换
+  ```python
+  s = 'KDnuggets'
+
+  print('KDnuggets as uppercase: {}'.format(s.upper()))   # KDnuggets as uppercase: KDNUGGETS
+  print('KDnuggets as lowercase: {}'.format(s.lower()))   # KDnuggets as lowercase: kdnuggets
+  print('KDnuggets as swapped case: {}'.format(s.swapcase()))     # KDnuggets as swapped case: kdNUGGETS
+  ```
   6. 检查是否有字符串成员
+  ```python
+  s1 = 'perpendicular'
+  s2 = 'pen'
+  s3 = 'pep'
+
+  print('pen in perpendicular -> {}'.format(s2 in s1))    # pen in perpendicular -> True
+  print('pep in perpendicular -> {}'.format(s3 in s1))    # pep in perpendicular -> False
+
+  s = 'Does this string contain a substring?'
+
+  print('string location -> {}'.format(s.find('string')))     # string location -> 10
+  print('spring location -> {}'.format(s.find('spring')))     # spring location -> -1
+  ```
   7. 子字符串替换
+  * str.replace(old, new[, count])
+    * Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced.
+  ```python
+  s1 = 'old things old things old things'
+  s2 = 'new'
+
+  print(s1.replace('old', s2))        # new things new things new things
+  print(s1.replace('old', s2, 2))     # new things new things old things
+  ```
   8. 组合多个列表的输出
+  ```python
+  countries = ['USA', 'Canada', 'UK', 'Australia']
+  cities = ['Washington', 'Ottawa', 'London', 'Canberra']
+
+  # The capital of USA is Washington.
+  # The capital of Canada is Ottawa.
+  # The capital of UK is London.
+  # The capital of Australia is Canberra.
+  for x, y in zip(countries, cities):
+      print('The capital of {} is {}.'.format(x, y))
+  ```
   9. 同字母异序词检查
+  ```python
+  from collections import Counter
+
+
+  def is_anagram(s1, s2):
+      return Counter(s1) == Counter(s2)
+
+
+  s1 = 'listen'
+  s2 = 'silent'
+  s3 = 'runner'
+  s4 = 'neuron'
+
+  print('listen is an anagram of silent -> {}'.format(is_anagram(s1, s2)))    # listen is an anagram of silent -> True
+  print('runner is an anagram of neuron -> {}'.format(is_anagram(s3, s4)))    # runner is an anagram of neuron -> False
+  ```
   10. 回文检查
+  ```python
+  def is_palindrome(s):
+      reverse = s[::-1]
+      if (s == reverse):
+          return True
+      return False
+
+
+  s1 = 'racecar'
+  s2 = 'hippopotamus'
+
+  print('racecar is a palindrome -> {}'.format(is_palindrome(s1)))    # racecar is a palindrome -> True
+  print('hippopotamus is a palindrome -> {}'.format(is_palindrome(s2)))   # hippopotamus is a palindrome -> False
+  ```
 * [如何优雅的操作Python字典 - 程序员大咖](https://mp.weixin.qq.com/s/mWjzDm9XNNnFiJGYhzpivA)
   * https://www.linuxzen.com/python-you-ya-de-cao-zuo-zi-dian.html
 ```python
