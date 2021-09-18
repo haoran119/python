@@ -1284,7 +1284,6 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [如何用 Python 构建机器学习模型？ (qq.com)](https://mp.weixin.qq.com/s/c-Sl7n_ceawz6AHm5Mtw0w)
   * 该 Notebook 包含了用于创建主要机器学习算法所需的代码模板。在 scikit-learn 中，我们已经准备好了几个算法。只需调整参数，给它们输入数据，进行训练，生成模型，最后进行预测。
   * https://github.com/haoran119/python/blob/1703d4e453ed815710a777edd80089196b3b5968/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/%E5%A6%82%E4%BD%95%E7%94%A8%20Python%20%E6%9E%84%E5%BB%BA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B.py
-
 * [不足 20 行 Python 代码，高效实现 k-means 均值聚类算法！](https://mp.weixin.qq.com/s/HCqzwwyA-EnDQpPsSUr8og)
   * https://blog.csdn.net/xufive/article/details/101448969
 * [使用Python进行机器学习的假设检验（附链接&代码）](https://mp.weixin.qq.com/s/iC6I66_bBEHlnwZMEZsN_Q)
@@ -1317,6 +1316,61 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
     * 百度 AI开放平台的语音合成接口、OCR文字识别接口
     * ImageGrab 截图
     * 文件传输
+
+### CRAWLER
+
+* [Python 爬虫介绍 | 菜鸟教程](http://www.runoob.com/w3cnote/python-spider-intro.html)
+  * https://blog.csdn.net/sinat_29957455/article/details/70846427
+* [从零开始的 Python 爬虫速成指南](https://segmentfault.com/a/1190000008135000)
+  * 本文主要内容：以最短的时间写一个最简单的爬虫，可以抓取论坛的帖子标题和帖子内容。
+* [Python 爬虫分析豆瓣 TOP250 告诉你程序员业余该看什么书？- CSDN](https://mp.weixin.qq.com/s/nviBjYyJ0lyvkOFYaJ8cIg)
+* [Python3 网络爬虫入门](https://cuijiahua.com/blog/2017/10/spider_tutorial_1.html)
+* [如何炼成 Python 爬虫“王者”？](https://mp.weixin.qq.com/s/RGCGsinVeE9Nrm60mmix5g)
+* [20行 Python 代码爬取王者荣耀全英雄皮肤 | 原力计划](https://mp.weixin.qq.com/s/3T8_L3j2sssNKHzzMgNkzQ)
+  * https://blog.csdn.net/qq_42453117/article/details/103190981
+* [基于 requests 的全能扫描王爬虫实践](https://mp.weixin.qq.com/s/J2DvsuEe9eO4ghPRlqKCrg)
+* [基于微博数据的人物性格分类系统](https://mp.weixin.qq.com/s/MPepP7JaBT-KbFXiw7NZLA)
+  * https://yishuihancheng.blog.csdn.net/
+* [Python 分析国庆热门旅游景点](https://mp.weixin.qq.com/s/s-d5VxSbYKd1xmvS2XrvWQ)
+  * https://github.com/pig6/qunar_spider
+* [用 Python 总结分析男篮世界杯](https://mp.weixin.qq.com/s/z0HTipGNQ8ieVdEfSzkbVw)
+* [用 Python 分析各国人口性别比例](https://mp.weixin.qq.com/s/tTMtJWQ6o10YJflmnGLxXg)
+* [用Python分析全国高等教育分布情况](https://github.com/zhouwei713/data_analysis/tree/master/college)
+* [Python 分析中国城市夜间灯光数据](https://mp.weixin.qq.com/s/iACTAa7OwkJqYGeO4zbq3g)
+* [教你如何用Python自动下载抖音小姐姐](https://github.com/xingag/app_spider/tree/master/%E6%8A%96%E9%9F%B3-%E8%8E%B7%E5%8F%96%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%B0%8F%E5%A7%90%E5%A7%90)
+* [Python爬取的微信好友信息里我看到了自律 | CSDN博文精选](https://mp.weixin.qq.com/s/TOyQ3pfjyFOYG66HU0hpsg)
+* [天气爬取+邮件发送](https://mp.weixin.qq.com/s/n93fPVfbcYuV4WfoprSe9g)
+  * https://github.com/seizeeveryday/DA-cases/tree/master/Weather%2BEmail
+* [基于 Fabric 部署分布式爬虫的思考](https://mp.weixin.qq.com/s/DSrAF40oWIStvtfKCE7pAA)
+* [车票？工作？对象？Python 教你优雅解决年关三大难题](https://mp.weixin.qq.com/s/QQy2bs0t5jWC-tFysGtDpQ)
+  * https://github.com/seizeeveryday/DA-cases/tree/master/Zhihu
+* [用 Python 抓取公号文章保存成 PDF](https://mp.weixin.qq.com/s/jGjCfnGdxzK29FgC4E-_Cg)
+* [Python 爬取 6271 家死亡公司数据，一眼看尽十年创业公司消亡史！ (qq.com)](https://mp.weixin.qq.com/s/c27WOcijEJw8d5zseK4Sxw)
+  * aotodata/interest/6217 at master · zpw1995/aotodata (github.com)
+
+#### FINANCE
+
+* [看我如何抓取最新房价数据](https://mp.weixin.qq.com/s/7dGsf88Lm7T-isLHOzhz-Q)
+* [看我如何抓取二手房价数据](https://mp.weixin.qq.com/s/fUFL_OjOUR48Ertx38F-xg)
+* [用Python爬取淘宝](https://github.com/pig6/taobao_spider)
+* [分析了16年的福利彩票记录，原来可以用Python这么买彩票](https://github.com/MiracleYoung/You-are-Pythonista/tree/master/PythonExercise/Tool/SSQ_Predict/)
+* [用 Python 分析网易严选 Bra 销售信息](https://mp.weixin.qq.com/s/1_zWK4T6UNrQwnVQoxx7XQ)
+* [爬了7000+条Bra信息](https://github.com/zhouwei713/data_analysis/tree/master/you163_spider)
+
+#### MOVIE
+
+* [Python登录豆瓣并爬取影评](https://mp.weixin.qq.com/s/Cpuh9S5rjvEkU_gPOoqQ5g)
+* [Python 爬虫实战：猫眼电影](https://mp.weixin.qq.com/s/ROZfhenHD1EK6cbifj6oYg)
+* [基于豆瓣影评数据的完整文本分析](https://mp.weixin.qq.com/s/qupUBFxVJvBSff9CksFI5w)
+  * https://yishuihancheng.blog.csdn.net/
+* [如何通过 Python 分析中国演员排名？](https://mp.weixin.qq.com/s/FezB7o5t5veSSKEt-YZV0w)
+* [Python 爬取 3000 部电影，最具人气烂片排行榜出炉](https://mp.weixin.qq.com/s/sKvb-QgaO09DK7cGRGNFDg)
+* [《庆余年》值得一看吗？Python告诉你谁在关注 | CSDN原力计划](https://mp.weixin.qq.com/s/dzZVtqQuJNFvjF-Qr7iPcw)
+* [用 Python 抓取 bilibili 弹幕并分析](https://mp.weixin.qq.com/s/Skb9QSgBCH3iV4RfAV1szw)
+* [用 Python 爬取分析每日票房数据](https://mp.weixin.qq.com/s/ag_BaGWNrcQokHlrFFSu2g)
+  * http://blog.sina.com.cn/leonmovie
+* [基于词典和弱标注信息的电影评论情感分析系统](https://mp.weixin.qq.com/s/3MX-fHI6WxuHGOHSY8RQCQ)
+  * https://yishuihancheng.blog.csdn.net/
 
 ### DATA SCIENCE
 
