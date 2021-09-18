@@ -19,7 +19,6 @@
 * [学习笔记之盘一盘 Python 系列 1 & 2 - 入门篇 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11289321.html)
 * [学习笔记之Python开发环境 IDE ( Anaconda / PyCharm ) - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/8915306.html)
 * [学习笔记之Python 3 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/10825575.html)
-* [学习笔记之Python爬虫 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/10470560.html)
 * [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
 * [学习笔记之pytest - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13769672.html)
 * [《Python入门必备指南》之如何系统地自学 Python？_腾讯课堂](https://ke.qq.com/course/217064)
@@ -220,8 +219,6 @@ def fun2(s: str) -> str:
         results += s[i]  # 每次拼接都要新建一个字符串，申请N次内存
     return results
 ```
-* [Python字符串用法大全](https://mp.weixin.qq.com/s/yMVrjmOYp7opYB0Nvx47Dw)
-* [Python字符串处理的8招秘籍](https://mp.weixin.qq.com/s/x_0Ahm-q8FAxAvJoUWnsEQ)
 * [10 个 Python 字符串处理技巧](https://mp.weixin.qq.com/s/iaT30IyPT8NSQ42d3oVpVA)
   * [Text Sequence Type — str - Built-in Types — Python 3.9.7 documentation](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
     * [String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
@@ -340,7 +337,7 @@ def fun2(s: str) -> str:
   print('racecar is a palindrome -> {}'.format(is_palindrome(s1)))    # racecar is a palindrome -> True
   print('hippopotamus is a palindrome -> {}'.format(is_palindrome(s2)))   # hippopotamus is a palindrome -> False
   ```
-* [如何优雅的操作Python字典 - 程序员大咖](https://mp.weixin.qq.com/s/mWjzDm9XNNnFiJGYhzpivA)
+* [如何优雅的操作Python字典](https://mp.weixin.qq.com/s/mWjzDm9XNNnFiJGYhzpivA)
   * https://www.linuxzen.com/python-you-ya-de-cao-zuo-zi-dian.html
 ```python
 """
@@ -401,7 +398,7 @@ print(b)    # [1, 3]
 * [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
   * https://maida6244.xyz/
 * [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
-* [Python 69个内置函数分8类总结](https://mp.weixin.qq.com/s/2ZFZ8olllPnrQ4wtCPPkMA)
+* Python 69个内置函数分8类总结
   * [Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html)
   * 1、内置函数
   * 2、类型相关
@@ -457,8 +454,7 @@ print(b)    # [1, 3]
 * [Python 进阶：全面解读高级特性之切片](https://mp.weixin.qq.com/s/afhvyDGjt8U2XzHCZHOJJA)
 * [聊一聊 Python 中的闭包](https://mp.weixin.qq.com/s/qYKNGqItnSXq0-Zq2kMCKA)
   * https://segmentfault.com/a/1190000007321972
-* [聊一聊 Python 中的“垃圾”回收](https://mp.weixin.qq.com/s/P3G5InQxq_kw4QUlhsXRCg)
-  * https://www.heroyf.club/2019/10/24/python_gc/
+* [聊一聊 Python 中的“垃圾”回收](https://www.heroyf.club/2019/10/24/python_gc/)
 * [Python 中 -m 的典型用法、原理解析与发展演变](https://mp.weixin.qq.com/s/tD3eSb2WdOPN_dKAQ9d6Ag)
 * [Python中的*args和**kwargs是什么？该如何使用？](https://mp.weixin.qq.com/s/s7PFVE_wcAMZaRUds2MJDQ) 
   * https://medium.com/better-programming/what-are-args-and-kwargs-in-python-6aaf9e3cad73
@@ -744,7 +740,7 @@ if __name__ == '__main__':
   * OrderedDict
     * 有序字典 (OrderedDict) 是字典的子类，就像常规字典一样，它会记录放入元素的顺序，但现在常规字典也有这种功能了，因此有序字典的存在意义也不大了。
     * 在有序词典中，有一个 reversed() 函数，可以逆序返回字典的键。
-* [你常常看到的 \_\_init\_\_.py 到底是个啥？](https://mp.weixin.qq.com/s/5RW_wd1J9RsyX99Zbm_G0g)
+* 你常常看到的 \_\_init\_\_.py 到底是个啥？
   * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
 * [Python编程中的if \_\_name\_\_ == 'main' 的作用和原理](https://mp.weixin.qq.com/s/SXTo0h2ExujAQdWnLWggdg)
   * https://zhuanlan.zhihu.com/p/34112508
@@ -812,16 +808,13 @@ if __name__ == '__main__':
 * [学习笔记之Python Debug ( pdb ) - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10437091.html)
 * [盘一盘 Python 系列特别篇 - 错误类型](https://mp.weixin.qq.com/s/PBaDdLcYxDso2V4aZcFXpA)
 * [盘一盘 Python 系列特别篇 - 异常处理](https://mp.weixin.qq.com/s/94O3Kz__8UQZoZtQ-WyOcQ)
-* [一文教你读懂 Python 中的异常信息](https://mp.weixin.qq.com/s/6cAuUpZgj5kZ-1KM7-ZV_Q)
-  * https://realpython.com/python-traceback/
-* [Python 常见的17个错误分析](https://mp.weixin.qq.com/s/_OZH8o9rHaha0TmCboCCJA)
-  * https://www.oschina.net/question/89964_62779
+* [一文教你读懂 Python 中的异常信息](https://realpython.com/python-traceback/)
+* [Python 常见的17个错误分析](https://www.oschina.net/question/89964_62779)
   * https://inventwithpython.com/blog/2012/07/09/16-common-python-runtime-errors-beginners-find/
 
 ### 面向对象
 
-* [Python 面向对象编程](https://mp.weixin.qq.com/s/IFRloykz9Nnb3N94CQpieg)
-  * http://www.langzi.fun/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html
+* [Python 面向对象编程](http://www.langzi.fun/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html)
   * 面向过程编程
   * 面向对象编程
   * 类的基本用法
@@ -996,7 +989,6 @@ d.method()  # A.method() called
 print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>]
 ```
 * [盘一盘 Python 系列特别篇 - 装饰器](https://mp.weixin.qq.com/s/ZWGZLur6_bdgZaIp_XzOxA)
-* [没看完这11 条，别说你精通 Python 装饰器](https://mp.weixin.qq.com/s/5hmauIKOTS1vqHbhE12KkA)
 * [5分钟全面掌握 Python 装饰器](https://mp.weixin.qq.com/s/Dx887iB-jn-BMdj3F1vHDQ)
 * [读懂 Python 装饰器](https://mp.weixin.qq.com/s/pezg8naU4Afkf8DTm_m13w)
 * [Python中的元编程：一个关于修饰器和元类的简单教程](https://mp.weixin.qq.com/s/bV7g9ugGmFjojGDMIc_kpQ)
@@ -1023,30 +1015,20 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 ### STYLE GUIDE
 
 * [学习笔记之Python最简编码规范 - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10387079.html)
-* [代码整洁之道-编写 Pythonic 代码](https://mp.weixin.qq.com/s/uYzO63krMt-_ztmf4SmI2w)
 * [写出漂亮 Python 代码的 20条准则](https://mp.weixin.qq.com/s/2I8clKTGDPbmR1fTOLWaZQ)
   * https://medium.com/better-programming/how-to-make-python-programming-more-elegant-and-decent-4b5962695aa9
 * [Python 编码风格指南](https://mp.weixin.qq.com/s/JnrLSfQfH4CGAZSK_rnumg)
 * [Python 简洁编码之道](https://mp.weixin.qq.com/s/UeOkqf37HQH-RQZbpJAiDQ)
-* [18式优雅你的Python](https://mp.weixin.qq.com/s/iiG3Jarc_bIzcvz1-lmmhg)
 * [改善Python程序的91个建议](https://zhuanlan.zhihu.com/p/32817459)
-* [符合语言习惯的 Python 优雅编程技巧](https://mp.weixin.qq.com/s/rE5OEFwwFxJNb_Omwmqvzw)
-  * http://lovesoo.org/pythonic-python-programming.html?amhgxy=ov4fk
 * [优雅编写Python3的62个小贴士](https://mp.weixin.qq.com/s/xkxpZo_8HixRlXU8PtMK7w)
 
 ### TIPS
 
 * [@Python 程序员，如何最大化提升编码效率？](https://mp.weixin.qq.com/s/_-vCTkryiP2gq_IdX6pL8w)
   * https://towardsdatascience.com/five-python-tricks-you-need-to-learn-today-9dbe03c790ab
-* [这些Python代码技巧，你肯定还不知道](https://mp.weixin.qq.com/s/UWd4hpeZztHmpHmmlftvlQ)
-  * https://www.freecodecamp.org/news/an-a-z-of-useful-python-tricks-b467524ee747/
-* [wtfPython—Python中一些奇妙的代码](https://mp.weixin.qq.com/s/B--tL_s8-eWF-x9ilCbvdQ)
-  * http://yaoyaoblog.xyz/2017/09/04/wtfPython%E2%80%94Python%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A6%99%E7%9A%84%E4%BB%A3%E7%A0%81/
-* [15个Pythonic的代码示例](https://mp.weixin.qq.com/s/vZcJ__SCcdLk2JopMx_yqA)
-* [7个案例15分钟让你了解Python套路](https://mp.weixin.qq.com/s/8GQ8gP4S4yA7FmlLhbuiBA)
-  * https://www.jianshu.com/p/36ae91c38279
-* [Python带我飞：50个有趣而又鲜为人知的Python特性](https://mp.weixin.qq.com/s/ULy82R1DYdbx0MH4xD22IA)
-  * https://github.com/leisurelicht/wtfpython-cn
+* [这些Python代码技巧，你肯定还不知道](https://www.freecodecamp.org/news/an-a-z-of-useful-python-tricks-b467524ee747/)
+* [7个案例15分钟让你了解Python套路](https://www.jianshu.com/p/36ae91c38279)
+* [Python带我飞：50个有趣而又鲜为人知的Python特性](https://github.com/leisurelicht/wtfpython-cn)
 * [Python中实用却不常见的小技巧](https://hackernoon.com/python-tricks-101-2836251922e0)
   * https://github.com/brennerm/PyTricks
 * [Python 开发中有哪些高级技巧？](https://mp.weixin.qq.com/s/6ierUk69wmooZcLKL3-XZw)
@@ -1054,7 +1036,6 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [10招玩转Python](https://mp.weixin.qq.com/s/WxYMY_b-5UPMD4KWPWIH9A)
 * [学Python，从列表推导到zip()函数，这五种技巧应知应会](https://mp.weixin.qq.com/s/GDC3GeTPXspInK_1DPyuVA)
   * https://towardsdatascience.com/python-tricks-101-what-every-new-programmer-should-know-c512a9787022
-* [10 个不为人知的Python冷知识](https://mp.weixin.qq.com/s/NysJHFlw57Br_k1cpYTmMA)
 * [Python的高级特征你知多少](https://mp.weixin.qq.com/s/VBiQ2X7Y93h51GkIosC_Vw)
 * [26个Python实用技巧](https://mp.weixin.qq.com/s/ttuB63_N5SQdOhIwLFGYgg)
   * https://mp.weixin.qq.com/s/lPZTVURxfdRVYqIMUfnsBw
@@ -1064,8 +1045,7 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
   * https://towardsdatascience.com/30-helpful-python-snippets-that-you-can-learn-in-30-seconds-or-less-69bb49204172
 * [每30秒学会一个Python小技巧](https://mp.weixin.qq.com/s/woVJXAI_8Gm7rIlaa6j7RQ)
   * https://github.com/30-seconds/30-seconds-of-python
-* [Python的 5 种高级用法](https://mp.weixin.qq.com/s/_9LWP5K7mZckjghCRn6FPQ)
-  * https://towardsdatascience.com/5-advanced-features-of-python-and-how-to-use-them-73bffa373c84
+* [Python的 5 种高级用法](https://towardsdatascience.com/5-advanced-features-of-python-and-how-to-use-them-73bffa373c84)
 * [Python 的 20 个操作](https://mp.weixin.qq.com/s/WQHokL69JZIHdQ9j9fGJUw)
   * https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124
 * [Python技巧小贴士](https://mp.weixin.qq.com/s/SnUgTGvkZtsPwA7pkwEexA)
@@ -1103,13 +1083,10 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
     * 使用生成器函数可以轻松定义自己的修饰函数
     * 循环内部，是一个极易发生“代码膨胀”的场地
     * 请使用生成器函数将循环内不同职责的代码块解耦出来，获得更好的灵活性
-* [Python循环这样写，高效节省内存](https://mp.weixin.qq.com/s/rQtaQAjkDGnK8fmirE0O8w)
 * [8个Python高效数据分析的技巧](https://mp.weixin.qq.com/s/l178i--vWqUaCdO99JG2pw)
   * https://towardsdatascience.com/python-for-data-science-8-concepts-you-may-have-forgotten-i-did-825966908393
 * [7 个 Python 特殊技巧，有效提升数分效率！](https://mp.weixin.qq.com/s/nn-3GGhQwzgGf-qGS7TINg)
-* [使用类型注解让 Python 代码更易读](https://mp.weixin.qq.com/s/SG7sybPIVM65JSP6BZT_4Q)
-  * https://github.com/Germey/TypingTest
-* [分享8点有用的Python编程建议](https://mp.weixin.qq.com/s/LtOUArQWA3BIdqFBjMkYcA)
+* 分享8点有用的Python编程建议
   * 项目文件事先做好归档
   * 永远不要手动修改源数据并且做好备份
   * 做好路径的正确配置
@@ -1121,8 +1098,7 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [为什么Python不用设计模式？](https://mp.weixin.qq.com/s/HMZ0UJCGOS4GihjX_A5iNw)
 * [动态类型一时爽，代码重构火葬场？](https://mp.weixin.qq.com/s/xjYK2f_ejVhshhn69uo7Cg)
 * [Python 10大谬论](https://mp.weixin.qq.com/s/4UdLgFsZkt_Q_mdGOGHe4w)
-* [给 Python 初学者的四条忠告](https://mp.weixin.qq.com/s/hAMzBoU1uscUiBywiyuJ4A)
-  * https://blog.csdn.net/xufive/article/details/102709538
+* [给 Python 初学者的四条忠告](https://blog.csdn.net/xufive/article/details/102709538)
 * [详解Python虚拟环境的原理及使用](https://mp.weixin.qq.com/s/kTyanAzsaiaieae8cpUwqg)
   * 本文先介绍虚拟环境的基础知识以及使用方法，然后再深入介绍虚拟环境背后的工作原理。
 
@@ -1193,8 +1169,7 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [用 coverage 模块提高 Python 开发效率](https://mp.weixin.qq.com/s/fP_mQtQnrssdzOOw6yPzQA)
   * Test with Coverage
   * Mock　
-* [Python 中更优雅的日志记录方案](https://mp.weixin.qq.com/s/XOcyUbgIrCXEAYH2p3Zo5Q)
-  * https://loguru.readthedocs.io/en/stable/index.html
+* [Python 中更优雅的日志记录方案](https://loguru.readthedocs.io/en/stable/index.html)
   * logging
   * loguru
 * [如何编写完美的 Python 命令行程序？](https://mp.weixin.qq.com/s/sAS_NE8sIpw9ROOWSd60zw)
@@ -1209,8 +1184,7 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
   * click
 * [wxPython：Python首选的GUI库 | CSDN博文精选](https://mp.weixin.qq.com/s/pJIuKgZC1o757iwkrt3uUQ)
 * [一份不可多得的数据科学与机器学习Python库](https://mp.weixin.qq.com/s/nkAKDx5OHx2Ld4Vo_RCXTQ)
-* [收藏 | 34 个优秀好用的Python开源框架](https://mp.weixin.qq.com/s/Aa7gsmxE1-kBSsToaR4ltA)
-  * https://github.com/Mybridge/amazing-python-2019
+* [收藏 | 34 个优秀好用的Python开源框架](https://github.com/Mybridge/amazing-python-2019)
   * https://medium.mybridge.co/34-amazing-python-open-source-libraries-for-the-past-year-v-2019-93d6ee11aceb
 * [Python 依赖库管理哪家强？pip、pipreqs、pigar、pip-tools、pipdeptree](https://mp.weixin.qq.com/s/8kg7bgS0i4cPgKRwPKPOmA)
 * [学习 Python，这 22 个包怎能不掌握？](https://mp.weixin.qq.com/s/vdDXAQlV94NdFBMb3eMF9w)
@@ -1226,58 +1200,40 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [用 Python 打包自己的库到 PYPI](https://mp.weixin.qq.com/s/9SdWsoJFJYDjkJal_QDocg)
   * https://www.zhihu.com/people/mai-da-3/activities
 * [用 Pyinstaller 打包文件为应用程序](https://mp.weixin.qq.com/s/FuUds4jqj4o1GHEzCrz7Fw)
-* [Python打包成exe](https://mp.weixin.qq.com/s/W3-Bty8jENedFWad06KnCA)
-* [详细指南 | 如何在Github发布Python开源包](https://mp.weixin.qq.com/s/FTcGjx6YLmuldAKp03dhAQ)
-  * https://www.freecodecamp.org/news/from-a-python-project-to-an-open-source-package-an-a-to-z-guide-c34cb7139a22/
-* [Python 中自动导入缺失的库](https://mp.weixin.qq.com/s/NYbovYS6z6j40ifnEfEEKA)
-* [用 Python 写一个安卓 APP](https://mp.weixin.qq.com/s/NTxNPZRci_b7zhZgU2MrGw)
-  * https://blog.51cto.com/youerning/1733534
-* [轻轻松松用Python写APP](https://mp.weixin.qq.com/s/CiJxNHQ8CjDO_8V3vK0bEw)
-  * https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace
-* [用Python把Linux命令写一遍](https://mp.weixin.qq.com/s/71fLATw5LStdknIk2PqHRQ)
+* [详细指南 | 如何在Github发布Python开源包](https://www.freecodecamp.org/news/from-a-python-project-to-an-open-source-package-an-a-to-z-guide-c34cb7139a22/)
+* [用 Python 写一个安卓 APP](https://blog.51cto.com/youerning/1733534)
+* [轻轻松松用Python写APP](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace)
 * [“堆”的 Python 实现与应用总结](https://mp.weixin.qq.com/s/cvUGuDSp_fb-kjHRe_zBPA)
   * https://zhuanlan.zhihu.com/p/85518062
 * [如何用 Python 快速开发一个区块链数据结构？](https://mp.weixin.qq.com/s/m7hZY93ponge6dy2fvTzAg)
 * [一文读懂Python复杂网络分析库networkx | CSDN博文精选](https://mp.weixin.qq.com/s/WYM7k9gddAndlLBuQWTbSA)
 * [实战：基于技术分析的Python算法交易](https://mp.weixin.qq.com/s/J-ZwLl_CzvaRHZjKvTA3iw)
-* [开发必学的验证码，教你从零写一个验证码](https://mp.weixin.qq.com/s/XGhpxP4rTg_JeRkYZX2EzA)
-  * https://github.com/MiracleYoung/You-are-Pythonista/tree/master/PythonExercise/App/captcha_project
+* [开发必学的验证码，教你从零写一个验证码](https://github.com/MiracleYoung/You-are-Pythonista/tree/master/PythonExercise/App/captcha_project)
 * [用 Python 生成炫酷二维码及解析](https://mp.weixin.qq.com/s/V2g6DICFkVDOg-kI3QmnrA)
   * 我们通过 Python 生成以及识别二维码需要用到的库为：qrcode、myqr、zxing，安装通过 pip install qrcode/myqr/zxing 即可。
-* [生成自定义二维码，5行Python代码就搞定](https://mp.weixin.qq.com/s/VyhoFRVu9KXOuMezouY6Og)
-  * [https://towardsdatascience.com/generate-qrcode-with-python-in-5-lines-42eda283f325
+* [生成自定义二维码，5行Python代码就搞定](https://towardsdatascience.com/generate-qrcode-with-python-in-5-lines-42eda283f325)
 * [万字干货 | Python后台开发的高并发场景优化解决方案](https://mp.weixin.qq.com/s/BHiM-mv7HXSmIY2KRf480g)
-* [仅仅50行Python，就可以在手机端看电脑桌面！](https://mp.weixin.qq.com/s/k02vPOwgdFgeZ9K4_dmJvw)
-* [用 Python 偷偷抓取了她的行踪](https://mp.weixin.qq.com/s/H6mxILglgko01GLqe7VRyQ)
-  * https://github.com/xingag/spider_python/tree/master/%E8%8E%B7%E5%8F%96%E5%A5%B3%E5%8F%8B%E7%9A%84%E4%BD%8D%E7%BD%AE
-* [谁偷偷删了你的微信？别慌！Python 帮你都揪出来了](https://mp.weixin.qq.com/s/iNkS550-8-Oj55x9Ye7Ykg)
-* [使用Python假装装黑客，批量破解朋友的网站密码](https://mp.weixin.qq.com/s/ZqSvVZiZC7ehcMvRAZ4unw)
-* [用Python可以算出了你的身份证号码](https://mp.weixin.qq.com/s/AuQu7rlDU8pkKv3F0SZffQ)
-  * https://github.com/zpw1995/aotodata/blob/master/interest/ID_card/ID_card.py
+* [用 Python 偷偷抓取了她的行踪](https://github.com/xingag/spider_python/tree/master/%E8%8E%B7%E5%8F%96%E5%A5%B3%E5%8F%8B%E7%9A%84%E4%BD%8D%E7%BD%AE)
+* [用Python可以算出了你的身份证号码](https://github.com/zpw1995/aotodata/blob/master/interest/ID_card/ID_card.py)
 * [用 Python 自动监测 GitHub 项目更新](https://mp.weixin.qq.com/s/_nkx_cCKxz0VrfgGvWDcrA)
 * [不到 50 行 Python 代码，做个刮刮卡](https://mp.weixin.qq.com/s/4WGYs4GMjObQZlObM2KkNQ)
-* [用Python做个海量小姐姐素描图](https://mp.weixin.qq.com/s/JIPdPBCurXMTcaPprWuZvw)
 * [用 Python 批量下载百度图片](https://mp.weixin.qq.com/s/q-obSiAt1Rs28itlKU2FiA)
 * [用 Python 处理 B 站下载视频](https://mp.weixin.qq.com/s/dCTIUNeDQ_HeZqWQr0hesA)
 * [如何用 Python 快速抓取 Google 搜索？](https://mp.weixin.qq.com/s/-GUgWH06Wy7pCzNbMjinXg)
   * https://hackernoon.com/how-to-scrape-google-with-python-bo7d2tal
   * https://github.com/getlinksc/scrape_google
-* [我用Python找到了隔壁蹭网妹子的QQ号](https://mp.weixin.qq.com/s/QKjc1nZo18PGq7j0K6sTIg)
 * [用 Python 编写一个天气查询应用](https://mp.weixin.qq.com/s/iciMycq-HpwZj-LSE60NQQ)
 * [大象装进冰箱要几步？Python 来解答](https://mp.weixin.qq.com/s/S5OWsuY1hT1qATadZ0v_kA)
 * [用 Python 制作家用防盗工具](https://mp.weixin.qq.com/s/6RE1fwKF8gndI3Bnhb8UgA)
 * [用 Python 制作“除夕夜倒计时”海报](https://mp.weixin.qq.com/s/MIhViQrYOca8QlQ7QEfoZw)
   * https://github.com/wwtm/gitpython_examples
-* [Python GUI开发，效率提升10倍的方法！](https://mp.weixin.qq.com/s/tRKEbBwjDtGWR4VTAfEqPg)
-  * https://github.com/PySimpleGUI/PySimpleGUI
+* [Python GUI开发，效率提升10倍的方法](https://github.com/PySimpleGUI/PySimpleGUI)
 * [用Python计算颜值数](https://mp.weixin.qq.com/s/d4r3oMReYCUBjUwCbAzE5w)
   * 现在很多拍照软件都有颜值测试及年龄识别功能，经过研究，发现 Python 也能实现，今天主要用 PyQt4 做个可视化工具，然后调用百度人脸识别api，识别出人脸的性别、年龄及颜值
 * [用 Python 发一封邮件](https://mp.weixin.qq.com/s/wXAfYIdGxukKSstiFxLi4g)
-* [用Python唱一首程序员版“惊雷”](https://mp.weixin.qq.com/s/CGFkdviDXu3-YEQTNywY7A)
 * [如何用 Python 制作地球仪？](https://mp.weixin.qq.com/s/I6B5CDKRf8QDftAcIa_o_w)
   * 写在前面的话：在之前的文章 Python 图表利器 pyecharts 中有介绍了 pyecharts 的安装及使用,详细教程请到 官网 学习
   * pyecharts 功能很强大，只需要导入相应的模块就配置相应的选项即可生成对应的超文本文件，使用浏览器访问即可！具体实例请见下文
-* [90行代码让微信开屏地球转起来](https://mp.weixin.qq.com/s/azBohOz_5mybLV32MSlaXQ)
 
 ### AI
 
@@ -1298,15 +1254,13 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
   * https://towardsdatascience.com/build-a-text-generator-web-app-in-under-50-lines-of-python-9b63d47edabb
 * [如何创建一个百分百懂你的产品推荐系统 | 深度教程（附代码详解）](https://mp.weixin.qq.com/s/Sj0fpz9xLOmJFjW4a7OcWQ)
 * [如何通过 Python 和 OpenCV 实现目标数量监控？](https://mp.weixin.qq.com/s/pUGTKXplXgKtikH1Zh0tRA)
-* [让二次元妹子动起来，用一张图生成动态虚拟主播](https://mp.weixin.qq.com/s/TgZ3KidFlioFvCpgSsdO9A)
-  * https://pkhungurn.github.io/talking-head-anime/
+* [让二次元妹子动起来，用一张图生成动态虚拟主播](https://pkhungurn.github.io/talking-head-anime/)
 * [用 Python 图像识别打造一个小狗分类器](https://mp.weixin.qq.com/s/il3Ou5wCMq0h2chP7Dnn1Q)
 * [3行代码，搞定AI自动抠图](https://mp.weixin.qq.com/s/naSRo2heiACI0hTOSUZu9g)
 * [Python中的图像增强技术](https://mp.weixin.qq.com/s/vqyaSK-Uis0vZrxu-KDMyw)
   * https://towardsdatascience.com/data-augmentation-techniques-in-python-f216ef5eed69
 * [AI图像智能修复老照片](https://mp.weixin.qq.com/s/BlrViDMRKm8Hdj9nvkzxvQ)
   * 所使用的的python库有cv2库，目的是用来读取图片，处理图片像素值和保存图片等；numpy用来对读取过来的像素值矩阵进行运算。
-* [用 Python 制作了一个朋友圈机器人](https://mp.weixin.qq.com/s/3OHpnKS9BrkoYIjF20ojvg)
 * [19 行代码能搭建一个微信机器人](https://mp.weixin.qq.com/s/HP9zfgpHywaLi3NUPyFT5A)
   * wxpy 是一个封装好的微信个人号接口，在 itchat 的基础上，通过大量接口优化提升了模块的易用性。
 * [当语音助手遇到机器人](https://mp.weixin.qq.com/s/I_hoLoLVPc0kfTCyMdSTag)
@@ -1377,8 +1331,7 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [《Python中神奇的第三方库：Faker》](https://mp.weixin.qq.com/s/1tk4xeWvwZ5oNhzaywgDgA)
   * [Python中第三方库-Faker](https://blog.csdn.net/mall_lucy/article/details/108655317)
   * 开发项目的时，为了测试常需要造假数据，经常要尽量的模拟真实环境，通常要费大量手工而且造出来的数据，而且通常手工造出来的看起来也很别扭，费时又费事，有没有更好的办法？有，这里给大家介绍一个“专业造数“库Faker，满足你对模拟数据的所有需求。
-* [【实战】使用 Python 分析 14 亿条数据](https://mp.weixin.qq.com/s/SUI3Gs5pUCVBrlsCqpdW0g)
-  * https://juejin.im/post/5aceae206fb9a028d2084fea
+* [【实战】使用 Python 分析 14 亿条数据](https://juejin.im/post/5aceae206fb9a028d2084fea)
 * [用 Python 绘制污染物玫瑰图](https://mp.weixin.qq.com/s/c3QMfbrkVgZhZ8BAvlqSgA)
   * https://yishuihancheng.blog.csdn.net/
 * [用 Python 测算气象预报的空报率与漏报率](https://mp.weixin.qq.com/s/DiWXmYhm9IaeIqJVQaP3sg)
@@ -1389,25 +1342,20 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
   * https://towardsdatascience.com/plotting-with-python-c2561b8c0f1f
 * [用 Python 分析今年考研形势](https://mp.weixin.qq.com/s/1fABS9C3w87bWHxZ4SC_mQ)
 * [用 Python 读取气象环境数据并绘图](https://mp.weixin.qq.com/s/RWPhPiYmJovxgfSrKOhAEg)
-* [用Python数据分析了北京积分落户名单](https://mp.weixin.qq.com/s/0jBZY8-LryScevzWv7z0-g)
-  * https://github.com/zpw1995/aotodata/tree/master/bj_luohu
+* [用Python数据分析了北京积分落户名单](https://github.com/zpw1995/aotodata/tree/master/bj_luohu)
 * [如何用 Python 画出新型冠状病毒疫情地图？](https://mp.weixin.qq.com/s/DjBIu4851l0a_vN_aEjo7Q)
 * [Python 硬核分析我国 14 亿人口，发现三大危机！](https://mp.weixin.qq.com/s/IFKYGMbxWbNTylBnE7zYBg)
   * https://github.com/pig6/china_population
 * [怎么用 Python 画出好看的词云图？](https://mp.weixin.qq.com/s/Tuzfh9aKTN7_Fxt8YJ4q-w)
-* [Python 竟能绘制出如此酷炫的三维图](https://mp.weixin.qq.com/s/tBl3iI-dfJcV4om0aJBnbA)
-  * https://jalammar.github.io/visual-numpy/
+* [Python 竟能绘制出如此酷炫的三维图](https://jalammar.github.io/visual-numpy/)
 * [用 Python 分析各国足球俱乐部排名](https://mp.weixin.qq.com/s/wakUY9phwcv1WPLo99og4A)
 * [用 Python 对淘宝用户行为进行分析](https://mp.weixin.qq.com/s/CWTAhpu6VLsia1iCoLiuAA)
   * 本数据报告以淘宝app平台为数据集，通过行业的指标对淘宝用户行为进行分析，从而探索淘宝用户的行为模式，具体指标包括：日PV和日UV分析，付费率分析，复购行为分析，漏斗流失分析和用户价值RFM分析。
 * [Python 制作动态图表，看全球疫情变化趋势](https://mp.weixin.qq.com/s/h3XaV7QfrcDMaUji1Y19Gw)
 * [Python 招聘岗位数据可视化](https://mp.weixin.qq.com/s/lDiyXf9ORkDeD6akeqKEVA)
-* [用Python分析了《青春有你2》](https://mp.weixin.qq.com/s/FRpE3EHP0GLYls1EUL8vAw)
 * [用 Python 做了一个全球疫情数据大屏](https://mp.weixin.qq.com/s/IbdEnZmG6UjCZvNVGWJcxg)
   * 爬虫模块负责从腾讯新闻获取数据，之后存入 Redis。Flask 是一个 Web 框架，负责 URL 和后台函数的映射，以及数据的传输。换言之，也就是从 Redis 中获取到原始数据，然后整理成相应的格式之后传递给前端页面，前端页面在拿到数据之后，调用百度的 ECharts 来实现图表的展示即可。
-* [用 Python 做一个动态可视化的交互大屏](https://mp.weixin.qq.com/s/H6K1K-LE7IM6-6Vp2v8U4Q)
-* [1行代码实现Python数据分析：图表美观清晰，自带对比功能](https://mp.weixin.qq.com/s/0T0e0lwx6bUOhGHr2J1Clg)
-  * https://github.com/fbdesignpro/sweetviz
+* [1行代码实现Python数据分析：图表美观清晰，自带对比功能](https://github.com/fbdesignpro/sweetviz)
 
 ### FINANCE
 
@@ -1447,8 +1395,7 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 
 * [Python实现五子棋人机对战 | CSDN博文精选](https://mp.weixin.qq.com/s/SSdJW4aMgmv4wgJ02dr2MQ)
   * https://github.com/junxiaosong/AlphaZero_Gomoku
-* [500行代码，教你用python写个微信飞机大战](https://mp.weixin.qq.com/s/IHAn_1cLCc-QQ3FWQIeaNQ)
-  * https://github.com/MiracleYoung/You-are-Pythonista/tree/master/PythonExercise/App/plan_game
+* [500行代码，教你用python写个微信飞机大战](https://github.com/MiracleYoung/You-are-Pythonista/tree/master/PythonExercise/App/plan_game)
 * [手把手教你用Python实现“坦克大战”，附详细代码！](https://mp.weixin.qq.com/s/50iI6bfrZWnH7ASx9prqzA)
 * [如何用 Python 实现超级玛丽的界面和状态机？](https://mp.weixin.qq.com/s/cOttH0PJKxJK2Y8dz3CLxQ)
   * https://blog.csdn.net/marble_xu/article/details/96427946
@@ -1469,15 +1416,13 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [Python 处理分析 128 张 Excel 表格竟不到3秒？| 附数据集](https://mp.weixin.qq.com/s/ZhWomp6LDgHHjf9Tr1dzvg)
   * https://github.com/seizeeveryday/DA-cases/tree/master/Python%2Bexcel
 * [将Python字符串生成PDF](https://mp.weixin.qq.com/s/5R6t_oiOOV7qG4YkdLcpvA)
-* [pdfkit | 自动化利器，生成PDF就靠它了](https://mp.weixin.qq.com/s/9OhS6hjpn6e0XAaATQOeXg)
 * [用 Python 操作 Word 文档](https://mp.weixin.qq.com/s/awN9gLqVn_s-STRzhioPXQ)
 * [用 Python 实现文件自动归类](https://mp.weixin.qq.com/s/Ech_OeoDdYkd1ZmNjRIm_w)
 * [用Python一键批量将任意结构的CSV文件导入MySQL数据库。](https://mp.weixin.qq.com/s/ouuk4o739tlzF6b5cNjUwQ)
 * [5个案例让Python输出漂亮的表格！](https://mp.weixin.qq.com/s/8uxc2t53N_j_mRPYbiG0sA)
   * https://linuxops.org/blog/python/prettytable.html
   * prettytable可以打印出美观的表格，并且对中文支持相当好
-* [Python与MySQL数据库的交互实战](https://mp.weixin.qq.com/s/9D2bi_1W6fjMxI3jaH2teA)
-  * https://blog.csdn.net/weixin_41261833/article/details/103832017
+* [Python与MySQL数据库的交互实战](https://blog.csdn.net/weixin_41261833/article/details/103832017)
 
 ## FAQ
 
