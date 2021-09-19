@@ -1275,8 +1275,12 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 
 * [Python 爬虫介绍 | 菜鸟教程](http://www.runoob.com/w3cnote/python-spider-intro.html)
   * https://blog.csdn.net/sinat_29957455/article/details/70846427
+* [Scrapy Tutorial — Scrapy 2.5.0 documentation](https://docs.scrapy.org/en/latest/intro/tutorial.html)
+* [qzhsjz/BBCcrawl: A Spider to crawl Current BBC News. Using Scrapy Framework.](https://github.com/qzhsjz/BBCcrawl)
+* [caiyingyi/news_classification_tool: 基于网络爬虫的外媒新闻分类统计工具的设计与实现](https://github.com/caiyingyi/news_classification_tool)
 * [从零开始的 Python 爬虫速成指南](https://segmentfault.com/a/1190000008135000)
   * 本文主要内容：以最短的时间写一个最简单的爬虫，可以抓取论坛的帖子标题和帖子内容。
+* [Python Scrapy爬虫框架学习 - SegmentFault 思否](https://segmentfault.com/a/1190000012041391?utm_source=sf-similar-article)
 * [Python 爬虫分析豆瓣 TOP250 告诉你程序员业余该看什么书？- CSDN](https://mp.weixin.qq.com/s/nviBjYyJ0lyvkOFYaJ8cIg)
 * [Python3 网络爬虫入门](https://cuijiahua.com/blog/2017/10/spider_tutorial_1.html)
 * [如何炼成 Python 爬虫“王者”？](https://mp.weixin.qq.com/s/RGCGsinVeE9Nrm60mmix5g)
