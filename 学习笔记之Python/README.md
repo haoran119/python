@@ -39,6 +39,22 @@
       * A key function or collation function is a callable that returns a value used for sorting or ordering. For example, locale.strxfrm() is used to produce a sort key that is aware of locale specific sort conventions.
     * [Sorting HOW TO — Python 3.9.6 documentation](https://docs.python.org/3/howto/sorting.html#sortinghowto)
       * Python lists have a built-in list.sort() method that modifies the list in-place. There is also a sorted() built-in function that builds a new sorted list from an iterable.
+    ```python
+    import functools
+
+    bids = [[1, 5, 0], [2, 7, 8], [3, 5, 2], [4, 3, 3]]
+
+    # ORDER BY bids[1] DESC, bids[2] ASC
+    def compare(x, y):
+        if x[1] != y[1]:
+            return y[1] - x[1]
+        else:
+            return x[2] - y[2]
+
+    sorted_bids = sorted(bids, key=functools.cmp_to_key(compare))
+
+    print(sorted_bids)  # [[2, 7, 8], [1, 5, 0], [3, 5, 2], [4, 3, 3]]
+    ```
   * items()
     * https://docs.python.org/3/library/stdtypes.html?highlight=items#dict.items
     * Return a new view of the dictionary’s items ((key, value) pairs). See the documentation of view objects.
