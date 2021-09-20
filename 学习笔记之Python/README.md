@@ -1888,6 +1888,34 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 
 * How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
   * Check the indentation for other class member functions prior to plot_all()
+* How to fix memory error when slicing list ?
+  * One possibility is to use generator
+  * [python - string[i:length] giving memory error - Stack Overflow](https://stackoverflow.com/questions/11471158/stringilength-giving-memory-error)
+  * [exception MemoryError - Built-in Exceptions — Python 3.9.7 documentation](https://docs.python.org/3/library/exceptions.html?highlight=memory%20error#MemoryError)
+  ```python
+  import sys
+
+
+  class Solution:
+      def slicing(self, x : int) -> list:
+          inputs = [10**9] * 10**6
+          results = []
+
+          for i in range(len(inputs) - x):
+              results.append(inputs[i : i + x])   # memory error
+
+          # print(results)
+          print(len(results))
+          print(sys.getsizeof(results[0]))
+          print(sys.getsizeof(results))
+
+
+  if __name__ == '__main__':
+      my_solution = Solution()
+
+      for i in range(5):
+          my_solution.slicing(i)  
+  ```
 * How to fix ModuleNotFoundError: No module named 'a.b' when from a.b.c import d ?
   * Check if there is __init.py__ under /a
 How to fix NameError: name 'var' is not defined when define var in try statement and use it in catch / finally statement ?
