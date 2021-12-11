@@ -21,6 +21,7 @@
 * [学习笔记之Python 3 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/10825575.html)
 * [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
 * [学习笔记之pytest - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13769672.html)
+	* [5 分钟快速上手 pytest 测试框架](https://mp.weixin.qq.com/s/uOUG5fqHqPWMckCa5WOC4Q)
 * [《Python入门必备指南》之如何系统地自学 Python？_腾讯课堂](https://ke.qq.com/course/217064)
   * 通过实例知道下list，dict实际使用中一些技巧
   * 了解web编程的学习线路图，知识网络
