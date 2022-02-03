@@ -704,6 +704,9 @@ if __name__ == '__main__':
       * Elements are counted from an iterable or initialized from another mapping (or counter) 
       * most_common([n])
         * Return a list of the n most common elements and their counts from the most common to the least. If n is omitted or None, most_common() returns all elements in the counter. Elements with equal counts are ordered in the order first encountered
+			```python
+			Counter('abracadabra').most_common(3) # [('a', 5), ('b', 2), ('r', 2)]
+			```
   * defaultdict：字典的子类，提供了一个工厂函数，为字典查询提供了默认值。
   * OrderedDict：字典的子类，保留了他们被添加的顺序。
   * namedtuple：创建命名元组子类的工厂函数。
