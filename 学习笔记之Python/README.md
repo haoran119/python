@@ -450,6 +450,7 @@ print(b)    # [1, 3]
 * [图解 Python 中深浅拷贝](https://mp.weixin.qq.com/s/TtGFFDTKdPwCYj7gmIdp_Q)
   * https://blog.csdn.net/mall_lucy/article/details/104531218
   * 赋值运算
+  	* l2 = l1是一个指向，是赋值，和深浅copy无关。
   * 浅copy
     * 浅copy：会在内存中新开辟一个空间，存放这个copy的列表，但是列表里面的内容还是沿用之前对象的内存地址。
   * 深copy
