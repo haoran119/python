@@ -765,6 +765,10 @@ if __name__ == '__main__':
   * heapq.heapify(x)
     * Transform list x into a heap, in-place, in linear time.
 
+#### [Numeric and Mathematical Modules](https://docs.python.org/3/library/numeric.html)
+
+##### [cmath — Mathematical functions for complex numbers](https://docs.python.org/3/library/cmath.html)
+
 #### [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
 
 ##### [itertools — Functions creating iterators for efficient looping](https://docs.python.org/3/library/itertools.html)
