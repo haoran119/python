@@ -216,7 +216,7 @@
       process(chunk)
   ```   
 
-## STRING
+### STRING
 
 * [Built-in Types — Python 3.10.2 documentation](https://docs.python.org/3/library/stdtypes.html#str.format)
 	* str.format(*args, **kwargs)
