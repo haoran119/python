@@ -217,13 +217,76 @@
   while chunk := file.read(9000):
       process(chunk)
   ```   
+* [条件语句的七种写法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247522923&idx=4&sn=04c0072a03765c7741f459cd0807d9b7&source=41#wechat_redirect)
 
 ### [Built-in Functions](https://docs.python.org/3/library/functions.html)
 
+* [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
+* Python 69个内置函数分8类总结
+  * [Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html)
+  * 1、内置函数
+  * 2、类型相关
+  * 3、数理统计相关
+  * 4、进制转换
+  * 5、面向对象相关
+  * 6、迭代器相关
+  * 7、map函数
+  * 8、排序相关
+  * 9 其他
+* [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
+  * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
+* [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
+* [Python高阶函数使用总结](https://mp.weixin.qq.com/s/xtO8NDq3lVacsT5Z7eQXmw)
+  * 本文结合各种实际的例子详细讲解了Python5个内建高阶函数的使用，能够帮助理解Python的数据结构和提高数据处理的效率，这5个函数分别是：
+    * map
+    * reduce
+    * filter
+    * sorted/sort
+    * zip
+* [Python | 掌握 Lambda 函数，四不要](https://mp.weixin.qq.com/s/tWibBZGcX4PtEKo0a1bvzQ)
+  * https://github.com/xitu/gold-miner/blob/master/article/2020/master-python-lambda-functions-with-these-4-donts.md
+    1. 不要返回任何值
+    2. 不要忘记更好的选择
+    3. 不要将它赋值给变量
+    4. 不要忘记列表推导式
 * [class complex([real[, imag]])](https://docs.python.org/3/library/functions.html?highlight=complex#complex)
 	* Return a complex number with the value real + imag*1j or convert a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j.
 
 ### [Built-in Types](https://docs.python.org/3/library/stdtypes.html)
+
+#### [Sequence Types — list, tuple, range](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
+
+* [干货|理解Python列表和元组](https://mp.weixin.qq.com/s/U-ctO-brjwxpm0LbLTB-dw)
+* [list.remove(x) - 5. Data Structures — Python 3.9.7 documentation](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
+  * Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
+  * [Python list remove() - GeeksforGeeks](https://www.geeksforgeeks.org/python-list-remove/)
+```python
+a = [1, 2, 2, 3, 4]
+b = [1, 2, 2, 3, 4]
+
+
+def even(x):
+    return x % 2 == 0
+
+
+for item in a:
+    if even(item):
+        # just remove the first occurrence
+        a.remove(item)
+
+print(a)    # [1, 2, 3]
+
+
+for item in b:
+    if even(item):
+        # remove all occurrence in list
+        while item in b:
+            b.remove(item)
+
+print(b)    # [1, 3]
+```
+* [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
+  * https://maida6244.xyz/
 
 #### [Text Sequence Type — str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
 
@@ -368,6 +431,9 @@ def fun2(s: str) -> str:
   print('racecar is a palindrome -> {}'.format(is_palindrome(s1)))    # racecar is a palindrome -> True
   print('hippopotamus is a palindrome -> {}'.format(is_palindrome(s2)))   # hippopotamus is a palindrome -> False
   ```
+  
+#### [Mapping Types — dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
+
 * [如何优雅的操作Python字典](https://mp.weixin.qq.com/s/mWjzDm9XNNnFiJGYhzpivA)
   * https://www.linuxzen.com/python-you-ya-de-cao-zuo-zi-dian.html
 ```python
@@ -397,66 +463,6 @@ if __name__ == '__main__':
 
     print("{} : {}".format(person, my_dict[person]))    # <__main__.Person object at 0x7f8cd0473ed0> : 123
 ```
-* [干货|理解Python列表和元组](https://mp.weixin.qq.com/s/U-ctO-brjwxpm0LbLTB-dw)
-* [list.remove(x) - 5. Data Structures — Python 3.9.7 documentation](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
-  * Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
-  * [Python list remove() - GeeksforGeeks](https://www.geeksforgeeks.org/python-list-remove/)
-```python
-a = [1, 2, 2, 3, 4]
-b = [1, 2, 2, 3, 4]
-
-
-def even(x):
-    return x % 2 == 0
-
-
-for item in a:
-    if even(item):
-        # just remove the first occurrence
-        a.remove(item)
-
-print(a)    # [1, 2, 3]
-
-
-for item in b:
-    if even(item):
-        # remove all occurrence in list
-        while item in b:
-            b.remove(item)
-
-print(b)    # [1, 3]
-```
-* [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
-  * https://maida6244.xyz/
-* [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
-* Python 69个内置函数分8类总结
-  * [Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html)
-  * 1、内置函数
-  * 2、类型相关
-  * 3、数理统计相关
-  * 4、进制转换
-  * 5、面向对象相关
-  * 6、迭代器相关
-  * 7、map函数
-  * 8、排序相关
-  * 9 其他
-* [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
-  * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
-* [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
-* [Python高阶函数使用总结](https://mp.weixin.qq.com/s/xtO8NDq3lVacsT5Z7eQXmw)
-  * 本文结合各种实际的例子详细讲解了Python5个内建高阶函数的使用，能够帮助理解Python的数据结构和提高数据处理的效率，这5个函数分别是：
-    * map
-    * reduce
-    * filter
-    * sorted/sort
-    * zip
-* [Python | 掌握 Lambda 函数，四不要](https://mp.weixin.qq.com/s/tWibBZGcX4PtEKo0a1bvzQ)
-  * https://github.com/xitu/gold-miner/blob/master/article/2020/master-python-lambda-functions-with-these-4-donts.md
-    1. 不要返回任何值
-    2. 不要忘记更好的选择
-    3. 不要将它赋值给变量
-    4. 不要忘记列表推导式
-* [条件语句的七种写法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247522923&idx=4&sn=04c0072a03765c7741f459cd0807d9b7&source=41#wechat_redirect)
 
 ## ADVANCE
 
