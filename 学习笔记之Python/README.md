@@ -763,12 +763,13 @@ if __name__ == '__main__':
 
 #### [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
 
-* [itertools — Functions creating iterators for efficient looping - Python 3.9.7 documentation](https://docs.python.org/3/library/itertools.html)
-  * This module implements a number of iterator building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
+##### [itertools — Functions creating iterators for efficient looping - Python 3.9.7 documentation](https://docs.python.org/3/library/itertools.html)
+
+* This module implements a number of iterator building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
   * [itertools.permutations(iterable, r=None)](https://docs.python.org/3/library/itertools.html#itertools.permutations)
     * Return successive r length permutations of elements in the iterable.
     * [Permutation and Combination in Python - GeeksforGeeks](https://www.geeksforgeeks.org/permutation-and-combination-in-python/)
-  * Infinite iterators:
+* Infinite iterators:
   
 | Iterator | Arguments | Results | Example |
 | - | - | - | - |
@@ -776,7 +777,7 @@ if __name__ == '__main__':
 | cycle() | p | p0, p1, … plast, p0, p1, … | cycle('ABCD') --> A B C D A B C D ... | 
 | repeat() | elem [,n] | elem, elem, elem, … endlessly or up to n times | repeat(10, 3) --> 10 10 10 | 
 
-  * Iterators terminating on the shortest input sequence:
+* Iterators terminating on the shortest input sequence:
 
 | Iterator | Arguments | Results | Example | 
 | - | - | - | - |
@@ -793,7 +794,7 @@ if __name__ == '__main__':
 | tee() | it, n | it1, it2, … itn splits one iterator into n
 | zip_longest() | p, q, … | (p[0], q[0]), (p[1], q[1]), … | zip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D-
 
-  * Combinatoric iterators:
+* Combinatoric iterators:
 
 | Iterator | Arguments | Results | Examples | Results |
 | - | - | - | - | - |
