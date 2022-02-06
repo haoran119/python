@@ -671,46 +671,9 @@ if __name__ == '__main__':
 * [深入探讨Python的import机制：实现远程导入模块 | CSDN博文精选](https://mp.weixin.qq.com/s/Sx_WyKUpoZrnFtV9epAfpg)
 * [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
 
-#### [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
+#### [Data Types](https://docs.python.org/3/library/datatypes.html)
 
-* [itertools — Functions creating iterators for efficient looping - Python 3.9.7 documentation](https://docs.python.org/3/library/itertools.html)
-  * This module implements a number of iterator building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
-  * [itertools.permutations(iterable, r=None)](https://docs.python.org/3/library/itertools.html#itertools.permutations)
-    * Return successive r length permutations of elements in the iterable.
-    * [Permutation and Combination in Python - GeeksforGeeks](https://www.geeksforgeeks.org/permutation-and-combination-in-python/)
-  * Infinite iterators:
-  
-| Iterator | Arguments | Results | Example |
-| - | - | - | - |
-| count() | start, [step] | start, start+step, start+2*step, … | count(10) --> 10 11 12 13 14 ... |
-| cycle() | p | p0, p1, … plast, p0, p1, … | cycle('ABCD') --> A B C D A B C D ... | 
-| repeat() | elem [,n] | elem, elem, elem, … endlessly or up to n times | repeat(10, 3) --> 10 10 10 | 
-
-  * Iterators terminating on the shortest input sequence:
-
-| Iterator | Arguments | Results | Example | 
-| - | - | - | - |
-| accumulate() | p [,func] | p0, p0+p1, p0+p1+p2, … | accumulate([1,2,3,4,5]) --> 1 3 6 10 15 | 
-| chain() | p, q, … | p0, p1, … plast, q0, q1, … | chain('ABC', 'DEF') --> A B C D E F | 
-| chain.from_iterable() | iterable | p0, p1, … plast, q0, q1, … | chain.from_iterable(['ABC', 'DEF']) --> A B C D E F | 
-| compress() | data, selectors | (d[0] if s[0]), (d[1] if s[1]), … | compress('ABCDEF', [1,0,1,0,1,1]) --> A C E F
-| dropwhile() | pred, seq | seq[n], seq[n+1], starting when pred fails | dropwhile(lambda x: x<5, [1,4,6,4,1]) --> 6 4 1
-| filterfalse() | pred, seq | elements of seq where pred(elem) is false | filterfalse(lambda x: x%2, range(10)) --> 0 2 4 6 8
-| groupby() | iterable[, key] | sub-iterators grouped by value of key(v)
-| islice() | seq, [start,] stop [, step] | elements from seq[start:stop:step] | islice('ABCDEFG', 2, None) --> C D E F G
-| starmap() | func, seq | func(*seq[0]), func(*seq[1]), … | starmap(pow, [(2,5), (3,2), (10,3)]) --> 32 9 1000
-| takewhile() | pred, seq | seq[0], seq[1], until pred fails | takewhile(lambda x: x<5, [1,4,6,4,1]) --> 1 4
-| tee() | it, n | it1, it2, … itn splits one iterator into n
-| zip_longest() | p, q, … | (p[0], q[0]), (p[1], q[1]), … | zip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D-
-
-  * Combinatoric iterators:
-
-| Iterator | Arguments | Results | Examples | Results |
-| - | - | - | - | - |
-| product() | p, q, … [repeat=1] | cartesian product, equivalent to a nested for-loop | product('ABCD', repeat=2) | AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
-| permutations() | p[, r] | r-length tuples, all possible orderings, no repeated elements | permutations('ABCD', 2) | AB AC AD BA BC BD CA CB CD DA DB DC
-| combinations() | p, r | r-length tuples, in sorted order, no repeated elements | combinations('ABCD', 2) | AB AC AD BC BD CD
-| combinations_with_replacement() | p, r | r-length tuples, in sorted order, with repeated elements| combinations_with_replacement('ABCD', 2) | AA AB AC AD BB BC BD CC CD DD
+##### [collections — Container datatypes](https://docs.python.org/3/library/collections.html)
 
 * [四种高性能数据类型，Python collections助你优化代码、简洁任务](https://mp.weixin.qq.com/s/17xwTlwJi1ckht3wGk5ttA)
   * https://levelup.gitconnected.com/introducing-high-performance-datatypes-in-python-with-the-collections-library-3d8c334827a5
@@ -780,11 +743,9 @@ if __name__ == '__main__':
   * OrderedDict
     * 有序字典 (OrderedDict) 是字典的子类，就像常规字典一样，它会记录放入元素的顺序，但现在常规字典也有这种功能了，因此有序字典的存在意义也不大了。
     * 在有序词典中，有一个 reversed() 函数，可以逆序返回字典的键。
-* 你常常看到的 \_\_init\_\_.py 到底是个啥？
-  * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
-* [Python编程中的if \_\_name\_\_ == 'main' 的作用和原理](https://mp.weixin.qq.com/s/SXTo0h2ExujAQdWnLWggdg)
-  * https://zhuanlan.zhihu.com/p/34112508
-  * \_\_name\_\_ 是当前模块名，当模块被直接运行时模块名为 \_\_main\_\_ 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。
+
+##### [heapq — Heap queue algorithm](https://docs.python.org/3/library/heapq.html)
+
 * [heapq — Heap queue algorithm — Python 3.9.6 documentation](https://docs.python.org/3/library/heapq.html?highlight=heapq#module-heapq)
   * This module provides an implementation of the heap queue algorithm, also known as the priority queue algorithm.
   * Heaps are binary trees for which every parent node has a value less than or equal to any of its children. This implementation uses arrays for which heap[k] <= heap[2*k+1] and heap[k] <= heap[2*k+2] for all k, counting elements from zero. For the sake of comparison, non-existing elements are considered to be infinite. The interesting property of a heap is that its smallest element is always the root, heap[0].
@@ -799,6 +760,53 @@ if __name__ == '__main__':
     * Push item on the heap, then pop and return the smallest item from the heap. The combined action runs more efficiently than heappush() followed by a separate call to heappop().
   * heapq.heapify(x)
     * Transform list x into a heap, in-place, in linear time.
+
+#### [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
+
+* [itertools — Functions creating iterators for efficient looping - Python 3.9.7 documentation](https://docs.python.org/3/library/itertools.html)
+  * This module implements a number of iterator building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
+  * [itertools.permutations(iterable, r=None)](https://docs.python.org/3/library/itertools.html#itertools.permutations)
+    * Return successive r length permutations of elements in the iterable.
+    * [Permutation and Combination in Python - GeeksforGeeks](https://www.geeksforgeeks.org/permutation-and-combination-in-python/)
+  * Infinite iterators:
+  
+| Iterator | Arguments | Results | Example |
+| - | - | - | - |
+| count() | start, [step] | start, start+step, start+2*step, … | count(10) --> 10 11 12 13 14 ... |
+| cycle() | p | p0, p1, … plast, p0, p1, … | cycle('ABCD') --> A B C D A B C D ... | 
+| repeat() | elem [,n] | elem, elem, elem, … endlessly or up to n times | repeat(10, 3) --> 10 10 10 | 
+
+  * Iterators terminating on the shortest input sequence:
+
+| Iterator | Arguments | Results | Example | 
+| - | - | - | - |
+| accumulate() | p [,func] | p0, p0+p1, p0+p1+p2, … | accumulate([1,2,3,4,5]) --> 1 3 6 10 15 | 
+| chain() | p, q, … | p0, p1, … plast, q0, q1, … | chain('ABC', 'DEF') --> A B C D E F | 
+| chain.from_iterable() | iterable | p0, p1, … plast, q0, q1, … | chain.from_iterable(['ABC', 'DEF']) --> A B C D E F | 
+| compress() | data, selectors | (d[0] if s[0]), (d[1] if s[1]), … | compress('ABCDEF', [1,0,1,0,1,1]) --> A C E F
+| dropwhile() | pred, seq | seq[n], seq[n+1], starting when pred fails | dropwhile(lambda x: x<5, [1,4,6,4,1]) --> 6 4 1
+| filterfalse() | pred, seq | elements of seq where pred(elem) is false | filterfalse(lambda x: x%2, range(10)) --> 0 2 4 6 8
+| groupby() | iterable[, key] | sub-iterators grouped by value of key(v)
+| islice() | seq, [start,] stop [, step] | elements from seq[start:stop:step] | islice('ABCDEFG', 2, None) --> C D E F G
+| starmap() | func, seq | func(*seq[0]), func(*seq[1]), … | starmap(pow, [(2,5), (3,2), (10,3)]) --> 32 9 1000
+| takewhile() | pred, seq | seq[0], seq[1], until pred fails | takewhile(lambda x: x<5, [1,4,6,4,1]) --> 1 4
+| tee() | it, n | it1, it2, … itn splits one iterator into n
+| zip_longest() | p, q, … | (p[0], q[0]), (p[1], q[1]), … | zip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D-
+
+  * Combinatoric iterators:
+
+| Iterator | Arguments | Results | Examples | Results |
+| - | - | - | - | - |
+| product() | p, q, … [repeat=1] | cartesian product, equivalent to a nested for-loop | product('ABCD', repeat=2) | AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
+| permutations() | p[, r] | r-length tuples, all possible orderings, no repeated elements | permutations('ABCD', 2) | AB AC AD BA BC BD CA CB CD DA DB DC
+| combinations() | p, r | r-length tuples, in sorted order, no repeated elements | combinations('ABCD', 2) | AB AC AD BC BD CD
+| combinations_with_replacement() | p, r | r-length tuples, in sorted order, with repeated elements| combinations_with_replacement('ABCD', 2) | AA AB AC AD BB BC BD CC CD DD
+
+* 你常常看到的 \_\_init\_\_.py 到底是个啥？
+  * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
+* [Python编程中的if \_\_name\_\_ == 'main' 的作用和原理](https://mp.weixin.qq.com/s/SXTo0h2ExujAQdWnLWggdg)
+  * https://zhuanlan.zhihu.com/p/34112508
+  * \_\_name\_\_ 是当前模块名，当模块被直接运行时模块名为 \_\_main\_\_ 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。
 
 ### IO / FILE
 
