@@ -763,7 +763,7 @@ if __name__ == '__main__':
 
 #### [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
 
-##### [itertools — Functions creating iterators for efficient looping - Python 3.9.7 documentation](https://docs.python.org/3/library/itertools.html)
+##### [itertools — Functions creating iterators for efficient looping](https://docs.python.org/3/library/itertools.html)
 
 * This module implements a number of iterator building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
   * [itertools.permutations(iterable, r=None)](https://docs.python.org/3/library/itertools.html#itertools.permutations)
