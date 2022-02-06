@@ -1,3 +1,6 @@
+# https://www.hackerrank.com/challenges/py-if-else/problem?isFullScreen=true
+
+
 #!/bin/python3
 
 # import math
@@ -5,7 +8,6 @@
 # import random
 # import re
 # import sys
-
 
 
 if __name__ == '__main__':
