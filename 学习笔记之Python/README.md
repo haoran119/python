@@ -223,19 +223,12 @@
 * [class complex([real[, imag]])](https://docs.python.org/3/library/functions.html?highlight=complex#complex)
 	* Return a complex number with the value real + imag*1j or convert a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j.
 
-### STRING
+### [Built-in Types](https://docs.python.org/3/library/stdtypes.html)
 
-* [Built-in Types — Python 3.10.2 documentation](https://docs.python.org/3/library/stdtypes.html#str.format)
-	* str.format(*args, **kwargs)
-* [string — Common string operations — Python 3.10.2 documentation](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#module-string)
-	* [String constants](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#string-constants)
-		* [string.ascii_lowercase](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#string.ascii_lowercase)
-			* The lowercase letters 'abcdefghijklmnopqrstuvwxyz'. This value is not locale-dependent and will not change.
-	* [Custom String Formatting](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#custom-string-formatting)
-	* [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings)
-	* [Helper functions](https://docs.python.org/3/library/string.html?#helper-functions)
-		* [string.capwords(s, sep=None)](https://docs.python.org/3/library/string.html?#string.capwords)
-			* Split the argument into words using str.split(), capitalize each word using str.capitalize(), and join the capitalized words using str.join(). If the optional second argument sep is absent or None, runs of whitespace characters are replaced by a single space and leading and trailing whitespace are removed, otherwise sep is used to split and join the words.
+#### [Text Sequence Type — str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+
+* [str.format(*args, **kwargs)](https://docs.python.org/3/library/stdtypes.html#str.format)
+	* Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}. Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument. Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
 * [盘一盘 Python 系列特别篇 - 格式化 String](https://mp.weixin.qq.com/s/jTiZOazn66nK6CU1SAtpTw)
 * Python 字符串拼接总结
   * https://segmentfault.com/a/1190000015475309
@@ -680,6 +673,19 @@ if __name__ == '__main__':
   * https://zhuanlan.zhihu.com/p/34112508
   * \_\_name\_\_ 是当前模块名，当模块被直接运行时模块名为 \_\_main\_\_ 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。
 * [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
+
+#### [Text Processing Services](https://docs.python.org/3/library/text.html)
+
+##### [string — Common string operations](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#module-string)
+
+* [String constants](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#string-constants)
+	* [string.ascii_lowercase](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#string.ascii_lowercase)
+		* The lowercase letters 'abcdefghijklmnopqrstuvwxyz'. This value is not locale-dependent and will not change.
+* [Custom String Formatting](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#custom-string-formatting)
+* [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings)
+* [Helper functions](https://docs.python.org/3/library/string.html?#helper-functions)
+	* [string.capwords(s, sep=None)](https://docs.python.org/3/library/string.html?#string.capwords)
+		* Split the argument into words using str.split(), capitalize each word using str.capitalize(), and join the capitalized words using str.join(). If the optional second argument sep is absent or None, runs of whitespace characters are replaced by a single space and leading and trailing whitespace are removed, otherwise sep is used to split and join the words.
 
 #### [Data Types](https://docs.python.org/3/library/datatypes.html)
 
