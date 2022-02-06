@@ -218,6 +218,11 @@
       process(chunk)
   ```   
 
+### [Built-in Functions](https://docs.python.org/3/library/functions.html)
+
+* [class complex([real[, imag]])](https://docs.python.org/3/library/functions.html?highlight=complex#complex)
+	* Return a complex number with the value real + imag*1j or convert a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j.
+
 ### STRING
 
 * [Built-in Types — Python 3.10.2 documentation](https://docs.python.org/3/library/stdtypes.html#str.format)
@@ -768,6 +773,9 @@ if __name__ == '__main__':
 #### [Numeric and Mathematical Modules](https://docs.python.org/3/library/numeric.html)
 
 ##### [cmath — Mathematical functions for complex numbers](https://docs.python.org/3/library/cmath.html)
+
+* [cmath.polar(x)](https://docs.python.org/3/library/cmath.html#cmath.polar)
+	* Return the representation of x in polar coordinates. Returns a pair (r, phi) where r is the modulus of x and phi is the phase of x. polar(x) is equivalent to (abs(x), phase(x)).
 
 #### [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
 
