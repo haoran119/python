@@ -226,6 +226,9 @@
 			* The lowercase letters 'abcdefghijklmnopqrstuvwxyz'. This value is not locale-dependent and will not change.
 	* [Custom String Formatting](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#custom-string-formatting)
 	* [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings)
+	* [Helper functions](https://docs.python.org/3/library/string.html?#helper-functions)
+		* [string.capwords(s, sep=None)](https://docs.python.org/3/library/string.html?#string.capwords)
+			* Split the argument into words using str.split(), capitalize each word using str.capitalize(), and join the capitalized words using str.join(). If the optional second argument sep is absent or None, runs of whitespace characters are replaced by a single space and leading and trailing whitespace are removed, otherwise sep is used to split and join the words.
 * [盘一盘 Python 系列特别篇 - 格式化 String](https://mp.weixin.qq.com/s/jTiZOazn66nK6CU1SAtpTw)
 * Python 字符串拼接总结
   * https://segmentfault.com/a/1190000015475309
