@@ -670,7 +670,7 @@ if __name__ == '__main__':
 * [深入探讨Python的import机制：实现远程导入模块 | CSDN博文精选](https://mp.weixin.qq.com/s/Sx_WyKUpoZrnFtV9epAfpg)
 * [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
 
-#### [Functional Programming Modules — Python 3.10.2 documentation](https://docs.python.org/3/library/functional.html)
+#### [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
 
 * [itertools — Functions creating iterators for efficient looping - Python 3.9.7 documentation](https://docs.python.org/3/library/itertools.html)
   * This module implements a number of iterator building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
