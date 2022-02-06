@@ -669,6 +669,11 @@ if __name__ == '__main__':
 ### 模块
 
 * [深入探讨Python的import机制：实现远程导入模块 | CSDN博文精选](https://mp.weixin.qq.com/s/Sx_WyKUpoZrnFtV9epAfpg)
+* 你常常看到的 \_\_init\_\_.py 到底是个啥？
+  * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
+* [Python编程中的if \_\_name\_\_ == 'main' 的作用和原理](https://mp.weixin.qq.com/s/SXTo0h2ExujAQdWnLWggdg)
+  * https://zhuanlan.zhihu.com/p/34112508
+  * \_\_name\_\_ 是当前模块名，当模块被直接运行时模块名为 \_\_main\_\_ 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。
 * [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
 
 #### [Data Types](https://docs.python.org/3/library/datatypes.html)
@@ -801,12 +806,6 @@ if __name__ == '__main__':
 | permutations() | p[, r] | r-length tuples, all possible orderings, no repeated elements | permutations('ABCD', 2) | AB AC AD BA BC BD CA CB CD DA DB DC
 | combinations() | p, r | r-length tuples, in sorted order, no repeated elements | combinations('ABCD', 2) | AB AC AD BC BD CD
 | combinations_with_replacement() | p, r | r-length tuples, in sorted order, with repeated elements| combinations_with_replacement('ABCD', 2) | AA AB AC AD BB BC BD CC CD DD
-
-* 你常常看到的 \_\_init\_\_.py 到底是个啥？
-  * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
-* [Python编程中的if \_\_name\_\_ == 'main' 的作用和原理](https://mp.weixin.qq.com/s/SXTo0h2ExujAQdWnLWggdg)
-  * https://zhuanlan.zhihu.com/p/34112508
-  * \_\_name\_\_ 是当前模块名，当模块被直接运行时模块名为 \_\_main\_\_ 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。
 
 ### IO / FILE
 
