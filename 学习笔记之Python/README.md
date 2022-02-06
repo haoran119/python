@@ -3,6 +3,7 @@
 * [python/学习笔记之Python at main · haoran119/python](https://github.com/haoran119/python/tree/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython)
 * [Welcome to Python.org](https://www.python.org/)
   * [3.9.5 Documentation (python.org)](https://docs.python.org/3/)
+  * [The Python Standard Library — Python 3.10.2 documentation](https://docs.python.org/3/library/index.html)
   * [Glossary — Python 3.9.7 documentation](https://docs.python.org/3/glossary.html#glossary)
   * [PEP 8 -- Style Guide for Python Code | Python.org](https://www.python.org/dev/peps/pep-0008/)
   * [Programming FAQ — Python 3.9.6 documentation](https://docs.python.org/3/faq/programming.html)
