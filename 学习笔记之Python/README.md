@@ -13,6 +13,9 @@
   * Python是完全面向对象的语言。函数、模块、数字、字符串都是对象。并且完全支持继承、重载、派生、多继承，有益于增强源代码的复用性。Python支持重载运算符和动态类型。
   * Python允许像数学的常用写法那样连着写两个比较运行符。比如a < b < c与a < b and b < c等价。C++的结果与Python不一样，首先它会先计算a < b，根据两者的大小获得0或者1两个值之一，然后再与c进行比较。
   * Python拥有一个强大的标准库。Python语言的核心只包含数字、字符串、列表、字典、文件等常见类型和函数，而由Python标准库提供了系统管理、网络通信、文本处理、数据库接口、图形系统、XML处理等额外的功能。
+* [Python Tutorial](https://www.tutorialspoint.com/python/index.htm)
+* [Python3 教程 | 菜鸟教程](http://www.runoob.com/python3/python3-tutorial.html)
+* [Python 入门指南 — Python tutorial 3.6.0 documentation](http://www.pythondoc.com/pythontutorial3/index.html)
 
 ## NOTES
 
@@ -76,8 +79,6 @@
 
 ## RESOURCES
 
-* [Python3 教程 | 菜鸟教程](http://www.runoob.com/python3/python3-tutorial.html)
-* [Python 入门指南 — Python tutorial 3.6.0 documentation](http://www.pythondoc.com/pythontutorial3/index.html)
 * [在 Windows 上使用 Python 进行开发 - Windows apps | Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/python/)
 * [网络课程 python 网络教育-百度传课](https://chuanke.baidu.com/course/_python_____.html)
 * [Python Example](https://www.programcreek.com/python/)
