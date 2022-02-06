@@ -220,7 +220,12 @@
 
 * [Built-in Types — Python 3.10.2 documentation](https://docs.python.org/3/library/stdtypes.html#str.format)
 	* str.format(*args, **kwargs)
-	* [string — Common string operations — Python 3.10.2 documentation](https://docs.python.org/3/library/string.html#formatstrings)
+* [string — Common string operations — Python 3.10.2 documentation](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#module-string)
+	* [String constants](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#string-constants)
+		* [string.ascii_lowercase](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#string.ascii_lowercase)
+			* The lowercase letters 'abcdefghijklmnopqrstuvwxyz'. This value is not locale-dependent and will not change.
+	* [Custom String Formatting](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#custom-string-formatting)
+	* [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings)
 * [盘一盘 Python 系列特别篇 - 格式化 String](https://mp.weixin.qq.com/s/jTiZOazn66nK6CU1SAtpTw)
 * Python 字符串拼接总结
   * https://segmentfault.com/a/1190000015475309
