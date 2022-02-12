@@ -1979,6 +1979,11 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 
 * How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
   * Check the indentation for other class member functions prior to plot_all()
+* How to fix "Invalid syntax" when using python3 feature typing?
+	* add below on the top to specify the env python3
+```python
+#!/usr/bin/env python3
+```
 * How to fix memory error when slicing list ?
   * One possibility is to use generator
   * [python - string[i:length] giving memory error - Stack Overflow](https://stackoverflow.com/questions/11471158/stringilength-giving-memory-error)
@@ -2009,7 +2014,7 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
   ```
 * How to fix ModuleNotFoundError: No module named 'a.b' when from a.b.c import d ?
   * Check if there is __init.py__ under /a
-How to fix NameError: name 'var' is not defined when define var in try statement and use it in catch / finally statement ?
+* How to fix NameError: name 'var' is not defined when define var in try statement and use it in catch / finally statement ?
   * Declare the var before try statement with var = None
   * python - Using a variable in a try,catch,finally statement without declaring it outside - Stack Overflow
     * https://stackoverflow.com/questions/17195569/using-a-variable-in-a-try-catch-finally-statement-without-declaring-it-outside
