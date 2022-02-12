@@ -290,6 +290,8 @@ print(b)    # [1, 3]
 
 #### [Text Sequence Type — str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
 
+* [str.count(sub[, start[, end]])](https://docs.python.org/3/library/stdtypes.html#str.count)
+	* Return the number of non-overlapping occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation.
 * [str.format(*args, **kwargs)](https://docs.python.org/3/library/stdtypes.html#str.format)
 	* Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}. Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument. Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
 * [盘一盘 Python 系列特别篇 - 格式化 String](https://mp.weixin.qq.com/s/jTiZOazn66nK6CU1SAtpTw)
