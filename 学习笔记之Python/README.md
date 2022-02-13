@@ -828,7 +828,7 @@ if __name__ == '__main__':
 | combinations() | p, r | r-length tuples, in sorted order, no repeated elements | combinations('ABCD', 2) | AB AC AD BC BD CD
 | combinations_with_replacement() | p, r | r-length tuples, in sorted order, with repeated elements| combinations_with_replacement('ABCD', 2) | AA AB AC AD BB BC BD CC CD DD
 
-### Files I/O
+### [Files I/O](https://www.tutorialspoint.com/python/python_files_io.htm)
 
 * [Text I/O - io — Core tools for working with streams — Python 3.10.2 documentation](https://docs.python.org/3/library/io.html?highlight=textiowrapper#text-i-o)
 	* [class io.TextIOBase](https://docs.python.org/3/library/io.html#io.TextIOBase)
@@ -892,7 +892,7 @@ if __name__ == '__main__':
   * https://linuxops.org/blog/python/prettytable.html
   * prettytable可以打印出美观的表格，并且对中文支持相当好
 
-### Exceptions Handling
+### [Exceptions Handling](https://www.tutorialspoint.com/python/python_exceptions.htm)
 
 * [学习笔记之Python Debug ( pdb ) - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10437091.html)
 * [盘一盘 Python 系列特别篇 - 错误类型](https://mp.weixin.qq.com/s/PBaDdLcYxDso2V4aZcFXpA)
@@ -942,7 +942,7 @@ if __name__ == '__main__':
   * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
 * [IPython 中常用的魔法命令](https://mp.weixin.qq.com/s/5ZyfyR9r9zBod6ZP7scewA)
 
-### Classes / Object Oriented
+### [Classes / Object Oriented](https://www.tutorialspoint.com/python/python_classes_objects.htm)
 
 * [Python 面向对象编程](http://www.langzi.fun/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html)
   * 面向过程编程
@@ -1127,7 +1127,7 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [写 Python 代码不可不知的函数式编程技术](https://mp.weixin.qq.com/s/cTUmjl8-laztpUSfSCW1hQ)
   * https://medium.com/better-programming/introduction-to-functional-programming-in-python-3d26cd9cbfd7
 
-### Regular Expressions
+### [Regular Expressions](https://www.tutorialspoint.com/python/python_reg_expressions.htm)
 
 * [Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript](https://regex101.com/)
 * [Regular Expressions Cheat Sheet by DaveChild - Download free from Cheatography - Cheatography.com: Cheat Sheets For Every Occasion](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
