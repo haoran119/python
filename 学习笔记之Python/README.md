@@ -233,6 +233,8 @@
   * 7、map函数
   * 8、排序相关
   * 9 其他
+* [open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)](https://docs.python.org/3/library/functions.html#open)
+	* Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
 * [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
   * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
 * [reversed(seq)](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
@@ -867,8 +869,18 @@ if __name__ == '__main__':
 | combinations() | p, r | r-length tuples, in sorted order, no repeated elements | combinations('ABCD', 2) | AB AC AD BC BD CD
 | combinations_with_replacement() | p, r | r-length tuples, in sorted order, with repeated elements| combinations_with_replacement('ABCD', 2) | AA AB AC AD BB BC BD CC CD DD
 
-### IO / FILE
+### Files I/O
 
+* [Text I/O - io — Core tools for working with streams — Python 3.10.2 documentation](https://docs.python.org/3/library/io.html?highlight=textiowrapper#text-i-o)
+	* [class io.TextIOBase](https://docs.python.org/3/library/io.html#io.TextIOBase)
+		* [read(size=- 1)](https://docs.python.org/3/library/io.html#io.TextIOBase.read)
+			* Read and return at most size characters from the stream as a single str. If size is negative or None, reads until EOF.
+		* [readline(size=- 1)](https://docs.python.org/3/library/io.html#io.TextIOBase.readline)
+			* Read until newline or EOF and return a single str. If the stream is already at EOF, an empty string is returned.
+			* If size is specified, at most size characters will be read.
+		* [write(s)](https://docs.python.org/3/library/io.html#io.TextIOBase.write)
+			* Write the string s to the stream and return the number of characters written.
+	* [class io.TextIOWrapper(buffer, encoding=None, errors=None, newline=None, line_buffering=False, write_through=False)](https://docs.python.org/3/library/io.html#io.TextIOWrapper)
 * [3.3.9. With Statement Context Managers - 3. Data model — Python 3.9.7 documentation](https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers)
   * A context manager is an object that defines the runtime context to be established when executing a with statement. The context manager handles the entry into, and the exit from, the desired runtime context for the execution of the block of code. Context managers are normally invoked using the with statement (described in section The with statement), but can also be used by directly invoking their methods.
   * Typical uses of context managers include saving and restoring various kinds of global state, locking and unlocking resources, closing opened files, etc.
@@ -907,6 +919,7 @@ if __name__ == '__main__':
         xfile.write('hello world')
 ```
 * [Python 数据形态及IO操作](https://mp.weixin.qq.com/s/97v0k_hWdgJeppx1oF7Vxw)
+* [13 ways to access data in Python. How to get data from local files… | by John Micah Reid | Towards Data Science](https://towardsdatascience.com/13-ways-to-access-data-in-python-bac5683e0063)
 * [Python处理CSV、JSON和XML数据的简便方法](https://mp.weixin.qq.com/s/1PyeBLIJNzswO3zd-mHiTQ)
   * https://towardsdatascience.com/the-easy-way-to-work-with-csv-json-and-xml-in-python-5056f9325ca9
 
