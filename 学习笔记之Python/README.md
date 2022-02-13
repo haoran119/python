@@ -66,7 +66,18 @@
   * 4.7.5. Lambda Expressions
     * https://docs.python.org/3/tutorial/controlflow.html?highlight=lambda#lambda-expressions
     * Small anonymous functions can be created with the lambda keyword.
-  * https://github.com/haoran119/python/blob/d8d0841e46f42aa474a4108a441007607955bc8f/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/4.7.5.%20Lambda%20Expressions.py
+	```python
+	#!/usr/bin/python3
+
+	res = {}
+	with open('demo.txt') as f:
+			for ch in f.read().replace(' ', ''):
+		res[ch] = res.get(ch, 0) + 1
+
+	# lambda x[1] stands for value in dictionary, x[0] stands for key in dictionary
+	for char, num in sorted(res.items(), key=lambda x: x[1], reverse=True)[:3]:
+			print('char %s count is %d' % (char, num))
+	```
 * [深入浅出带你学Python冲击年薪30万【马哥教育】_腾讯课堂](https://ke.qq.com/course/134017)
   * Python哲学
     * import this
@@ -330,6 +341,54 @@ print(b)    # [1, 3]
 * [str.format(*args, **kwargs)](https://docs.python.org/3/library/stdtypes.html#str.format)
 	* Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}. Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument. Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
 * [盘一盘 Python 系列特别篇 - 格式化 String](https://mp.weixin.qq.com/s/jTiZOazn66nK6CU1SAtpTw)
+* 如何多行字符串拼接?
+```python
+# -*- coding: utf-8 -*-
+"""
+@author: Hao
+"""
+
+start_timestamp = "2018-01-01 00:00:00"
+end_timestamp = "2018-01-02 00:00:00"
+
+# =============================================================================
+# SELECT "timestamp", col1
+# FROM tbl
+# WHERE "timestamp" >= '2018-01-01 00:00:00' AND "timestamp" <= '2018-01-02 00:00:00'
+# ORDER BY "timestamp" ASC
+# =============================================================================
+query = """
+    SELECT "timestamp", col1
+    FROM tbl
+    WHERE "timestamp" >= '"""             \
+    + start_timestamp +                 \
+    """' AND "timestamp" <= '"""        \
+    + end_timestamp +                   \
+    """'
+    ORDER BY "timestamp" ASC
+    """
+
+print(query)
+
+# =============================================================================
+# SELECT "timestamp", col1
+# FROM tbl
+# WHERE "timestamp" >= '2018-01-01 00:00:00' AND "timestamp" <= '2018-01-02 00:00:00'
+# ORDER BY "timestamp" ASC
+# =============================================================================
+query = ("""
+    SELECT "timestamp", col1
+    FROM tbl
+    WHERE "timestamp" >= '"""
+    + start_timestamp +
+    """' AND "timestamp" <= '"""
+    + end_timestamp +
+    """'
+    ORDER BY "timestamp" ASC
+    """)
+
+print(query)
+```
 * Python 字符串拼接总结
   * https://segmentfault.com/a/1190000015475309
   * [2.4.3. Formatted string literals - 2. Lexical analysis — Python 3.9.6 documentation](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
@@ -855,6 +914,65 @@ if __name__ == '__main__':
 
 ### [Files I/O](https://www.tutorialspoint.com/python/python_files_io.htm)
 
+* How to input and output file ?
+  * 7. Input and Output — Python 3.7.4 documentation
+    * https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects
+    * https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json
+    * For reading lines from a file, you can loop over the file object. This is memory efficient, fast, and leads to simple code
+  * Python3 File 方法 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-file-methods.html
+  * python - How to read a file line-by-line into a list? - Stack Overflow
+    * https://stackoverflow.com/questions/3277503/how-to-read-a-file-line-by-line-into-a-list
+  * Python dump dict to json file - Stack Overflow
+    * https://stackoverflow.com/questions/17043860/python-dump-dict-to-json-file
+  * Python Dictionary to CSV - Stack Overflow
+    * https://stackoverflow.com/questions/8331469/python-dictionary-to-csv
+  * [Python JSON: Read, Write, Parse JSON (With Examples) (programiz.com)](https://www.programiz.com/python-programming/json)
+  * [Python File I/O: Read and Write Files in Python (programiz.com)](https://www.programiz.com/python-programming/file-operation)
+  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.load)
+    * json.load(fp, *, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
+    * Deserialize fp (a .read()-supporting text file or binary file containing a JSON document) to a Python object using this conversion table.
+  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.dump)
+    * json.dump(obj, fp, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)
+    * Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object) using this conversion table.
+    * If specified, default should be a function that gets called for objects that can’t otherwise be serialized. It should return a JSON encodable version of the object or raise a TypeError. If not specified, TypeError is raised.
+    * If sort_keys is true (default: False), then the output of dictionaries will be sorted by key.
+  * How to write datetime object to json file ?
+    * [python - How to overcome "datetime.datetime not JSON serializable"? - Stack Overflow](https://stackoverflow.com/questions/11875770/how-to-overcome-datetime-datetime-not-json-serializable/36142844#36142844)
+      * $ json.dumps(my_dictionary, indent=4, sort_keys=True, default=str) 
+    * [How to write a datetime object to JSON in Python (kite.com)](https://www.kite.com/python/answers/how-to-write-a-datetime-object-to-json-in-python#)
+      * Call datetime.datetime.isoformat() to convert datetime.datetime into a ISO date format, which is compatible with JSON.
+```python
+with open( filename, 'r' ) as f:
+    for line in f:
+        print(line, end='')
+
+import json
+with open( filename, 'w' ) as f:
+    json.dump(text, f)
+
+with open(filename, 'r') as f:
+    x = json.load(f)
+```
+* How to iterate directory for files ?
+  * os — Miscellaneous operating system interfaces — Python 3.7.4 documentation
+    * https://docs.python.org/3/library/os.html?highlight=os%20walk#os.walk
+    * Generate the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
+  * Python3 OS 文件/目录方法 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-os-file-methods.html
+  * Python list directory, subdirectory, and files - Stack Overflow
+    * https://stackoverflow.com/questions/2909975/python-list-directory-subdirectory-and-files
+```python
+import os
+
+root = '.'
+
+for path, subdirs, files in os.walk(root):
+    for name in files:
+        if name.endswith('.json'):
+            filename = os.path.join(path, name)
+            print(filename) # '.\path\test.json'
+```
 * [Text I/O - io — Core tools for working with streams — Python 3.10.2 documentation](https://docs.python.org/3/library/io.html?highlight=textiowrapper#text-i-o)
 	* [class io.TextIOBase](https://docs.python.org/3/library/io.html#io.TextIOBase)
 		* [read(size=- 1)](https://docs.python.org/3/library/io.html#io.TextIOBase.read)
@@ -1013,7 +1131,6 @@ if __name__ == '__main__':
   * 使用装饰器
   * 更加减半的使用property()函数
 * [盘一盘 Python 系列特别篇 - 面向对象编程](https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247488340&idx=1&sn=572a046a414e830e209e8ea1c7cc92e0&chksm=e890905ddfe7194b2478fa00075469b83d997133290aef42d6c2af0db3aca1b46a6543823e11&scene=21#wechat_redirect)
-  * [View code](https://github.com/haoran119/python/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/%E7%9B%98%E4%B8%80%E7%9B%98%20Python%20%E7%B3%BB%E5%88%97%E7%89%B9%E5%88%AB%E7%AF%87%20-%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.py)
   * 第一章 - 对象初体验
     * 1.1 整型 int
       * 在 C++ 和 Java 里，整数只是一个基础 (primitive) 类型，而在 Python 里，整数是一个类，可以用来创建很多整数型对象。
@@ -1082,6 +1199,277 @@ if __name__ == '__main__':
   * 总结
     * 在学习 OOP 之前，我们通过整数、列表、数组和数据帧这些“变量”，来看看它们下面属性，即字段和方法。先从思维上把“变量”转成“对象”。
     * 在学习 OOP 时，我们用雇员为例，学习如何定义类、构建对象、定义类方法和静态方法、继承父类雇员多态出开发者和经理、使用魔法方法、使用属性装饰器。并在中间穿插介绍了类的四大特征：封装、抽象、继承、多态。
+```python
+"""
+盘一盘 Python 系列特别篇 - 面向对象编程
+    https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247488340&idx=1&sn=572a046a414e830e209e8ea1c7cc92e0&chksm=e890905ddfe7194b2478fa00075469b83d997133290aef42d6c2af0db3aca1b46a6543823e11&scene=21#wechat_redirect
+"""
+
+import datetime
+
+
+class Employee:
+    num_of_emps = 0
+    raise_rate = 1.05
+
+    def __init__(self, first, last, pay) -> None:
+        self.first = first
+        self.last = last
+        self.pay = pay
+
+        Employee.num_of_emps += 1
+
+    @property
+    def email(self):
+        return '{}.{}@gmail.com'.format(self.first, self.last)
+
+    @property
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last)
+
+    @fullname.setter
+    def fullname(self, name):
+        first, last = name.split(' ')
+        self.first = first
+        self.last = last
+
+    @fullname.deleter
+    def fullname(self):
+        print('Delete Name: ', self.fullname)
+        self.first = None
+        self.last = None
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_rate)
+
+    def __repr__(self) -> str:
+        return 'Employee(\'{}\', \'{}\', {})'.format(self.first, self.last, self.pay)
+
+    def __str__(self) -> str:
+        return '{} - {}'.format(self.fullname, self.email)
+
+    @classmethod
+    def set_raise_rate(cls, rate):
+        cls.raise_rate = rate
+
+    @classmethod
+    def from_string(cls, emp_str):
+        first, last, pay = emp_str.split('-')
+
+        return cls(first, last, pay)
+
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday == 6:
+            return False
+
+        return True
+
+
+class Developer(Employee):
+    raise_rate = 1.1
+
+    def __init__(self, first, last, pay, prog_lang) -> None:
+        super().__init__(first, last, pay)
+        self.prog_lang = prog_lang
+
+
+class Manager(Employee):
+    def __init__(self, first, last, pay, employees=None) -> None:
+        super().__init__(first, last, pay)
+
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
+
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+
+    def remove_emp(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
+
+    def print_emp(self):
+        for emp in self.employees:
+            print('-->', emp.fullname)
+        print('---')
+
+
+if __name__ == '__main__':
+    print(Employee.num_of_emps)     # 0
+
+    emp_1 = Employee('Steven', 'Wang', 200000)
+
+    print(Employee.num_of_emps)     # 1
+
+    emp_2 = Employee('Sherry', 'Zhang', 100000)
+
+    print(Employee.num_of_emps)     # 2
+
+    print(emp_1.pay)                # 200000
+    emp_1.apply_raise()
+    print(emp_1.pay)                # 210000
+
+    print(Employee.raise_rate)      # 1.05
+    print(emp_1.raise_rate)         # 1.05
+    print(emp_2.raise_rate)         # 1.05
+
+    Employee.raise_rate = 1.1
+
+    print(Employee.raise_rate)      # 1.1
+    print(emp_1.raise_rate)         # 1.1
+    print(emp_2.raise_rate)         # 1.1
+
+    emp_1.raise_rate = 1.05
+
+    print(Employee.raise_rate)      # 1.1
+    print(emp_1.raise_rate)         # 1.05
+    print(emp_2.raise_rate)         # 1.1
+
+    Employee.set_raise_rate(1.1)
+
+    print(Employee.raise_rate)      # 1.1
+    print(emp_1.raise_rate)         # 1.05 ?
+    print(emp_2.raise_rate)         # 1.1
+
+    emp_1.set_raise_rate(1.2)
+
+    print(Employee.raise_rate)      # 1.2
+    print(emp_1.raise_rate)         # 1.05 ?
+    print(emp_2.raise_rate)         # 1.2
+
+    my_date = datetime.date(2019, 10, 2)
+    print(Employee.is_workday(my_date))     # True
+
+    emp_str_3 = 'James-Harden-1000000'
+    emp_3 = Employee.from_string(emp_str_3)
+
+    print(emp_3.email)              # James.Harden@gmail.com
+
+    dev_1 = Developer('Steven', 'Wang', 200000, 'Python')
+    dev_2 = Developer('Sherry', 'Zhang', 100000, 'SQL')
+
+    print(dev_1.email)              # Steven.Wang@gmail.com
+    print(dev_1.prog_lang)          # Python
+
+    print(help(Developer))
+# Help on class Developer in module __main__:
+
+# class Developer(Employee)
+#  |  Developer(first, last, pay, prog_lang) -> None
+#  |
+#  |  Method resolution order:
+#  |      Developer
+#  |      Employee
+#  |      builtins.object
+#  |
+#  |  Methods defined here:
+#  |
+#  |  __init__(self, first, last, pay, prog_lang) -> None
+#  |      Initialize self.  See help(type(self)) for accurate signature.
+#  |
+#  |  ----------------------------------------------------------------------
+#  |  Data and other attributes defined here:
+#  |
+#  |  raise_rate = 1.1
+#  |
+#  |  ----------------------------------------------------------------------
+#  |  Methods inherited from Employee:
+#  |
+#  |  __repr__(self) -> str
+#  |      Return repr(self).
+#  |
+#  |  __str__(self) -> str
+#  |      Return str(self).
+#  |
+#  |  apply_raise(self)
+#  |
+#  |  ----------------------------------------------------------------------
+#  |  Class methods inherited from Employee:
+#  |
+#  |  from_string(emp_str) from builtins.type
+#  |
+#  |  set_raise_rate(rate) from builtins.type
+#  |
+#  |  ----------------------------------------------------------------------
+#  |  Static methods inherited from Employee:
+#  |
+#  |  is_workday(day)
+#  |
+#  |  ----------------------------------------------------------------------
+#  |  Data descriptors inherited from Employee:
+#  |
+#  |  __dict__
+#  |      dictionary for instance variables (if defined)
+#  |
+#  |  __weakref__
+#  |      list of weak references to the object (if defined)
+#  |
+#  |  email
+#  |
+#  |  fullname
+#  |
+#  |  ----------------------------------------------------------------------
+#  |  Data and other attributes inherited from Employee:
+#  |
+#  |  num_of_emps = 5
+
+# None
+
+    print(dev_1.pay)                # 200000
+    dev_1.apply_raise()
+    print(dev_1.pay)                # 220000
+
+    mgr_1 = Manager('Jack', 'Black', 500000, [dev_1])
+
+    print(mgr_1.email)              # Jack.Black@gmail.com
+    mgr_1.print_emp()               # --> Steven Wang
+
+    mgr_1.add_emp(dev_2)
+    mgr_1.print_emp()               # --> Steven Wang --> Sherry Zhang
+
+    mgr_1.remove_emp(dev_1)
+    mgr_1.print_emp()               # --> Steven Wang
+
+    print(isinstance(mgr_1, Manager))           # True
+    print(isinstance(mgr_1, Employee))          # True
+    print(isinstance(mgr_1, Developer))         # False
+
+    print(isinstance(dev_1, Developer))         # True
+    print(isinstance(dev_1, Employee))          # True
+    print(isinstance(dev_1, Manager))           # False
+
+    print(issubclass(Manager, Employee))        # True
+    print(issubclass(Developer, Employee))      # True
+    print(issubclass(Employee, Developer))      # False
+    print(issubclass(Employee, Manager))        # False
+    print(issubclass(Manager, Developer))       # False
+    print(issubclass(Developer, Manager))       # False
+
+    emp_1 = Employee('Steven', 'Wang', 200000)
+
+    print(emp_1)                                # Steven Wang - Steven.Wang@gmail.com
+    print(emp_1.__repr__())                     # Employee('Steven', 'Wang', 200000)
+    print(emp_1.__str__())                      # Steven Wang - Steven.Wang@gmail.com
+
+    print(emp_1.first)                          # Steven
+    print(emp_1.email)                          # Steven.Wang@gmail.com
+    print(emp_1.fullname)                       # Steven Wang
+
+    emp_1.fullname = 'Tracy Mcgrady'
+
+    print(emp_1.first)                          # Tracy
+    print(emp_1.email)                          # Tracy.Mcgrady@gmail.com
+    print(emp_1.fullname)                       # Tracy Mcgrady
+
+    emp_1 = Employee('Steven', 'Wang', 200000)
+    print(emp_1.fullname)                       # Steven Wang
+
+    del emp_1.fullname                          # Delete Name:  Steven Wang
+    print(emp_1.fullname)                       # None None
+```
 * [简单理解python面向对象及装饰器](https://mp.weixin.qq.com/s/jaoMUy5okkMZ9QOYK-og1Q)
   * 一、类
   * 二、继承
@@ -1324,6 +1712,7 @@ if __name__ == "__main__":
 
 ### [Multithreaded Programming](https://www.tutorialspoint.com/python/python_multithreading.htm)
 
+* [multiprocessing — Process-based parallelism — Python 3.9.5 documentation](https://docs.python.org/3/library/multiprocessing.html)
 * [理解python多线程和多进程](https://mp.weixin.qq.com/s/pjoSXrpjvxvOHDmWAhYfFA)
 * [深入理解python多线程和多进程](https://mp.weixin.qq.com/s/w0dZrtv8ogdtxO8FT2LrEg)
 * [入门 | 三行Python代码，让数据预处理速度提高2到6倍](https://mp.weixin.qq.com/s/DgKuNIa_m-CsXWgHIz_3rQ)
@@ -1572,7 +1961,225 @@ if __name__ == "__main__":
 
 * [如何用 Python 构建机器学习模型？ (qq.com)](https://mp.weixin.qq.com/s/c-Sl7n_ceawz6AHm5Mtw0w)
   * 该 Notebook 包含了用于创建主要机器学习算法所需的代码模板。在 scikit-learn 中，我们已经准备好了几个算法。只需调整参数，给它们输入数据，进行训练，生成模型，最后进行预测。
-  * https://github.com/haoran119/python/blob/1703d4e453ed815710a777edd80089196b3b5968/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/%E5%A6%82%E4%BD%95%E7%94%A8%20Python%20%E6%9E%84%E5%BB%BA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B.py
+```python
+""" LinearRegression """
+
+# Import modules
+from sklearn import linear_model
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted_variable
+
+x_test  = test_dataset_precictor_variables
+
+# Create linear regression object
+linear = linear_model.LinearRegression()
+
+# Train the model with training data and check the score
+linear.fit(x_train, y_train)
+linear.score(x_train, y_train)
+
+# Collect coefficients
+print('Coefficient: \n', linear.coef_)
+print('Intercept: \n', linear.intercept_)
+
+# Make predictions
+predicted_values = linear.predict(x_test)
+
+""" LogisticRegression """
+
+# Import modules
+from sklearn.linear_model import LogisticRegression
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted_variable
+
+x_test  = test_dataset_precictor_variables
+
+# Create logistic regression object
+model = LogisticRegression()
+
+# Train the model with training data and checking the score
+model.fit(x_train, y_train)
+model.score(x_train, y_train)
+
+# Collect coefficients
+print('Coefficient: \n', model.coef_)
+print('Intercept: \n', model.intercept_)
+
+# Make predictions
+predicted_vaues = model.predict(x_teste)
+
+""" DecisionTreeRegressor """
+
+# Import modules
+from sklearn import tree
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted_variable
+
+x_test  = test_dataset_precictor_variables
+
+# Create Decision Tree Regressor Object
+model = tree.DecisionTreeRegressor()
+
+# Create Decision Tree Classifier Object
+model = tree.DecisionTreeClassifier()
+
+# Train the model with training data and checking the score
+model.fit(x_train, y_train)
+model.score(x_train, y_train)
+
+# Make predictions
+predicted_values = model.predict(x_test)
+
+""" GaussianNB """
+
+# Import modules
+from sklearn.naive_bayes import GaussianNB
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted variable
+
+x_test  = test_dataset_precictor_variables
+
+# Create GaussianNB object
+model = GaussianNB()
+
+# Train the model with training data
+model.fit(x_train, y_train)
+
+# Make predictions
+predicted_values = model.predict(x_test)
+
+""" svm """
+
+# Import modules
+from sklearn import svm
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted variable
+
+x_test  = test_dataset_precictor_variables
+
+# Create SVM Classifier object
+model = svm.svc()
+
+# Train the model with training data and checking the score
+model.fit(x_train, y_train)
+model.score(x_train, y_train)
+
+# Make predictions
+predicted_values = model.predict(x_test)
+
+""" KNeighborsClassifier """
+
+# Import modules
+from sklearn.neighbors import KNeighborsClassifier
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted variable
+
+x_test  = test_dataset_precictor_variables
+
+# Create KNeighbors Classifier Objects
+KNeighborsClassifier(n_neighbors = 6) # default value = 5
+
+# Train the model with training data
+model.fit(x_train, y_train)
+
+# Make predictions
+predicted_values = model.predict(x_test)
+
+""" KMeans """
+
+# Import modules
+from sklearn.cluster import KMeans
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted variable
+
+x_test  = test_dataset_precictor_variables
+
+# Create KMeans objects
+k_means = KMeans(n_clusters = 3, random_state = 0)
+
+# Train the model with training data
+model.fit(x_train)
+
+# Make predictions
+predicted_values = model.predict(x_test)
+
+""" RandomForestClassifier """
+
+# Import modules
+from sklearn.ensemble import RandomForestClassifier
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted variable
+
+x_test  = test_dataset_precictor_variables
+
+# Create Random Forest Classifier objects
+model = RandomForestClassifier()
+
+# Train the model with training data
+model.fit(x_train, x_test)
+
+# Make predictions
+predicted_values = model.predict(x_test)
+
+""" decomposition """
+
+# Import modules
+from sklearn import decomposition
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted variable
+
+x_test  = test_dataset_precictor_variables
+
+# Creating PCA decomposition object
+pca = decomposition.PCA(n_components = k)
+
+# Creating Factor analysis decomposition object
+fa = decomposition.FactorAnalysis()
+
+# Reduc the size of the training set using PCA
+reduced_train = pca.fit_transform(train)
+
+# Reduce the size of the training set using PCA
+reduced_test = pca.transform(test)
+
+""" GradientBoostingClassifier """
+
+# Import modules
+from sklearn.ensemble import GradientBoostingClassifier
+
+# Create training and test subsets
+x_train = train_dataset_predictor_variables
+y_train = train_dataset_predicted variable
+
+x_test  = test_dataset_precictor_variables
+
+# Creating Gradient Boosting Classifier object
+model = GradientBoostingClassifier(n_estimators = 100, learning_rate = 1.0, max_depth = 1, random_state = 0)
+
+# Training the model with training data
+model.fit(x_train, x_test)
+
+# Make predictions
+predicted_values = model.predict(x_test)
+```
 * [不足 20 行 Python 代码，高效实现 k-means 均值聚类算法！](https://mp.weixin.qq.com/s/HCqzwwyA-EnDQpPsSUr8og)
   * https://blog.csdn.net/xufive/article/details/101448969
 * [使用Python进行机器学习的假设检验（附链接&代码）](https://mp.weixin.qq.com/s/iC6I66_bBEHlnwZMEZsN_Q)
@@ -1789,8 +2396,6 @@ if __name__ == "__main__":
     * def greeting(name: str) -> str: ...
   * Using Python's Type Annotations - DEV
     * https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way.
-* 如何多行字符串拼接?
-  * https://github.com/haoran119/python/blob/e98be0d3dedb64f4440fe620ca47edbcde0e75a1/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/%E5%A6%82%E4%BD%95%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5.py
 * Comparisons
   * 6. Expressions — Python 3.7.4 documentation
     * https://docs.python.org/3/reference/expressions.html#comparisons
@@ -1858,7 +2463,13 @@ if __name__ == "__main__":
   * enumerate
   * Change values in a list using a for loop (python) - Stack Overflow
     * https://stackoverflow.com/questions/54974579/change-values-in-a-list-using-a-for-loop-python
-  * https://github.com/haoran119/python/blob/081816091c1372991cd1542028710399aa67de99/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20change%20values%20in%20a%20list%20with%20for%20loop.py
+```python
+list_a = [0] * 10
+ 
+for index, value in enumerate(list_a):
+    if index > 5:
+        list_a[index] = -1
+```
 * How to reverse list ?
   * r_tests = tests[::-1]
   * r_tests = reversed(tests)
@@ -1977,7 +2588,108 @@ if __name__ == "__main__":
 * How to print lists ?
   * Print lists in Python (4 Different Ways) - GeeksforGeeks
   * https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
-  * https://github.com/haoran119/python/blob/cd05dd3d79480c527d38822b5bccf4879a471563/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20print%20lists.py
+```python
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 22 11:05:55 2018
+
+@author: h.tang
+"""
+
+# using for loop
+a = [1, 2, 3, 4, 5]
+
+# =============================================================================
+# 1. Using for loop : Traverse from 0 to len(list) and print all elements of the list one by one uisng a for loop,
+# this is the standard practice of doing it.
+# =============================================================================
+#1
+#2
+#3
+#4
+#5
+#1 2 3 4 5
+
+# printing the list using loop
+for x in range(len(a)):
+    print a[x]
+
+for x in range(len(a)):
+    print a[x],
+
+# =============================================================================
+# 2. Without using loops: * symbol is use to print the list elements in a single line with space.
+# To print all elements in new lines or separated by space use sep=”\n” or sep=”, ” respectively.
+# =============================================================================
+# Python program to print list
+# without using loop
+
+a = [1, 2, 3, 4, 5]
+
+#1 2 3 4 5
+#printing lists separated by commas
+#1, 2, 3, 4, 5
+#printing lists in new line
+#1
+#2
+#3
+#4
+#5
+
+# printing the list using * operator separated
+# by space
+print(*a)
+
+# printing the list using * and sep operator
+print("printing lists separated by commas")
+
+print(*a, sep = ", ")
+
+# print in new line
+print("printing lists in new line")
+
+print(*a, sep = "\n")
+
+# =============================================================================
+# 3. Convert a list to a string for display : If it is a list of strings we can simply join them using join() function,
+# but if the list contains integers then convert it into string and then use join() function to join them to a string and print the string.
+# =============================================================================
+# Python program to print list
+# by Converting a list to a
+# string for display
+a =["Geeks", "for", "Geeks"]
+
+#Geeks for Geeks
+#1, 2, 3, 4, 5
+
+# print the list using join function()
+print(' '.join(a))
+
+# print the list by converting a list of
+# integers to string
+a = [1, 2, 3, 4, 5]
+
+print str(a)[1:-1]
+
+# =============================================================================
+# 4. Using map : Use map() to convert each item in the list to a string if list is not a string, and then join them
+# =============================================================================
+# Python program to print list
+# print the list by converting a list of
+# integers to string using map
+a = [1, 2, 3, 4, 5]
+#1 2 3 4 5
+#in new line
+#1
+#2
+#3
+#4
+#5
+print(' '.join(map(str, a)))
+
+print"in new line"
+print('\n'.join(map(str, a)))
+```
 * How to create and initialise list with repeated N times ?
   * x = [5]
   * print(x * 5)　　// [5, 5, 5, 5, 5]
@@ -2075,44 +2787,6 @@ if __name__ == "__main__":
       * os.path.isdir()
     * Checking if Either Exist
       * os.path.exists()
-* How to iterate directory for files ?
-  * os — Miscellaneous operating system interfaces — Python 3.7.4 documentation
-    * https://docs.python.org/3/library/os.html?highlight=os%20walk#os.walk
-    * Generate the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
-  * Python3 OS 文件/目录方法 | 菜鸟教程
-    * http://www.runoob.com/python3/python3-os-file-methods.html
-  * Python list directory, subdirectory, and files - Stack Overflow
-    * https://stackoverflow.com/questions/2909975/python-list-directory-subdirectory-and-files
-  * https://github.com/haoran119/python/blob/b754b5ae1339443d9c5fc9d54cf7b9de1349cc12/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20iterate%20directory%20for%20files.py 
-* How to input and output file ?
-  * 7. Input and Output — Python 3.7.4 documentation
-    * https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects
-    * https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json
-    * For reading lines from a file, you can loop over the file object. This is memory efficient, fast, and leads to simple code
-  * Python3 File 方法 | 菜鸟教程
-    * http://www.runoob.com/python3/python3-file-methods.html
-  * python - How to read a file line-by-line into a list? - Stack Overflow
-    * https://stackoverflow.com/questions/3277503/how-to-read-a-file-line-by-line-into-a-list
-  * Python dump dict to json file - Stack Overflow
-    * https://stackoverflow.com/questions/17043860/python-dump-dict-to-json-file
-  * Python Dictionary to CSV - Stack Overflow
-    * https://stackoverflow.com/questions/8331469/python-dictionary-to-csv
-  * [Python JSON: Read, Write, Parse JSON (With Examples) (programiz.com)](https://www.programiz.com/python-programming/json)
-  * [Python File I/O: Read and Write Files in Python (programiz.com)](https://www.programiz.com/python-programming/file-operation)
-  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.load)
-    * json.load(fp, *, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
-    * Deserialize fp (a .read()-supporting text file or binary file containing a JSON document) to a Python object using this conversion table.
-  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.dump)
-    * json.dump(obj, fp, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)
-    * Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object) using this conversion table.
-    * If specified, default should be a function that gets called for objects that can’t otherwise be serialized. It should return a JSON encodable version of the object or raise a TypeError. If not specified, TypeError is raised.
-    * If sort_keys is true (default: False), then the output of dictionaries will be sorted by key.
-  * How to write datetime object to json file ?
-    * [python - How to overcome "datetime.datetime not JSON serializable"? - Stack Overflow](https://stackoverflow.com/questions/11875770/how-to-overcome-datetime-datetime-not-json-serializable/36142844#36142844)
-      * $ json.dumps(my_dictionary, indent=4, sort_keys=True, default=str) 
-    * [How to write a datetime object to JSON in Python (kite.com)](https://www.kite.com/python/answers/how-to-write-a-datetime-object-to-json-in-python#)
-      * Call datetime.datetime.isoformat() to convert datetime.datetime into a ISO date format, which is compatible with JSON.
-  * https://github.com/haoran119/python/blob/c47e7b70db20a0eb7aff785806555f886c02f2cc/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20input%20and%20output%20file.py
 * How to use try ... except ... finally statement for exception ?
   * 8.4. The try statement - 8. Compound statements — Python 3.7.4 documentation
     * https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
@@ -2162,9 +2836,30 @@ if __name__ == "__main__":
     * https://stackoverflow.com/questions/20063/whats-the-best-way-to-parse-command-line-arguments
   * python - Why use argparse rather than optparse? - Stack Overflow
     * https://stackoverflow.com/questions/3217673/why-use-argparse-rather-than-optparse
-  * https://github.com/haoran119/python/blob/b69260423d5abfefbf53b83c2a77d9962d4765cd/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20parse%20arguments%20for%20command-line%20options.py
-* How to use multiprocessing ?
-  * [multiprocessing — Process-based parallelism — Python 3.9.5 documentation](https://docs.python.org/3/library/multiprocessing.html)
+```python
+import argparse
+
+if __name__ == "__main__":
+    try:
+        parser = argparse.ArgumentParser(prog='test',
+                                         description='Test class A')
+
+        parser.add_argument('-c',
+                            '--config',
+                            metavar='file',
+                            help='Path to file',
+                            required=True)
+
+        args = parser.parse_args()
+
+        print("args.config = {0}\n".format(args.config))
+
+    except (AttributeError, TypeError, RuntimeError) as err:
+        logger.logError(err.message)
+
+    except Exception as err:
+        logger.logException(err.message)
+```
 
 ### FIX OF ERRORS
 
