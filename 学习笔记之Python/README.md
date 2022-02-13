@@ -1713,6 +1713,68 @@ if __name__ == "__main__":
 ### [Multithreaded Programming](https://www.tutorialspoint.com/python/python_multithreading.htm)
 
 * [multiprocessing — Process-based parallelism — Python 3.9.5 documentation](https://docs.python.org/3/library/multiprocessing.html)
+* [学习笔记之asyncio — Asynchronous I/O - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13531730.html)
+```python
+import asyncio
+import logging
+import zmq
+import zmq.asyncio
+
+
+class TestService:
+
+    def __init__(self, url):
+        self._url = url
+
+        self._is_running = False
+        self._zmq_context = None
+        self._socket = None
+
+    def _start(self):
+        if self._is_running:
+            return
+
+        self._zmq_context = zmq.asyncio.Context()
+        self._socket = self._zmq_context.socket(zmq.REP)
+        self._socket.bind(self._url)
+
+    def _stop(self):
+        if not self._is_running:
+            return
+
+        if not self._socket.closed:
+            self._socket.close()
+
+    async def _process_message(self, data):
+        # Process message here
+        return data
+
+    async def _recv_and_process(self):
+        # need while loop to keep receiving and processing messages
+        while (True):
+            msg = await self._socket.recv_multipart()
+            reply = await self._process_message(msg)
+            await self._socket.send_multipart([reply,])
+
+    def run(self):
+        loop = None
+
+        try:
+            self._start()
+
+            loop = asyncio.get_event_loop()
+            loop.create_task(self._recv_and_process())
+            loop.run_forever()
+
+        except Exception as ex:
+            logging.error('Error {}'.format(ex))
+
+        finally:
+            if loop is not None:
+                loop.close()
+
+            self._stop()
+```
 * [理解python多线程和多进程](https://mp.weixin.qq.com/s/pjoSXrpjvxvOHDmWAhYfFA)
 * [深入理解python多线程和多进程](https://mp.weixin.qq.com/s/w0dZrtv8ogdtxO8FT2LrEg)
 * [入门 | 三行Python代码，让数据预处理速度提高2到6倍](https://mp.weixin.qq.com/s/DgKuNIa_m-CsXWgHIz_3rQ)
