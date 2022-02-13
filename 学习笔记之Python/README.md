@@ -1118,6 +1118,9 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
   * https://medium.com/better-programming/introduction-to-functional-programming-in-python-3d26cd9cbfd7
 
 ### Regular Expressions
+
+* [Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript](https://regex101.com/)
+* [Regular Expressions Cheat Sheet by DaveChild - Download free from Cheatography - Cheatography.com: Cheat Sheets For Every Occasion](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
 * [Python3 正则表达式 | 菜鸟教程](http://www.runoob.com/python3/python3-reg-expressions.html)
 * [盘一盘 Python 系列特别篇 - 正则表达式](https://mp.weixin.qq.com/s/Tewaynja3ggkcpzAli-1YQ)
 * [re — Regular expression operations — Python 3.10.2 documentation](https://docs.python.org/3/library/re.html#module-re)
@@ -1139,7 +1142,6 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [regex - Python extract pattern matches - Stack Overflow](https://stackoverflow.com/questions/15340582/python-extract-pattern-matches)
 * [Python 正则表达式 re 模块简明笔记](https://mp.weixin.qq.com/s/8M_xiHMNB1a93ZunpxMsLg)
 	* https://funhacks.net/2016/12/27/regular_expression/
-* [Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript](https://regex101.com/)
 * [Python正则表达式](https://mp.weixin.qq.com/s/bc-Puk4AVc1XxusrbSwaHg)
 	* re模块主要定义了9个常量、12个函数、1个异常，每个常量和函数都会通过实际代码案例讲解，让大家能更直观的了解其作用！
 ```python
