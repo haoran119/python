@@ -932,7 +932,7 @@ if __name__ == '__main__':
   * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
 * [IPython 中常用的魔法命令](https://mp.weixin.qq.com/s/5ZyfyR9r9zBod6ZP7scewA)
 
-### 面向对象
+### Classes / Object Oriented
 
 * [Python 面向对象编程](http://www.langzi.fun/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html)
   * 面向过程编程
@@ -1117,7 +1117,31 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [写 Python 代码不可不知的函数式编程技术](https://mp.weixin.qq.com/s/cTUmjl8-laztpUSfSCW1hQ)
   * https://medium.com/better-programming/introduction-to-functional-programming-in-python-3d26cd9cbfd7
 
-### 多线程
+### Regular Expressions
+* Python3 正则表达式 | 菜鸟教程
+* http://www.runoob.com/python3/python3-reg-expressions.html
+* [盘一盘 Python 系列特别篇 - 正则表达式](https://mp.weixin.qq.com/s/Tewaynja3ggkcpzAli-1YQ)
+* re — Regular expression operations — Python 3.7.4 documentation
+* https://docs.python.org/3.7/library/re.html#module-re
+* Regular Expression HOWTO — Python 3.7.4 documentation
+* https://docs.python.org/3/howto/regex.html
+* regex - Get all unnamed groups in a Python match object - Stack Overflow
+* https://stackoverflow.com/questions/30293064/get-all-unnamed-groups-in-a-python-match-object
+* regex - Extracting 2 strings from regular expression Python - Stack Overflow
+* https://stackoverflow.com/questions/23658156/extracting-2-strings-from-regular-expression-python
+* regex - Python extract pattern matches - Stack Overflow
+* https://stackoverflow.com/questions/15340582/python-extract-pattern-matches
+* Python 正则表达式 re 模块简明笔记
+* https://mp.weixin.qq.com/s/8M_xiHMNB1a93ZunpxMsLg
+* https://funhacks.net/2016/12/27/regular_expression/
+* Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript
+* https://regex101.com/
+* Python正则表达式
+* https://mp.weixin.qq.com/s/bc-Puk4AVc1XxusrbSwaHg
+* re模块主要定义了9个常量、12个函数、1个异常，每个常量和函数都会通过实际代码案例讲解，让大家能更直观的了解其作用！
+* https://github.com/haoran119/python/blob/66ca8ad50b905265dcb232de2437bd10c5372943/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20use%20Regular%20Expression%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.py
+
+### Multithreaded Programming
 
 * [理解python多线程和多进程](https://mp.weixin.qq.com/s/pjoSXrpjvxvOHDmWAhYfFA)
 * [深入理解python多线程和多进程](https://mp.weixin.qq.com/s/w0dZrtv8ogdtxO8FT2LrEg)
@@ -1931,29 +1955,6 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * How to define custom exception ?
   * How to Define Custom Exceptions in Python? (With Examples)
     * https://www.programiz.com/python-programming/user-defined-exception
-* How to use Regular Expression 正则表达式 ？
-  * Python3 正则表达式 | 菜鸟教程
-    * http://www.runoob.com/python3/python3-reg-expressions.html
-  * [盘一盘 Python 系列特别篇 - 正则表达式](https://mp.weixin.qq.com/s/Tewaynja3ggkcpzAli-1YQ)
-  * re — Regular expression operations — Python 3.7.4 documentation
-    * https://docs.python.org/3.7/library/re.html#module-re
-  * Regular Expression HOWTO — Python 3.7.4 documentation
-    * https://docs.python.org/3/howto/regex.html
-  * regex - Get all unnamed groups in a Python match object - Stack Overflow
-    * https://stackoverflow.com/questions/30293064/get-all-unnamed-groups-in-a-python-match-object
-  * regex - Extracting 2 strings from regular expression Python - Stack Overflow
-    * https://stackoverflow.com/questions/23658156/extracting-2-strings-from-regular-expression-python
-  * regex - Python extract pattern matches - Stack Overflow
-    * https://stackoverflow.com/questions/15340582/python-extract-pattern-matches
-  * Python 正则表达式 re 模块简明笔记
-    * https://mp.weixin.qq.com/s/8M_xiHMNB1a93ZunpxMsLg
-    * https://funhacks.net/2016/12/27/regular_expression/
-  * Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript
-    * https://regex101.com/
-  * Python正则表达式
-    * https://mp.weixin.qq.com/s/bc-Puk4AVc1XxusrbSwaHg
-    * re模块主要定义了9个常量、12个函数、1个异常，每个常量和函数都会通过实际代码案例讲解，让大家能更直观的了解其作用！
-  * https://github.com/haoran119/python/blob/66ca8ad50b905265dcb232de2437bd10c5372943/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20use%20Regular%20Expression%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.py
 * How to use logging ?
   * Logging HOWTO — Python 3.7.0 documentation
     * https://docs.python.org/3.7/howto/logging.html#basic-logging-tutorial
