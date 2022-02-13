@@ -1229,6 +1229,96 @@ pprint.pprint(dumps, width=1)
 	* 基于这些前提，我们平时在部署 Python 程序时，一般更倾向于使用多进程的方式去部署，就是为了避免 GIL 的影响。
 	* 任何一种编程语言，都有其优势和劣势，我们需要理解它的实现机制，发挥其长处，才能更好地服务于我们的需求。
 
+### [Database Access](https://www.tutorialspoint.com/python/python_database_access.htm)
+
+```python
+import psycopg2
+
+
+class DBTest(object):
+    """
+    Database data retrieval
+    """
+
+    def __init__(self, config):
+        self.connection = None
+
+        self.db_config = {
+            'host': config['host'],
+            'database': config['name'],
+            'user': config['user'],
+            'password': config['password'],
+            'port': config['port'] if 'port' in config else None,
+            'application_name': 'equipment_simulator'
+        }
+
+    def __enter__(self):
+        self.connect(self.db_config)
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.close()
+
+    def connect(self, kwargs):
+        """
+        Instantiate DB connection
+        """
+
+        try:
+            self.connection = psycopg2.connect(**kwargs)
+        except (psycopg2.DatabaseError, psycopg2.InterfaceError) as error:
+            raise Exception(error.message)
+
+    def close(self):
+        """
+        Close the connection to the database
+        """
+
+        try:
+            if self.connection is not None:
+                self.connection.close()
+                self.connection = None
+        except (psycopg2.DatabaseError, psycopg2.InterfaceError) as error:
+            raise Exception(error.message)
+
+    @staticmethod
+    def dict_fetchall(cursor):
+        """
+        :param cursor:
+        :return: Return all rows from a cursor as a dict
+        """
+
+        columns = [col[0] for col in cursor.description]
+        return [dict(zip(columns, row)) for row in cursor.fetchall()]
+
+    def get_data(self, key):
+        if not key:
+            return None
+
+        query = '''
+            select *
+            from test_table
+            where name in {}
+        '''.format(tuple(key))
+
+        cursor = self.connection.cursor()
+        cursor.execute(query)
+        results = self.dict_fetchall(cursor)
+
+        return results
+
+
+if __name__ == "__main__":
+    input_config = {}
+    input_key = ''
+
+    with DBTest(config=input_config) as my_dbtest:
+        key = input_key
+
+        data = my_dbtest.get_data(key=key)
+        print(data)
+```
+
 ### 编码
 
 * [一文透彻掌握 Python 编码问题](https://mp.weixin.qq.com/s/CFDH58dwU3ilMn1axJVccg)
