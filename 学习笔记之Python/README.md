@@ -511,6 +511,17 @@ if __name__ == '__main__':
     print("{} : {}".format(person, my_dict[person]))    # <__main__.Person object at 0x7f8cd0473ed0> : 123
 ```
 
+### [Built-in Exceptions](https://docs.python.org/3/library/exceptions.html)
+
+### [Exceptions Handling](https://www.tutorialspoint.com/python/python_exceptions.htm)
+
+* [学习笔记之Python Debug ( pdb ) - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10437091.html)
+* [盘一盘 Python 系列特别篇 - 错误类型](https://mp.weixin.qq.com/s/PBaDdLcYxDso2V4aZcFXpA)
+* [盘一盘 Python 系列特别篇 - 异常处理](https://mp.weixin.qq.com/s/94O3Kz__8UQZoZtQ-WyOcQ)
+* [一文教你读懂 Python 中的异常信息](https://realpython.com/python-traceback/)
+* [Python 常见的17个错误分析](https://www.oschina.net/question/89964_62779)
+  * https://inventwithpython.com/blog/2012/07/09/16-common-python-runtime-errors-beginners-find/
+
 ### Iterator / Generator
 
 * [盘一盘 Python 系列特别篇 - 两大利「器」](https://mp.weixin.qq.com/s/o9REZiT-k-6UTcSnqCfCMQ)
@@ -905,15 +916,6 @@ if __name__ == '__main__':
 * [5个案例让Python输出漂亮的表格！](https://mp.weixin.qq.com/s/8uxc2t53N_j_mRPYbiG0sA)
   * https://linuxops.org/blog/python/prettytable.html
   * prettytable可以打印出美观的表格，并且对中文支持相当好
-
-### [Exceptions Handling](https://www.tutorialspoint.com/python/python_exceptions.htm)
-
-* [学习笔记之Python Debug ( pdb ) - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10437091.html)
-* [盘一盘 Python 系列特别篇 - 错误类型](https://mp.weixin.qq.com/s/PBaDdLcYxDso2V4aZcFXpA)
-* [盘一盘 Python 系列特别篇 - 异常处理](https://mp.weixin.qq.com/s/94O3Kz__8UQZoZtQ-WyOcQ)
-* [一文教你读懂 Python 中的异常信息](https://realpython.com/python-traceback/)
-* [Python 常见的17个错误分析](https://www.oschina.net/question/89964_62779)
-  * https://inventwithpython.com/blog/2012/07/09/16-common-python-runtime-errors-beginners-find/
 
 ## ADVANCE
 
