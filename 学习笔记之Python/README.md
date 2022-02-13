@@ -881,6 +881,17 @@ if __name__ == '__main__':
 * [13 ways to access data in Python. How to get data from local files… | by John Micah Reid | Towards Data Science](https://towardsdatascience.com/13-ways-to-access-data-in-python-bac5683e0063)
 * [Python处理CSV、JSON和XML数据的简便方法](https://mp.weixin.qq.com/s/1PyeBLIJNzswO3zd-mHiTQ)
   * https://towardsdatascience.com/the-easy-way-to-work-with-csv-json-and-xml-in-python-5056f9325ca9
+* [利用 tornado 实现表格文件预览](https://mp.weixin.qq.com/s/NVAzXKP801mfAfNRMvCjBw)
+  * https://github.com/percent4/csv_file_review
+* [Python 处理分析 128 张 Excel 表格竟不到3秒？| 附数据集](https://mp.weixin.qq.com/s/ZhWomp6LDgHHjf9Tr1dzvg)
+  * https://github.com/seizeeveryday/DA-cases/tree/master/Python%2Bexcel
+* [将Python字符串生成PDF](https://mp.weixin.qq.com/s/5R6t_oiOOV7qG4YkdLcpvA)
+* [用 Python 操作 Word 文档](https://mp.weixin.qq.com/s/awN9gLqVn_s-STRzhioPXQ)
+* [用 Python 实现文件自动归类](https://mp.weixin.qq.com/s/Ech_OeoDdYkd1ZmNjRIm_w)
+* [用Python一键批量将任意结构的CSV文件导入MySQL数据库。](https://mp.weixin.qq.com/s/ouuk4o739tlzF6b5cNjUwQ)
+* [5个案例让Python输出漂亮的表格！](https://mp.weixin.qq.com/s/8uxc2t53N_j_mRPYbiG0sA)
+  * https://linuxops.org/blog/python/prettytable.html
+  * prettytable可以打印出美观的表格，并且对中文支持相当好
 
 ### Exceptions Handling
 
@@ -1214,6 +1225,8 @@ pprint.pprint(dumps, width=1)
 ```
 
 ### [Database Access](https://www.tutorialspoint.com/python/python_database_access.htm)
+
+* [Python与MySQL数据库的交互实战](https://blog.csdn.net/weixin_41261833/article/details/103832017)
 
 ```python
 import psycopg2
