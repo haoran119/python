@@ -1121,6 +1121,18 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
 * [Python3 正则表达式 | 菜鸟教程](http://www.runoob.com/python3/python3-reg-expressions.html)
 * [盘一盘 Python 系列特别篇 - 正则表达式](https://mp.weixin.qq.com/s/Tewaynja3ggkcpzAli-1YQ)
 * [re — Regular expression operations — Python 3.7.4 documentation](https://docs.python.org/3.7/library/re.html#module-re)
+	* [re.compile(pattern, flags=0)](https://docs.python.org/3.7/library/re.html#re.compile)
+		* Compile a regular expression pattern into a regular expression object, which can be used for matching using its match(), search() and other methods, described below.
+		* The expression’s behaviour can be modified by specifying a flags value. Values can be any of the following variables, combined using bitwise OR (the | operator).
+	* [re.findall(pattern, string, flags=0)](https://docs.python.org/3.7/library/re.html#re.findall)
+		* Return all non-overlapping matches of pattern in string, as a list of strings. The string is scanned left-to-right, and matches are returned in the order found. If one or more groups are present in the pattern, return a list of groups; this will be a list of tuples if the pattern has more than one group. Empty matches are included in the result.
+		* Changed in version 3.7: Non-empty matches can now start just after a previous empty match.
+	* [re.search(pattern, string, flags=0)](https://docs.python.org/3.7/library/re.html#re.search)
+		* Scan through string looking for the first location where the regular expression pattern produces a match, and return a corresponding match object. Return None if no position in the string matches the pattern; note that this is different from finding a zero-length match at some point in the string.
+	* [re.match(pattern, string, flags=0)](https://docs.python.org/3.7/library/re.html#re.match)
+		* If zero or more characters at the beginning of string match the regular expression pattern, return a corresponding match object. Return None if the string does not match the pattern; note that this is different from a zero-length match.
+		* Note that even in MULTILINE mode, re.match() will only match at the beginning of the string and not at the beginning of each line.
+		* If you want to locate a match anywhere in string, use search() instead (see also search() vs. match()).
 * [Regular Expression HOWTO — Python 3.7.4 documentation](https://docs.python.org/3/howto/regex.html)
 * [regex - Get all unnamed groups in a Python match object - Stack Overflow](https://stackoverflow.com/questions/30293064/get-all-unnamed-groups-in-a-python-match-object)
 * [regex - Extracting 2 strings from regular expression Python - Stack Overflow](https://stackoverflow.com/questions/23658156/extracting-2-strings-from-regular-expression-python)
