@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jul  1 19:54:40 2022
+https://www.geeksforgeeks.org/python-how-to-search-for-a-string-in-text-files/
 
-@author: Hao
+https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/Python_FileText.html
 """
 
 
