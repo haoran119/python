@@ -1213,22 +1213,6 @@ pprint.pprint(dumps, width=1)
 # =============================================================================
 ```
 
-### Multithreaded Programming
-
-* [理解python多线程和多进程](https://mp.weixin.qq.com/s/pjoSXrpjvxvOHDmWAhYfFA)
-* [深入理解python多线程和多进程](https://mp.weixin.qq.com/s/w0dZrtv8ogdtxO8FT2LrEg)
-* [入门 | 三行Python代码，让数据预处理速度提高2到6倍](https://mp.weixin.qq.com/s/DgKuNIa_m-CsXWgHIz_3rQ)
-  * https://towardsdatascience.com/heres-how-you-can-get-a-2-6x-speed-up-on-your-data-pre-processing-with-python-847887e63be5
-* [Python 线程为什么要搞个 setDaemon ？](https://mp.weixin.qq.com/s/tRaQftWQNzE2a_ZKDLGE4w)
-* [为什么 GIL 让多线程变得如此鸡肋？](https://mp.weixin.qq.com/s/QP4h36qqTWUKchrxN56v9A)
-	* 这篇文章我们主要讲了 Python GIL 相关的问题。
-	* 首先，我们了解到 GIL 属于 Python 解释器层面的，它并不是 Python 语言的特性，这一点我们一定不要搞混了。GIL 的存在会让 Python 在执行代码时，只允许同一时刻只有一个线程在执行，其目的是为了保证在执行过程中内存管理的安全性。
-	* 之后我们通过一个例子，观察到 Python 在多线程运行 CPU 密集型任务时，执行效率比单线程还要低，其原因是因为在多核 CPU 环境下，GIL 的存在会导致多线程切换时无效的资源消耗，因此会降低程序运行的效率。
-	* 但如果使用多线程运行 IO 密集型的任务，由于线程更多地是在等待 IO，所以并不会消耗 CPU 资源，这种情况下，使用多线程是可以提高程序运行效率的。
-	* 最后，我们分析了 GIL 存在的原因，更多是因为历史问题导致，也正因为 GIL 的存在，很多 Python 开发者默认 Python 是线程安全的，这也间接增加了去除 GIL 的困难性。
-	* 基于这些前提，我们平时在部署 Python 程序时，一般更倾向于使用多进程的方式去部署，就是为了避免 GIL 的影响。
-	* 任何一种编程语言，都有其优势和劣势，我们需要理解它的实现机制，发挥其长处，才能更好地服务于我们的需求。
-
 ### [Database Access](https://www.tutorialspoint.com/python/python_database_access.htm)
 
 ```python
@@ -1318,6 +1302,22 @@ if __name__ == "__main__":
         data = my_dbtest.get_data(key=key)
         print(data)
 ```
+
+### [Multithreaded Programming](https://www.tutorialspoint.com/python/python_multithreading.htm)
+
+* [理解python多线程和多进程](https://mp.weixin.qq.com/s/pjoSXrpjvxvOHDmWAhYfFA)
+* [深入理解python多线程和多进程](https://mp.weixin.qq.com/s/w0dZrtv8ogdtxO8FT2LrEg)
+* [入门 | 三行Python代码，让数据预处理速度提高2到6倍](https://mp.weixin.qq.com/s/DgKuNIa_m-CsXWgHIz_3rQ)
+  * https://towardsdatascience.com/heres-how-you-can-get-a-2-6x-speed-up-on-your-data-pre-processing-with-python-847887e63be5
+* [Python 线程为什么要搞个 setDaemon ？](https://mp.weixin.qq.com/s/tRaQftWQNzE2a_ZKDLGE4w)
+* [为什么 GIL 让多线程变得如此鸡肋？](https://mp.weixin.qq.com/s/QP4h36qqTWUKchrxN56v9A)
+	* 这篇文章我们主要讲了 Python GIL 相关的问题。
+	* 首先，我们了解到 GIL 属于 Python 解释器层面的，它并不是 Python 语言的特性，这一点我们一定不要搞混了。GIL 的存在会让 Python 在执行代码时，只允许同一时刻只有一个线程在执行，其目的是为了保证在执行过程中内存管理的安全性。
+	* 之后我们通过一个例子，观察到 Python 在多线程运行 CPU 密集型任务时，执行效率比单线程还要低，其原因是因为在多核 CPU 环境下，GIL 的存在会导致多线程切换时无效的资源消耗，因此会降低程序运行的效率。
+	* 但如果使用多线程运行 IO 密集型的任务，由于线程更多地是在等待 IO，所以并不会消耗 CPU 资源，这种情况下，使用多线程是可以提高程序运行效率的。
+	* 最后，我们分析了 GIL 存在的原因，更多是因为历史问题导致，也正因为 GIL 的存在，很多 Python 开发者默认 Python 是线程安全的，这也间接增加了去除 GIL 的困难性。
+	* 基于这些前提，我们平时在部署 Python 程序时，一般更倾向于使用多进程的方式去部署，就是为了避免 GIL 的影响。
+	* 任何一种编程语言，都有其优势和劣势，我们需要理解它的实现机制，发挥其长处，才能更好地服务于我们的需求。
 
 ### 编码
 
