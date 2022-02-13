@@ -101,5 +101,4 @@
 
   print(foo1 is foo2)     # True
   ```
-* [Stack in Python - GeeksforGeeks](https://www.geeksforgeeks.org/stack-in-python/)
 * [Program to count occurrence of a given character in a string - GeeksforGeeks](https://www.geeksforgeeks.org/program-count-occurrence-given-character-string/?ref=gcse)
