@@ -667,7 +667,7 @@ if __name__ == '__main__':
     print(next(my_incrementor))  # Traceback (most recent call last): ... StopIteration
 ```
 
-### Modules
+### [Modules](https://www.tutorialspoint.com/python/python_modules.htm)
 
 * [深入探讨Python的import机制：实现远程导入模块 | CSDN博文精选](https://mp.weixin.qq.com/s/Sx_WyKUpoZrnFtV9epAfpg)
 * 你常常看到的 \_\_init\_\_.py 到底是个啥？
