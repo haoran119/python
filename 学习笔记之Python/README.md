@@ -258,12 +258,6 @@
     * filter
     * sorted/sort
     * zip
-* [Python | 掌握 Lambda 函数，四不要](https://mp.weixin.qq.com/s/tWibBZGcX4PtEKo0a1bvzQ)
-  * https://github.com/xitu/gold-miner/blob/master/article/2020/master-python-lambda-functions-with-these-4-donts.md
-    1. 不要返回任何值
-    2. 不要忘记更好的选择
-    3. 不要将它赋值给变量
-    4. 不要忘记列表推导式
 * [class complex([real[, imag]])](https://docs.python.org/3/library/functions.html?highlight=complex#complex)
 	* Return a complex number with the value real + imag*1j or convert a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j.
 
@@ -278,6 +272,12 @@
   * https://medium.com/better-programming/what-are-args-and-kwargs-in-python-6aaf9e3cad73
 * [为什么 Python 没有 main 函数？](https://mp.weixin.qq.com/s/Nr1nD6qKKRd-C55PCV-sGw)
   * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
+* [Python | 掌握 Lambda 函数，四不要](https://mp.weixin.qq.com/s/tWibBZGcX4PtEKo0a1bvzQ)
+  * https://github.com/xitu/gold-miner/blob/master/article/2020/master-python-lambda-functions-with-these-4-donts.md
+    1. 不要返回任何值
+    2. 不要忘记更好的选择
+    3. 不要将它赋值给变量
+    4. 不要忘记列表推导式
 
 ### [Built-in Constants](https://docs.python.org/3/library/constants.html)
 
