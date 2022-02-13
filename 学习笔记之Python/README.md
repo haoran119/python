@@ -497,48 +497,7 @@ if __name__ == '__main__':
     print("{} : {}".format(person, my_dict[person]))    # <__main__.Person object at 0x7f8cd0473ed0> : 123
 ```
 
-## ADVANCE
-
-* [5张图理解Python中的浅拷贝与深拷贝](https://mp.weixin.qq.com/s/em4OBWLdTqC7jdvyCs7Jhg)
-* [图解 Python 中深浅拷贝](https://mp.weixin.qq.com/s/TtGFFDTKdPwCYj7gmIdp_Q)
-  * https://blog.csdn.net/mall_lucy/article/details/104531218
-  * 赋值运算
-  	* l2 = l1是一个指向，是赋值，和深浅copy无关。
-  * 浅copy
-    * 浅copy：会在内存中新开辟一个空间，存放这个copy的列表，但是列表里面的内容还是沿用之前对象的内存地址。
-  * 深copy
-    * 深copy：会在内存中开辟新空间，将原列表以及列表里面的可变数据类型重新创建一份，不可变数据类型则沿用之前的。
-  * 为什么Python默认的拷贝方式是浅拷贝？
-    * 时间角度：浅拷贝花费时间更少。
-    * 空间角度：浅拷贝花费内存更少。
-    * 效率角度：浅拷贝只拷贝顶层数据，一般情况下比深拷贝效率高。
-  * 总结：
-    * 不可变对象在赋值时会开辟新空间。
-    * 可变对象在赋值时，修改一个的值，另一个也会发生改变。
-    * 深、浅拷贝对不可变对象拷贝时，不开辟新空间，相当于赋值操作。
-    * 浅拷贝在拷贝时，只拷贝第一层中的引用，如果元素是可变对象，并且被修改，那么拷贝的对象也会发生变化。
-    * 深拷贝在拷贝时，会逐层进行拷贝，直到所有的引用都是不可变对象为止。
-    * Python 有多种方式实现浅拷贝，copy模块的copy 函数 ，对象的 copy 函数 ，工厂方法，切片等。
-    * 大多数情况下，编写程序时，都是使用浅拷贝，除非有特定的需求。
-    * 浅拷贝的优点：拷贝速度快，占用空间少，拷贝效率高。
-* [Python 程序员如何防止数据被修改？](https://mp.weixin.qq.com/s/V8x6clZRK6k9T2rXwj2aDQ)
-* [Python 进阶：全面解读高级特性之切片](https://mp.weixin.qq.com/s/afhvyDGjt8U2XzHCZHOJJA)
-* [聊一聊 Python 中的闭包](https://mp.weixin.qq.com/s/qYKNGqItnSXq0-Zq2kMCKA)
-  * https://segmentfault.com/a/1190000007321972
-* [聊一聊 Python 中的“垃圾”回收](https://www.heroyf.club/2019/10/24/python_gc/)
-* [Python 中 -m 的典型用法、原理解析与发展演变](https://mp.weixin.qq.com/s/tD3eSb2WdOPN_dKAQ9d6Ag)
-* [*args and **kwargs in Python - GeeksforGeeks](https://www.geeksforgeeks.org/args-kwargs-python/)
-	* In Python, we can pass a variable number of arguments to a function using special symbols. There are two special symbols:
-	* Special Symbols Used for passing arguments:
-	* 1.)*args (Non-Keyword Arguments)
-	* 2.)**kwargs (Keyword Arguments)
-* [Python中的*args和**kwargs是什么？该如何使用？](https://mp.weixin.qq.com/s/s7PFVE_wcAMZaRUds2MJDQ) 
-  * https://medium.com/better-programming/what-are-args-and-kwargs-in-python-6aaf9e3cad73
-* [为什么 Python 没有 main 函数？](https://mp.weixin.qq.com/s/Nr1nD6qKKRd-C55PCV-sGw)
-  * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
-* [IPython 中常用的魔法命令](https://mp.weixin.qq.com/s/5ZyfyR9r9zBod6ZP7scewA)
-
-### 迭代器与生成器
+### Iterator / Generator
 
 * [盘一盘 Python 系列特别篇 - 两大利「器」](https://mp.weixin.qq.com/s/o9REZiT-k-6UTcSnqCfCMQ)
   * 主要介绍 Python 里的两大利「器」，生成器 (generator) 和迭代器 (iterator)。
@@ -708,7 +667,7 @@ if __name__ == '__main__':
     print(next(my_incrementor))  # Traceback (most recent call last): ... StopIteration
 ```
 
-### 模块
+### Modules
 
 * [深入探讨Python的import机制：实现远程导入模块 | CSDN博文精选](https://mp.weixin.qq.com/s/Sx_WyKUpoZrnFtV9epAfpg)
 * 你常常看到的 \_\_init\_\_.py 到底是个啥？
@@ -923,7 +882,7 @@ if __name__ == '__main__':
 * [Python处理CSV、JSON和XML数据的简便方法](https://mp.weixin.qq.com/s/1PyeBLIJNzswO3zd-mHiTQ)
   * https://towardsdatascience.com/the-easy-way-to-work-with-csv-json-and-xml-in-python-5056f9325ca9
 
-### 错误和异常
+### Exceptions Handling
 
 * [学习笔记之Python Debug ( pdb ) - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10437091.html)
 * [盘一盘 Python 系列特别篇 - 错误类型](https://mp.weixin.qq.com/s/PBaDdLcYxDso2V4aZcFXpA)
@@ -931,6 +890,47 @@ if __name__ == '__main__':
 * [一文教你读懂 Python 中的异常信息](https://realpython.com/python-traceback/)
 * [Python 常见的17个错误分析](https://www.oschina.net/question/89964_62779)
   * https://inventwithpython.com/blog/2012/07/09/16-common-python-runtime-errors-beginners-find/
+
+## ADVANCE
+
+* [5张图理解Python中的浅拷贝与深拷贝](https://mp.weixin.qq.com/s/em4OBWLdTqC7jdvyCs7Jhg)
+* [图解 Python 中深浅拷贝](https://mp.weixin.qq.com/s/TtGFFDTKdPwCYj7gmIdp_Q)
+  * https://blog.csdn.net/mall_lucy/article/details/104531218
+  * 赋值运算
+  	* l2 = l1是一个指向，是赋值，和深浅copy无关。
+  * 浅copy
+    * 浅copy：会在内存中新开辟一个空间，存放这个copy的列表，但是列表里面的内容还是沿用之前对象的内存地址。
+  * 深copy
+    * 深copy：会在内存中开辟新空间，将原列表以及列表里面的可变数据类型重新创建一份，不可变数据类型则沿用之前的。
+  * 为什么Python默认的拷贝方式是浅拷贝？
+    * 时间角度：浅拷贝花费时间更少。
+    * 空间角度：浅拷贝花费内存更少。
+    * 效率角度：浅拷贝只拷贝顶层数据，一般情况下比深拷贝效率高。
+  * 总结：
+    * 不可变对象在赋值时会开辟新空间。
+    * 可变对象在赋值时，修改一个的值，另一个也会发生改变。
+    * 深、浅拷贝对不可变对象拷贝时，不开辟新空间，相当于赋值操作。
+    * 浅拷贝在拷贝时，只拷贝第一层中的引用，如果元素是可变对象，并且被修改，那么拷贝的对象也会发生变化。
+    * 深拷贝在拷贝时，会逐层进行拷贝，直到所有的引用都是不可变对象为止。
+    * Python 有多种方式实现浅拷贝，copy模块的copy 函数 ，对象的 copy 函数 ，工厂方法，切片等。
+    * 大多数情况下，编写程序时，都是使用浅拷贝，除非有特定的需求。
+    * 浅拷贝的优点：拷贝速度快，占用空间少，拷贝效率高。
+* [Python 程序员如何防止数据被修改？](https://mp.weixin.qq.com/s/V8x6clZRK6k9T2rXwj2aDQ)
+* [Python 进阶：全面解读高级特性之切片](https://mp.weixin.qq.com/s/afhvyDGjt8U2XzHCZHOJJA)
+* [聊一聊 Python 中的闭包](https://mp.weixin.qq.com/s/qYKNGqItnSXq0-Zq2kMCKA)
+  * https://segmentfault.com/a/1190000007321972
+* [聊一聊 Python 中的“垃圾”回收](https://www.heroyf.club/2019/10/24/python_gc/)
+* [Python 中 -m 的典型用法、原理解析与发展演变](https://mp.weixin.qq.com/s/tD3eSb2WdOPN_dKAQ9d6Ag)
+* [*args and **kwargs in Python - GeeksforGeeks](https://www.geeksforgeeks.org/args-kwargs-python/)
+	* In Python, we can pass a variable number of arguments to a function using special symbols. There are two special symbols:
+	* Special Symbols Used for passing arguments:
+	* 1.)*args (Non-Keyword Arguments)
+	* 2.)**kwargs (Keyword Arguments)
+* [Python中的*args和**kwargs是什么？该如何使用？](https://mp.weixin.qq.com/s/s7PFVE_wcAMZaRUds2MJDQ) 
+  * https://medium.com/better-programming/what-are-args-and-kwargs-in-python-6aaf9e3cad73
+* [为什么 Python 没有 main 函数？](https://mp.weixin.qq.com/s/Nr1nD6qKKRd-C55PCV-sGw)
+  * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
+* [IPython 中常用的魔法命令](https://mp.weixin.qq.com/s/5ZyfyR9r9zBod6ZP7scewA)
 
 ### 面向对象
 
