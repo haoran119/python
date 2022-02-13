@@ -1118,28 +1118,85 @@ print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.
   * https://medium.com/better-programming/introduction-to-functional-programming-in-python-3d26cd9cbfd7
 
 ### Regular Expressions
-* Python3 正则表达式 | 菜鸟教程
-* http://www.runoob.com/python3/python3-reg-expressions.html
+* [Python3 正则表达式 | 菜鸟教程](http://www.runoob.com/python3/python3-reg-expressions.html)
 * [盘一盘 Python 系列特别篇 - 正则表达式](https://mp.weixin.qq.com/s/Tewaynja3ggkcpzAli-1YQ)
-* re — Regular expression operations — Python 3.7.4 documentation
-* https://docs.python.org/3.7/library/re.html#module-re
-* Regular Expression HOWTO — Python 3.7.4 documentation
-* https://docs.python.org/3/howto/regex.html
-* regex - Get all unnamed groups in a Python match object - Stack Overflow
-* https://stackoverflow.com/questions/30293064/get-all-unnamed-groups-in-a-python-match-object
-* regex - Extracting 2 strings from regular expression Python - Stack Overflow
-* https://stackoverflow.com/questions/23658156/extracting-2-strings-from-regular-expression-python
-* regex - Python extract pattern matches - Stack Overflow
-* https://stackoverflow.com/questions/15340582/python-extract-pattern-matches
-* Python 正则表达式 re 模块简明笔记
-* https://mp.weixin.qq.com/s/8M_xiHMNB1a93ZunpxMsLg
-* https://funhacks.net/2016/12/27/regular_expression/
-* Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript
-* https://regex101.com/
-* Python正则表达式
-* https://mp.weixin.qq.com/s/bc-Puk4AVc1XxusrbSwaHg
-* re模块主要定义了9个常量、12个函数、1个异常，每个常量和函数都会通过实际代码案例讲解，让大家能更直观的了解其作用！
-* https://github.com/haoran119/python/blob/66ca8ad50b905265dcb232de2437bd10c5372943/src/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython/How%20to%20use%20Regular%20Expression%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.py
+* [re — Regular expression operations — Python 3.7.4 documentation](https://docs.python.org/3.7/library/re.html#module-re)
+* [Regular Expression HOWTO — Python 3.7.4 documentation](https://docs.python.org/3/howto/regex.html)
+* [regex - Get all unnamed groups in a Python match object - Stack Overflow](https://stackoverflow.com/questions/30293064/get-all-unnamed-groups-in-a-python-match-object)
+* [regex - Extracting 2 strings from regular expression Python - Stack Overflow](https://stackoverflow.com/questions/23658156/extracting-2-strings-from-regular-expression-python)
+* [regex - Python extract pattern matches - Stack Overflow](https://stackoverflow.com/questions/15340582/python-extract-pattern-matches)
+* [Python 正则表达式 re 模块简明笔记](https://mp.weixin.qq.com/s/8M_xiHMNB1a93ZunpxMsLg)
+	* https://funhacks.net/2016/12/27/regular_expression/
+* [Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript](https://regex101.com/)
+* [Python正则表达式](https://mp.weixin.qq.com/s/bc-Puk4AVc1XxusrbSwaHg)
+	* re模块主要定义了9个常量、12个函数、1个异常，每个常量和函数都会通过实际代码案例讲解，让大家能更直观的了解其作用！
+```python
+import re
+
+filename = 'test.log'
+pattern = re.compile('FinishedMessage from (?P<truck>.*):.*d=(?P<dump>.*)')
+dumps = {}
+
+with open( filename, 'r' ) as f:
+    for line in f:
+        print(line)
+
+        match = re.search(pattern, line)
+        print(match)
+
+        if match:
+            print(match.group(0))
+            print(match.group(1))
+            print(match.group(2))
+            print(match.groupdict())
+            print(match.groupdict()['truck'])
+            print(match.groupdict()['dump'])
+
+            dump = match.groupdict()['dump']
+
+            if dump not in dumps:
+                dumps[ dump ] = [ match.groupdict()['truck'] ]
+            else:
+                dumps[ dump ].append(match.groupdict()['truck'])
+        print()
+
+import pprint
+pprint.pprint(dumps, width=1)
+
+# =============================================================================
+# [1] FinishedMessage from t1: group=[1] d=D1
+#
+# <re.Match object; span=(4, 43), match='FinishedMessage from t1: group=[1] d=D1'>
+# FinishedMessage from t1: group=[1] d=D1
+# t1
+# D1
+# {'truck': 't1', 'dump': 'D1'}
+# t1
+# D1
+#
+# [2] FinishedMessage from t2: group=[2] d=D2
+#
+# <re.Match object; span=(4, 43), match='FinishedMessage from t2: group=[2] d=D2'>
+# FinishedMessage from t2: group=[2] d=D2
+# t2
+# D2
+# {'truck': 't2', 'dump': 'D2'}
+# t2
+# D2
+#
+# [3] FinishedMessage from t3: group=[3] d=D2
+# <re.Match object; span=(4, 43), match='FinishedMessage from t3: group=[3] d=D2'>
+# FinishedMessage from t3: group=[3] d=D2
+# t3
+# D2
+# {'truck': 't3', 'dump': 'D2'}
+# t3
+# D2
+#
+# {'D1': ['t1'],
+#  'D2': ['t2',
+#         't3']}
+# =============================================================================```
 
 ### Multithreaded Programming
 
