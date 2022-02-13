@@ -523,6 +523,11 @@ if __name__ == '__main__':
   * https://segmentfault.com/a/1190000007321972
 * [聊一聊 Python 中的“垃圾”回收](https://www.heroyf.club/2019/10/24/python_gc/)
 * [Python 中 -m 的典型用法、原理解析与发展演变](https://mp.weixin.qq.com/s/tD3eSb2WdOPN_dKAQ9d6Ag)
+* [*args and **kwargs in Python - GeeksforGeeks](https://www.geeksforgeeks.org/args-kwargs-python/)
+	* In Python, we can pass a variable number of arguments to a function using special symbols. There are two special symbols:
+	* Special Symbols Used for passing arguments:
+	* 1.)*args (Non-Keyword Arguments)
+	* 2.)**kwargs (Keyword Arguments)
 * [Python中的*args和**kwargs是什么？该如何使用？](https://mp.weixin.qq.com/s/s7PFVE_wcAMZaRUds2MJDQ) 
   * https://medium.com/better-programming/what-are-args-and-kwargs-in-python-6aaf9e3cad73
 * [为什么 Python 没有 main 函数？](https://mp.weixin.qq.com/s/Nr1nD6qKKRd-C55PCV-sGw)
