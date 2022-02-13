@@ -264,6 +264,10 @@ def greeting(name: str) -> str:
     return 'Hello ' + name
 ```
 * In the function greeting, the argument name is expected to be of type str and the return type str. Subtypes are accepted as arguments.
+* [typing.Any](https://docs.python.org/3/library/typing.html#typing.Any)
+	* Special type indicating an unconstrained type.
+		* Every type is compatible with Any.
+		* Any is compatible with every type.
 * [class typing.List(list, MutableSequence[T])](https://docs.python.org/3/library/typing.html#typing.List)
 	* Generic version of list. Useful for annotating return types. To annotate arguments it is preferred to use an abstract collection type such as Sequence or Iterable.
 
