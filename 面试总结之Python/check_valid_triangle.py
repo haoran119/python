@@ -15,6 +15,6 @@ if __name__ == '__main__':
     b = 10
     c = 5
     if checkValidity(a, b, c):
-    print("Valid")
+        print("Valid")
     else:
-    print("Invalid")
+        print("Invalid")
