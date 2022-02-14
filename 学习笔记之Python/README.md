@@ -776,6 +776,37 @@ if __name__ == '__main__':
 
 #### [Data Types](https://docs.python.org/3/library/datatypes.html)
 
+##### [datetime — Basic date and time types](https://docs.python.org/3/library/datetime.html)
+
+* [Python - Date & Time](https://www.tutorialspoint.com/python/python_date_time.htm)
+* Get date of the datetime instance
+	* 8.1. datetime — Basic date and time types — Python 3.6.6rc1 documentation
+		* https://docs.python.org/3/library/datetime.html#datetime.date
+* timedelta Objects - datetime — Basic date and time types — Python 3.7.2 documentation
+	* https://docs.python.org/3/library/datetime.html#timedelta-objects
+	* class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
+* [Python datetime to string without microsecond component - Stack Overflow](https://stackoverflow.com/questions/7999935/python-datetime-to-string-without-microsecond-component)
+	* $ datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+	* 8.1. datetime — Basic date and time types — Python 3.3.7 documentation
+		* https://docs.python.org/3.3/library/datetime.html#datetime.datetime.strftime
+* How to increment the day in datetime? Python - Stack Overflow
+	* https://stackoverflow.com/questions/3240458/how-to-increment-the-day-in-datetime-python
+	* date += datetime.timedelta(days=1)
+* datetime — Basic date and time types — Python 3.8.6rc1 documentation
+	* https://docs.python.org/3.8/library/datetime.html#datetime.datetime.utcfromtimestamp
+	* classmethod datetime.utcfromtimestamp(timestamp)
+	* Return the UTC datetime corresponding to the POSIX timestamp, with tzinfo None. (The resulting object is naive.)
+* Examples of Usage: datetime
+	* [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#examples-of-usage-datetime)
+	* [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#strftime-strptime-behavior)
+		* strftime() and strptime() Behavior
+	* [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#datetime.datetime.strptime)
+		* classmethod datetime.strptime(date_string, format)
+		* Return a datetime corresponding to date_string, parsed according to format.
+	* [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#datetime.datetime.strftime)
+		* datetime.strftime(format)
+		* Return a string representing the date and time, controlled by an explicit format string.
+
 ##### [collections — Container datatypes](https://docs.python.org/3/library/collections.html)
 
 * [四种高性能数据类型，Python collections助你优化代码、简洁任务](https://mp.weixin.qq.com/s/17xwTlwJi1ckht3wGk5ttA)
@@ -2570,34 +2601,6 @@ for index, value in enumerate(list_a):
 * Two types usage of for loop ?
   * python - "for loop" with two variables? - Stack Overflow
     * https://stackoverflow.com/questions/18648626/for-loop-with-two-variables
-* datetime operation
-  * Get date of the datetime instance
-    * 8.1. datetime — Basic date and time types — Python 3.6.6rc1 documentation
-      * https://docs.python.org/3/library/datetime.html#datetime.date
-  * timedelta Objects - datetime — Basic date and time types — Python 3.7.2 documentation
-    * https://docs.python.org/3/library/datetime.html#timedelta-objects
-    * class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
-  * [Python datetime to string without microsecond component - Stack Overflow](https://stackoverflow.com/questions/7999935/python-datetime-to-string-without-microsecond-component)
-    * $ datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    * 8.1. datetime — Basic date and time types — Python 3.3.7 documentation
-      * https://docs.python.org/3.3/library/datetime.html#datetime.datetime.strftime
-  * How to increment the day in datetime? Python - Stack Overflow
-    * https://stackoverflow.com/questions/3240458/how-to-increment-the-day-in-datetime-python
-    * date += datetime.timedelta(days=1)
-  * datetime — Basic date and time types — Python 3.8.6rc1 documentation
-    * https://docs.python.org/3.8/library/datetime.html#datetime.datetime.utcfromtimestamp
-    * classmethod datetime.utcfromtimestamp(timestamp)
-    * Return the UTC datetime corresponding to the POSIX timestamp, with tzinfo None. (The resulting object is naive.)
-  * Examples of Usage: datetime
-    * [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#examples-of-usage-datetime)
-    * [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#strftime-strptime-behavior)
-      * strftime() and strptime() Behavior
-    * [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#datetime.datetime.strptime)
-      * classmethod datetime.strptime(date_string, format)
-      * Return a datetime corresponding to date_string, parsed according to format.
-    * [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#datetime.datetime.strftime)
-      * datetime.strftime(format)
-      * Return a string representing the date and time, controlled by an explicit format string.
 * How to find the min value in dictionary ?
   * min(d.items(), key=lambda x: x[1])
   * min(d.items(), key=d.get)
