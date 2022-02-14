@@ -3,18 +3,18 @@
 # Python3 program to check if three sides form a triangle or not
 
 def checkValidity(a, b, c):
-	# check condition
-	if (a + b < c) or (a + c < b) or (b + c < a) :
-		return False
-	else:
-		return True	
+    # check condition
+    if (a + b < c) or (a + c < b) or (b + c < a) :
+        return False
+    else:
+        return True	
 
 # driver code
 if __name__ == '__main__':
-  a = 7
-  b = 10
-  c = 5
-  if checkValidity(a, b, c):
+    a = 7
+    b = 10
+    c = 5
+    if checkValidity(a, b, c):
     print("Valid")
-  else:
+    else:
     print("Invalid")
