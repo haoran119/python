@@ -49,7 +49,6 @@
 
 ## CODE
 
-* [python/面试总结之Python at main · haoran119/python](https://github.com/haoran119/python/tree/main/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BPython)
 * [Solve Python | HackerRank](https://www.hackerrank.com/domains/python?badge_type=python)
 * [100道Python练手题目](https://mp.weixin.qq.com/s/0y19nH3nxkAPmB52EAMvLA)
   * https://github.com/RichardFu123/Python100Cases
