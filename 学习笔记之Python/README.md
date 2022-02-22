@@ -1,6 +1,5 @@
 # 学习笔记之Python
 
-* [python/学习笔记之Python at main · haoran119/python](https://github.com/haoran119/python/tree/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BPython)
 * [Welcome to Python.org](https://www.python.org/)
   * [3.9.5 Documentation (python.org)](https://docs.python.org/3/)
   * [The Python Standard Library — Python 3.10.2 documentation](https://docs.python.org/3/library/index.html)
