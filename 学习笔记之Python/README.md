@@ -512,24 +512,6 @@ if __name__ == '__main__':
   * python - How do I check if a list is empty? - Stack Overflow
     * https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty
 
-#### [typing — Support for type hints](https://docs.python.org/3/library/typing.html)
-
-* Note: The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
-* This module provides runtime support for type hints. The most fundamental support consists of the types Any, Union, Callable, TypeVar, and Generic. For a full specification, please see PEP 484. For a simplified introduction to type hints, see PEP 483.
-* The function below takes and returns a string and is annotated as follows:
-```python
-def greeting(name: str) -> str:
-    return 'Hello ' + name
-```
-* In the function greeting, the argument name is expected to be of type str and the return type str. Subtypes are accepted as arguments.
-* [typing.Any](https://docs.python.org/3/library/typing.html#typing.Any)
-	* Special type indicating an unconstrained type.
-		* Every type is compatible with Any.
-		* Any is compatible with every type.
-* [class typing.List(list, MutableSequence[T])](https://docs.python.org/3/library/typing.html#typing.List)
-	* Generic version of list. Useful for annotating return types. To annotate arguments it is preferred to use an abstract collection type such as Sequence or Iterable.
-* [Using Python's Type Annotations - DEV](https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way)
-
 #### [Numeric Types — int, float, complex](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
 
 * [Numbers](https://www.tutorialspoint.com/python3/python_numbers.htm)
@@ -1162,9 +1144,6 @@ if __name__ == '__main__':
 	* [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#datetime.datetime.strftime)
 		* datetime.strftime(format)
 		* Return a string representing the date and time, controlled by an explicit format string.
-* How to measure execution time of code ?
-  * timeit — Measure execution time of small code snippets — Python 3.8.0 documentation
-    * https://docs.python.org/3.8/library/timeit.html
 
 ##### [collections — Container datatypes](https://docs.python.org/3/library/collections.html)
 
@@ -1372,9 +1351,9 @@ for path, subdirs, files in os.walk(root):
             print(filename) # '.\path\test.json'
 ```
 
-#### [Generic Operating System Services](https://docs.python.org/3/library/allos.html)
+### [Generic Operating System Services](https://docs.python.org/3/library/allos.html)
 
-##### [io — Core tools for working with streams](https://docs.python.org/3/library/io.html)
+#### [io — Core tools for working with streams](https://docs.python.org/3/library/io.html)
 
 * The io module provides Python’s main facilities for dealing with various types of I/O. There are three main types of I/O: text I/O, binary I/O and raw I/O. These are generic categories, and various backing stores can be used for each of them. A concrete object belonging to any of these categories is called a file object. Other common terms are stream and file-like object.
 * Independent of its category, each concrete stream object will also have various capabilities: it can be read-only, write-only, or read-write. It can also allow arbitrary random access (seeking forwards or backwards to any location), or only sequential access (for example in the case of a socket or pipe).
@@ -1482,7 +1461,7 @@ with open(filename, 'r') as f:
   * https://linuxops.org/blog/python/prettytable.html
   * prettytable可以打印出美观的表格，并且对中文支持相当好
 
-##### [argparse — Parser for command-line options, arguments and sub-commands](https://docs.python.org/3/library/argparse.html)
+#### [argparse — Parser for command-line options, arguments and sub-commands](https://docs.python.org/3/library/argparse.html)
 
 * The argparse module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and argparse will figure out how to parse those out of sys.argv. The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.
 * How to parse arguments for command-line options ?
@@ -1515,7 +1494,7 @@ if __name__ == "__main__":
         logger.logException(err.message)
 ```
 
-##### [logging — Logging facility for Python](https://docs.python.org/3/library/logging.html)
+#### [logging — Logging facility for Python](https://docs.python.org/3/library/logging.html)
 
 * This module defines functions and classes which implement a flexible event logging system for applications and libraries.
 * The key benefit of having the logging API provided by a standard library module is that all Python modules can participate in logging, so your application log can include your own messages integrated with messages from third-party modules.
@@ -1549,6 +1528,36 @@ if __name__ == "__main__":
     * https://docs.python.org/3/howto/logging.html#logging-to-a-file
     * logging.basicConfig(level=getattr(logging, loglevel.upper()))
 * [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
+
+### [Development Tools](https://docs.python.org/3/library/development.html)
+
+* The modules described in this chapter help you write software. For example, the pydoc module takes a module and generates documentation based on the module’s contents. The doctest and unittest modules contains frameworks for writing unit tests that automatically exercise code and verify that the expected output is produced. 2to3 can translate Python 2.x source code into valid Python 3.x code.
+
+#### [typing — Support for type hints](https://docs.python.org/3/library/typing.html)
+
+* Note: The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
+* This module provides runtime support for type hints. The most fundamental support consists of the types Any, Union, Callable, TypeVar, and Generic. For a full specification, please see PEP 484. For a simplified introduction to type hints, see PEP 483.
+* The function below takes and returns a string and is annotated as follows:
+```python
+def greeting(name: str) -> str:
+    return 'Hello ' + name
+```
+* In the function greeting, the argument name is expected to be of type str and the return type str. Subtypes are accepted as arguments.
+* [typing.Any](https://docs.python.org/3/library/typing.html#typing.Any)
+	* Special type indicating an unconstrained type.
+		* Every type is compatible with Any.
+		* Any is compatible with every type.
+* [class typing.List(list, MutableSequence[T])](https://docs.python.org/3/library/typing.html#typing.List)
+	* Generic version of list. Useful for annotating return types. To annotate arguments it is preferred to use an abstract collection type such as Sequence or Iterable.
+* [Using Python's Type Annotations - DEV](https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way)
+
+### [Debugging and Profiling](https://docs.python.org/3/library/debug.html)
+
+* These libraries help you with Python development: the debugger enables you to step through code, analyze stack frames and set breakpoints etc., and the profilers run code and give you a detailed breakdown of execution times, allowing you to identify bottlenecks in your programs. Auditing events provide visibility into runtime behaviors that would otherwise require intrusive debugging or patching.
+
+#### [timeit — Measure execution time of small code snippets](https://docs.python.org/3/library/timeit.html)
+
+* This module provides a simple way to time small bits of Python code. It has both a Command-Line Interface as well as a callable one. It avoids a number of common traps for measuring execution times. See also Tim Peters’ introduction to the “Algorithms” chapter in the second edition of Python Cookbook, published by O’Reilly.
 
 ## ADVANCE
 
