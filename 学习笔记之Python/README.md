@@ -217,7 +217,6 @@
 
 ### [Basic Operators](https://www.tutorialspoint.com/python3/python_basic_operators.htm)
 
-* [Python 为什么不支持 i++ 自增语法，不提供 ++ 操作符？ (qq.com)](https://mp.weixin.qq.com/s/gs3aZucOxXkeMGmP0H9fuA)
 * [6.12. Assignment expressions - 6. Expressions — Python 3.9.7 documentation](https://docs.python.org/3/reference/expressions.html?highlight=walrus#assignment-expressions)
   * assignment_expression ::=  [identifier ":="] expression
   * An assignment expression (sometimes also called a “named expression” or “walrus”) assigns an expression to an identifier, while also returning the value of the expression.
