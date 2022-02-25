@@ -49,6 +49,11 @@
 * [吐血整理的 Python 面试题(qq.com)](https://mp.weixin.qq.com/s/4GUHtSxGhBaBVfMMsX8lOQ)
 * [What are .pyc files in Python?](https://www.tutorialspoint.com/What-are-pyc-files-in-Python)
   * .pyc files are created by the Python interpreter when a .py file is imported. They contain the "compiled bytecode" of the imported module/program so that the "translation" from source code to bytecode (which only needs to be done once) can be skipped on subsequent imports if the .pyc is newer than the corresponding .py file, thus speeding startup a little. But it's still interpreted. Once the *.pyc file is generated, there is no need of *.py file, unless you edit it.
+* [Difference between continue and pass statements in Python - GeeksforGeeks](https://www.geeksforgeeks.org/difference-between-continue-and-pass-statements-in-python/)
+* Continue statement
+* This statement is used to skip over the execution part of the loop on a certain condition. After that, it transfers the control to the beginning of the loop. Basically, it skips its following statements and continues with the next iteration of the loop.
+* Pass statement
+* As the name suggests pass statement simply does nothing. We use pass statement to write empty loops. Pass is also used for empty control statements, functions and classes.
 * [Python | Difference Between List and Tuple - GeeksforGeeks](https://www.geeksforgeeks.org/python-difference-between-list-and-tuple/)
 
 | SR.NO. | LIST | TUPLE |
