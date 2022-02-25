@@ -279,6 +279,176 @@
     3. 不要将它赋值给变量
     4. 不要忘记列表推导式
 
+### Iterator / Generator
+
+* [盘一盘 Python 系列特别篇 - 两大利「器」](https://mp.weixin.qq.com/s/o9REZiT-k-6UTcSnqCfCMQ)
+  * 主要介绍 Python 里的两大利「器」，生成器 (generator) 和迭代器 (iterator)。
+  * 生成器
+    * 定义生成器 (generator) 有两种方法：
+      * 使用函数 (function) 
+      * 使用表达式 (expression)
+    * 如何来看生成器里的元素呢？有两种方法：1. 转换成 list；2. 用 next()。
+    * 总结：生成器可以用生成函数 (generator function) 来定义，记住要用 yield 而不是 return。
+    * 总结：生成器可以用生成表达式 (generator expression) 来定义，记住和列表解析式很像，将 [] 改成 () 即可。
+    * 生成器 vs 列表
+      * 生成器好在哪里？好就好在生成器是按需求调用 (call-by-need) 的，你需要调用一个值，我就 yield 一个值，然后用 next() 更新内部状态，等待你下次调用。这套流程也称作惰性求值 (lazy evaluation)，目的是最小化计算机要做的工作。
+      * 在大规模数据时，一次性处理往往抵消而且不方便，而惰性求值解决了这个问题，它把计算的具体步骤延迟到了要实际用该数据的时候。
+      * 对比一下生成器和列表在运行简单操作时的用的时间和占的内存。
+      ```python
+      import timeit
+      import sys
+
+      print(timeit.timeit('l = [x+1 for x in range(10000000)]', number=1))    # 0.88682526
+
+      l = [x+1 for x in range(10000000)]
+      print(sys.getsizeof(l))     # 81528064
+
+      print(timeit.timeit('g = (x+1 for x in range(10000000))', number=1))    # 1.501199999998093e-05
+
+      g = (x+1 for x in range(10000000))
+      print(sys.getsizeof(g))     # 128
+      ```
+  * 迭代器
+    * 可迭代对象(Iterable)
+      * 任何只要可以循环的东西就可称之可迭代对象 (iterable)。容器类型数据 (str, tuple, list, dict, set) 都可以被 for 循环，因此它们都是可迭代对象。
+      * 在 Python 里万物皆对象，如果真要判断一个对象是否是可迭代对象，我们可以用 isinstance(x, Iterable)。
+      * 在 Python 里万物皆对象，那么我们可以查看该对象对应的类里面的属性，用 dir() 函数。里面有 __iter__() 魔法方法 (magic method) 的对象就是可迭代对象。
+    * 迭代器
+      * 可被 for 循环的列表、字典、元组、集合和字符串都是可迭代对象，但实际上 for 循环里真正的对象是迭代器。
+      * 首先用 isinstance(x, Iterator) 来判断，结果它们 5 个都不是迭代器。
+      * 那它们怎么能被 for 循环呢？原来 for 循环先用 __iter__() 方法将它们都转成迭代器，再开始遍历它们的每个元素。
+      * 被 __iter__() 方法包装之后，列表、字典、元组、集合和字符串都是迭代器了。注意 iter(x) 和 x.__iter__() 是等价的，后者太难看因此习惯用前者。
+      * 既然能被迭代，那该对象里面肯定有 __next__() 魔法方法，要不然怎么可以一个元素一个元素往下走下去
+      * 除了 __next__，迭代器里还有 __iter__，而 __iter__ 是判断可迭代对象的标准。因此可得只要是迭代器就是可迭代对象，但反过来不成立。
+      * 有了 StopIteration  这个提示，我们甚至可以自己写代码来实现用 for 循环来打印。
+      ```python
+      i_nums = iter(nums)
+
+      while True:
+          try:
+              print(next(i_nums))
+          except StopIteration:
+              break
+      ```
+    * 自定义迭代器
+      * 上节讲了用 iter() 函数可以将可迭代对象转换成迭代器，本节再介绍两种定义迭代器的方法：1. 用类；2. 生成器。
+      * 用类来定义
+      ```python
+      class MyRange:
+          def __init__(self, start, end):
+              self.value = start
+              self.end = end
+
+          def __iter__(self):
+              return self
+
+          def __next__(self):
+              if self.value >= self.end:
+                  raise StopIteration
+              current = self.value
+              self.value += 1
+              return current
+
+
+      if __name__ == '__main__':
+          nums = MyRange(1, 5)
+
+          # 可以被 for 循环
+          # 1
+          # 2
+          # 3
+          # 4
+          for num in nums:
+              print(num)
+
+          nums = MyRange(1, 5)
+
+          # 也可以使用 next() 函数
+          print(next(nums))   # 1
+          print(next(nums))   # 2
+          print(next(nums))   # 3
+          print(next(nums))   # 4
+          print(next(nums))   # Traceback (most recent call last): ... StopIteration
+      ```
+      * 用生成器来定义
+      ```python
+      def range_generator(start, end):
+          current = start
+          while current < end:
+              yield current
+              current += 1
+
+
+      if __name__ == '__main__':
+          nums = range_generator(1, 5)
+
+          # 可以被 for 循环
+          # 1
+          # 2
+          # 3
+          # 4
+          for num in nums:
+              print(num)
+
+          nums = range_generator(1, 5)
+
+          # 也可以使用 next() 函数
+          print(next(nums))   # 1
+          print(next(nums))   # 2
+          print(next(nums))   # 3
+          print(next(nums))   # 4
+          print(next(nums))   # Traceback (most recent call last): ... StopIteration
+      ```
+    * 内置迭代器
+      * 在 Python 里有不少内置的迭代器，用起来非常方便，我们会介绍 count, cycle, repeat, combinations, permudations, product 和 chain。
+      * 首先引用 itertools，顾名思义就知道它里面有很多迭代器的工具。
+      * count
+        * count() 就像是计数器，不停的往前更新。它可用在给不知道大小的数据标注索引。
+      * cycle
+        * cycle() 作用是循环遍历！
+      * repeat
+        * repeat() 作用是重复，但是一旦设置 times 参数比如 3，那么不能打印次数不能超过 3，否则会报错。
+        * repeat() 还可以和其他高阶函数一起用，如下列 map 函数。
+      * combinations & permutations
+        * 从 letters 里面 4 个元素取出 2 个来组合 (元素位置不重要)。
+        * 从 letters 里面 4 个元素取出 2 个来排列 (元素位置重要)。
+      * product
+        * product() 是穷举出所有情况，本例只从 numbers 里面 4 个元素取出 2 个，不同位置元素可以重复。
+        * 上面结果去除一些「位置不同但元素相同」，比如 (1, 2) 和 (2, 1) 只保留一个，就是 combinations_with_replacement() 的结果
+        * 上面结果再去除「重复元素」，比如 (1, 1), (2, 2), ... ，就是 combinations() 的结果
+      * chain
+        * 用于三个不同类型的数据格式，列表 letters，元组 numbers 和集合 names，我们可用 chain() 将它们串起来成一个迭代器，再逐个遍历它里面的元素。
+  * 总结
+    * 字典用来创建映射关系
+    * 函数用来创建可调用对象
+    * 生成器用来创建迭代器
+    * 当你想要个可用惰性计算的可迭代对象时，考虑用迭代器。
+    * 当你想创建迭代器时，考虑用生成器。
+    * 当你想创建生成器时，考虑用生成函数 (用 yield) 或生成表达式 (用小括号 ())。    
+* [Python 迭代器与生成器](http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html)
+* [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
+* [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
+```python
+def incrementor(n: int):
+    count = 0
+
+    while count < n:
+        yield count
+        count += 1
+
+
+if __name__ == '__main__':
+    print(list(incrementor(3)))  # [0, 1, 2]
+
+    my_incrementor = incrementor(3)
+
+    print(my_incrementor)   # <generator object incrementor at 0x7fe9fd886350>
+    print(next(my_incrementor))  # 0
+    print(next(my_incrementor))  # 1
+    print(next(my_incrementor))  # 2
+    print(next(my_incrementor))  # Traceback (most recent call last): ... StopIteration
+```
+
 ### [Built-in Constants](https://docs.python.org/3/library/constants.html)
 
 ### [Built-in Types](https://docs.python.org/3/library/stdtypes.html)
@@ -580,176 +750,6 @@ if __name__ == '__main__':
 * [一文教你读懂 Python 中的异常信息](https://realpython.com/python-traceback/)
 * [Python 常见的17个错误分析](https://www.oschina.net/question/89964_62779)
   * https://inventwithpython.com/blog/2012/07/09/16-common-python-runtime-errors-beginners-find/
-
-### Iterator / Generator
-
-* [盘一盘 Python 系列特别篇 - 两大利「器」](https://mp.weixin.qq.com/s/o9REZiT-k-6UTcSnqCfCMQ)
-  * 主要介绍 Python 里的两大利「器」，生成器 (generator) 和迭代器 (iterator)。
-  * 生成器
-    * 定义生成器 (generator) 有两种方法：
-      * 使用函数 (function) 
-      * 使用表达式 (expression)
-    * 如何来看生成器里的元素呢？有两种方法：1. 转换成 list；2. 用 next()。
-    * 总结：生成器可以用生成函数 (generator function) 来定义，记住要用 yield 而不是 return。
-    * 总结：生成器可以用生成表达式 (generator expression) 来定义，记住和列表解析式很像，将 [] 改成 () 即可。
-    * 生成器 vs 列表
-      * 生成器好在哪里？好就好在生成器是按需求调用 (call-by-need) 的，你需要调用一个值，我就 yield 一个值，然后用 next() 更新内部状态，等待你下次调用。这套流程也称作惰性求值 (lazy evaluation)，目的是最小化计算机要做的工作。
-      * 在大规模数据时，一次性处理往往抵消而且不方便，而惰性求值解决了这个问题，它把计算的具体步骤延迟到了要实际用该数据的时候。
-      * 对比一下生成器和列表在运行简单操作时的用的时间和占的内存。
-      ```python
-      import timeit
-      import sys
-
-      print(timeit.timeit('l = [x+1 for x in range(10000000)]', number=1))    # 0.88682526
-
-      l = [x+1 for x in range(10000000)]
-      print(sys.getsizeof(l))     # 81528064
-
-      print(timeit.timeit('g = (x+1 for x in range(10000000))', number=1))    # 1.501199999998093e-05
-
-      g = (x+1 for x in range(10000000))
-      print(sys.getsizeof(g))     # 128
-      ```
-  * 迭代器
-    * 可迭代对象(Iterable)
-      * 任何只要可以循环的东西就可称之可迭代对象 (iterable)。容器类型数据 (str, tuple, list, dict, set) 都可以被 for 循环，因此它们都是可迭代对象。
-      * 在 Python 里万物皆对象，如果真要判断一个对象是否是可迭代对象，我们可以用 isinstance(x, Iterable)。
-      * 在 Python 里万物皆对象，那么我们可以查看该对象对应的类里面的属性，用 dir() 函数。里面有 __iter__() 魔法方法 (magic method) 的对象就是可迭代对象。
-    * 迭代器
-      * 可被 for 循环的列表、字典、元组、集合和字符串都是可迭代对象，但实际上 for 循环里真正的对象是迭代器。
-      * 首先用 isinstance(x, Iterator) 来判断，结果它们 5 个都不是迭代器。
-      * 那它们怎么能被 for 循环呢？原来 for 循环先用 __iter__() 方法将它们都转成迭代器，再开始遍历它们的每个元素。
-      * 被 __iter__() 方法包装之后，列表、字典、元组、集合和字符串都是迭代器了。注意 iter(x) 和 x.__iter__() 是等价的，后者太难看因此习惯用前者。
-      * 既然能被迭代，那该对象里面肯定有 __next__() 魔法方法，要不然怎么可以一个元素一个元素往下走下去
-      * 除了 __next__，迭代器里还有 __iter__，而 __iter__ 是判断可迭代对象的标准。因此可得只要是迭代器就是可迭代对象，但反过来不成立。
-      * 有了 StopIteration  这个提示，我们甚至可以自己写代码来实现用 for 循环来打印。
-      ```python
-      i_nums = iter(nums)
-
-      while True:
-          try:
-              print(next(i_nums))
-          except StopIteration:
-              break
-      ```
-    * 自定义迭代器
-      * 上节讲了用 iter() 函数可以将可迭代对象转换成迭代器，本节再介绍两种定义迭代器的方法：1. 用类；2. 生成器。
-      * 用类来定义
-      ```python
-      class MyRange:
-          def __init__(self, start, end):
-              self.value = start
-              self.end = end
-
-          def __iter__(self):
-              return self
-
-          def __next__(self):
-              if self.value >= self.end:
-                  raise StopIteration
-              current = self.value
-              self.value += 1
-              return current
-
-
-      if __name__ == '__main__':
-          nums = MyRange(1, 5)
-
-          # 可以被 for 循环
-          # 1
-          # 2
-          # 3
-          # 4
-          for num in nums:
-              print(num)
-
-          nums = MyRange(1, 5)
-
-          # 也可以使用 next() 函数
-          print(next(nums))   # 1
-          print(next(nums))   # 2
-          print(next(nums))   # 3
-          print(next(nums))   # 4
-          print(next(nums))   # Traceback (most recent call last): ... StopIteration
-      ```
-      * 用生成器来定义
-      ```python
-      def range_generator(start, end):
-          current = start
-          while current < end:
-              yield current
-              current += 1
-
-
-      if __name__ == '__main__':
-          nums = range_generator(1, 5)
-
-          # 可以被 for 循环
-          # 1
-          # 2
-          # 3
-          # 4
-          for num in nums:
-              print(num)
-
-          nums = range_generator(1, 5)
-
-          # 也可以使用 next() 函数
-          print(next(nums))   # 1
-          print(next(nums))   # 2
-          print(next(nums))   # 3
-          print(next(nums))   # 4
-          print(next(nums))   # Traceback (most recent call last): ... StopIteration
-      ```
-    * 内置迭代器
-      * 在 Python 里有不少内置的迭代器，用起来非常方便，我们会介绍 count, cycle, repeat, combinations, permudations, product 和 chain。
-      * 首先引用 itertools，顾名思义就知道它里面有很多迭代器的工具。
-      * count
-        * count() 就像是计数器，不停的往前更新。它可用在给不知道大小的数据标注索引。
-      * cycle
-        * cycle() 作用是循环遍历！
-      * repeat
-        * repeat() 作用是重复，但是一旦设置 times 参数比如 3，那么不能打印次数不能超过 3，否则会报错。
-        * repeat() 还可以和其他高阶函数一起用，如下列 map 函数。
-      * combinations & permutations
-        * 从 letters 里面 4 个元素取出 2 个来组合 (元素位置不重要)。
-        * 从 letters 里面 4 个元素取出 2 个来排列 (元素位置重要)。
-      * product
-        * product() 是穷举出所有情况，本例只从 numbers 里面 4 个元素取出 2 个，不同位置元素可以重复。
-        * 上面结果去除一些「位置不同但元素相同」，比如 (1, 2) 和 (2, 1) 只保留一个，就是 combinations_with_replacement() 的结果
-        * 上面结果再去除「重复元素」，比如 (1, 1), (2, 2), ... ，就是 combinations() 的结果
-      * chain
-        * 用于三个不同类型的数据格式，列表 letters，元组 numbers 和集合 names，我们可用 chain() 将它们串起来成一个迭代器，再逐个遍历它里面的元素。
-  * 总结
-    * 字典用来创建映射关系
-    * 函数用来创建可调用对象
-    * 生成器用来创建迭代器
-    * 当你想要个可用惰性计算的可迭代对象时，考虑用迭代器。
-    * 当你想创建迭代器时，考虑用生成器。
-    * 当你想创建生成器时，考虑用生成函数 (用 yield) 或生成表达式 (用小括号 ())。    
-* [Python 迭代器与生成器](http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html)
-* [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
-* [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
-```python
-def incrementor(n: int):
-    count = 0
-
-    while count < n:
-        yield count
-        count += 1
-
-
-if __name__ == '__main__':
-    print(list(incrementor(3)))  # [0, 1, 2]
-
-    my_incrementor = incrementor(3)
-
-    print(my_incrementor)   # <generator object incrementor at 0x7fe9fd886350>
-    print(next(my_incrementor))  # 0
-    print(next(my_incrementor))  # 1
-    print(next(my_incrementor))  # 2
-    print(next(my_incrementor))  # Traceback (most recent call last): ... StopIteration
-```
 
 ### [Modules](https://www.tutorialspoint.com/python/python_modules.htm)
 
