@@ -47,6 +47,7 @@
 * [53个Python经典面试题详解 (qq.com)](https://mp.weixin.qq.com/s/Ck1tcCez2BwGlOla6tjGWA)
   * [53 Python Interview Questions and Answers | by Chris I. | Towards Data Science](https://towardsdatascience.com/53-python-interview-questions-and-answers-91fa311eec3f)
 * [吐血整理的 Python 面试题(qq.com)](https://mp.weixin.qq.com/s/4GUHtSxGhBaBVfMMsX8lOQ)
+* list v.s. tuple
 
 ## CODE
 
