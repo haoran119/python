@@ -1099,9 +1099,9 @@ if __name__ == '__main__':
   * https://zhuanlan.zhihu.com/p/34112508
   * \_\_name\_\_ 是当前模块名，当模块被直接运行时模块名为 \_\_main\_\_ 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。
 
-#### [Text Processing Services](https://docs.python.org/3/library/text.html)
+### [Text Processing Services](https://docs.python.org/3/library/text.html)
 
-##### [string — Common string operations](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#module-string)
+#### [string — Common string operations](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#module-string)
 
 * [String constants](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#string-constants)
 	* [string.ascii_lowercase](https://docs.python.org/3/library/string.html?highlight=ascii_lowercase#string.ascii_lowercase)
@@ -1112,9 +1112,9 @@ if __name__ == '__main__':
 	* [string.capwords(s, sep=None)](https://docs.python.org/3/library/string.html?#string.capwords)
 		* Split the argument into words using str.split(), capitalize each word using str.capitalize(), and join the capitalized words using str.join(). If the optional second argument sep is absent or None, runs of whitespace characters are replaced by a single space and leading and trailing whitespace are removed, otherwise sep is used to split and join the words.
 
-#### [Data Types](https://docs.python.org/3/library/datatypes.html)
+### [Data Types](https://docs.python.org/3/library/datatypes.html)
 
-##### [datetime — Basic date and time types](https://docs.python.org/3/library/datetime.html)
+#### [datetime — Basic date and time types](https://docs.python.org/3/library/datetime.html)
 
 * [Date & Time](https://www.tutorialspoint.com/python3/python_date_time.htm)
 * Get date of the datetime instance
@@ -1145,7 +1145,7 @@ if __name__ == '__main__':
 		* datetime.strftime(format)
 		* Return a string representing the date and time, controlled by an explicit format string.
 
-##### [collections — Container datatypes](https://docs.python.org/3/library/collections.html)
+#### [collections — Container datatypes](https://docs.python.org/3/library/collections.html)
 
 * [四种高性能数据类型，Python collections助你优化代码、简洁任务](https://mp.weixin.qq.com/s/17xwTlwJi1ckht3wGk5ttA)
   * https://levelup.gitconnected.com/introducing-high-performance-datatypes-in-python-with-the-collections-library-3d8c334827a5
@@ -1267,16 +1267,16 @@ if __name__ == '__main__':
   * Design and History FAQ — Python 3.8.1 documentation
     * https://docs.python.org/3/faq/design.html?highlight=switch%20case#why-isn-t-there-a-switch-or-case-statement-in-python
 
-#### [Numeric and Mathematical Modules](https://docs.python.org/3/library/numeric.html)
+### [Numeric and Mathematical Modules](https://docs.python.org/3/library/numeric.html)
 
-##### [cmath — Mathematical functions for complex numbers](https://docs.python.org/3/library/cmath.html)
+#### [cmath — Mathematical functions for complex numbers](https://docs.python.org/3/library/cmath.html)
 
 * [cmath.polar(x)](https://docs.python.org/3/library/cmath.html#cmath.polar)
 	* Return the representation of x in polar coordinates. Returns a pair (r, phi) where r is the modulus of x and phi is the phase of x. polar(x) is equivalent to (abs(x), phase(x)).
 
-#### [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
+### [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
 
-##### [itertools — Functions creating iterators for efficient looping](https://docs.python.org/3/library/itertools.html)
+#### [itertools — Functions creating iterators for efficient looping](https://docs.python.org/3/library/itertools.html)
 
 * This module implements a number of iterator building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
   * [itertools.permutations(iterable, r=None)](https://docs.python.org/3/library/itertools.html#itertools.permutations)
@@ -1316,7 +1316,7 @@ if __name__ == '__main__':
 | combinations() | p, r | r-length tuples, in sorted order, no repeated elements | combinations('ABCD', 2) | AB AC AD BC BD CD
 | combinations_with_replacement() | p, r | r-length tuples, in sorted order, with repeated elements| combinations_with_replacement('ABCD', 2) | AA AB AC AD BB BC BD CC CD DD
 
-#### [File and Directory Access](https://docs.python.org/3/library/filesys.html)
+### [File and Directory Access](https://docs.python.org/3/library/filesys.html)
 
 * How to check if file exists ?
   * os.path — Common pathname manipulations — Python 3.7.2 documentation
