@@ -48,6 +48,18 @@
   * [53 Python Interview Questions and Answers | by Chris I. | Towards Data Science](https://towardsdatascience.com/53-python-interview-questions-and-answers-91fa311eec3f)
 * [吐血整理的 Python 面试题(qq.com)](https://mp.weixin.qq.com/s/4GUHtSxGhBaBVfMMsX8lOQ)
 * list v.s. tuple
+* [What are .pyc files in Python?](https://www.tutorialspoint.com/What-are-pyc-files-in-Python)
+  * .pyc files are created by the Python interpreter when a .py file is imported. They contain the "compiled bytecode" of the imported module/program so that the "translation" from source code to bytecode (which only needs to be done once) can be skipped on subsequent imports if the .pyc is newer than the corresponding .py file, thus speeding startup a little. But it's still interpreted. Once the *.pyc file is generated, there is no need of *.py file, unless you edit it.
+* [Read a file line by line in Python - GeeksforGeeks](https://www.geeksforgeeks.org/read-a-file-line-by-line-in-python/)
+  * Reading line by line
+    * Using readlines()
+      * readlines() is used to read all the lines at a single go and then return them as each line a string element in a list. This function can be used for small files, as it reads the whole file content to the memory, then split it into separate lines. We can iterate over the list and strip the newline ‘\n’ character using strip() function.
+    * Using readline()
+      * readline() function reads a line of the file and return it in the form of the string. It takes a parameter n, which specifies the maximum number of bytes that will be read. However, does not reads more than one line, even if n exceeds the length of the line. It will be efficient when reading a large file because instead of fetching all the data in one go, it fetches line by line. readline() returns the next line of the file which contains a newline character in the end. Also, if the end of the file is reached, it will return an empty string.
+    * Using for loop
+      * An iterable object is returned by open() function while opening a file. This final way of reading in a file line-by-line includes iterating over a file object in a for loop. Doing this we are taking advantage of a built-in Python function that allows us to iterate over the file object implicitly using a for loop in a combination with using the iterable object. This approach takes fewer lines of code, which is always the best practice worthy of following.
+  * With statement
+    * The With statement in Python is used in exception handling to make the code cleaner and much more readable. It simplifies the management of common resources like file streams. 
 
 ## CODE
 
