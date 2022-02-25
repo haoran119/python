@@ -76,6 +76,10 @@
       * An iterable object is returned by open() function while opening a file. This final way of reading in a file line-by-line includes iterating over a file object in a for loop. Doing this we are taking advantage of a built-in Python function that allows us to iterate over the file object implicitly using a for loop in a combination with using the iterable object. This approach takes fewer lines of code, which is always the best practice worthy of following.
   * With statement
     * The With statement in Python is used in exception handling to make the code cleaner and much more readable. It simplifies the management of common resources like file streams. 
+* [How to multiply two pandas DataFrame columns in Python](https://www.kite.com/python/answers/how-to-multiply-two-pandas-dataframe-columns-in-python#:~:text=Use%20the%20syntax%20df%5Bcol1,result%20to%20a%20new%20column.)
+```python
+df["a*b"] = df["a"] * df["b"]
+```
 
 ## CODE
 
