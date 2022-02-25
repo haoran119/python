@@ -497,7 +497,7 @@ if __name__ == '__main__':
 
 #### [typing — Support for type hints](https://docs.python.org/3/library/typing.html)
 
-* Note The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
+* Note: The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
 * This module provides runtime support for type hints. The most fundamental support consists of the types Any, Union, Callable, TypeVar, and Generic. For a full specification, please see PEP 484. For a simplified introduction to type hints, see PEP 483.
 * The function below takes and returns a string and is annotated as follows:
 ```python
@@ -511,13 +511,7 @@ def greeting(name: str) -> str:
 		* Any is compatible with every type.
 * [class typing.List(list, MutableSequence[T])](https://docs.python.org/3/library/typing.html#typing.List)
 	* Generic version of list. Useful for annotating return types. To annotate arguments it is preferred to use an abstract collection type such as Sequence or Iterable.
-* How to use type annotations ?
-  * typing — Support for type hints — Python 3.9.0 documentation
-    * https://docs.python.org/3/library/typing.html
-    * Note: The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
-    * def greeting(name: str) -> str: ...
-  * Using Python's Type Annotations - DEV
-    * https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way.
+* [Using Python's Type Annotations - DEV](https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way)
 
 #### [Numeric Types — int, float, complex](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
 
