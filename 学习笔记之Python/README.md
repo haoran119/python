@@ -423,8 +423,6 @@ if __name__ == '__main__':
     print(next(my_incrementor))  # Traceback (most recent call last): ... StopIteration
 ```
 
-### [Date & Time](https://www.tutorialspoint.com/python3/python_date_time.htm)
-
 ### [Built-in Functions](https://docs.python.org/3/library/functions.html)
 
 * [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
@@ -439,13 +437,6 @@ if __name__ == '__main__':
   * 7、map函数
   * 8、排序相关
   * 9 其他
-* [open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)](https://docs.python.org/3/library/functions.html#open)
-	* Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
-* [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
-  * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
-* [reversed(seq)](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
-	* Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
-* [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
 * [Python高阶函数使用总结](https://mp.weixin.qq.com/s/xtO8NDq3lVacsT5Z7eQXmw)
   * 本文结合各种实际的例子详细讲解了Python5个内建高阶函数的使用，能够帮助理解Python的数据结构和提高数据处理的效率，这5个函数分别是：
     * map
@@ -453,14 +444,40 @@ if __name__ == '__main__':
     * filter
     * sorted/sort
     * zip
-* [class complex([real[, imag]])](https://docs.python.org/3/library/functions.html?highlight=complex#complex)
-	* Return a complex number with the value real + imag*1j or convert a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j.
 * [Python | fabs() vs abs() - GeeksforGeeks](https://www.geeksforgeeks.org/python-fabs-vs-abs/)
   * Both the abs() and the fabs() function is used to find the absolute value of a number, i.e., remove the negative sign of a number. 
   * Both will return the absolute value of a number.
   * The difference is that math.fabs(number) will always return a floating-point number even if the argument is an integer, whereas abs() will return a floating-point or an integer depending upon the argument.
   * In case the argument is a complex number, abs() will return the magnitude part whereas fabs() will return an error.
   * To use the fabs() function we need to import the library “math” while the abs() function comes with the standard library of Python.
+* [class complex([real[, imag]])](https://docs.python.org/3/library/functions.html?highlight=complex#complex)
+	* Return a complex number with the value real + imag*1j or convert a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j.
+* How to check type of object ?
+  * x = isinstance(5, int)
+  * Built-in Functions — Python 3.7.4 documentation
+    * https://docs.python.org/3/library/functions.html#isinstance
+  * Python isinstance() Function
+    * https://www.w3schools.com/python/ref_func_isinstance.asp
+* How to check if object has an attribute ?
+  * Built-in Functions — Python 3.8.5 documentation
+    * [hasattr(object, name)](https://docs.python.org/3/library/functions.html#hasattr)
+      * The arguments are an object and a string. The result is True if the string is the name of one of the object’s attributes, False if not. (This is implemented by calling getattr(object, name) and seeing whether it raises an AttributeError or not.)
+    * [object.__getattr__(self, name)](https://docs.python.org/3/reference/datamodel.html#object.__getattr__)
+      * Called when the default attribute access fails with an AttributeError (either __getattribute__() raises an AttributeError because name is not an instance attribute or an attribute in the class tree for self; or __get__() of a name property raises AttributeError). This method should either return the (computed) attribute value or raise an AttributeError exception.
+    * [object.__getattribute__(self, name)](https://docs.python.org/3/reference/datamodel.html#object.__getattribute__)
+      * Called unconditionally to implement attribute accesses for instances of the class. If the class also defines __getattr__(), the latter will not be called unless __getattribute__() either calls it explicitly or raises an AttributeError. This method should return the (computed) attribute value or raise an AttributeError exception. In order to avoid infinite recursion in this method, its implementation should always call the base class method with the same name to access any attributes it needs, for example, object.__getattribute__(self, name).
+  * How to know if an object has an attribute in Python - Stack Overflow
+    * https://stackoverflow.com/questions/610883/how-to-know-if-an-object-has-an-attribute-in-python
+* [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
+* [open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)](https://docs.python.org/3/library/functions.html#open)
+	* Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
+* [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
+  * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
+* [reversed(seq)](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
+	* Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
+* zip
+  * https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip
+  * Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
 
 ### [Functions](https://www.tutorialspoint.com/python/python_functions.htm)
 
@@ -571,9 +588,6 @@ print(b)    # [1, 3]
 ```
 * [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
   * https://maida6244.xyz/
-* zip
-  * https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip
-  * Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
 * How to convert dictionary to list ?
   * Converting Python Dictionary to List - Stack Overflow
     * https://stackoverflow.com/questions/1679384/converting-python-dictionary-to-list
@@ -1106,7 +1120,7 @@ if __name__ == '__main__':
 
 ##### [datetime — Basic date and time types](https://docs.python.org/3/library/datetime.html)
 
-* [Python - Date & Time](https://www.tutorialspoint.com/python/python_date_time.htm)
+* [Date & Time](https://www.tutorialspoint.com/python3/python_date_time.htm)
 * Get date of the datetime instance
 	* 8.1. datetime — Basic date and time types — Python 3.6.6rc1 documentation
 		* https://docs.python.org/3/library/datetime.html#datetime.date
@@ -2838,35 +2852,12 @@ predicted_values = model.predict(x_test)
 * How to set pip install package index ?
   * Edit ~/.pip/pip.conf to set index-url / extra-index-url
   * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
-
-
-
-
-
-
-
-
 * How to use enumerations ?
   * enum — Support for enumerations — Python 3.8.1 documentation
     * https://docs.python.org/3/library/enum.html?highlight=enum#enum.Enum
   * Design and History FAQ — Python 3.8.1 documentation
     * https://docs.python.org/3/faq/design.html?highlight=switch%20case#why-isn-t-there-a-switch-or-case-statement-in-python
-* How to check type of object ?
-  * x = isinstance(5, int)
-  * Built-in Functions — Python 3.7.4 documentation
-    * https://docs.python.org/3/library/functions.html#isinstance
-  * Python isinstance() Function
-    * https://www.w3schools.com/python/ref_func_isinstance.asp
-* How to check if object has an attribute ?
-  * Built-in Functions — Python 3.8.5 documentation
-    * [hasattr(object, name)](https://docs.python.org/3/library/functions.html#hasattr)
-      * The arguments are an object and a string. The result is True if the string is the name of one of the object’s attributes, False if not. (This is implemented by calling getattr(object, name) and seeing whether it raises an AttributeError or not.)
-    * [object.__getattr__(self, name)](https://docs.python.org/3/reference/datamodel.html#object.__getattr__)
-      * Called when the default attribute access fails with an AttributeError (either __getattribute__() raises an AttributeError because name is not an instance attribute or an attribute in the class tree for self; or __get__() of a name property raises AttributeError). This method should either return the (computed) attribute value or raise an AttributeError exception.
-    * [object.__getattribute__(self, name)](https://docs.python.org/3/reference/datamodel.html#object.__getattribute__)
-      * Called unconditionally to implement attribute accesses for instances of the class. If the class also defines __getattr__(), the latter will not be called unless __getattribute__() either calls it explicitly or raises an AttributeError. This method should return the (computed) attribute value or raise an AttributeError exception. In order to avoid infinite recursion in this method, its implementation should always call the base class method with the same name to access any attributes it needs, for example, object.__getattribute__(self, name).
-  * How to know if an object has an attribute in Python - Stack Overflow
-    * https://stackoverflow.com/questions/610883/how-to-know-if-an-object-has-an-attribute-in-python
+
 * How to check if file exists ?
   * os.path — Common pathname manipulations — Python 3.7.2 documentation
     * https://docs.python.org/3/library/os.path.html?highlight=isfile#os.path.isfile
