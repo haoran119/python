@@ -214,6 +214,9 @@
     print(f())  # <generator object f at 0x7facfc885f50>
     print(next(f()))    # 5
     ```
+
+### [Basic Operators](https://www.tutorialspoint.com/python3/python_basic_operators.htm)
+
 * [Python 为什么不支持 i++ 自增语法，不提供 ++ 操作符？ (qq.com)](https://mp.weixin.qq.com/s/gs3aZucOxXkeMGmP0H9fuA)
 * [6.12. Assignment expressions - 6. Expressions — Python 3.9.7 documentation](https://docs.python.org/3/reference/expressions.html?highlight=walrus#assignment-expressions)
   * assignment_expression ::=  [identifier ":="] expression
@@ -228,9 +231,28 @@
   while chunk := file.read(9000):
       process(chunk)
   ```   
+* Comparisons
+  * 6. Expressions — Python 3.7.4 documentation
+    * https://docs.python.org/3/reference/expressions.html#comparisons
+    * Unlike C, all comparison operations in Python have the same priority, which is lower than that of any arithmetic, shifting or bitwise operation. Also unlike C, expressions like a < b < c have the interpretation that is conventional in mathematics
+    * Comparisons can be chained arbitrarily, e.g., x < y <= z is equivalent to x < y and y <= z, except that y is evaluated only once (but in both cases z is not evaluated at all when x < y is found to be false).
+
+### [Decision Making](https://www.tutorialspoint.com/python3/python_decision_making.htm)
+
+* Conditional Expressions
+  * 6. Expressions — Python 3.7.0 documentation
+    * https://docs.python.org/3/reference/expressions.html?highlight=conditional%20expressions#conditional-expressions
+    * x = 1 if y == 1 else 0
+    * 注意Python中没有三元运算符 y == 1 ? 1 : 0
+  * 1 PEP 308: Conditional Expressions
+    * https://docs.python.org/2.5/whatsnew/pep-308.html
 * [条件语句的七种写法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247522923&idx=4&sn=04c0072a03765c7741f459cd0807d9b7&source=41#wechat_redirect)
 
 ### [Loops](https://www.tutorialspoint.com/python3/python_loops.htm)
+
+* Two types usage of for loop ?
+  * python - "for loop" with two variables? - Stack Overflow
+    * https://stackoverflow.com/questions/18648626/for-loop-with-two-variables
 
 #### Iterator / Generator
 
@@ -402,16 +424,6 @@ if __name__ == '__main__':
     print(next(my_incrementor))  # Traceback (most recent call last): ... StopIteration
 ```
 
-### [Numbers](https://www.tutorialspoint.com/python3/python_numbers.htm)
-
-### [Strings](https://www.tutorialspoint.com/python3/python_strings.htm)
-
-### [Lists](https://www.tutorialspoint.com/python3/python_lists.htm)
-
-### [Tuples](https://www.tutorialspoint.com/python3/python_tuples.htm)
-
-### [Dictionary](https://www.tutorialspoint.com/python3/python_dictionary.htm)
-
 ### [Date & Time](https://www.tutorialspoint.com/python3/python_date_time.htm)
 
 ### [Built-in Functions](https://docs.python.org/3/library/functions.html)
@@ -473,6 +485,17 @@ if __name__ == '__main__':
 
 ### [Built-in Types](https://docs.python.org/3/library/stdtypes.html)
 
+* How to check if dictionary/list/string/tuple is empty ?
+  * PEP 8 -- Style Guide for Python Code | Python.org
+    * https://www.python.org/dev/peps/pep-0008/
+    * For sequences, (strings, lists, tuples), use the fact that empty sequences are false.
+    * Yes: if not seq: / if seq:
+    * No: if len(seq): / if not len(seq):
+  * Python: Checking if a 'Dictionary' is empty doesn't seem to work - Stack Overflow
+    * https://stackoverflow.com/questions/23177439/python-checking-if-a-dictionary-is-empty-doesnt-seem-to-work
+  * python - How do I check if a list is empty? - Stack Overflow
+    * https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty
+
 #### [typing — Support for type hints](https://docs.python.org/3/library/typing.html)
 
 * Note The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
@@ -489,10 +512,42 @@ def greeting(name: str) -> str:
 		* Any is compatible with every type.
 * [class typing.List(list, MutableSequence[T])](https://docs.python.org/3/library/typing.html#typing.List)
 	* Generic version of list. Useful for annotating return types. To annotate arguments it is preferred to use an abstract collection type such as Sequence or Iterable.
+* How to use type annotations ?
+  * typing — Support for type hints — Python 3.9.0 documentation
+    * https://docs.python.org/3/library/typing.html
+    * Note: The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
+    * def greeting(name: str) -> str: ...
+  * Using Python's Type Annotations - DEV
+    * https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way.
+
+#### [Numeric Types — int, float, complex](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
+
+* [Numbers](https://www.tutorialspoint.com/python3/python_numbers.htm)
+* How to display a decimal in scientific notation ?
+  * '{:.2e}'.format(0.456) = '4.56e-01'
+  * '{:.2f}'.format(0.456) = '0.46'
+  * python - Display a decimal in scientific notation - Stack Overflow
+    * https://stackoverflow.com/questions/6913532/display-a-decimal-in-scientific-notation
+* What's the infinity number ?
+  * float('inf')
+  * Built-in Types — Python 3.7.4 documentation
+    * https://docs.python.org/3/library/stdtypes.html?highlight=float%20inf
+    * float also accepts the strings “nan” and “inf” with an optional prefix “+” or “-” for Not a Number (NaN) and positive or negative infinity.
+  * sys.maxsize
+  * python - Maximum and Minimum values for ints - Stack Overflow
+    * https://stackoverflow.com/questions/7604966/maximum-and-minimum-values-for-ints
+    * In Python 3, this question doesn't apply. The plain int type is unbounded.
+    * However, you might actually be looking for information about the current interpreter's word size, which will be the same as the machine's word size in most cases. That information is still available in Python 3 as sys.maxsize, which is the maximum value representable by a signed word. Equivalently, it's the size of the largest possible list or in-memory sequence.
+  * sys — System-specific parameters and functions — Python 3.8.2 documentation
+    * https://docs.python.org/3/library/sys.html#sys.maxsize
+    * An integer giving the maximum value a variable of type Py_ssize_t can take. It’s usually 2\*\*31 - 1 on a 32-bit platform and 2\*\*63 - 1 on a 64-bit platform.
 
 #### [Sequence Types — list, tuple, range](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
 
 * [干货|理解Python列表和元组](https://mp.weixin.qq.com/s/U-ctO-brjwxpm0LbLTB-dw)
+
+##### [Lists](https://www.tutorialspoint.com/python3/python_lists.htm)
+
 * [list.remove(x) - 5. Data Structures — Python 3.9.7 documentation](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
   * Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
   * [Python list remove() - GeeksforGeeks](https://www.geeksforgeeks.org/python-list-remove/)
@@ -523,9 +578,192 @@ print(b)    # [1, 3]
 ```
 * [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
   * https://maida6244.xyz/
+* zip
+  * https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip
+  * Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
+* How to convert dictionary to list ?
+  * Converting Python Dictionary to List - Stack Overflow
+    * https://stackoverflow.com/questions/1679384/converting-python-dictionary-to-list
+  * 4. Built-in Types — Python 3.6.6rc1 documentation
+    * https://docs.python.org/3/library/stdtypes.html?highlight=items#dict.items
+    * https://docs.python.org/3/library/stdtypes.html?highlight=items#dictionary-view-objects
+  * 5. Data Structures — Python 3.8.3 documentation
+    * https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
+* How to check if a list contains elements of another list ?
+  * check = all(item in List1 for item in List2)
+  * check = any(item in List1 for item in List2)
+  * Check if Python List Contains Elements of Another List
+    * https://www.techbeamers.com/program-python-list-contains-elements/
+  * Built-in Functions — Python 3.7.4 documentation
+    * https://docs.python.org/3/library/functions.html?highlight=any#any
+    * https://docs.python.org/3/library/functions.html?#all
+* How to change values in a list with for loop ?
+  * enumerate
+  * Change values in a list using a for loop (python) - Stack Overflow
+    * https://stackoverflow.com/questions/54974579/change-values-in-a-list-using-a-for-loop-python
+```python
+list_a = [0] * 10
+ 
+for index, value in enumerate(list_a):
+    if index > 5:
+        list_a[index] = -1
+```
+* How to reverse list ?
+  * r_tests = tests[::-1]
+  * r_tests = reversed(tests)
+  * [reversed - Built-in Functions — Python 3.9.6 documentation](https://docs.python.org/3/library/functions.html?highlight=reverse#reversed)
+    * Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
+* How to create and initialise list with repeated N times ?
+  * x = [5]
+  * print(x * 5)　　// [5, 5, 5, 5, 5]
+  * print([x] * 5)　// [[5], [5], [5], [5], [5]]
+  * Create List of Single Item Repeated n Times in Python - Stack Overflow
+    * https://stackoverflow.com/questions/3459098/create-list-of-single-item-repeated-n-times-in-python/3459131
+    * [e] * n
+  * [ [ 1 for x in range(n) ] for x in range(m) ]
+  * [How do I create a multidimensional list?](https://docs.python.org/3/faq/programming.html#how-do-i-create-a-multidimensional-list)
+    * The reason is that replicating a list with * doesn’t create copies, it only creates references to the existing objects. The *3 creates a list containing 3 references to the same list of length two. Changes to one row will show in all rows, which is almost certainly not what you want.
+    * The suggested approach is to create a list of the desired length first and then fill in each element with a newly created list
+    * Or, you can use an extension that provides a matrix datatype; NumPy is the best known.
+    * YES: A = [[None] * w for i in range(h)]
+    * NO: A = [[None] * 2] * 3
+    * https://docs.python.org/3/library/stdtypes.html?highlight=list#typesseq-common
+      * What has happened is that [[]] is a one-element list containing an empty list, so all three elements of [[]] * 3 are references to this single empty list. Modifying any of the elements of lists modifies this single list. 
+      * YES: lists = [[] for i in range(3)]
+      * NO: lists = [[]] * 3
+* How to remove duplicates in lists ?
+  * python - Removing duplicates in lists - Stack Overflow
+    * https://stackoverflow.com/questions/7961363/removing-duplicates-in-lists
+    * list(set(t))
+  * 5. Data Structures — Python 3.7.0 documentation
+    * https://docs.python.org/3/tutorial/datastructures.html#sets
+    * Python also includes a data type for sets. A set is an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.
+* How to print dictionary / list on multiple lines with pprint?
+  * pprint — Data pretty printer — Python 3.7.4 documentation
+    * https://docs.python.org/3.7/library/pprint.html
+  * python - pprint dictionary on multiple lines - Stack Overflow
+    * https://stackoverflow.com/questions/20171392/pprint-dictionary-on-multiple-lines
+  * 如何美观地打印 Python 对象？这个标准库可以简单实现
+    * https://mp.weixin.qq.com/s/ePlvdBu8VsS5xnqimv71CQ
+* How to print lists ?
+  * Print lists in Python (4 Different Ways) - GeeksforGeeks
+  * https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
+```python
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 22 11:05:55 2018
+
+@author: h.tang
+"""
+
+# using for loop
+a = [1, 2, 3, 4, 5]
+
+# =============================================================================
+# 1. Using for loop : Traverse from 0 to len(list) and print all elements of the list one by one uisng a for loop,
+# this is the standard practice of doing it.
+# =============================================================================
+#1
+#2
+#3
+#4
+#5
+#1 2 3 4 5
+
+# printing the list using loop
+for x in range(len(a)):
+    print a[x]
+
+for x in range(len(a)):
+    print a[x],
+
+# =============================================================================
+# 2. Without using loops: * symbol is use to print the list elements in a single line with space.
+# To print all elements in new lines or separated by space use sep=”\n” or sep=”, ” respectively.
+# =============================================================================
+# Python program to print list
+# without using loop
+
+a = [1, 2, 3, 4, 5]
+
+#1 2 3 4 5
+#printing lists separated by commas
+#1, 2, 3, 4, 5
+#printing lists in new line
+#1
+#2
+#3
+#4
+#5
+
+# printing the list using * operator separated
+# by space
+print(*a)
+
+# printing the list using * and sep operator
+print("printing lists separated by commas")
+
+print(*a, sep = ", ")
+
+# print in new line
+print("printing lists in new line")
+
+print(*a, sep = "\n")
+
+# =============================================================================
+# 3. Convert a list to a string for display : If it is a list of strings we can simply join them using join() function,
+# but if the list contains integers then convert it into string and then use join() function to join them to a string and print the string.
+# =============================================================================
+# Python program to print list
+# by Converting a list to a
+# string for display
+a =["Geeks", "for", "Geeks"]
+
+#Geeks for Geeks
+#1, 2, 3, 4, 5
+
+# print the list using join function()
+print(' '.join(a))
+
+# print the list by converting a list of
+# integers to string
+a = [1, 2, 3, 4, 5]
+
+print str(a)[1:-1]
+
+# =============================================================================
+# 4. Using map : Use map() to convert each item in the list to a string if list is not a string, and then join them
+# =============================================================================
+# Python program to print list
+# print the list by converting a list of
+# integers to string using map
+a = [1, 2, 3, 4, 5]
+#1 2 3 4 5
+#in new line
+#1
+#2
+#3
+#4
+#5
+print(' '.join(map(str, a)))
+
+print"in new line"
+print('\n'.join(map(str, a)))
+```
+
+##### [Tuples](https://www.tutorialspoint.com/python3/python_tuples.htm)
+
+* How to convert list to tuple ?
+  * tuple( list_obj )
+  * Python | Convert a list into a tuple - GeeksforGeeks
+    * https://www.geeksforgeeks.org/python-convert-a-list-into-a-tuple/
+    * tuple(list)
+    * tuple(i for i in list)
+    * (*list, )
 
 #### [Text Sequence Type — str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
 
+* [Strings](https://www.tutorialspoint.com/python3/python_strings.htm)
 * [str.count(sub[, start[, end]])](https://docs.python.org/3/library/stdtypes.html#str.count)
 	* Return the number of non-overlapping occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation.
 * [str.format(*args, **kwargs)](https://docs.python.org/3/library/stdtypes.html#str.format)
@@ -717,6 +955,43 @@ def fun2(s: str) -> str:
   print('racecar is a palindrome -> {}'.format(is_palindrome(s1)))    # racecar is a palindrome -> True
   print('hippopotamus is a palindrome -> {}'.format(is_palindrome(s2)))   # hippopotamus is a palindrome -> False
   ```
+* How to convert list to string ?
+  * stest = str(['test1', 'test2', 'test3']).strip('[]')
+  * 4. Built-in Types — Python 3.6.6rc1 documentation
+    * https://docs.python.org/3/library/stdtypes.html?highlight=str#text-sequence-type-str
+    * https://docs.python.org/3/library/stdtypes.html?highlight=str#str.strip
+  * python - TypeError: cannot concatenate 'str' and 'list' objects in email - Stack Overflow
+    * https://stackoverflow.com/questions/26521899/typeerror-cannot-concatenate-str-and-list-objects-in-email
+* How to check if substring exists ?
+  * if "substring" in test_string:
+  * if s.startswith(("a", "b")):
+  * 6. Expressions — Python 3.7.2rc1 documentation - Membership test operations
+    * https://docs.python.org/3/reference/expressions.html#membership-test-details
+  * Built-in Types — Python 3.7.2rc1 documentation
+    * str.startswith(prefix[, start[, end]])
+    * Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
+  * Does Python have a string 'contains' substring method? - Stack Overflow
+    * https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method
+    * if "blah" not in somestring: 
+* How to replace characters / substring in a string ?
+  * 'www.example.com'.strip('cmowz.')
+  * str.replace('html', 'log')
+  * Pay attention that strip will only remove the leading and trailing characters.
+  * Built-in Types — Python 3.7.1 documentation - str.strip([chars])
+    * https://docs.python.org/3/library/stdtypes.html?highlight=strip#str.strip
+    * Return a copy of the string with the leading and trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix or suffix; rather, all combinations of its values are stripped
+  * str.replace(old, new[, count])
+    * https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace
+    * Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced.
+* How to sort string ?
+  * [How to sort the letters in a string alphabetically in Python - Stack Overflow](https://stackoverflow.com/questions/15046242/how-to-sort-the-letters-in-a-string-alphabetically-in-python)
+  * ''.join(sorted(a))
+* How to split string ?
+  * [str.split(sep=None, maxsplit=-1) - Built-in Types — Python 3.9.6 documentation](https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split) 
+    * Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).
+    * If sep is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings (for example, '1,,2'.split(',') returns ['1', '', '2']). The sep argument may consist of multiple characters (for example, '1<>2<>3'.split('<>') returns ['1', '2', '3']). Splitting an empty string with a specified separator returns [''].
+  * [python中split()和split(' ')的区别 - 少年与python - 博客园](https://www.cnblogs.com/python-coder/p/10073329.html)
+    * split()的时候，多个空格当成一个空格；split(' ')的时候，多个空格都要分割，每个空格分割出来空。
 
 #### [Set Types — set, frozenset](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
 
@@ -730,6 +1005,7 @@ def fun2(s: str) -> str:
 * A mapping object maps hashable values to arbitrary objects. Mappings are mutable objects. There is currently only one standard mapping type, the dictionary. (For other containers see the built-in list, set, and tuple classes, and the collections module.)
 * A dictionary’s keys are almost arbitrary values. Values that are not hashable, that is, values containing lists, dictionaries or other mutable types (that are compared by value rather than by object identity) may not be used as keys. Numeric types used for keys obey the normal rules for numeric comparison: if two numbers compare equal (such as 1 and 1.0) then they can be used interchangeably to index the same dictionary entry. (Note however, that since computers store floating-point numbers as approximations it is usually unwise to use them as dictionary keys.)
 * Dictionaries can be created by placing a comma-separated list of key: value pairs within braces, for example: {'jack': 4098, 'sjoerd': 4127} or {4098: 'jack', 4127: 'sjoerd'}, or by the dict constructor.
+* [Dictionary](https://www.tutorialspoint.com/python3/python_dictionary.htm)
 * [如何优雅的操作Python字典](https://mp.weixin.qq.com/s/mWjzDm9XNNnFiJGYhzpivA)
   * https://www.linuxzen.com/python-you-ya-de-cao-zuo-zi-dian.html
 ```python
@@ -759,6 +1035,45 @@ if __name__ == '__main__':
 
     print("{} : {}".format(person, my_dict[person]))    # <__main__.Person object at 0x7f8cd0473ed0> : 123
 ```
+* How to find the min value in dictionary ?
+  * min(d.items(), key=lambda x: x[1])
+  * min(d.items(), key=d.get)
+  * min(d.values())
+  * min(d.keys())
+  * python - Get the key corresponding to the minimum value within a dictionary - Stack Overflow
+    * https://stackoverflow.com/questions/3282823/get-the-key-corresponding-to-the-minimum-value-within-a-dictionary
+    * min(d, key=d.get)
+  * python - Getting key with maximum value in dictionary? - Stack Overflow
+    * https://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary
+  * 2. Built-in Functions — Python 3.7.0 documentation
+    * https://docs.python.org/3/library/functions.html?highlight=min#min
+    * https://docs.python.org/3/library/stdtypes.html?highlight=dictionary#dict.get
+      * get(key[, default])
+      * Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError.
+  * Python3 min() 函数 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-func-number-min.html
+  * Python3 字典 get() 方法 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-att-dictionary-get.html
+* How to iterate over a dictionary ?
+  * for key in dict
+  * for value in dict.values()
+  * for key, value in dict.items()
+  * Iterate over a dictionary in Python - GeeksforGeeks
+    * https://www.geeksforgeeks.org/iterate-over-a-dictionary-in-python/
+  * Python3 字典 in 操作符 | 菜鸟教程　　
+    * https://www.runoob.com/python3/python3-att-dictionary-in-html.html
+    * Python 字典 in 操作符用于判断键是否存在于字典中，如果键在字典 dict 里返回 true，否则返回 false。
+* How to delete an item from dictionary ?
+  * Built-in Types — Python 3.8.2 documentation
+    * https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+    * del d[key]
+      * Remove d[key] from d. Raises a KeyError if key is not in the map.
+    * pop(key[, default])
+      * If key is in the dictionary, remove it and return its value, else return default. If default is not given and key is not in the dictionary, a KeyError is raised.
+  * Dictionary Tutorials & Notes | Python | HackerEarth
+    * https://www.hackerearth.com/practice/python/working-with-data/dictionary/tutorial/
+  * python - Delete a dictionary item if the key exists - Stack Overflow
+    * mydict.pop("key", None)
 
 ### [Built-in Exceptions](https://docs.python.org/3/library/exceptions.html)
 
@@ -844,9 +1159,37 @@ if __name__ == '__main__':
 			Counter('abracadabra').most_common(3) # [('a', 5), ('b', 2), ('r', 2)]
 			```
   * defaultdict：字典的子类，提供了一个工厂函数，为字典查询提供了默认值。
+    * collections — Container datatypes — Python 3.8.5 documentation
+    * https://docs.python.org/3/library/collections.html?highlight=defaultdict#collections.defaultdict
+    * class collections.defaultdict([default_factory[, ...]])
+    * Returns a new dictionary-like object. defaultdict is a subclass of the built-in dict class. It overrides one method and adds one writable instance variable. The remaining functionality is the same as for the dict class and is not documented here.
+    * The first argument provides the initial value for the default_factory attribute; it defaults to None. All remaining arguments are treated the same as if they were passed to the dict constructor, including keyword arguments.
   * OrderedDict：字典的子类，保留了他们被添加的顺序。
   * namedtuple：创建命名元组子类的工厂函数。
+    * collections — Container datatypes — Python 3.8.0 documentation
+      * https://docs.python.org/3/library/collections.html#collections.namedtuple
+      * collections.namedtuple(typename, field_names, *, rename=False, defaults=None, module=None)
+      * Returns a new tuple subclass named typename. The new subclass is used to create tuple-like objects that have fields accessible by attribute lookup as well as being indexable and iterable. Instances of the subclass also have a helpful docstring (with typename and field_names) and a helpful __repr__() method which lists the tuple contents in a name=value format.
+      * collections — Container datatypes — Python 3.8.2 documentation
+        * https://docs.python.org/3.8/library/collections.html?highlight=namedtuple#collections.somenamedtuple._replace
+        * somenamedtuple._replace(**kwargs)
+        * Return a new instance of the named tuple replacing specified fields with new values
   * deque：类似列表容器，实现了在两端快速添加(append)和弹出(pop)。
+    * collections — Container datatypes — Python 3.8.2 documentation
+      * https://docs.python.org/3/library/collections.html?highlight=deque#deque-objects
+      * class collections.deque([iterable[, maxlen]])
+      * Returns a new deque object initialized left-to-right (using append()) with data from iterable. If iterable is not specified, the new deque is empty.
+      * pop()
+        * Remove and return an element from the right side of the deque. If no elements are present, raises an IndexError.
+      * popleft()
+        * Remove and return an element from the left side of the deque. If no elements are present, raises an IndexError.
+    * queue — A synchronized queue class — Python 3.8.2 documentation
+      * https://docs.python.org/3/library/queue.html
+      * The queue module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming when information must be exchanged safely between multiple threads. The Queue class in this module implements all the required locking semantics.
+    * python - Queue.Queue vs. collections.deque - Stack Overflow
+      * https://stackoverflow.com/questions/717148/queue-queue-vs-collections-deque
+      * Queue.Queue and collections.deque serve different purposes. Queue.Queue is intended for allowing different threads to communicate using queued messages/data, whereas collections.deque is simply intended as a datastructure. That's why Queue.Queue has methods like put_nowait(), get_nowait(), and join(), whereas collections.deque doesn't. Queue.Queue isn't intended to be used as a collection, which is why it lacks the likes of the in operator.
+      * It boils down to this: if you have multiple threads and you want them to be able to communicate without the need for locks, you're looking for Queue.Queue; if you just want a queue or a double-ended queue as a datastructure, use collections.deque.
   * ChainMap：类似字典的容器类，将多个映射集合到一个视图里面。
 * [盘一盘 Python 系列特别篇 - Collection](https://mp.weixin.qq.com/s/C_bSgxE_1wIPhcqIF7w74w)
   * 我们在【盘一盘 Python 下】一贴介绍过 5 种类型的容器型（container）数据，分别是字符串（string）、列表（list）、元组（tuple）、字典（dictionary）和集合（set）。
@@ -1564,6 +1907,31 @@ d = D()
 d.method()  # A.method() called
 print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>]
 ```
+* Abstract base class v.s. Interface ?
+  * Interfaces in Python: Protocols and ABCs · Abu Ashraf Masnun
+  * There’s no interface keyword in Python. The Java / C# way of using interfaces is not available here. In the dynamic language world, things are more implicit. We’re more focused on how an object behaves, rather than it’s type/class.
+  * PEP 3119 -- Introducing Abstract Base Classes | Python.org
+    * https://www.python.org/dev/peps/pep-3119/
+  * collections.abc — Abstract Base Classes for Containers — Python 3.8.0 documentation
+    * https://docs.python.org/3/library/collections.abc.html#module-collections.abc
+  * 3. Data model — Python 3.8.0 documentation
+    * https://docs.python.org/3/reference/datamodel.html?highlight=__str__#object.__str__
+    * Called by str(object) and the built-in functions format() and print() to compute the “informal” or nicely printable string representation of an object. The return value must be a string object.
+  * Built-in Types — Python 3.8.0 documentation
+    * https://docs.python.org/3/library/stdtypes.html#str
+    * class str(object=b'', encoding='utf-8', errors='strict')
+  * Duck typing - Wikipedia
+    * https://en.wikipedia.org/wiki/Duck_typing
+    * Duck typing in computer programming is an application of the duck test—"If it walks like a duck and it quacks like a duck, then it must be a duck"—to determine if an object can be used for a particular purpose. With normal typing, suitability is determined by an object's type. In duck typing, an object's suitability is determined by the presence of certain methods and properties, rather than the type of the object itself.[1]
+  * 鸭子类型 - 维基百科，自由的百科全书
+    * 鸭子类型（英语：duck typing）在程序设计中是动态类型的一种风格。在这种风格中，一个对象有效的语义，不是由继承自特定的类或实现特定的接口，而是由"当前方法和属性的集合"决定。
+    * 在鸭子类型中，关注点在于对象的行为，能作什么；而不是关注对象所属的类型。
+    * 鸭子类型通常得益于"不"测试方法和函数中参数的类型，而是依赖文档、清晰的代码和测试来确保正确使用。
+    * 在常规类型中，我们能否在一个特定场景中使用某个对象取决于这个对象的类型，而在鸭子类型中，则取决于这个对象是否具有某种属性或者方法——即只要具备特定的属性或方法，能通过鸭子测试，就可以使用。
+  * oop - How do I implement interfaces in python? - Stack Overflow
+    * https://stackoverflow.com/questions/2124190/how-do-i-implement-interfaces-in-python
+  * Difference between abstract class and interface in Python - Stack Overflow
+    * https://stackoverflow.com/questions/372042/difference-between-abstract-class-and-interface-in-python
 * [盘一盘 Python 系列特别篇 - 装饰器](https://mp.weixin.qq.com/s/ZWGZLur6_bdgZaIp_XzOxA)
 * [5分钟全面掌握 Python 装饰器](https://mp.weixin.qq.com/s/Dx887iB-jn-BMdj3F1vHDQ)
 * [读懂 Python 装饰器](https://mp.weixin.qq.com/s/pezg8naU4Afkf8DTm_m13w)
@@ -2477,367 +2845,14 @@ predicted_values = model.predict(x_test)
 * How to set pip install package index ?
   * Edit ~/.pip/pip.conf to set index-url / extra-index-url
   * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
-* Abstract base class v.s. Interface ?
-  * Interfaces in Python: Protocols and ABCs · Abu Ashraf Masnun
-  * There’s no interface keyword in Python. The Java / C# way of using interfaces is not available here. In the dynamic language world, things are more implicit. We’re more focused on how an object behaves, rather than it’s type/class.
-  * PEP 3119 -- Introducing Abstract Base Classes | Python.org
-    * https://www.python.org/dev/peps/pep-3119/
-  * collections.abc — Abstract Base Classes for Containers — Python 3.8.0 documentation
-    * https://docs.python.org/3/library/collections.abc.html#module-collections.abc
-  * 3. Data model — Python 3.8.0 documentation
-    * https://docs.python.org/3/reference/datamodel.html?highlight=__str__#object.__str__
-    * Called by str(object) and the built-in functions format() and print() to compute the “informal” or nicely printable string representation of an object. The return value must be a string object.
-  * Built-in Types — Python 3.8.0 documentation
-    * https://docs.python.org/3/library/stdtypes.html#str
-    * class str(object=b'', encoding='utf-8', errors='strict')
-  * Duck typing - Wikipedia
-    * https://en.wikipedia.org/wiki/Duck_typing
-    * Duck typing in computer programming is an application of the duck test—"If it walks like a duck and it quacks like a duck, then it must be a duck"—to determine if an object can be used for a particular purpose. With normal typing, suitability is determined by an object's type. In duck typing, an object's suitability is determined by the presence of certain methods and properties, rather than the type of the object itself.[1]
-  * 鸭子类型 - 维基百科，自由的百科全书
-    * 鸭子类型（英语：duck typing）在程序设计中是动态类型的一种风格。在这种风格中，一个对象有效的语义，不是由继承自特定的类或实现特定的接口，而是由"当前方法和属性的集合"决定。
-    * 在鸭子类型中，关注点在于对象的行为，能作什么；而不是关注对象所属的类型。
-    * 鸭子类型通常得益于"不"测试方法和函数中参数的类型，而是依赖文档、清晰的代码和测试来确保正确使用。
-    * 在常规类型中，我们能否在一个特定场景中使用某个对象取决于这个对象的类型，而在鸭子类型中，则取决于这个对象是否具有某种属性或者方法——即只要具备特定的属性或方法，能通过鸭子测试，就可以使用。
-  * oop - How do I implement interfaces in python? - Stack Overflow
-    * https://stackoverflow.com/questions/2124190/how-do-i-implement-interfaces-in-python
-  * Difference between abstract class and interface in Python - Stack Overflow
-    * https://stackoverflow.com/questions/372042/difference-between-abstract-class-and-interface-in-python
-* How to use type annotations ?
-  * typing — Support for type hints — Python 3.9.0 documentation
-    * https://docs.python.org/3/library/typing.html
-    * Note: The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
-    * def greeting(name: str) -> str: ...
-  * Using Python's Type Annotations - DEV
-    * https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way.
-* Comparisons
-  * 6. Expressions — Python 3.7.4 documentation
-    * https://docs.python.org/3/reference/expressions.html#comparisons
-    * Unlike C, all comparison operations in Python have the same priority, which is lower than that of any arithmetic, shifting or bitwise operation. Also unlike C, expressions like a < b < c have the interpretation that is conventional in mathematics
-    * Comparisons can be chained arbitrarily, e.g., x < y <= z is equivalent to x < y and y <= z, except that y is evaluated only once (but in both cases z is not evaluated at all when x < y is found to be false).
-* Conditional Expressions
-  * 6. Expressions — Python 3.7.0 documentation
-    * https://docs.python.org/3/reference/expressions.html?highlight=conditional%20expressions#conditional-expressions
-    * x = 1 if y == 1 else 0
-    * 注意Python中没有三元运算符 y == 1 ? 1 : 0
-  * 1 PEP 308: Conditional Expressions
-    * https://docs.python.org/2.5/whatsnew/pep-308.html
-* How to display a decimal in scientific notation ?
-  * '{:.2e}'.format(0.456) = '4.56e-01'
-  * '{:.2f}'.format(0.456) = '0.46'
-  * python - Display a decimal in scientific notation - Stack Overflow
-    * https://stackoverflow.com/questions/6913532/display-a-decimal-in-scientific-notation
-* What's the infinity number ?
-  * float('inf')
-  * Built-in Types — Python 3.7.4 documentation
-    * https://docs.python.org/3/library/stdtypes.html?highlight=float%20inf
-    * float also accepts the strings “nan” and “inf” with an optional prefix “+” or “-” for Not a Number (NaN) and positive or negative infinity.
-  * sys.maxsize
-  * python - Maximum and Minimum values for ints - Stack Overflow
-    * https://stackoverflow.com/questions/7604966/maximum-and-minimum-values-for-ints
-    * In Python 3, this question doesn't apply. The plain int type is unbounded.
-    * However, you might actually be looking for information about the current interpreter's word size, which will be the same as the machine's word size in most cases. That information is still available in Python 3 as sys.maxsize, which is the maximum value representable by a signed word. Equivalently, it's the size of the largest possible list or in-memory sequence.
-  * sys — System-specific parameters and functions — Python 3.8.2 documentation
-    * https://docs.python.org/3/library/sys.html#sys.maxsize
-    * An integer giving the maximum value a variable of type Py_ssize_t can take. It’s usually 2\*\*31 - 1 on a 32-bit platform and 2\*\*63 - 1 on a 64-bit platform.
-* zip
-  * https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip
-  * Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
-* How to convert dictionary to list ?
-  * Converting Python Dictionary to List - Stack Overflow
-    * https://stackoverflow.com/questions/1679384/converting-python-dictionary-to-list
-  * 4. Built-in Types — Python 3.6.6rc1 documentation
-    * https://docs.python.org/3/library/stdtypes.html?highlight=items#dict.items
-    * https://docs.python.org/3/library/stdtypes.html?highlight=items#dictionary-view-objects
-  * 5. Data Structures — Python 3.8.3 documentation
-    * https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
-* How to convert list to string ?
-  * stest = str(['test1', 'test2', 'test3']).strip('[]')
-  * 4. Built-in Types — Python 3.6.6rc1 documentation
-    * https://docs.python.org/3/library/stdtypes.html?highlight=str#text-sequence-type-str
-    * https://docs.python.org/3/library/stdtypes.html?highlight=str#str.strip
-  * python - TypeError: cannot concatenate 'str' and 'list' objects in email - Stack Overflow
-    * https://stackoverflow.com/questions/26521899/typeerror-cannot-concatenate-str-and-list-objects-in-email
-* How to convert list to tuple ?
-  * tuple( list_obj )
-  * Python | Convert a list into a tuple - GeeksforGeeks
-    * https://www.geeksforgeeks.org/python-convert-a-list-into-a-tuple/
-    * tuple(list)
-    * tuple(i for i in list)
-    * (*list, )
-* How to check if a list contains elements of another list ?
-  * check = all(item in List1 for item in List2)
-  * check = any(item in List1 for item in List2)
-  * Check if Python List Contains Elements of Another List
-    * https://www.techbeamers.com/program-python-list-contains-elements/
-  * Built-in Functions — Python 3.7.4 documentation
-    * https://docs.python.org/3/library/functions.html?highlight=any#any
-    * https://docs.python.org/3/library/functions.html?#all
-* How to change values in a list with for loop ?
-  * enumerate
-  * Change values in a list using a for loop (python) - Stack Overflow
-    * https://stackoverflow.com/questions/54974579/change-values-in-a-list-using-a-for-loop-python
-```python
-list_a = [0] * 10
- 
-for index, value in enumerate(list_a):
-    if index > 5:
-        list_a[index] = -1
-```
-* How to reverse list ?
-  * r_tests = tests[::-1]
-  * r_tests = reversed(tests)
-  * [reversed - Built-in Functions — Python 3.9.6 documentation](https://docs.python.org/3/library/functions.html?highlight=reverse#reversed)
-    * Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
-* How to check if substring exists ?
-  * if "substring" in test_string:
-  * if s.startswith(("a", "b")):
-  * 6. Expressions — Python 3.7.2rc1 documentation - Membership test operations
-    * https://docs.python.org/3/reference/expressions.html#membership-test-details
-  * Built-in Types — Python 3.7.2rc1 documentation
-    * str.startswith(prefix[, start[, end]])
-    * Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
-  * Does Python have a string 'contains' substring method? - Stack Overflow
-    * https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method
-    * if "blah" not in somestring: 
-* How to replace characters / substring in a string ?
-  * 'www.example.com'.strip('cmowz.')
-  * str.replace('html', 'log')
-  * Pay attention that strip will only remove the leading and trailing characters.
-  * Built-in Types — Python 3.7.1 documentation - str.strip([chars])
-    * https://docs.python.org/3/library/stdtypes.html?highlight=strip#str.strip
-    * Return a copy of the string with the leading and trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix or suffix; rather, all combinations of its values are stripped
-  * str.replace(old, new[, count])
-    * https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace
-    * Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced.
-* How to sort string ?
-  * [How to sort the letters in a string alphabetically in Python - Stack Overflow](https://stackoverflow.com/questions/15046242/how-to-sort-the-letters-in-a-string-alphabetically-in-python)
-  * ''.join(sorted(a))
-* How to split string ?
-  * [str.split(sep=None, maxsplit=-1) - Built-in Types — Python 3.9.6 documentation](https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split) 
-    * Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).
-    * If sep is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings (for example, '1,,2'.split(',') returns ['1', '', '2']). The sep argument may consist of multiple characters (for example, '1<>2<>3'.split('<>') returns ['1', '2', '3']). Splitting an empty string with a specified separator returns [''].
-  * [python中split()和split(' ')的区别 - 少年与python - 博客园](https://www.cnblogs.com/python-coder/p/10073329.html)
-    * split()的时候，多个空格当成一个空格；split(' ')的时候，多个空格都要分割，每个空格分割出来空。
-* Two types usage of for loop ?
-  * python - "for loop" with two variables? - Stack Overflow
-    * https://stackoverflow.com/questions/18648626/for-loop-with-two-variables
-* How to find the min value in dictionary ?
-  * min(d.items(), key=lambda x: x[1])
-  * min(d.items(), key=d.get)
-  * min(d.values())
-  * min(d.keys())
-  * python - Get the key corresponding to the minimum value within a dictionary - Stack Overflow
-    * https://stackoverflow.com/questions/3282823/get-the-key-corresponding-to-the-minimum-value-within-a-dictionary
-    * min(d, key=d.get)
-  * python - Getting key with maximum value in dictionary? - Stack Overflow
-    * https://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary
-  * 2. Built-in Functions — Python 3.7.0 documentation
-    * https://docs.python.org/3/library/functions.html?highlight=min#min
-    * https://docs.python.org/3/library/stdtypes.html?highlight=dictionary#dict.get
-      * get(key[, default])
-      * Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError.
-  * Python3 min() 函数 | 菜鸟教程
-    * http://www.runoob.com/python3/python3-func-number-min.html
-  * Python3 字典 get() 方法 | 菜鸟教程
-    * http://www.runoob.com/python3/python3-att-dictionary-get.html
-* How to iterate over a dictionary ?
-  * for key in dict
-  * for value in dict.values()
-  * for key, value in dict.items()
-  * Iterate over a dictionary in Python - GeeksforGeeks
-    * https://www.geeksforgeeks.org/iterate-over-a-dictionary-in-python/
-  * Python3 字典 in 操作符 | 菜鸟教程　　
-    * https://www.runoob.com/python3/python3-att-dictionary-in-html.html
-    * Python 字典 in 操作符用于判断键是否存在于字典中，如果键在字典 dict 里返回 true，否则返回 false。
-* How to delete an item from dictionary ?
-  * Built-in Types — Python 3.8.2 documentation
-    * https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
-    * del d[key]
-      * Remove d[key] from d. Raises a KeyError if key is not in the map.
-    * pop(key[, default])
-      * If key is in the dictionary, remove it and return its value, else return default. If default is not given and key is not in the dictionary, a KeyError is raised.
-  * Dictionary Tutorials & Notes | Python | HackerEarth
-    * https://www.hackerearth.com/practice/python/working-with-data/dictionary/tutorial/
-  * python - Delete a dictionary item if the key exists - Stack Overflow
-    * mydict.pop("key", None)
-* How to check if dictionary/list/string/tuple is empty ?
-  * PEP 8 -- Style Guide for Python Code | Python.org
-    * https://www.python.org/dev/peps/pep-0008/
-    * For sequences, (strings, lists, tuples), use the fact that empty sequences are false.
-    * Yes: if not seq: / if seq:
-    * No: if len(seq): / if not len(seq):
-  * Python: Checking if a 'Dictionary' is empty doesn't seem to work - Stack Overflow
-    * https://stackoverflow.com/questions/23177439/python-checking-if-a-dictionary-is-empty-doesnt-seem-to-work
-  * python - How do I check if a list is empty? - Stack Overflow
-    * https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty
-* How to print lists ?
-  * Print lists in Python (4 Different Ways) - GeeksforGeeks
-  * https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
-```python
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov 22 11:05:55 2018
 
-@author: h.tang
-"""
 
-# using for loop
-a = [1, 2, 3, 4, 5]
 
-# =============================================================================
-# 1. Using for loop : Traverse from 0 to len(list) and print all elements of the list one by one uisng a for loop,
-# this is the standard practice of doing it.
-# =============================================================================
-#1
-#2
-#3
-#4
-#5
-#1 2 3 4 5
 
-# printing the list using loop
-for x in range(len(a)):
-    print a[x]
 
-for x in range(len(a)):
-    print a[x],
 
-# =============================================================================
-# 2. Without using loops: * symbol is use to print the list elements in a single line with space.
-# To print all elements in new lines or separated by space use sep=”\n” or sep=”, ” respectively.
-# =============================================================================
-# Python program to print list
-# without using loop
 
-a = [1, 2, 3, 4, 5]
 
-#1 2 3 4 5
-#printing lists separated by commas
-#1, 2, 3, 4, 5
-#printing lists in new line
-#1
-#2
-#3
-#4
-#5
-
-# printing the list using * operator separated
-# by space
-print(*a)
-
-# printing the list using * and sep operator
-print("printing lists separated by commas")
-
-print(*a, sep = ", ")
-
-# print in new line
-print("printing lists in new line")
-
-print(*a, sep = "\n")
-
-# =============================================================================
-# 3. Convert a list to a string for display : If it is a list of strings we can simply join them using join() function,
-# but if the list contains integers then convert it into string and then use join() function to join them to a string and print the string.
-# =============================================================================
-# Python program to print list
-# by Converting a list to a
-# string for display
-a =["Geeks", "for", "Geeks"]
-
-#Geeks for Geeks
-#1, 2, 3, 4, 5
-
-# print the list using join function()
-print(' '.join(a))
-
-# print the list by converting a list of
-# integers to string
-a = [1, 2, 3, 4, 5]
-
-print str(a)[1:-1]
-
-# =============================================================================
-# 4. Using map : Use map() to convert each item in the list to a string if list is not a string, and then join them
-# =============================================================================
-# Python program to print list
-# print the list by converting a list of
-# integers to string using map
-a = [1, 2, 3, 4, 5]
-#1 2 3 4 5
-#in new line
-#1
-#2
-#3
-#4
-#5
-print(' '.join(map(str, a)))
-
-print"in new line"
-print('\n'.join(map(str, a)))
-```
-* How to create and initialise list with repeated N times ?
-  * x = [5]
-  * print(x * 5)　　// [5, 5, 5, 5, 5]
-  * print([x] * 5)　// [[5], [5], [5], [5], [5]]
-  * Create List of Single Item Repeated n Times in Python - Stack Overflow
-    * https://stackoverflow.com/questions/3459098/create-list-of-single-item-repeated-n-times-in-python/3459131
-    * [e] * n
-  * [ [ 1 for x in range(n) ] for x in range(m) ]
-  * [How do I create a multidimensional list?](https://docs.python.org/3/faq/programming.html#how-do-i-create-a-multidimensional-list)
-    * The reason is that replicating a list with * doesn’t create copies, it only creates references to the existing objects. The *3 creates a list containing 3 references to the same list of length two. Changes to one row will show in all rows, which is almost certainly not what you want.
-    * The suggested approach is to create a list of the desired length first and then fill in each element with a newly created list
-    * Or, you can use an extension that provides a matrix datatype; NumPy is the best known.
-    * YES: A = [[None] * w for i in range(h)]
-    * NO: A = [[None] * 2] * 3
-    * https://docs.python.org/3/library/stdtypes.html?highlight=list#typesseq-common
-      * What has happened is that [[]] is a one-element list containing an empty list, so all three elements of [[]] * 3 are references to this single empty list. Modifying any of the elements of lists modifies this single list. 
-      * YES: lists = [[] for i in range(3)]
-      * NO: lists = [[]] * 3
-* How to remove duplicates in lists ?
-  * python - Removing duplicates in lists - Stack Overflow
-    * https://stackoverflow.com/questions/7961363/removing-duplicates-in-lists
-    * list(set(t))
-  * 5. Data Structures — Python 3.7.0 documentation
-    * https://docs.python.org/3/tutorial/datastructures.html#sets
-    * Python also includes a data type for sets. A set is an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.
-* How to print dictionary / list on multiple lines with pprint?
-  * pprint — Data pretty printer — Python 3.7.4 documentation
-    * https://docs.python.org/3.7/library/pprint.html
-  * python - pprint dictionary on multiple lines - Stack Overflow
-    * https://stackoverflow.com/questions/20171392/pprint-dictionary-on-multiple-lines
-  * 如何美观地打印 Python 对象？这个标准库可以简单实现
-    * https://mp.weixin.qq.com/s/ePlvdBu8VsS5xnqimv71CQ
-* What's defaultdict ?
-  * collections — Container datatypes — Python 3.8.5 documentation
-  * https://docs.python.org/3/library/collections.html?highlight=defaultdict#collections.defaultdict
-  * class collections.defaultdict([default_factory[, ...]])
-  * Returns a new dictionary-like object. defaultdict is a subclass of the built-in dict class. It overrides one method and adds one writable instance variable. The remaining functionality is the same as for the dict class and is not documented here.
-  * The first argument provides the initial value for the default_factory attribute; it defaults to None. All remaining arguments are treated the same as if they were passed to the dict constructor, including keyword arguments.
-* What's deque ?
-  * collections — Container datatypes — Python 3.8.2 documentation
-    * https://docs.python.org/3/library/collections.html?highlight=deque#deque-objects
-    * class collections.deque([iterable[, maxlen]])
-    * Returns a new deque object initialized left-to-right (using append()) with data from iterable. If iterable is not specified, the new deque is empty.
-    * pop()
-      * Remove and return an element from the right side of the deque. If no elements are present, raises an IndexError.
-    * popleft()
-      * Remove and return an element from the left side of the deque. If no elements are present, raises an IndexError.
-  * queue — A synchronized queue class — Python 3.8.2 documentation
-    * https://docs.python.org/3/library/queue.html
-    * The queue module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming when information must be exchanged safely between multiple threads. The Queue class in this module implements all the required locking semantics.
-  * python - Queue.Queue vs. collections.deque - Stack Overflow
-    * https://stackoverflow.com/questions/717148/queue-queue-vs-collections-deque
-    * Queue.Queue and collections.deque serve different purposes. Queue.Queue is intended for allowing different threads to communicate using queued messages/data, whereas collections.deque is simply intended as a datastructure. That's why Queue.Queue has methods like put_nowait(), get_nowait(), and join(), whereas collections.deque doesn't. Queue.Queue isn't intended to be used as a collection, which is why it lacks the likes of the in operator.
-    * It boils down to this: if you have multiple threads and you want them to be able to communicate without the need for locks, you're looking for Queue.Queue; if you just want a queue or a double-ended queue as a datastructure, use collections.deque.
-* What's namedtuple ?
-  * collections — Container datatypes — Python 3.8.0 documentation
-    * https://docs.python.org/3/library/collections.html#collections.namedtuple
-    * collections.namedtuple(typename, field_names, *, rename=False, defaults=None, module=None)
-    * Returns a new tuple subclass named typename. The new subclass is used to create tuple-like objects that have fields accessible by attribute lookup as well as being indexable and iterable. Instances of the subclass also have a helpful docstring (with typename and field_names) and a helpful __repr__() method which lists the tuple contents in a name=value format.
-    * collections — Container datatypes — Python 3.8.2 documentation
-      * https://docs.python.org/3.8/library/collections.html?highlight=namedtuple#collections.somenamedtuple._replace
-      * somenamedtuple._replace(**kwargs)
-      * Return a new instance of the named tuple replacing specified fields with new values
 * How to use enumerations ?
   * enum — Support for enumerations — Python 3.8.1 documentation
     * https://docs.python.org/3/library/enum.html?highlight=enum#enum.Enum
