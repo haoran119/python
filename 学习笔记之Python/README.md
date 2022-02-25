@@ -230,55 +230,6 @@
   ```   
 * [条件语句的七种写法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247522923&idx=4&sn=04c0072a03765c7741f459cd0807d9b7&source=41#wechat_redirect)
 
-### [Built-in Functions](https://docs.python.org/3/library/functions.html)
-
-* [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
-* Python 69个内置函数分8类总结
-  * [Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html)
-  * 1、内置函数
-  * 2、类型相关
-  * 3、数理统计相关
-  * 4、进制转换
-  * 5、面向对象相关
-  * 6、迭代器相关
-  * 7、map函数
-  * 8、排序相关
-  * 9 其他
-* [open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)](https://docs.python.org/3/library/functions.html#open)
-	* Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
-* [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
-  * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
-* [reversed(seq)](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
-	* Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
-* [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
-* [Python高阶函数使用总结](https://mp.weixin.qq.com/s/xtO8NDq3lVacsT5Z7eQXmw)
-  * 本文结合各种实际的例子详细讲解了Python5个内建高阶函数的使用，能够帮助理解Python的数据结构和提高数据处理的效率，这5个函数分别是：
-    * map
-    * reduce
-    * filter
-    * sorted/sort
-    * zip
-* [class complex([real[, imag]])](https://docs.python.org/3/library/functions.html?highlight=complex#complex)
-	* Return a complex number with the value real + imag*1j or convert a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j.
-
-### [Functions](https://www.tutorialspoint.com/python/python_functions.htm)
-
-* [*args and **kwargs in Python - GeeksforGeeks](https://www.geeksforgeeks.org/args-kwargs-python/)
-	* In Python, we can pass a variable number of arguments to a function using special symbols. There are two special symbols:
-	* Special Symbols Used for passing arguments:
-	* 1.)*args (Non-Keyword Arguments)
-	* 2.)**kwargs (Keyword Arguments)
-* [Python中的*args和**kwargs是什么？该如何使用？](https://mp.weixin.qq.com/s/s7PFVE_wcAMZaRUds2MJDQ) 
-  * https://medium.com/better-programming/what-are-args-and-kwargs-in-python-6aaf9e3cad73
-* [为什么 Python 没有 main 函数？](https://mp.weixin.qq.com/s/Nr1nD6qKKRd-C55PCV-sGw)
-  * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
-* [Python | 掌握 Lambda 函数，四不要](https://mp.weixin.qq.com/s/tWibBZGcX4PtEKo0a1bvzQ)
-  * https://github.com/xitu/gold-miner/blob/master/article/2020/master-python-lambda-functions-with-these-4-donts.md
-    1. 不要返回任何值
-    2. 不要忘记更好的选择
-    3. 不要将它赋值给变量
-    4. 不要忘记列表推导式
-
 ### Iterator / Generator
 
 * [盘一盘 Python 系列特别篇 - 两大利「器」](https://mp.weixin.qq.com/s/o9REZiT-k-6UTcSnqCfCMQ)
@@ -448,6 +399,55 @@ if __name__ == '__main__':
     print(next(my_incrementor))  # 2
     print(next(my_incrementor))  # Traceback (most recent call last): ... StopIteration
 ```
+
+### [Built-in Functions](https://docs.python.org/3/library/functions.html)
+
+* [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
+* Python 69个内置函数分8类总结
+  * [Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html)
+  * 1、内置函数
+  * 2、类型相关
+  * 3、数理统计相关
+  * 4、进制转换
+  * 5、面向对象相关
+  * 6、迭代器相关
+  * 7、map函数
+  * 8、排序相关
+  * 9 其他
+* [open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)](https://docs.python.org/3/library/functions.html#open)
+	* Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
+* [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
+  * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
+* [reversed(seq)](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
+	* Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
+* [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
+* [Python高阶函数使用总结](https://mp.weixin.qq.com/s/xtO8NDq3lVacsT5Z7eQXmw)
+  * 本文结合各种实际的例子详细讲解了Python5个内建高阶函数的使用，能够帮助理解Python的数据结构和提高数据处理的效率，这5个函数分别是：
+    * map
+    * reduce
+    * filter
+    * sorted/sort
+    * zip
+* [class complex([real[, imag]])](https://docs.python.org/3/library/functions.html?highlight=complex#complex)
+	* Return a complex number with the value real + imag*1j or convert a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j.
+
+### [Functions](https://www.tutorialspoint.com/python/python_functions.htm)
+
+* [*args and **kwargs in Python - GeeksforGeeks](https://www.geeksforgeeks.org/args-kwargs-python/)
+	* In Python, we can pass a variable number of arguments to a function using special symbols. There are two special symbols:
+	* Special Symbols Used for passing arguments:
+	* 1.)*args (Non-Keyword Arguments)
+	* 2.)**kwargs (Keyword Arguments)
+* [Python中的*args和**kwargs是什么？该如何使用？](https://mp.weixin.qq.com/s/s7PFVE_wcAMZaRUds2MJDQ) 
+  * https://medium.com/better-programming/what-are-args-and-kwargs-in-python-6aaf9e3cad73
+* [为什么 Python 没有 main 函数？](https://mp.weixin.qq.com/s/Nr1nD6qKKRd-C55PCV-sGw)
+  * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
+* [Python | 掌握 Lambda 函数，四不要](https://mp.weixin.qq.com/s/tWibBZGcX4PtEKo0a1bvzQ)
+  * https://github.com/xitu/gold-miner/blob/master/article/2020/master-python-lambda-functions-with-these-4-donts.md
+    1. 不要返回任何值
+    2. 不要忘记更好的选择
+    3. 不要将它赋值给变量
+    4. 不要忘记列表推导式
 
 ### [Built-in Constants](https://docs.python.org/3/library/constants.html)
 
