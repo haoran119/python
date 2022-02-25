@@ -430,6 +430,12 @@ if __name__ == '__main__':
     * zip
 * [class complex([real[, imag]])](https://docs.python.org/3/library/functions.html?highlight=complex#complex)
 	* Return a complex number with the value real + imag*1j or convert a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j.
+* [Python | fabs() vs abs() - GeeksforGeeks](https://www.geeksforgeeks.org/python-fabs-vs-abs/)
+  * Both the abs() and the fabs() function is used to find the absolute value of a number, i.e., remove the negative sign of a number. 
+  * Both will return the absolute value of a number.
+  * The difference is that math.fabs(number) will always return a floating-point number even if the argument is an integer, whereas abs() will return a floating-point or an integer depending upon the argument.
+  * In case the argument is a complex number, abs() will return the magnitude part whereas fabs() will return an error.
+  * To use the fabs() function we need to import the library “math” while the abs() function comes with the standard library of Python.
 
 ### [Functions](https://www.tutorialspoint.com/python/python_functions.htm)
 
