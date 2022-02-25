@@ -230,7 +230,9 @@
   ```   
 * [条件语句的七种写法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247522923&idx=4&sn=04c0072a03765c7741f459cd0807d9b7&source=41#wechat_redirect)
 
-### Iterator / Generator
+### [Loops](https://www.tutorialspoint.com/python3/python_loops.htm)
+
+#### Iterator / Generator
 
 * [盘一盘 Python 系列特别篇 - 两大利「器」](https://mp.weixin.qq.com/s/o9REZiT-k-6UTcSnqCfCMQ)
   * 主要介绍 Python 里的两大利「器」，生成器 (generator) 和迭代器 (iterator)。
@@ -399,6 +401,18 @@ if __name__ == '__main__':
     print(next(my_incrementor))  # 2
     print(next(my_incrementor))  # Traceback (most recent call last): ... StopIteration
 ```
+
+### [Numbers](https://www.tutorialspoint.com/python3/python_numbers.htm)
+
+### [Strings](https://www.tutorialspoint.com/python3/python_strings.htm)
+
+### [Lists](https://www.tutorialspoint.com/python3/python_lists.htm)
+
+### [Tuples](https://www.tutorialspoint.com/python3/python_tuples.htm)
+
+### [Dictionary](https://www.tutorialspoint.com/python3/python_dictionary.htm)
+
+### [Date & Time](https://www.tutorialspoint.com/python3/python_date_time.htm)
 
 ### [Built-in Functions](https://docs.python.org/3/library/functions.html)
 
