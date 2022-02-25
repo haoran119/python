@@ -1086,6 +1086,14 @@ if __name__ == '__main__':
 
 ### [Exceptions Handling](https://www.tutorialspoint.com/python/python_exceptions.htm)
 
+* How to use try ... except ... finally statement for exception ?
+  * 8.4. The try statement - 8. Compound statements — Python 3.7.4 documentation
+    * https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
+  * Manually raising (throwing) an exception in Python - Stack Overflow
+    * https://stackoverflow.com/questions/2052390/manually-raising-throwing-an-exception-in-python　　
+* How to define custom exception ?
+  * How to Define Custom Exceptions in Python? (With Examples)
+    * https://www.programiz.com/python-programming/user-defined-exception
 * [学习笔记之Python Debug ( pdb ) - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/10437091.html)
 * [盘一盘 Python 系列特别篇 - 错误类型](https://mp.weixin.qq.com/s/PBaDdLcYxDso2V4aZcFXpA)
 * [盘一盘 Python 系列特别篇 - 异常处理](https://mp.weixin.qq.com/s/94O3Kz__8UQZoZtQ-WyOcQ)
@@ -1095,13 +1103,19 @@ if __name__ == '__main__':
 
 ### [Modules](https://www.tutorialspoint.com/python/python_modules.htm)
 
+* How to import module from parent directory ?
+  * import sys
+  * sys.path.append('..')
+  * from A import B
+  * python - Importing modules from parent folder - Stack Overflow
+    * https://stackoverflow.com/questions/714063/importing-modules-from-parent-folder
+  * [学了半天，import 到底在干啥？](https://mp.weixin.qq.com/s/FN__-XO_-htH36jPLiiTZg)
 * [深入探讨Python的import机制：实现远程导入模块 | CSDN博文精选](https://mp.weixin.qq.com/s/Sx_WyKUpoZrnFtV9epAfpg)
 * 你常常看到的 \_\_init\_\_.py 到底是个啥？
   * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
 * [Python编程中的if \_\_name\_\_ == 'main' 的作用和原理](https://mp.weixin.qq.com/s/SXTo0h2ExujAQdWnLWggdg)
   * https://zhuanlan.zhihu.com/p/34112508
   * \_\_name\_\_ 是当前模块名，当模块被直接运行时模块名为 \_\_main\_\_ 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。
-* [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
 
 #### [Text Processing Services](https://docs.python.org/3/library/text.html)
 
@@ -1148,6 +1162,9 @@ if __name__ == '__main__':
 	* [datetime — Basic date and time types — Python 3.8.8 documentation](https://docs.python.org/3.8/library/datetime.html#datetime.datetime.strftime)
 		* datetime.strftime(format)
 		* Return a string representing the date and time, controlled by an explicit format string.
+* How to measure execution time of code ?
+  * timeit — Measure execution time of small code snippets — Python 3.8.0 documentation
+    * https://docs.python.org/3.8/library/timeit.html
 
 ##### [collections — Container datatypes](https://docs.python.org/3/library/collections.html)
 
@@ -1264,6 +1281,13 @@ if __name__ == '__main__':
   * heapq.heapify(x)
     * Transform list x into a heap, in-place, in linear time.
 
+##### [enum — Support for enumerations](https://docs.python.org/3/library/enum.html)
+
+* An enumeration is a set of symbolic names (members) bound to unique, constant values. Within an enumeration, the members can be compared by identity, and the enumeration itself can be iterated over.
+* How to use enumerations ?
+  * Design and History FAQ — Python 3.8.1 documentation
+    * https://docs.python.org/3/faq/design.html?highlight=switch%20case#why-isn-t-there-a-switch-or-case-statement-in-python
+
 #### [Numeric and Mathematical Modules](https://docs.python.org/3/library/numeric.html)
 
 ##### [cmath — Mathematical functions for complex numbers](https://docs.python.org/3/library/cmath.html)
@@ -1313,48 +1337,21 @@ if __name__ == '__main__':
 | combinations() | p, r | r-length tuples, in sorted order, no repeated elements | combinations('ABCD', 2) | AB AC AD BC BD CD
 | combinations_with_replacement() | p, r | r-length tuples, in sorted order, with repeated elements| combinations_with_replacement('ABCD', 2) | AA AB AC AD BB BC BD CC CD DD
 
-### [Files I/O](https://www.tutorialspoint.com/python/python_files_io.htm)
+#### [File and Directory Access](https://docs.python.org/3/library/filesys.html)
 
-* How to input and output file ?
-  * 7. Input and Output — Python 3.7.4 documentation
-    * https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects
-    * https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json
-    * For reading lines from a file, you can loop over the file object. This is memory efficient, fast, and leads to simple code
-  * Python3 File 方法 | 菜鸟教程
-    * http://www.runoob.com/python3/python3-file-methods.html
-  * python - How to read a file line-by-line into a list? - Stack Overflow
-    * https://stackoverflow.com/questions/3277503/how-to-read-a-file-line-by-line-into-a-list
-  * Python dump dict to json file - Stack Overflow
-    * https://stackoverflow.com/questions/17043860/python-dump-dict-to-json-file
-  * Python Dictionary to CSV - Stack Overflow
-    * https://stackoverflow.com/questions/8331469/python-dictionary-to-csv
-  * [Python JSON: Read, Write, Parse JSON (With Examples) (programiz.com)](https://www.programiz.com/python-programming/json)
-  * [Python File I/O: Read and Write Files in Python (programiz.com)](https://www.programiz.com/python-programming/file-operation)
-  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.load)
-    * json.load(fp, *, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
-    * Deserialize fp (a .read()-supporting text file or binary file containing a JSON document) to a Python object using this conversion table.
-  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.dump)
-    * json.dump(obj, fp, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)
-    * Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object) using this conversion table.
-    * If specified, default should be a function that gets called for objects that can’t otherwise be serialized. It should return a JSON encodable version of the object or raise a TypeError. If not specified, TypeError is raised.
-    * If sort_keys is true (default: False), then the output of dictionaries will be sorted by key.
-  * How to write datetime object to json file ?
-    * [python - How to overcome "datetime.datetime not JSON serializable"? - Stack Overflow](https://stackoverflow.com/questions/11875770/how-to-overcome-datetime-datetime-not-json-serializable/36142844#36142844)
-      * $ json.dumps(my_dictionary, indent=4, sort_keys=True, default=str) 
-    * [How to write a datetime object to JSON in Python (kite.com)](https://www.kite.com/python/answers/how-to-write-a-datetime-object-to-json-in-python#)
-      * Call datetime.datetime.isoformat() to convert datetime.datetime into a ISO date format, which is compatible with JSON.
-```python
-with open( filename, 'r' ) as f:
-    for line in f:
-        print(line, end='')
-
-import json
-with open( filename, 'w' ) as f:
-    json.dump(text, f)
-
-with open(filename, 'r') as f:
-    x = json.load(f)
-```
+* How to check if file exists ?
+  * os.path — Common pathname manipulations — Python 3.7.2 documentation
+    * https://docs.python.org/3/library/os.path.html?highlight=isfile#os.path.isfile
+    * os.path.isfile(path)
+    * Return True if path is an existing regular file. This follows symbolic links, so both islink() and isfile() can be true for the same path.
+  * Python: Check if a File or Directory Exists
+    * https://stackabuse.com/python-check-if-a-file-or-directory-exists/
+    * Checking if a File Exists
+      * os.path.isfile()
+    * Checking if a Directory Exists
+      * os.path.isdir()
+    * Checking if Either Exist
+      * os.path.exists()
 * How to iterate directory for files ?
   * os — Miscellaneous operating system interfaces — Python 3.7.4 documentation
     * https://docs.python.org/3/library/os.html?highlight=os%20walk#os.walk
@@ -1374,6 +1371,15 @@ for path, subdirs, files in os.walk(root):
             filename = os.path.join(path, name)
             print(filename) # '.\path\test.json'
 ```
+
+#### [Generic Operating System Services](https://docs.python.org/3/library/allos.html)
+
+##### [io — Core tools for working with streams](https://docs.python.org/3/library/io.html)
+
+* The io module provides Python’s main facilities for dealing with various types of I/O. There are three main types of I/O: text I/O, binary I/O and raw I/O. These are generic categories, and various backing stores can be used for each of them. A concrete object belonging to any of these categories is called a file object. Other common terms are stream and file-like object.
+* Independent of its category, each concrete stream object will also have various capabilities: it can be read-only, write-only, or read-write. It can also allow arbitrary random access (seeking forwards or backwards to any location), or only sequential access (for example in the case of a socket or pipe).
+* All streams are careful about the type of data you give to them. For example giving a str object to the write() method of a binary stream will raise a TypeError. So will giving a bytes object to the write() method of a text stream.
+* [Files I/O](https://www.tutorialspoint.com/python/python_files_io.htm)
 * [Text I/O - io — Core tools for working with streams — Python 3.10.2 documentation](https://docs.python.org/3/library/io.html?highlight=textiowrapper#text-i-o)
 	* [class io.TextIOBase](https://docs.python.org/3/library/io.html#io.TextIOBase)
 		* [read(size=- 1)](https://docs.python.org/3/library/io.html#io.TextIOBase.read)
@@ -1421,6 +1427,46 @@ if __name__ == '__main__':
         print('With statement block')
         xfile.write('hello world')
 ```
+* How to input and output file ?
+  * 7. Input and Output — Python 3.7.4 documentation
+    * https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects
+    * https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json
+    * For reading lines from a file, you can loop over the file object. This is memory efficient, fast, and leads to simple code
+  * Python3 File 方法 | 菜鸟教程
+    * http://www.runoob.com/python3/python3-file-methods.html
+  * python - How to read a file line-by-line into a list? - Stack Overflow
+    * https://stackoverflow.com/questions/3277503/how-to-read-a-file-line-by-line-into-a-list
+  * Python dump dict to json file - Stack Overflow
+    * https://stackoverflow.com/questions/17043860/python-dump-dict-to-json-file
+  * Python Dictionary to CSV - Stack Overflow
+    * https://stackoverflow.com/questions/8331469/python-dictionary-to-csv
+  * [Python JSON: Read, Write, Parse JSON (With Examples) (programiz.com)](https://www.programiz.com/python-programming/json)
+  * [Python File I/O: Read and Write Files in Python (programiz.com)](https://www.programiz.com/python-programming/file-operation)
+  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.load)
+    * json.load(fp, *, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
+    * Deserialize fp (a .read()-supporting text file or binary file containing a JSON document) to a Python object using this conversion table.
+  * [json — JSON encoder and decoder — Python 3.9.2 documentation](https://docs.python.org/3/library/json.html?highlight=json#json.dump)
+    * json.dump(obj, fp, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)
+    * Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object) using this conversion table.
+    * If specified, default should be a function that gets called for objects that can’t otherwise be serialized. It should return a JSON encodable version of the object or raise a TypeError. If not specified, TypeError is raised.
+    * If sort_keys is true (default: False), then the output of dictionaries will be sorted by key.
+  * How to write datetime object to json file ?
+    * [python - How to overcome "datetime.datetime not JSON serializable"? - Stack Overflow](https://stackoverflow.com/questions/11875770/how-to-overcome-datetime-datetime-not-json-serializable/36142844#36142844)
+      * $ json.dumps(my_dictionary, indent=4, sort_keys=True, default=str) 
+    * [How to write a datetime object to JSON in Python (kite.com)](https://www.kite.com/python/answers/how-to-write-a-datetime-object-to-json-in-python#)
+      * Call datetime.datetime.isoformat() to convert datetime.datetime into a ISO date format, which is compatible with JSON.
+```python
+with open( filename, 'r' ) as f:
+    for line in f:
+        print(line, end='')
+
+import json
+with open( filename, 'w' ) as f:
+    json.dump(text, f)
+
+with open(filename, 'r') as f:
+    x = json.load(f)
+```
 * [Python 数据形态及IO操作](https://mp.weixin.qq.com/s/97v0k_hWdgJeppx1oF7Vxw)
 * [13 ways to access data in Python. How to get data from local files… | by John Micah Reid | Towards Data Science](https://towardsdatascience.com/13-ways-to-access-data-in-python-bac5683e0063)
 * [Python处理CSV、JSON和XML数据的简便方法](https://mp.weixin.qq.com/s/1PyeBLIJNzswO3zd-mHiTQ)
@@ -1435,6 +1481,74 @@ if __name__ == '__main__':
 * [5个案例让Python输出漂亮的表格！](https://mp.weixin.qq.com/s/8uxc2t53N_j_mRPYbiG0sA)
   * https://linuxops.org/blog/python/prettytable.html
   * prettytable可以打印出美观的表格，并且对中文支持相当好
+
+##### [argparse — Parser for command-line options, arguments and sub-commands](https://docs.python.org/3/library/argparse.html)
+
+* The argparse module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and argparse will figure out how to parse those out of sys.argv. The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.
+* How to parse arguments for command-line options ?
+  * python - What's the best way to parse command line arguments? - Stack Overflow
+    * https://stackoverflow.com/questions/20063/whats-the-best-way-to-parse-command-line-arguments
+  * python - Why use argparse rather than optparse? - Stack Overflow
+    * https://stackoverflow.com/questions/3217673/why-use-argparse-rather-than-optparse
+```python
+import argparse
+
+if __name__ == "__main__":
+    try:
+        parser = argparse.ArgumentParser(prog='test',
+                                         description='Test class A')
+
+        parser.add_argument('-c',
+                            '--config',
+                            metavar='file',
+                            help='Path to file',
+                            required=True)
+
+        args = parser.parse_args()
+
+        print("args.config = {0}\n".format(args.config))
+
+    except (AttributeError, TypeError, RuntimeError) as err:
+        logger.logError(err.message)
+
+    except Exception as err:
+        logger.logException(err.message)
+```
+
+##### [logging — Logging facility for Python](https://docs.python.org/3/library/logging.html)
+
+* This module defines functions and classes which implement a flexible event logging system for applications and libraries.
+* The key benefit of having the logging API provided by a standard library module is that all Python modules can participate in logging, so your application log can include your own messages integrated with messages from third-party modules.
+* The basic classes defined by the module, together with their functions, are listed below.
+	* Loggers expose the interface that application code directly uses.
+	* Handlers send the log records (created by loggers) to the appropriate destination.
+	* Filters provide a finer grained facility for determining which log records to output.
+	* Formatters specify the layout of log records in the final output.
+* How to use logging ?
+  * Logging HOWTO — Python 3.7.0 documentation
+    * https://docs.python.org/3.7/howto/logging.html#basic-logging-tutorial
+  * 16.6. logging — Logging facility for Python — Python 3.7.0 documentation
+    * https://docs.python.org/3.7/library/logging.html#logging.debug
+    * https://docs.python.org/3.7/library/logging.html#logging.info
+    * https://docs.python.org/3.7/library/logging.html#logging.warning
+    * https://docs.python.org/3.7/library/logging.html#logging.error
+    * https://docs.python.org/3.7/library/logging.html#logging.exception
+    * https://docs.python.org/3.7/library/logging.html#logging.basicConfig
+    * https://docs.python.org/3.7/library/logging.html?highlight=shutdown#logging.shutdown
+    * logging.basicConfig( filename=output.replace('html', 'log'), filemode='w',  format='[%(asctime)s] \n%(message)s',  datefmt='%Y-%m-%d %H:%M:%S',  level=logging.DEBUG )
+    * logging.getLogger(name=None)
+      * https://docs.python.org/3.7/library/logging.html?highlight=getlogger#logging.getLogger　　
+      * Return a logger with the specified name or, if name is None, return a logger which is the root logger of the hierarchy. If specified, the name is typically a dot-separated hierarchical name like ‘a’, ‘a.b’ or ‘a.b.c.d’. Choice of these names is entirely up to the developer who is using logging.
+      * All calls to this function with a given name return the same logger instance. This means that logger instances never need to be passed between different parts of an application.
+  * Logging Cookbook — Python 3.7.0 documentation
+    * https://docs.python.org/3/howto/logging-cookbook.html
+  * Good logging practice in Python – Fang's coding note
+    * https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/
+  * For the issue setLevel() doesn't work logger.setLevel(logging.DEBUG) , fix it with logging.basicConfig(level=logging.DEBUG).
+  * To set logging level with variable e.g. loglevel
+    * https://docs.python.org/3/howto/logging.html#logging-to-a-file
+    * logging.basicConfig(level=getattr(logging, loglevel.upper()))
+* [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
 
 ## ADVANCE
 
@@ -2852,98 +2966,6 @@ predicted_values = model.predict(x_test)
 * How to set pip install package index ?
   * Edit ~/.pip/pip.conf to set index-url / extra-index-url
   * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
-* How to use enumerations ?
-  * enum — Support for enumerations — Python 3.8.1 documentation
-    * https://docs.python.org/3/library/enum.html?highlight=enum#enum.Enum
-  * Design and History FAQ — Python 3.8.1 documentation
-    * https://docs.python.org/3/faq/design.html?highlight=switch%20case#why-isn-t-there-a-switch-or-case-statement-in-python
-
-* How to check if file exists ?
-  * os.path — Common pathname manipulations — Python 3.7.2 documentation
-    * https://docs.python.org/3/library/os.path.html?highlight=isfile#os.path.isfile
-    * os.path.isfile(path)
-    * Return True if path is an existing regular file. This follows symbolic links, so both islink() and isfile() can be true for the same path.
-  * Python: Check if a File or Directory Exists
-    * https://stackabuse.com/python-check-if-a-file-or-directory-exists/
-    * Checking if a File Exists
-      * os.path.isfile()
-    * Checking if a Directory Exists
-      * os.path.isdir()
-    * Checking if Either Exist
-      * os.path.exists()
-* How to use try ... except ... finally statement for exception ?
-  * 8.4. The try statement - 8. Compound statements — Python 3.7.4 documentation
-    * https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
-  * Manually raising (throwing) an exception in Python - Stack Overflow
-    * https://stackoverflow.com/questions/2052390/manually-raising-throwing-an-exception-in-python　　
-* How to define custom exception ?
-  * How to Define Custom Exceptions in Python? (With Examples)
-    * https://www.programiz.com/python-programming/user-defined-exception
-* How to use logging ?
-  * Logging HOWTO — Python 3.7.0 documentation
-    * https://docs.python.org/3.7/howto/logging.html#basic-logging-tutorial
-  * 16.6. logging — Logging facility for Python — Python 3.7.0 documentation
-    * https://docs.python.org/3.7/library/logging.html#logging.debug
-    * https://docs.python.org/3.7/library/logging.html#logging.info
-    * https://docs.python.org/3.7/library/logging.html#logging.warning
-    * https://docs.python.org/3.7/library/logging.html#logging.error
-    * https://docs.python.org/3.7/library/logging.html#logging.exception
-    * https://docs.python.org/3.7/library/logging.html#logging.basicConfig
-    * https://docs.python.org/3.7/library/logging.html?highlight=shutdown#logging.shutdown
-    * logging.basicConfig( filename=output.replace('html', 'log'), filemode='w',  format='[%(asctime)s] \n%(message)s',  datefmt='%Y-%m-%d %H:%M:%S',  level=logging.DEBUG )
-    * logging.getLogger(name=None)
-      * https://docs.python.org/3.7/library/logging.html?highlight=getlogger#logging.getLogger　　
-      * Return a logger with the specified name or, if name is None, return a logger which is the root logger of the hierarchy. If specified, the name is typically a dot-separated hierarchical name like ‘a’, ‘a.b’ or ‘a.b.c.d’. Choice of these names is entirely up to the developer who is using logging.
-      * All calls to this function with a given name return the same logger instance. This means that logger instances never need to be passed between different parts of an application.
-  * Logging Cookbook — Python 3.7.0 documentation
-    * https://docs.python.org/3/howto/logging-cookbook.html
-  * Good logging practice in Python – Fang's coding note
-    * https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/
-  * For the issue setLevel() doesn't work logger.setLevel(logging.DEBUG) , fix it with logging.basicConfig(level=logging.DEBUG).
-  * To set logging level with variable e.g. loglevel
-    * https://docs.python.org/3/howto/logging.html#logging-to-a-file
-    * logging.basicConfig(level=getattr(logging, loglevel.upper()))
-* How to measure execution time of code ?
-  * timeit — Measure execution time of small code snippets — Python 3.8.0 documentation
-    * https://docs.python.org/3.8/library/timeit.html
-* How to import module from parent directory ?
-  * import sys
-  * sys.path.append('..')
-  * from A import B
-  * python - Importing modules from parent folder - Stack Overflow
-    * https://stackoverflow.com/questions/714063/importing-modules-from-parent-folder
-  * [学了半天，import 到底在干啥？](https://mp.weixin.qq.com/s/FN__-XO_-htH36jPLiiTZg)
-* How to parse arguments for command-line options ?
-  * 15.4. argparse — Parser for command-line options, arguments and sub-commands — Python 2.7.16 documentation
-    * https://docs.python.org/2.7/library/argparse.html?highlight=arg%20parse#the-add-argument-method
-  * python - What's the best way to parse command line arguments? - Stack Overflow
-    * https://stackoverflow.com/questions/20063/whats-the-best-way-to-parse-command-line-arguments
-  * python - Why use argparse rather than optparse? - Stack Overflow
-    * https://stackoverflow.com/questions/3217673/why-use-argparse-rather-than-optparse
-```python
-import argparse
-
-if __name__ == "__main__":
-    try:
-        parser = argparse.ArgumentParser(prog='test',
-                                         description='Test class A')
-
-        parser.add_argument('-c',
-                            '--config',
-                            metavar='file',
-                            help='Path to file',
-                            required=True)
-
-        args = parser.parse_args()
-
-        print("args.config = {0}\n".format(args.config))
-
-    except (AttributeError, TypeError, RuntimeError) as err:
-        logger.logError(err.message)
-
-    except Exception as err:
-        logger.logException(err.message)
-```
 
 ### FIX OF ERRORS
 
