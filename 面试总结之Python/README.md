@@ -47,7 +47,17 @@
 * [53个Python经典面试题详解 (qq.com)](https://mp.weixin.qq.com/s/Ck1tcCez2BwGlOla6tjGWA)
   * [53 Python Interview Questions and Answers | by Chris I. | Towards Data Science](https://towardsdatascience.com/53-python-interview-questions-and-answers-91fa311eec3f)
 * [吐血整理的 Python 面试题(qq.com)](https://mp.weixin.qq.com/s/4GUHtSxGhBaBVfMMsX8lOQ)
-* list v.s. tuple
+* [Python | Difference Between List and Tuple - GeeksforGeeks](https://www.geeksforgeeks.org/python-difference-between-list-and-tuple/)
+
+| SR.NO. | LIST | TUPLE |
+| - | - | - | 
+1 | Lists are mutable | Tuples are immutable
+2 | Implication of iterations is Time-consuming | The implication of iterations is comparatively Faster
+3 | The list is better for performing operations, such as insertion and deletion.	Tuple data type is appropriate for accessing the elements
+4 | Lists consume more memory | Tuple consume less memory as compared to the list
+5 | Lists have several built-in methods | Tuple does not have many built-in methods.
+6 | The unexpected changes and errors are more likely to occur | In tuple, it is hard to take place.
+
 * [What are .pyc files in Python?](https://www.tutorialspoint.com/What-are-pyc-files-in-Python)
   * .pyc files are created by the Python interpreter when a .py file is imported. They contain the "compiled bytecode" of the imported module/program so that the "translation" from source code to bytecode (which only needs to be done once) can be skipped on subsequent imports if the .pyc is newer than the corresponding .py file, thus speeding startup a little. But it's still interpreted. Once the *.pyc file is generated, there is no need of *.py file, unless you edit it.
 * [Read a file line by line in Python - GeeksforGeeks](https://www.geeksforgeeks.org/read-a-file-line-by-line-in-python/)
