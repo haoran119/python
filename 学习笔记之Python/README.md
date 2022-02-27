@@ -252,6 +252,9 @@
 * Two types usage of for loop ?
   * python - "for loop" with two variables? - Stack Overflow
     * https://stackoverflow.com/questions/18648626/for-loop-with-two-variables
+* [Using else conditional statement with for loop in python - GeeksforGeeks](https://www.geeksforgeeks.org/using-else-conditional-statement-with-for-loop-in-python/)
+	* In most of the programming languages (C/C++, Java, etc), the use of else statement has been restricted with the if conditional statements. But Python also allows us to use the else condition with for loops.
+	* The else block just after for/while is executed only when the loop is NOT terminated by a break statement.
 
 #### Iterator / Generator
 
