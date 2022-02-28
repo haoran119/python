@@ -2,6 +2,7 @@
 
 * [Welcome to Python.org](https://www.python.org/)
   * [3.9.5 Documentation (python.org)](https://docs.python.org/3/)
+  * [The Python Tutorial — Python 3.10.2 documentation](https://docs.python.org/3/tutorial/index.html)
   * [The Python Standard Library — Python 3.10.2 documentation](https://docs.python.org/3/library/index.html)
   * [Glossary — Python 3.9.7 documentation](https://docs.python.org/3/glossary.html#glossary)
   * [PEP 8 -- Style Guide for Python Code | Python.org](https://www.python.org/dev/peps/pep-0008/)
@@ -1517,8 +1518,10 @@ if __name__ == "__main__":
     * https://docs.python.org/3.7/library/logging.html#logging.debug
     * https://docs.python.org/3.7/library/logging.html#logging.info
     * https://docs.python.org/3.7/library/logging.html#logging.warning
-    * https://docs.python.org/3.7/library/logging.html#logging.error
-    * https://docs.python.org/3.7/library/logging.html#logging.exception
+    * [logging.error(msg, *args, **kwargs)](https://docs.python.org/3.7/library/logging.html#logging.error)
+	    * Logs a message with level ERROR on the root logger. The arguments are interpreted as for debug().
+    * [logging.exception(msg, *args, **kwargs)](https://docs.python.org/3.7/library/logging.html#logging.exception)
+    	* Logs a message with level ERROR on the root logger. The arguments are interpreted as for debug(). Exception info is added to the logging message. This function should only be called from an exception handler.
     * https://docs.python.org/3.7/library/logging.html#logging.basicConfig
     * https://docs.python.org/3.7/library/logging.html?highlight=shutdown#logging.shutdown
     * logging.basicConfig( filename=output.replace('html', 'log'), filemode='w',  format='[%(asctime)s] \n%(message)s',  datefmt='%Y-%m-%d %H:%M:%S',  level=logging.DEBUG )
@@ -1534,7 +1537,70 @@ if __name__ == "__main__":
   * To set logging level with variable e.g. loglevel
     * https://docs.python.org/3/howto/logging.html#logging-to-a-file
     * logging.basicConfig(level=getattr(logging, loglevel.upper()))
+```python
+import logging
+
+logging.basicConfig(filename='test.log',
+                    format='[%(asctime)s] %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S',
+                    level=logging.INFO
+                    )
+
+logger = logging.getLogger('test')
+
+logger.info('Start logging')
+```
 * [Python Logging 模块完全解读](https://mp.weixin.qq.com/s/iZEjyEoxVUQ5cner2VY1kg)
+* [Python Logging — logger.error versus logger.exception | by Rahul Kumar | Medium](https://medium.com/@rahulkumar_33287/logger-error-versus-logger-exception-4113b39beb4b)
+	* logger.error(e) will give you this as an output
+	* Notice that while this gives a nicely formatter ERROR log, it suppresses the traceback information since we have set our log formatter to output log message on stdout in the format ‘%(asctime)-15s %(levelname)-2s %(message)s’.
+	* logger.error(e, stack_info=True, exc_info=True) will give you that nicely formatted ERROR message in addition to the Traceback and Stack.
+	* and finally logger.exception(e) will give that ERROR line and traceback information without having to set any flags. It does not give Stack though unless you set the stack_info=True in the argument.
+```python
+import logging
+
+# create an instance of the logger
+logger = logging.getLogger()
+
+# logging set up
+log_format = logging.Formatter('%(asctime)-15s %(levelname)-2s %(message)s')
+sh = logging.StreamHandler()
+sh.setFormatter(log_format)
+
+# add the handler
+logger.addHandler(sh)
+logger.setLevel(logging.INFO)
+
+
+def do_something():
+    return None
+
+
+def call_do_something():
+    # This will obviously throw and exception
+    return do_something() + 4
+
+
+# logging exception with logger.error()
+try:
+    call_do_something()
+except Exception as e:
+    logger.error(e)
+
+
+# logging exception with logger.error() with full traceback
+try:
+    call_do_something()
+except Exception as e:
+    logger.error(e, stack_info=True, exc_info=True)
+
+
+# logging exception with logger.exception() with full traceback
+try:
+    call_do_something()
+except Exception as e:
+    logger.exception(e)
+```
 
 ### [Development Tools](https://docs.python.org/3/library/development.html)
 
