@@ -3023,7 +3023,15 @@ predicted_values = model.predict(x_test)
           my_solution.slicing(i)  
   ```
 * How to fix ModuleNotFoundError: No module named 'a.b' when from a.b.c import d ?
-  * Check if there is __init.py__ under /a
+  * For python2, check if there is /_/_init.py/_/_ under /a
+  * Or
+  * [python - Relative imports - ModuleNotFoundError: No module named x - Stack Overflow](https://stackoverflow.com/questions/43728431/relative-imports-modulenotfounderror-no-module-named-x)
+		* [ModuleNotFoundError: No module named x | Towards Data Science](https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c)
+		* first make sure you are using absolute imports
+		* export the project’s root directory to PYTHONPATH
+```sh
+export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
+```
 * How to fix NameError: name 'var' is not defined when define var in try statement and use it in catch / finally statement ?
   * Declare the var before try statement with var = None
   * python - Using a variable in a try,catch,finally statement without declaring it outside - Stack Overflow
