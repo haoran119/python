@@ -3026,9 +3026,9 @@ predicted_values = model.predict(x_test)
   * For python2, check if there is /_/_init.py/_/_ under /a
   * Or
   * [python - Relative imports - ModuleNotFoundError: No module named x - Stack Overflow](https://stackoverflow.com/questions/43728431/relative-imports-modulenotfounderror-no-module-named-x)
-		* [ModuleNotFoundError: No module named x | Towards Data Science](https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c)
-			* first make sure you are using absolute imports
-			* export the project’s root directory to PYTHONPATH
+  * [ModuleNotFoundError: No module named x | Towards Data Science](https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c)
+		* first make sure you are using absolute imports
+		* export the project’s root directory to PYTHONPATH
 ```sh
 export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 ```
