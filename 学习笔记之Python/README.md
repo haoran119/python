@@ -24,8 +24,6 @@
 * [学习笔记之Python开发环境 IDE ( Anaconda / PyCharm ) - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/8915306.html)
 * [学习笔记之Python 3 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/10825575.html)
 * [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
-* [学习笔记之pytest - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13769672.html)
-	* [5 分钟快速上手 pytest 测试框架](https://mp.weixin.qq.com/s/uOUG5fqHqPWMckCa5WOC4Q)
 * [《Python入门必备指南》之如何系统地自学 Python？_腾讯课堂](https://ke.qq.com/course/217064)
   * 通过实例知道下list，dict实际使用中一些技巧
   * 了解web编程的学习线路图，知识网络
@@ -2347,6 +2345,43 @@ class TestService:
 	* 基于这些前提，我们平时在部署 Python 程序时，一般更倾向于使用多进程的方式去部署，就是为了避免 GIL 的影响。
 	* 任何一种编程语言，都有其优势和劣势，我们需要理解它的实现机制，发挥其长处，才能更好地服务于我们的需求。
 
+### UnitTest
+
+* [Python中的两个测试工具](https://mp.weixin.qq.com/s/IUCoUkws923ojK__HPe3kA)
+  * unittest: 一个通用的测试框架
+  * doctest: 一个更简单的模块，是为检查文档而设计的，但也非常适合用来编写单元测试
+* [用 coverage 模块提高 Python 开发效率](https://mp.weixin.qq.com/s/fP_mQtQnrssdzOOw6yPzQA)
+  * Test with Coverage
+  * Mock　
+
+#### [pytest](https://docs.pytest.org/en/stable/)
+
+* [学习笔记之pytest - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13769672.html)
+	* [5 分钟快速上手 pytest 测试框架](https://mp.weixin.qq.com/s/uOUG5fqHqPWMckCa5WOC4Q)
+```python
+import pytest
+
+raw_data = read_data(...)
+
+def test_myfunc(*args, **kwargs):
+    do_something()
+    data = ...
+    assert data == raw_data
+
+if __name__ == '__main__':
+    pytest.main()
+```
+* [Pytest - why it's more popular than unittest? - Blog j-labs](https://blog.j-labs.pl/2019/02/Pytest-why-its-more-popular-than-unittest)
+  * Firstly, it’s worth to say, that pytest supports unittest.TestCase class from the beginning. All behaviors thought during writing tests with unittest (e.g.: writing assertions) remain the same, which gives extremely smooth transition to a new framework. Additionally, most unittest features work too, so pytest executor can run old tests as well (subtests are not supported).
+  * Moreover, there are pytest features that work in unittest.TestCase subclasses like marking tests.
+  * Experience from unittest in pytest – out-of-the-box
+  * Distributed tests to multiple CPUs with xdist
+  * Flowless integration with parameterized module
+  * Marking tests as a manner of organizing the test suites
+  * Handy extension - flake8
+  * Generating HTML tests result
+  * I personally prefer to use pytest instead of unittest. It’s fast and reliable. Despite the fact, that it reduces boilerplate code to the minimum, it still remains readable. Although, it’s not to be found in the standard library (which may be disadvantage for some), it may actually a clear advantage, because new releases of pytest are not bound to the Python official releases (which happens less frequently). Pytest helps me to organize my test suites and show test results to the others.  I highly recommend this tool.
+
 ### 编码
 
 * [一文透彻掌握 Python 编码问题](https://mp.weixin.qq.com/s/CFDH58dwU3ilMn1axJVccg)
@@ -2495,22 +2530,6 @@ class TestService:
 * [140种Python标准库、第三方库和外部工具都有了](https://mp.weixin.qq.com/s/Qp12DRURa2I9AVjQ7gpxVw)
 * [介绍几款 Python 类型检查工具](https://mp.weixin.qq.com/s/IvYJkpAmWJ-3ZEHtZzRiCQ)
   * pyright
-* [Python中的两个测试工具](https://mp.weixin.qq.com/s/IUCoUkws923ojK__HPe3kA)
-  * unittest: 一个通用的测试框架
-  * doctest: 一个更简单的模块，是为检查文档而设计的，但也非常适合用来编写单元测试
-* [Pytest - why it's more popular than unittest? - Blog j-labs](https://blog.j-labs.pl/2019/02/Pytest-why-its-more-popular-than-unittest)
-  * Firstly, it’s worth to say, that pytest supports unittest.TestCase class from the beginning. All behaviors thought during writing tests with unittest (e.g.: writing assertions) remain the same, which gives extremely smooth transition to a new framework. Additionally, most unittest features work too, so pytest executor can run old tests as well (subtests are not supported).
-  * Moreover, there are pytest features that work in unittest.TestCase subclasses like marking tests.
-  * Experience from unittest in pytest – out-of-the-box
-  * Distributed tests to multiple CPUs with xdist
-  * Flowless integration with parameterized module
-  * Marking tests as a manner of organizing the test suites
-  * Handy extension - flake8
-  * Generating HTML tests result
-  * I personally prefer to use pytest instead of unittest. It’s fast and reliable. Despite the fact, that it reduces boilerplate code to the minimum, it still remains readable. Although, it’s not to be found in the standard library (which may be disadvantage for some), it may actually a clear advantage, because new releases of pytest are not bound to the Python official releases (which happens less frequently). Pytest helps me to organize my test suites and show test results to the others.  I highly recommend this tool.
-* [用 coverage 模块提高 Python 开发效率](https://mp.weixin.qq.com/s/fP_mQtQnrssdzOOw6yPzQA)
-  * Test with Coverage
-  * Mock　
 * [Python 中更优雅的日志记录方案](https://loguru.readthedocs.io/en/stable/index.html)
   * logging
   * loguru
