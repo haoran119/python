@@ -2337,7 +2337,7 @@ if __name__ == "__main__":
         print(data)
 ```
 
-### [Multithreaded Programming](https://www.tutorialspoint.com/python/python_multithreading.htm)
+### [Multithreaded Programming](https://www.tutorialspoint.com/python3/python_multithreading.htm)
 
 * [multiprocessing — Process-based parallelism — Python 3.9.5 documentation](https://docs.python.org/3/library/multiprocessing.html)
 * [学习笔记之asyncio — Asynchronous I/O - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13531730.html)
