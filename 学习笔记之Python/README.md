@@ -2339,7 +2339,13 @@ if __name__ == "__main__":
 
 ### [Multithreaded Programming](https://www.tutorialspoint.com/python3/python_multithreading.htm)
 
-* [multiprocessing — Process-based parallelism — Python 3.9.5 documentation](https://docs.python.org/3/library/multiprocessing.html)
+* [Concurrent Execution — Python 3.10.2 documentation](https://docs.python.org/3/library/concurrency.html)
+	* The modules described in this chapter provide support for concurrent execution of code. The appropriate choice of tool will depend on the task to be executed (CPU bound vs IO bound) and preferred style of development (event driven cooperative multitasking vs preemptive multitasking). 
+	* [threading — Thread-based parallelism — Python 3.10.2 documentation](https://docs.python.org/3/library/threading.html)
+		* This module constructs higher-level threading interfaces on top of the lower level \_thread module. See also the queue module.
+		* CPython implementation detail: In CPython, due to the Global Interpreter Lock, only one thread can execute Python code at once (even though certain performance-oriented libraries might overcome this limitation). If you want your application to make better use of the computational resources of multi-core machines, you are advised to use multiprocessing or concurrent.futures.ProcessPoolExecutor. However, threading is still an appropriate model if you want to run multiple I/O-bound tasks simultaneously.
+	* [multiprocessing — Process-based parallelism — Python 3.9.5 documentation](https://docs.python.org/3/library/multiprocessing.html)
+		* multiprocessing is a package that supports spawning processes using an API similar to the threading module. The multiprocessing package offers both local and remote concurrency, effectively side-stepping the Global Interpreter Lock by using subprocesses instead of threads. Due to this, the multiprocessing module allows the programmer to fully leverage multiple processors on a given machine. It runs on both Unix and Windows.
 * [学习笔记之asyncio — Asynchronous I/O - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13531730.html)
 ```python
 import asyncio
@@ -2403,12 +2409,27 @@ class TestService:
             self._stop()
 ```
 * [理解python多线程和多进程](https://mp.weixin.qq.com/s/pjoSXrpjvxvOHDmWAhYfFA)
+	* 一、多线程与多进程
+	* 二、Python多进程编程
+		* Process
+			* 多进程的实现与你的操作系统有关。例如Unix/Linux操作系统提供了一个fork()系统调用来创建进程。普通的函数调用，调用一次，返回一次，但是fork()调用一次，返回两次，因为操作系统自动把当前进程（称为父进程）复制了一份（称为子进程），然后，分别在父进程和子进程内返回。子进程永远返回0，而父进程返回子进程的ID。这样做的理由是，一个父进程可以fork出很多子进程，所以，父进程要记下每个子进程的ID，而子进程只需要调用getppid()就可以拿到父进程的ID。
+			* 而Python的os模块里正好封装了该系统调用，所以在Unix/Linux操作系统可以通过os.fork()创建子进程。
+			* 但是Window系统是没有这个系统调用的，因此没办法用fork()实现多进程。Python提供了一个multiprocessing模块来供跨平台版本的Python使用多进程，这个模块提供了一个Process类来代表一个进程对象。
+		* Pool
+			* 如果我们要创建大量的子进程，可以利用进程池的方式来批量创建子进程。
+	* 三、进程间通信
+		* Python模块multiprcess提供Queue和Pipe类来进行进程间的通信，另外还有很多方式，这里我们先介绍提出的这两种。
+		* Queue是多进程安全的队列，可以使用Queue实现多进程之间的数据传递。Queue通过put()方法把数据插入到队尾，get()方法用于从队头取出数据。并且它们都有两个参数分别为blocked和timeout。当队列已满且blocked为True的时候，如果timeout为正值，则会阻塞timeout指定的时间，直到该队列有剩余的空间。如果超时，会抛出Queue.Full异常，同理当队列为空且blocked为True的时候，如果timeout为正值，则会等待timeout时间直到有数据插入再取走。若等待时间内没有型数据插入则会抛出Queue.Empty异常。（创建Queue对象时接受一个maxsize参数来限制队列里的对象个数）
+		* Pipe是方法是实现两个进程通信的另一种方法。Pipe对象分两种，一种为单向管道，一种为双向管道，可以通过构造方法Pipe ( duplex = False ) 来创建单向管道（默认为双向管道）。
+		* Pipe执行任务的方式是，一个进程从Pipe的一端输入对象，然后一个进程从Pipe的另一端接收对象，单向管道只允许管道一端的进程输入，而双向管道则允许从两端输入
+	* 四、小结
+		* 掌握Python多进程编程技术可以充分利用多核CPU，极大的提高计算机的执行效率，例如在生成随机森林的时候，使用多进程可以提高CART的生成速率等等。
 * [深入理解python多线程和多进程](https://mp.weixin.qq.com/s/w0dZrtv8ogdtxO8FT2LrEg)
 * [入门 | 三行Python代码，让数据预处理速度提高2到6倍](https://mp.weixin.qq.com/s/DgKuNIa_m-CsXWgHIz_3rQ)
   * https://towardsdatascience.com/heres-how-you-can-get-a-2-6x-speed-up-on-your-data-pre-processing-with-python-847887e63be5
 * [Python 线程为什么要搞个 setDaemon ？](https://mp.weixin.qq.com/s/tRaQftWQNzE2a_ZKDLGE4w)
 * [为什么 GIL 让多线程变得如此鸡肋？](https://mp.weixin.qq.com/s/QP4h36qqTWUKchrxN56v9A)
-	* 这篇文章我们主要讲了 Python GIL 相关的问题。
+	* 这篇文章我们主要讲了 Python [GIL](https://docs.python.org/3/glossary.html#term-global-interpreter-lock) 相关的问题。
 	* 首先，我们了解到 GIL 属于 Python 解释器层面的，它并不是 Python 语言的特性，这一点我们一定不要搞混了。GIL 的存在会让 Python 在执行代码时，只允许同一时刻只有一个线程在执行，其目的是为了保证在执行过程中内存管理的安全性。
 	* 之后我们通过一个例子，观察到 Python 在多线程运行 CPU 密集型任务时，执行效率比单线程还要低，其原因是因为在多核 CPU 环境下，GIL 的存在会导致多线程切换时无效的资源消耗，因此会降低程序运行的效率。
 	* 但如果使用多线程运行 IO 密集型的任务，由于线程更多地是在等待 IO，所以并不会消耗 CPU 资源，这种情况下，使用多线程是可以提高程序运行效率的。
