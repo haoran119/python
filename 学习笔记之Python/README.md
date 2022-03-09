@@ -1623,6 +1623,11 @@ def greeting(name: str) -> str:
 * [class typing.List(list, MutableSequence[T])](https://docs.python.org/3/library/typing.html#typing.List)
 	* Generic version of list. Useful for annotating return types. To annotate arguments it is preferred to use an abstract collection type such as Sequence or Iterable.
 * [Using Python's Type Annotations - DEV](https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,of%20a%20variable%20should%20be.&text=It%20is%20important%20to%20note,the%20program%20in%20any%20way)
+* [python - How to annotate types of multiple return values? - Stack Overflow](https://stackoverflow.com/questions/40181344/how-to-annotate-types-of-multiple-return-values)
+	* support for type hinting notation [has been added to most standard-library container types](https://docs.python.org/3/whatsnew/3.9.html#type-hinting-generics-in-standard-collections) (see [PEP 585](https://www.python.org/dev/peps/pep-0585/#implementation) for the complete list). In fact, you can use this as of Python 3.7 too provided you use the from __future__ import annotations compiler switch for your modules and a type checker that supports the syntax.
+```python
+-> tuple[bool, str]
+```
 
 ### [Debugging and Profiling](https://docs.python.org/3/library/debug.html)
 
