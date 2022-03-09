@@ -123,20 +123,38 @@ df["a*b"] = df["a"] * df["b"]
     * New 是真正创建实例对象的方法，所以重写基类的new 方法，以此保证创建对象的时候只生成一个实例
   ```python
   class Singleton:
-      def __new__(cls, *args, **kwargs):
+      def __new__(cls: Any, *args, **kwargs) -> Any:
           if not hasattr(cls, '_instance'):
               cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)
 
           return cls._instance
 
 
+  class Singleton1:
+      _instance = None
+
+      def __new__(cls: Any) -> Any:
+          if cls._instance is None:
+              cls._instance = super(Singleton1, cls).__new__(cls)
+              return cls._instance
+          else:
+              return cls._instance
+
+
   class Foo(Singleton):
+      pass
+
+
+  class Foo1(Singleton1):
       pass
 
 
   foo1 = Foo()
   foo2 = Foo()
+  foo11 = Foo1()
+  foo12 = Foo1()
 
   print(foo1 is foo2)     # True
+  print(foo11 is foo12)   # True
   ```
 * [Program to count occurrence of a given character in a string - GeeksforGeeks](https://www.geeksforgeeks.org/program-count-occurrence-given-character-string/?ref=gcse)
