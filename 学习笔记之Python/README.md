@@ -15,6 +15,7 @@
   * Python拥有一个强大的标准库。Python语言的核心只包含数字、字符串、列表、字典、文件等常见类型和函数，而由Python标准库提供了系统管理、网络通信、文本处理、数据库接口、图形系统、XML处理等额外的功能。
 * [Python Technologies Tutorials](https://www.tutorialspoint.com/python_technologies_tutorials.htm)
   * [Python 3 Tutorial](https://www.tutorialspoint.com/python3/index.htm)
+* [Python Programming Language - GeeksforGeeks](https://www.geeksforgeeks.org/python-programming-language/?ref=shm)
 * [Python3 教程 | 菜鸟教程](http://www.runoob.com/python3/python3-tutorial.html)
 * [Python 入门指南 — Python tutorial 3.6.0 documentation](http://www.pythondoc.com/pythontutorial3/index.html)
 
