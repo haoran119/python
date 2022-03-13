@@ -758,10 +758,15 @@ print('\n'.join(map(str, a)))
 * [Strings](https://www.tutorialspoint.com/python3/python_strings.htm)
 	* String Special Operators
 
-|Operator|Description|Example|
+Operator|Description|Example
 -|-|-
 r/R|Raw String - Suppresses actual meaning of Escape characters. The syntax for raw strings is exactly the same as for normal strings with the exception of the raw string operator, the letter "r," which precedes the quotation marks. The "r" can be lowercase (r) or uppercase (R) and must be placed immediately preceding the first quote mark.|print r'\n' prints \n and print R'\n'prints \n
 
+* [Python String - GeeksforGeeks](https://www.geeksforgeeks.org/python-strings/)
+
+##### [String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+
+* Strings implement all of the common sequence operations, along with the additional methods described below.
 * str.capitalize()
 	* Return a copy of the string with its first character capitalized and the rest lowercased.
 * [str.count(sub[, start[, end]])](https://docs.python.org/3/library/stdtypes.html#str.count)
