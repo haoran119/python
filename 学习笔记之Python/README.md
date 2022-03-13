@@ -539,6 +539,30 @@ if __name__ == '__main__':
 
 #### [Sequence Types — list, tuple, range](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
 
+##### [Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
+
+* The operations in the following table are supported by most sequence types, both mutable and immutable. The collections.abc.Sequence ABC is provided to make it easier to correctly implement these operations on custom sequence types.
+* This table lists the sequence operations sorted in ascending priority. In the table, s and t are sequences of the same type, n, i, j and k are integers and x is an arbitrary object that meets any type and value restrictions imposed by s.
+* The in and not in operations have the same priorities as the comparison operations. The + (concatenation) and * (repetition) operations have the same priority as the corresponding numeric operations.
+
+Operation|Result
+-|-
+x in s|True if an item of s is equal to x, else False
+x not in s|False if an item of s is equal to x, else True
+s + t|the concatenation of s and t
+s * n or n * s|equivalent to adding s to itself n times
+s[i]|ith item of s, origin 0
+s[i:j]|slice of s from i to j
+s[i:j:k]|slice of s from i to j with step k
+len(s)|length of s
+min(s)|smallest item of s
+max(s)|largest item of s
+s.index(x[, i[, j]])|index of the first occurrence of x in s (at or after index i and before index j)
+s.count(x)|total number of occurrences of x in s
+
+* Sequences of the same type also support comparisons. In particular, tuples and lists are compared lexicographically by comparing corresponding elements. This means that to compare equal, every element must compare equal and the two sequences must be of the same type and have the same length. (For full details see Comparisons in the language reference.)
+* Forward and reversed iterators over mutable sequences access values using an index. That index will continue to march forward (or backward) even if the underlying sequence is mutated. The iterator terminates only when an IndexError or a StopIteration is encountered (or when the index drops below zero).
+
 * [干货|理解Python列表和元组](https://mp.weixin.qq.com/s/U-ctO-brjwxpm0LbLTB-dw)
 
 ##### [Lists](https://www.tutorialspoint.com/python3/python_lists.htm)
