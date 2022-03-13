@@ -563,10 +563,68 @@ s.count(x)|total number of occurrences of x in s
 * Sequences of the same type also support comparisons. In particular, tuples and lists are compared lexicographically by comparing corresponding elements. This means that to compare equal, every element must compare equal and the two sequences must be of the same type and have the same length. (For full details see Comparisons in the language reference.)
 * Forward and reversed iterators over mutable sequences access values using an index. That index will continue to march forward (or backward) even if the underlying sequence is mutated. The iterator terminates only when an IndexError or a StopIteration is encountered (or when the index drops below zero).
 
+##### [Immutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types)
+
+* The only operation that immutable sequence types generally implement that is not also implemented by mutable sequence types is support for the hash() built-in.
+* This support allows immutable sequences, such as tuple instances, to be used as dict keys and stored in set and frozenset instances.
+* Attempting to hash an immutable sequence that contains unhashable values will result in TypeError.
+
+##### [Mutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
+
+* The operations in the following table are defined on mutable sequence types. The collections.abc.MutableSequence ABC is provided to make it easier to correctly implement these operations on custom sequence types.
+* In the table s is an instance of a mutable sequence type, t is any iterable object and x is an arbitrary object that meets any type and value restrictions imposed by s (for example, bytearray only accepts integers that meet the value restriction 0 <= x <= 255).
+
+Operation|Result|Notes
+-|-|-
+s[i] = x|item i of s is replaced by x
+s[i:j] = t|slice of s from i to j is replaced by the contents of the iterable t
+del s[i:j]|same as s[i:j] = []
+s[i:j:k] = t|the elements of s[i:j:k] are replaced by those of t|(1)
+del s[i:j:k]|removes the elements of s[i:j:k] from the list
+s.append(x)|appends x to the end of the sequence (same as s[len(s):len(s)] = [x])
+s.clear()|removes all items from s (same as del s[:])|(5)
+s.copy()|creates a shallow copy of s (same as s[:])|(5)
+s.extend(t) or s += t|extends s with the contents of t (for the most part the same as s[len(s):len(s)] = t)
+s *= n|updates s with its contents repeated n times|(6)
+s.insert(i, x)|inserts x into s at the index given by i (same as s[i:i] = [x])
+s.pop() or s.pop(i)|retrieves the item at i and also removes it from s|(2)
+s.remove(x)|remove the first item from s where s[i] is equal to x|(3)
+s.reverse()|reverses the items of s in place|(4)
+
+* Notes:
+1. t must have the same length as the slice it is replacing.
+2. The optional argument i defaults to -1, so that by default the last item is removed and returned.
+3. remove() raises ValueError when x is not found in s.
+4. The reverse() method modifies the sequence in place for economy of space when reversing a large sequence. To remind users that it operates by side effect, it does not return the reversed sequence.
+5. clear() and copy() are included for consistency with the interfaces of mutable containers that don’t support slicing operations (such as dict and set). copy() is not part of the collections.abc.MutableSequence ABC, but most concrete mutable sequence classes provide it.
+6. The value n is an integer, or an object implementing __index__(). Zero and negative values of n clear the sequence. Items in the sequence are not copied; they are referenced multiple times, as explained for s * n under Common Sequence Operations.
+
 * [干货|理解Python列表和元组](https://mp.weixin.qq.com/s/U-ctO-brjwxpm0LbLTB-dw)
 
 ##### [Lists](https://www.tutorialspoint.com/python3/python_lists.htm)
 
+* Lists are mutable sequences, typically used to store collections of homogeneous items (where the precise degree of similarity will vary by application).
+* [class list([iterable])](https://docs.python.org/3/library/stdtypes.html#list)
+	* Lists may be constructed in several ways:
+		* Using a pair of square brackets to denote the empty list: []
+		* Using square brackets, separating items with commas: [a], [a, b, c]
+		* Using a list comprehension: [x for x in iterable]
+		* Using the type constructor: list() or list(iterable)
+	* The constructor builds a list whose items are the same and in the same order as iterable’s items. iterable may be either a sequence, a container that supports iteration, or an iterator object. If iterable is already a list, a copy is made and returned, similar to iterable[:]. For example, list('abc') returns ['a', 'b', 'c'] and list( (1, 2, 3) ) returns [1, 2, 3]. If no argument is given, the constructor creates a new empty list, [].
+	* Many other operations also produce lists, including the sorted() built-in.
+	* Lists implement all of the common and mutable sequence operations. Lists also provide the following additional method:
+		* [sort(*, key=None, reverse=False)](https://docs.python.org/3/library/stdtypes.html#list.sort)
+			* This method sorts the list in place, using only < comparisons between items. Exceptions are not suppressed - if any comparison operations fail, the entire sort operation will fail (and the list will likely be left in a partially modified state).
+			* sort() accepts two arguments that can only be passed by keyword (keyword-only arguments):
+			* key specifies a function of one argument that is used to extract a comparison key from each list element (for example, key=str.lower). The key corresponding to each item in the list is calculated once and then used for the entire sorting process. The default value of None means that list items are sorted directly without calculating a separate key value.
+			* The functools.cmp_to_key() utility is available to convert a 2.x style cmp function to a key function.
+			* reverse is a boolean value. If set to True, then the list elements are sorted as if each comparison were reversed.
+			* This method modifies the sequence in place for economy of space when sorting a large sequence. To remind users that it operates by side effect, it does not return the sorted sequence (use sorted() to explicitly request a new sorted list instance).
+			* The sort() method is guaranteed to be stable. A sort is stable if it guarantees not to change the relative order of elements that compare equal — this is helpful for sorting in multiple passes (for example, sort by department, then by salary grade).
+			* For sorting examples and a brief sorting tutorial, see [Sorting HOW TO](https://docs.python.org/3/howto/sorting.html#sortinghowto).
+			* CPython implementation detail: While a list is being sorted, the effect of attempting to mutate, or even inspect, the list is undefined. The C implementation of Python makes the list appear empty for the duration, and raises ValueError if it can detect that the list has been mutated during a sort.
+			* [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
+				* https://maida6244.xyz/
 * [list.remove(x) - 5. Data Structures — Python 3.9.7 documentation](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
   * Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
   * [Python list remove() - GeeksforGeeks](https://www.geeksforgeeks.org/python-list-remove/)
@@ -595,8 +653,6 @@ for item in b:
 
 print(b)    # [1, 3]
 ```
-* [Python 列表排序 sort 与 sorted 详解](https://mp.weixin.qq.com/s/R16hyfikRCOEUGhDGOBVcQ)
-  * https://maida6244.xyz/
 * How to convert dictionary to list ?
   * Converting Python Dictionary to List - Stack Overflow
     * https://stackoverflow.com/questions/1679384/converting-python-dictionary-to-list
