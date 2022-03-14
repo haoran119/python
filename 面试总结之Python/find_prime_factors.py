@@ -1,8 +1,9 @@
 """
 Efficient program to print all prime factors of a given number
-    (https://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number/)
+https://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number/
 
-Prime Numbers - GeeksforGeeks (https://www.geeksforgeeks.org/prime-numbers/)
+Prime Numbers - GeeksforGeeks
+https://www.geeksforgeeks.org/prime-numbers/
 
 Given a number n, write an efficient function to print all prime factors of n.
 For example, if the input number is 12, then output should be “2 2 3”.
