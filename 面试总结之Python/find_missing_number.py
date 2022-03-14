@@ -28,9 +28,9 @@ class Solution:
         if not input_list:
             return None
 
-        n = len(input_list)
+        n = len(input_list) + 1
 
-        expected_sum = (n + 1) * (n + 2) / 2
+        expected_sum = n * (n + 1) / 2
         actual_sum = sum(input_list)
 
         return int(expected_sum - actual_sum)
@@ -67,6 +67,9 @@ if __name__ == '__main__':
 
     list_test = [1, 2, 4, 6, 3, 7, 8]
 
-    result = my_solution.find_missing_number2(list_test)    # 5
-
-    print(result)
+    result = my_solution.find_missing_number(list_test)
+    print(result)   # 5
+    result = my_solution.find_missing_number2(list_test)
+    print(result)   # 5
+    result = my_solution.find_missing_number3(list_test)
+    print(result)   # 5
