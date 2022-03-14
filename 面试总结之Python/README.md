@@ -157,4 +157,3 @@ df["a*b"] = df["a"] * df["b"]
   print(foo1 is foo2)     # True
   print(foo11 is foo12)   # True
   ```
-* [Program to count occurrence of a given character in a string - GeeksforGeeks](https://www.geeksforgeeks.org/program-count-occurrence-given-character-string/?ref=gcse)
