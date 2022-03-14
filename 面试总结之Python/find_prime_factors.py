@@ -42,6 +42,22 @@ class Solution:
 
         return results
 
+    def find_prime_factors1(self, data: int) -> list:
+        if data < 2:
+            return []
+
+        results = []
+
+        c = 2
+        while data > 1:
+            if data % c == 0:
+                data /= c
+                results.append(c)
+            else:
+                c += 1
+
+        return results
+
     def generate_primes(self, n: int) -> list:
         if n == 2:
             return [2]
@@ -63,7 +79,7 @@ class Solution:
 
         return primes
 
-    def find_prime_factors1(self, data: int) -> list:
+    def find_prime_factors2(self, data: int) -> list:
         primes = self.generate_primes(data)
         results = []
         self.found = False
@@ -87,7 +103,7 @@ class Solution:
 
         return results
 
-    def find_prime_factors2(self, data: int) -> list:
+    def find_prime_factors3(self, data: int) -> list:
         if data == 2:
             return [2]
 
@@ -116,26 +132,6 @@ if __name__ == '__main__':
 
     inputs = [0, 1, 2, 3, 12, 60, 315]
 
-    # 0
-    # []
-    # primes = []
-    # 1
-    # []
-    # primes = []
-    # 2
-    # [2]
-    # 3
-    # [3]
-    # primes = [2, 3]
-    # 12
-    # [2, 2, 3]
-    # primes = [2, 3, 5, 7, 11]
-    # 60
-    # [2, 2, 3, 5]
-    # primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
-    # 315
-    # [3, 3, 5, 7]
-    # primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313]
     for i in inputs:
         print(i)
         results = my_solution.find_prime_factors(i)
@@ -144,3 +140,28 @@ if __name__ == '__main__':
         print(results)
         results = my_solution.find_prime_factors2(i)
         print(results)
+        results = my_solution.find_prime_factors3(i)
+        print(results)
+
+"""
+0
+[]
+primes = []
+1
+[]
+primes = []
+2
+[2]
+3
+[3]
+primes = [2, 3]
+12
+[2, 2, 3]
+primes = [2, 3, 5, 7, 11]
+60
+[2, 2, 3, 5]
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+315
+[3, 3, 5, 7]
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313]
+"""
