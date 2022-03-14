@@ -29,17 +29,17 @@ def find_most_frequent_element_in_list2(list_input: list) -> Any:
     if not list_input:
         return None
 
-    counter = 0
-    num = list_input[0]
+    max_frequency = 0
+    result = list_input[0]
 
     for i in list_input:
         current_frequency = list_input.count(i)
 
-        if current_frequency > counter:
-            counter = current_frequency
-            num = i
+        if current_frequency > max_frequency:
+            max_frequency = current_frequency
+            result = i
 
-    return num
+    return result
 
 
 def find_most_frequent_element_in_list3(list_input: list) -> Any:
@@ -58,17 +58,17 @@ if __name__ == '__main__':
     inputs = [2, 1, 2, 2, 1, 3]
 
     result = find_most_frequent_element_in_list1(inputs)
-    print(result)
+    print(result)   # 2
     result = find_most_frequent_element_in_list2(inputs)
-    print(result)
+    print(result)   # 2
     result = find_most_frequent_element_in_list3(inputs)
-    print(result)
+    print(result)   # 2
 
     inputs = ['Dog', 'Cat', 'Dog']
 
     result = find_most_frequent_element_in_list1(inputs)
-    print(result)
+    print(result)   # Dog
     result = find_most_frequent_element_in_list2(inputs)
-    print(result)
+    print(result)   # Dog
     result = find_most_frequent_element_in_list3(inputs)
-    print(result)
+    print(result)   # Dog
