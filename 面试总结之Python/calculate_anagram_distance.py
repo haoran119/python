@@ -44,10 +44,10 @@ if __name__ == '__main__':
     inputs2 = "harder"
 
     result = my_solution.calculate_anagram_distance(inputs1, inputs2)
-    print(result)
+    print(result) # 2
 
     inputs1 = "apple"
     inputs2 = "pear"
 
     result = my_solution.calculate_anagram_distance(inputs1, inputs2)
-    print(result)
+    print(result) # 3
