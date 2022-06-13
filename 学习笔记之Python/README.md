@@ -2867,7 +2867,6 @@ if __name__ == '__main__':
   * sys.argv
   * argparse
   * click
-* [wxPython：Python首选的GUI库 | CSDN博文精选](https://mp.weixin.qq.com/s/pJIuKgZC1o757iwkrt3uUQ)
 * [一份不可多得的数据科学与机器学习Python库](https://mp.weixin.qq.com/s/nkAKDx5OHx2Ld4Vo_RCXTQ)
 * [收藏 | 34 个优秀好用的Python开源框架](https://github.com/Mybridge/amazing-python-2019)
   * https://medium.mybridge.co/34-amazing-python-open-source-libraries-for-the-past-year-v-2019-93d6ee11aceb
@@ -2912,7 +2911,6 @@ if __name__ == '__main__':
 * [用 Python 制作家用防盗工具](https://mp.weixin.qq.com/s/6RE1fwKF8gndI3Bnhb8UgA)
 * [用 Python 制作“除夕夜倒计时”海报](https://mp.weixin.qq.com/s/MIhViQrYOca8QlQ7QEfoZw)
   * https://github.com/wwtm/gitpython_examples
-* [Python GUI开发，效率提升10倍的方法](https://github.com/PySimpleGUI/PySimpleGUI)
 * [用Python计算颜值数](https://mp.weixin.qq.com/s/d4r3oMReYCUBjUwCbAzE5w)
   * 现在很多拍照软件都有颜值测试及年龄识别功能，经过研究，发现 Python 也能实现，今天主要用 PyQt4 做个可视化工具，然后调用百度人脸识别api，识别出人脸的性别、年龄及颜值
 * [用 Python 发一封邮件](https://mp.weixin.qq.com/s/wXAfYIdGxukKSstiFxLi4g)
