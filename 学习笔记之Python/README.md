@@ -2634,6 +2634,41 @@ class TestService:
 	* 基于这些前提，我们平时在部署 Python 程序时，一般更倾向于使用多进程的方式去部署，就是为了避免 GIL 的影响。
 	* 任何一种编程语言，都有其优势和劣势，我们需要理解它的实现机制，发挥其长处，才能更好地服务于我们的需求。
 
+### [GUI Programming](https://www.tutorialspoint.com/python3/python_gui_programming.htm)
+
+* [Top 10 Python GUI Frameworks for Developers | by Claire D. Costa | Towards Data Science](https://towardsdatascience.com/top-10-python-gui-frameworks-for-developers-adca32fbe6fc)
+1. PyQt5
+2. Tkinter
+3. Kivy
+4. wxPython
+5. Libavg
+6. PySimpleGUI
+7. PyForms
+8. Wax
+9. PySide2
+10. PyGUI
+* [Python 图形界面框架 PyQt5 使用指南](https://mp.weixin.qq.com/s/ZWGKAYmIPxm2bJr0J3YpiA)
+	* https://www.biaodianfu.com/pyqt5.html
+	* 常见GUI框架
+	* PyQt5[1]：Qt[2]是一个跨平台的 C++图形用户界面库。QT一度被诺基亚拥，后出售给芬兰的软件公司Digia Oyj。PyQt5是基于Digia公司Qt5的Python接口，由一组Python模块构成。PyQt5本身拥有超过620个类和6000函数及方法。在可以运行于多个平台，包括：Unix, Windows, and Mac OS。
+	* Pyside6[3]：Pyside是QT公司官方提供的Python包，上一版本为Pyside2，对应的是QT5，最新版命名规则进行了调整，更改为Pyside6，对应的是QT6版本。由于官方出品的比较看好，缺点是发布比较晚，网上的资料没有PyQt5多。
+	* Tkinter[4]：Python内置的GUI框架，使用TCL实现，Python中内嵌了TCL解释器，使用它的时候不用安装额外的扩展包，直接import，跨平台。不足之处在于UI布局全靠代码实现，只有15种常用部件，显示效果简陋。
+	* PySimpleGUI[5]：PySimpleGUI 是 Tkinter 一层包装。使用 PySimpleGUI 实现自定义 GUI 所需的代码量要比使用 Tkinter 直接编写相同的 GUI 要少得多。
+	* WxPython[6]：wxPython是Python语言对流行的wxWidgets跨平台GUI工具库的绑定。用得比较广泛，跨平台，C++编写，文档少，用户可能就需要根据编程内容对不同平台中的GUI代码做一些调整。遇到问题不好解决，代码布局控件，不直观。
+	* Wax[7]：基于wxPython ，为克服wxPython的问题而制作的一个包。
+	* Kivy[8]：主要针对多点触控程序，智能手机平板等，也可以在没有触屏功能的系统上，全平台支持（Windows, Linux, Mac OS X, Android and iOS.）使用Python和cython编写，中文支持差，需要自己下载中文库并且制定路径。
+	* BeeWare[9]：Write once. Deploy everywhere.需要与Kivy配合使用。
+	* Toga[10]：一个使用Python开发原生APP的GUI工具包。Toga由一个具有共享接口的基础组件库组成，以简化与平台无关的GUI开发。Toga适用于Mac OS、Windows、Linux（GTK）以及Android和iOS等移动平台。
+	* Eel[11]：一个轻量的 Python 库，用于制作简单的类似于 Electron（但是比它更轻量） 的离线 HTML/JS GUI 应用程序，并具有对 Python 功能（capabilities）和库的完全访问权限。
+	* Flexx[12]：一个纯 Python 工具包，用来创建图形化界面应用程序。其使用 Web 技术进行界面的渲染。你可以用 Flexx 来创建桌面应用，同时也可以导出一个应用到独立的 HTML 文档。因为使用纯 Python 开发，所以 Flexx 是跨平台的。只需要有 Python 和浏览器就可以运行。
+	* pywebview[13]是围绕 webview 组件的轻量型跨平台包装器（wrapper），它允许在其自己的本机 GUI 窗口中显示 HTML 内容。它使您可以在桌面应用程序中使用 Web 技术，同时尽最大可能隐藏使用浏览器构建GUI的事实。
+	* enaml[14]：一种能够让你用最小的努力就可以实现高质量GUI界面的的Python框架，也是一种独特的编程语言。enaml将声明性语言与基于约束的布局系统结合在一起，使用户可以轻松地定义灵活布局的UI。enaml应用程序可以在任何支持Python和Qt的平台上运行。
+	* 个人想法：太多学不完，先学PyQt5，原因是资料多，学有余力再学pyside6，最后看下PySimpleGUI，看能否解决一些简单问题。
+* [wxPython：Python首选的GUI库 | CSDN博文精选](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247523070&idx=5&sn=7a5c7617864b6b876a3fb5a93a91af9d&source=41#wechat_redirect)
+	* 跨平台的GUI工具库，较为有名的当属GTK+、Qt 和 wxWidgets 了。GTK+是C实现的，由于C语言本身不支持OOP，因而GTK+上手相当困难，写起来也较为复杂艰涩。Qt 和 wxWidgets 则是C++实现的，各自拥有庞大的用户群体。虽然我喜欢wxWidgets，但还是尽可能客观地搜集了关于Qt 和 wxWidgets 的对比评价。
+* [PySimpleGUI/PySimpleGUI](https://github.com/PySimpleGUI/PySimpleGUI)
+	* PySimpleGUI/PySimpleGUI: Launched in 2018. It's 2022 and PySimpleGUI is actively developed & supported. Create complex windows simply. Supports tkinter, Qt, WxPython, Remi (in browser). Create GUI applications trivially with a full set of widgets. Multi-Window applications are also simple. 3.4 to 3.11 supported. 325+ Demo programs & Cookbook for rapid start. Extensive documentation. Examples for Machine Learning(OpenCV Integration, Chatterbot), Rainmeter-like Desktop Widgets, Matplotlib + Pyplot integration, add GUI to command line scripts, PDF & Image Viewer. For both beginning and advanced programmers. docs - PySimpleGUI.org GitHub - PySimpleGUI.com. The Minecraft of GUIs - simple to complex... does them all.
+
 ### UnitTest
 
 * [Python中的两个测试工具](https://mp.weixin.qq.com/s/IUCoUkws923ojK__HPe3kA)
