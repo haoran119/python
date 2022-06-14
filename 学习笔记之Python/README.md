@@ -3295,6 +3295,9 @@ predicted_values = model.predict(x_test)
 * [酱香科技！用 Python 分析白酒类基金有多赚钱！](https://mp.weixin.qq.com/s/lNk79g2UK7vzSlIBac2Qcw)
   * 从采集基金数据然后进行分析
   * [招商中证白酒指数](https://danjuanapp.com/funding/161725?channel=1300100141)
+
+#### QUANT
+
 * [Python量化金融都需要用到哪些库？最全汇总](https://mp.weixin.qq.com/s/dZqAroiNV7vIEqtDaIRc0w)
 	* [wilsonfreitas/awesome-quant: A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)](https://github.com/wilsonfreitas/awesome-quant)
 
