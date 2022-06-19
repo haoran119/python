@@ -3464,9 +3464,9 @@ predicted_values = model.predict(x_test)
 * [pandas · GitHub](https://github.com/pandas-dev)
 	* Powerful data manipulation tools for Python
 * [pandas (software) - Wikipedia](https://en.wikipedia.org/wiki/Pandas_(software))
-* In computer programming, pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series. It is free software released under the three-clause BSD license. The name is derived from the term "panel data", an econometrics term for data sets that include observations over multiple time periods for the same individuals.
+	* In computer programming, pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series. It is free software released under the three-clause BSD license. The name is derived from the term "panel data", an econometrics term for data sets that include observations over multiple time periods for the same individuals.
 * [pandas_百度百科](https://baike.baidu.com/item/pandas)
-* Python Data Analysis Library 或 pandas 是基于NumPy 的一种工具，该工具是为了解决数据分析任务而创建的。Pandas 纳入了大量库和一些标准的数据模型，提供了高效地操作大型数据集所需的工具。pandas提供了大量能使我们快速便捷地处理数据的函数和方法。你很快就会发现，它是使Python成为强大而高效的数据分析环境的重要因素之一。
+	* Python Data Analysis Library 或 pandas 是基于NumPy 的一种工具，该工具是为了解决数据分析任务而创建的。Pandas 纳入了大量库和一些标准的数据模型，提供了高效地操作大型数据集所需的工具。pandas提供了大量能使我们快速便捷地处理数据的函数和方法。你很快就会发现，它是使Python成为强大而高效的数据分析环境的重要因素之一。
 * [学习笔记之pandas Foundations | DataCamp - Pegasus923 - 博客园](https://www.cnblogs.com/pegasus923/p/9017799.html)
 * [资源 | 23种Pandas核心操作，你需要过一遍吗？ - 机器学习算法与Python学习](https://mp.weixin.qq.com/s/klGFyKngYnwZYfhhLne8Sg)
 	* https://towardsdatascience.com/23-great-pandas-codes-for-data-scientists-cca5ed9d8a38
