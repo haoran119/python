@@ -3454,6 +3454,602 @@ predicted_values = model.predict(x_test)
 	* [numpy.reshape — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/generated/numpy.reshape.html)
 	* [numpy.ndarray.flatten — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html)
 
+### [pandas](https://pandas.pydata.org/)
+
+* Python Data Analysis Library
+* pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
+* [pandas: powerful Python data analysis toolkit — pandas 0.22.0 documentation](http://pandas.pydata.org/pandas-docs/stable/index.html)
+* [10 Minutes to pandas — pandas 0.22.0 documentation](http://pandas.pydata.org/pandas-docs/stable/10min.html#)
+	* This is a short introduction to pandas, geared mainly for new users. You can see more complex recipes in the Cookbook
+* [pandas · GitHub](https://github.com/pandas-dev)
+	* Powerful data manipulation tools for Python
+* [pandas (software) - Wikipedia](https://en.wikipedia.org/wiki/Pandas_(software))
+* In computer programming, pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series. It is free software released under the three-clause BSD license. The name is derived from the term "panel data", an econometrics term for data sets that include observations over multiple time periods for the same individuals.
+* [pandas_百度百科](https://baike.baidu.com/item/pandas)
+* Python Data Analysis Library 或 pandas 是基于NumPy 的一种工具，该工具是为了解决数据分析任务而创建的。Pandas 纳入了大量库和一些标准的数据模型，提供了高效地操作大型数据集所需的工具。pandas提供了大量能使我们快速便捷地处理数据的函数和方法。你很快就会发现，它是使Python成为强大而高效的数据分析环境的重要因素之一。
+* [学习笔记之pandas Foundations | DataCamp - Pegasus923 - 博客园](https://www.cnblogs.com/pegasus923/p/9017799.html)
+* [资源 | 23种Pandas核心操作，你需要过一遍吗？ - 机器学习算法与Python学习](https://mp.weixin.qq.com/s/klGFyKngYnwZYfhhLne8Sg)
+	* https://towardsdatascience.com/23-great-pandas-codes-for-data-scientists-cca5ed9d8a38
+	* Pandas 是一个 Python 软件库，它提供了大量能使我们快速便捷地处理数据的函数和方法。一般而言，Pandas 是使 Python 成为强大而高效的数据分析环境的重要因素之一。在本文中，作者从基本数据集读写、数据处理和 DataFrame 操作三个角度展示了 23 个 Pandas 核心方法。
+* [Python 数据处理库 pandas 入门教程 - 数据分析与开发](https://mp.weixin.qq.com/s/Qd9lqngAiD2AYVLvV54Xwg)
+	* pandas是一个Python语言的软件包，在我们使用Python语言进行机器学习编程的时候，这是一个非常常用的基础编程库。本文是对它的一个入门教程。
+	* pandas提供了快速，灵活和富有表现力的数据结构，目的是使“关系”或“标记”数据的工作既简单又直观。它旨在成为在Python中进行实际数据分析的高级构建块。
+	* 入门介绍
+	* 核心数据结构
+	* Series
+	* DataFrame
+	* Index对象与数据访问
+	* 文件操作
+	* 读取Excel文件
+	* 读取CSV文件
+	* 处理无效值
+	* 忽略无效值
+	* 替换无效值
+	* 处理字符串
+* [Python 数据处理库 pandas 进阶教程 - 数据分析与开发](https://mp.weixin.qq.com/s/_8b5sdvpMVR_M0XuEezrOQ)
+	* 数据访问
+		* 基础方法：[]和.
+		* loc与iloc
+		* at与iat
+	* Index对象
+		* MultiIndex
+	* 数据整合
+		* Concat与Append
+		* Merge与Join
+	* 数据集合和分组操作
+	* 时间相关
+	* 图形展示
+* [Python Pandas Functions in Parallel - Data and Stuff by Jay](http://www.racketracer.com/2016/07/06/pandas-in-parallel/)
+	* I’m always on the lookout for quick hacks and code snippets that might help improve efficiency. Most of the time that’s through stackoverflow but here’s one that deals with parallelization and efficiency that I thought would be helpful.
+	* Since Pandas doesn’t have an internal parallelism feature yet, it makes doing apply functions with huge datasets a pain if the functions have expensive computation times. One way to shorten that amount of time is to split the dataset into separate pieces, perform the apply function, and then re-concatenate the pandas dataframes.
+* [Pandas核心操作](https://mp.weixin.qq.com/s/2a_xS-BuPOpNCw3ZNZuYnQ)
+* [【精选】Pandas一站式教程！](https://mp.weixin.qq.com/s/c02KHqLsI5i1xKE_DnwVVw)
+	* https://towardsdatascience.com/be-a-more-efficient-data-scientist-today-master-pandas-with-this-guide-ea362d27386
+* 盘一盘 Python 系列 4 - Pandas
+	* https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247486680&idx=1&sn=ee79e798cb2c00ff4dd02609ca9c494d&chksm=e8908fd1dfe706c71f998ceec4e8c6a44a76778b8382313a5f773319765e8b1116bf3dbbeeec&scene=21#wechat_redirect
+	* https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247486784&idx=1&sn=50a54067e9d596d4a03beb2b281167fb&chksm=e8908e49dfe7075f3cb3b1d5ef9b6ad149c63d3e33a8a42e503717ed09d82df7aa71e87c1eb1&scene=21#wechat_redirect
+* [常用的46个Pandas方法](https://mp.weixin.qq.com/s/-pazqu03A4ejRvFRCfHoZw)
+* [Pandas 中第二好用的函数是？](https://mp.weixin.qq.com/s/xc3kpVXeYcKu9Xxn5B1gxg)
+* [Pandas数据处理——盘点那些常用的函数（上）](https://mp.weixin.qq.com/s/IVUrb97GN3QvgYsBFdpc2w)
+* [Pandas0.25来了，别错过这10大好用的新功能](https://mp.weixin.qq.com/s/YaVipYsRYBF2eIBq9ps5VA)
+* [一文掌握 Series 和 DataFrame 的基础功能](https://mp.weixin.qq.com/s/5rLI5Vol67tjMeE-YVfBbw)
+	* https://www.zhihu.com/people/zarten/activities
+* [一文详解 merge 数据拼接方法](https://mp.weixin.qq.com/s/-P2dE_gXhbjrlFTC7VSGjA)
+* [一文完全掌握Pandas中的groupby操作](https://mp.weixin.qq.com/s/_H-jEBx_o4qUnruAHqSbOg)
+* [用 Style 方法提高 Pandas 数据的颜值](https://mp.weixin.qq.com/s/Ws09pBW5P2HzapmsxfbMwA)
+	* https://pbpython.com/styling-pandas.html
+	* Pandas的style用法在大多数教程中见的比较少，它主要是用来美化DataFrame和Series的输出，能够更加直观地显示数据结果。
+
+#### BEST PRACTICE
+
+利用 Pandas 分析日志数据
+
+https://mp.weixin.qq.com/s/A3lteYWeM2gM8qH75M8rXQ
+【技巧】Pandas循环提速7万多倍！
+
+https://mp.weixin.qq.com/s/VavtPcBtVzLw_k8KxSdKqw
+https://towardsdatascience.com/how-to-make-your-pandas-loop-71-803-times-faster-805030df4f06
+【技巧】11 个 Python Pandas 小技巧让你更高效
+
+https://mp.weixin.qq.com/s?__biz=MzIxODM4MjA5MA==&mid=2247490794&idx=2&sn=0f92cd1f274534f77f722f48f1e38023&chksm=97ea368fa09dbf99370385244a6e0828bedac23b3f1aa88bb36671d0102dfb3e1f663216858d&mpshare=1&scene=24&srcid=&sharer_sharetime=1568072412382&sharer_shareid=5ed4a849fa42d9599a974fa8eb45e8fa&key=b1719993cc296ec4a2ee472aa9c64ca953f23c2e1990555a735ef4dc57db63bddc3527235579b4df2fd5f77d61135ae5af57d1a86f8557b1c73712f5bbcfd8707644a485c2bc5fedefe3e564b4c2919a&ascene=14&uin=MTMzMzc3MjY4MQ%3D%3D&devicetype=Windows+10&version=62060833&lang=en&pass_ticket=tT3maEfznKd3xtVT4L8%2Bl%2B2KKdhrJZ3ERaWEoIpqIMB2I2ssKo%2BTfx0v80L7rMTL
+不识 Pandas，纵是老手也枉然？
+
+https://mp.weixin.qq.com/s/ZfwITBpt_etOpEfzyXdDAQ
+Pandas可视化综合指南：手把手从零教你绘制数据图表
+
+https://mp.weixin.qq.com/s/yO6u7b6zdkE8pGoNsrtKkg
+https://kanoki.org/2019/09/16/dataframe-visualization-with-pandas-plot/
+https://www.kaggle.com/PromptCloudHQ/world-happiness-report-2019/version/1
+如何在 Python 数据中清洗常用 4 板斧？
+
+https://mp.weixin.qq.com/s/M9vefH0FZeWwEk73SW-aIQ
+8 段用于数据清洗 Python 代码
+
+https://mp.weixin.qq.com/s/KHaMU4wkFs25C46NY-_OqQ
+https://towardsdatascience.com/the-simple-yet-practical-data-cleaning-codes-ad27c4ce0a38
+如何只用一行代码让Pandas加速四倍？
+
+https://mp.weixin.qq.com/s/Jkx1K7d1ufD2S6s2cOA7Hw
+https://www.kdnuggets.com/2019/11/speed-up-pandas-4x.html
+提升Pandas性能，让你的pandas飞起来！
+
+https://mp.weixin.qq.com/s/qwgkGtT9LtaeWnTB-ShfRw
+12 个 Numpy 和 Pandas 函数，提高效率
+
+12 Amazing Pandas & NumPy Functions | by Kunal Dhariwal | Towards Data Science
+GitHub - kunaldhariwal/12-Amazing-Pandas-NumPy-Functions: Code linked to the article published on medium.com
+Numpy 的 6 种高效函数
+argpartition()
+allclose()
+clip()
+extract()
+where()
+percentile()
+Pandas 数据统计包的 6 种高效函数
+read_csv(nrows=n)
+map()
+apply()
+isin()
+copy()
+select_dtypes()
+如何优雅地使用pdpipe与Pandas构建管道？
+
+https://mp.weixin.qq.com/s/URsFRHDwApp3Oj3fwtxnwg
+https://towardsdatascience.com/https-medium-com-tirthajyoti-build-pipelines-with-pandas-using-pdpipe-cade6128cd31
+用 Pandas 玩转时间序列数据
+
+进行金融数据分析或量化研究时，总避免不了时间序列数据的处理，时间序列是指在一定时间内按时间顺序测量的某个变量的取值序列。常见的时间序列数据有一天内随着时间变化的温度序列，又或者交易时间内不断波动的股票价格序列。Pandas也因其强大的时序处理能力而被广泛应用于金融数据分析，这篇文章为大家介绍一下Pandas中的时间序列处理，所使用的数据是上证指数2019年的行情数据。
+时间相关的数据类型
+将时间列转换为时间格式
+时间序列的索引
+提取出时间/日期的属性
+resample
+Comparison with SQL — pandas 0.23.3 documentation
+
+https://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#
+How to rewrite your SQL queries in Pandas, and more ?
+https://codeburst.io/how-to-rewrite-your-sql-queries-in-pandas-and-more-149d341fc53e
+How to print all elements in a dataframe ? 
+
+python - Is there a way to pretty print an entire Pandas Series / DataFrame? - Stack Overflow
+https://stackoverflow.com/questions/19124601/is-there-a-way-to-pretty-print-an-entire-pandas-series-dataframe
+print(df.to_string())
+How to get all column names of a dataframe?
+
+list( df )
+How to check if a dataframe column exists ?
+
+python - How to check if a column exists in Pandas - Stack Overflow
+https://stackoverflow.com/questions/24870306/how-to-check-if-a-column-exists-in-pandas
+if 'A' in df.columns:
+How to check if a dataframe column / serie is empty ?
+
+python - How to check if pandas Series is empty? - Stack Overflow
+https://stackoverflow.com/questions/24652417/how-to-check-if-pandas-series-is-empty
+df.empty
+df.dropna().empty
+pandas.DataFrame.dropna — pandas 0.23.3 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html#pandas-dataframe-dropna
+DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
+How to find unique value in a column of dataframe ?
+
+pandas.unique — pandas 0.22.0 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.unique.html#pandas.unique
+pandas.Series.tolist — pandas 0.23.1 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.tolist.html#pandas-series-tolist
+List Unique Values In A pandas Column
+https://chrisalbon.com/python/data_wrangling/pandas_list_unique_values_in_column/
+How to query a specified column / panel ?
+
+pandas.DataFrame.loc — pandas 0.23.0 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.loc.html?highlight=loc#pandas.DataFrame.loc
+Indexing and Selecting Data — pandas 0.23.1 documentation
+http://pandas.pydata.org/pandas-docs/stable/indexing.html#different-choices-for-indexing
+Slice with labels for row and single label for column. As mentioned above, note that both the start and stop of the slice are included.
+>>> df.loc['cobra':'viper', 'max_speed']
+How to get a specific column as series / dataframe ?
+
+series
+df[ 'col1' ] / df.col1
+df[ [c for c in df.columns if c.startswith('a')][0] ]
+dataframe
+df[ [ 'col1' ] ]
+df[ [c for c in df.columns if c.startswith('a')] ]
+Choosing columns in pandas DataFrame – Kasia Rachuta – Medium
+https://medium.com/@kasiarachuta/choosing-columns-in-pandas-dataframe-d0677b34a6ca
+df[ 'col1' ]
+This command picks a column and returns it as a Series
+df[ [ 'col1' ] ]
+Here, I chose the column and I get a DataFrame
+How to get the last row / value of dataframe ?
+
+How to get the last n row of pandas dataframe? - Stack Overflow
+https://stackoverflow.com/questions/14663004/how-to-get-the-last-n-row-of-pandas-dataframe
+df.iloc[ -1 ]
+df.tail( 1 )
+pandas.DataFrame.tail — pandas 0.23.3 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html#pandas.DataFrame.tail
+DataFrame.tail(n=5)
+pandas.DataFrame.iloc — pandas 0.23.3 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc
+python - obtaining last value of dataframe column without index - Stack Overflow
+https://stackoverflow.com/questions/34166030/obtaining-last-value-of-dataframe-column-without-index
+df.column.iat[ -1 ]
+Indexing and Selecting Data — pandas 0.23.3 documentation
+http://pandas.pydata.org/pandas-docs/stable/indexing.html#fast-scalar-value-getting-and-setting
+python - Loc vs. iloc vs. ix vs. at vs. iat? - Stack Overflow
+https://stackoverflow.com/questions/28757389/loc-vs-iloc-vs-ix-vs-at-vs-iat
+loc - label based
+iloc - position based
+at: get scalar values. It's a very fast loc
+iat: Get scalar values. It's a very fast iloc
+How to get scalar value of a panel with condition ?
+
+id = df.loc[a==b, 'id'].values[0]
+id = df[a==b]['id'].iat[0]
+pandas.Panel.iat — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Panel.iat.html?highlight=iat#pandas.Panel.iat
+Access a single value for a row/column pair by integer position.
+Similar to iloc, in that both provide integer-based lookups. Use iat if you only need to get or set a single value in a DataFrame or Series.
+python - How to get scalar value on a cell using conditional indexing - Stack Overflow
+https://stackoverflow.com/questions/30813088/how-to-get-scalar-value-on-a-cell-using-conditional-indexing
+get at the underlying numpy matrix using .values on a series or dataframe
+How to get count of rows in dataframe ?
+
+len( df )
+Built-in Functions — Python 3.7.2 documentation
+https://docs.python.org/3/library/functions.html#len
+Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
+pandas python how to count the number of records or rows in a dataframe - Stack Overflow
+https://stackoverflow.com/questions/17468878/pandas-python-how-to-count-the-number-of-records-or-rows-in-a-dataframe/41968240
+To get the number of rows in a dataframe use:
+df.shape[0]
+(and df.shape[1] to get the number of columns).
+As an alternative you can use
+len(df)
+or
+len(df.index)
+(and len(df.columns) for the columns)
+shape is more versatile and more convenient than len(), especially for interactive work (just needs to be added at the end), but len is a bit faster (see also this answer).
+To avoid: count() because it returns the number of non-NA/null observations over requested axis
+len(df.index) is faster
+How to create a new column with applying function on the existing columns ?
+
+df['new'] = df.apply(lambda x : myfunc(x['old']), axis='columns')
+pandas.DataFrame.apply — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.apply.html
+DataFrame.apply(func, axis=0, broadcast=None, raw=False, reduce=None, result_type=None, args=(), **kwds)
+Apply a function along an axis of the DataFrame.
+How to look up the first match element ?
+
+python - lookup first match in Pandas dataframe - Stack Overflow
+https://stackoverflow.com/questions/46371391/lookup-first-match-in-pandas-dataframe
+westcoast.loc[westcoast.state=='Oregon', 'capital'].item()
+s = westcoast.loc[westcoast.state=='Oregon', 'capital']
+s = np.nan if s.empty else s.iat[0]
+pandas.Series.item — pandas 0.23.1 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.item.html
+pandas.DataFrame.iat — pandas 0.23.1 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iat.html
+pandas.DataFrame.empty — pandas 0.23.1 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.empty.html?highlight=pandas%20dataframe%20empty#pandas-dataframe-empty
+How to find index where elements should be inserted to maintain order ?
+
+pandas.Series.searchsorted — pandas 0.23.3 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.searchsorted.html?highlight=searchsorted#pandas.Series.searchsorted
+Series.searchsorted(value, side='left', sorter=None)
+pandas.Index.searchsorted — pandas 0.23.3 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Index.searchsorted.html?highlight=searchsorted#pandas.Index.searchsorted
+Index.searchsorted(value, side='left', sorter=None)
+Essential Basic Functionality — pandas 0.23.3 documentation
+http://pandas.pydata.org/pandas-docs/stable/basics.html#searchsorted
+Cookbook — pandas 0.23.3 documentation
+http://pandas.pydata.org/pandas-docs/stable/cookbook.html?highlight=searchsorted#merge
+python - Pandas merge with logic - Stack Overflow
+https://stackoverflow.com/questions/25125626/pandas-merge-with-logic/2512764
+How to reset index ?
+
+pandas.DataFrame.reset_index — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reset_index.html
+DataFrame.reset_index(level=None, drop=False, inplace=False, col_level=0, col_fill='')
+drop : boolean, default False
+Do not try to insert index into dataframe columns. This resets the index to the default integer index.
+How to sort by values ?
+
+pandas.DataFrame.sort_values — pandas 0.23.1 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html
+DataFrame.sort_values(by, axis=0, ascending=True, inplace=False, kind='quicksort', na_position='last')
+How to group by ?
+
+Group By: split-apply-combine — pandas 0.23.0 documentation
+https://pandas.pydata.org/pandas-docs/stable/groupby.html
+pandas.DataFrame.groupby — pandas 0.23.0 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html?highlight=groupby#pandas.DataFrame.groupby
+DataFrame.groupby(by=None, axis=0, level=None, as_index=True, sort=True, group_keys=True, squeeze=False, observed=False, **kwargs)
+as_index : boolean, default True
+For aggregated output, return object with group labels as the index. Only relevant for DataFrame input. as_index=False is effectively “SQL-style” grouped output
+sort : boolean, default True
+Sort group keys. Get better performance by turning this off. Note this does not influence the order of observations within each group. groupby preserves the order of rows within each group.
+How to extract features by grouping columns ?
+
+df_mean = (df.groupby('id').col.mean().rename('mean_col'))
+19 Essential Snippets in Pandas - 16. Extracting Features by Grouping Columns
+https://jeffdelaney.me/blog/useful-snippets-in-pandas/
+df.groupby('topping')['discount'].apply(lambda x: np.mean(x))
+pandas.Series.rename — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.rename.html
+Series.rename(index=None, **kwargs)
+How to groupby and sum ?
+
+python - Pandas group-by and sum - Stack Overflow
+https://stackoverflow.com/questions/39922986/pandas-group-by-and-sum
+df.groupby(['Name']).sum()
+How to delete rows from dataframe permanently ?
+
+pandas.DataFrame.drop — pandas 0.23.1 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.drop.html#pandas.DataFrame.drop
+DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
+How to Delete a Row from a Pandas Dataframe Object in Python
+http://www.learningaboutelectronics.com/Articles/How-to-delete-a-row-from-a-pandas-dataframe-object-in-Python.php
+dataframe1.drop('D', inplace=True)
+How to drop columns with specified names / list ?
+
+cols = [c for c in df.columns if not c.startswith( ('col1', 'col2') ) ]
+cols = [c for c in df.columns if not any( f in c for f in list_f ) ]
+df = df[cols]
+pandas.DataFrame.rename — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.rename.html
+DataFrame.rename(mapper=None, index=None, columns=None, axis=None, copy=True, inplace=False, level=None)
+Built-in Types — Python 3.7.1 documentation - str.startswith(prefix[, start[, end]])
+https://docs.python.org/3/library/stdtypes.html#str.startswith
+Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
+python - Pandas dataframe: drop columns whose name contains a specific string - Stack Overflow
+https://stackoverflow.com/questions/19071199/pandas-dataframe-drop-columns-whose-name-contains-a-specific-string
+python - Check if multiple strings exist in another string - Stack Overflow
+https://stackoverflow.com/questions/3389574/check-if-multiple-strings-exist-in-another-string
+You can use any: if any(x in str for x in a):
+Similarly to check if all the strings from the list are found, use all instead of any.
+How to drop duplicates ?
+
+pandas.DataFrame.drop_duplicates — pandas 0.22.0 documentation
+https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.drop_duplicates.html
+DataFrame.drop_duplicates(subset=None, keep='first', inplace=False)
+grouped = grouped.drop_duplicates(['A', 'B'])
+Drop all duplicate rows in Python Pandas - Stack Overflow
+https://stackoverflow.com/questions/23667369/drop-all-duplicate-rows-in-python-pandas
+Note that it will drop all duplicates. So an issue will occur if you just want to drop consecutive duplicates.
+How to drop consecutive duplicates ?
+
+pandas.DataFrame.shift — pandas 0.22.0 documentation
+https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.shift.html?highlight=shift#pandas.DataFrame.shift
+DataFrame.shift(periods=1, freq=None, axis=0)
+python - Pandas: Drop consecutive duplicates - Stack Overflow
+https://stackoverflow.com/questions/19463985/pandas-drop-consecutive-duplicates
+a.loc[a.shift() != a]
+de_dup = a[cols].loc[(a[cols].shift() != a[cols]).any(axis=1)]
+How to shift column in dataframe ?
+
+python - Shift column in pandas dataframe up by one? - Stack Overflow
+https://stackoverflow.com/questions/20095673/shift-column-in-pandas-dataframe-up-by-one
+df.gdp = df.gdp.shift(-1)
+df[:-1]
+How to copy a dataframe ?
+
+pandas.DataFrame.copy — pandas 0.23.3 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.copy.html
+DataFrame.copy(deep=True)
+Make a copy of this object’s indices and data.
+When deep=True (default), a new object will be created with a copy of the calling object’s data and indices. Modifications to the data or indices of the copy will not be reflected in the original object (see notes below).
+When deep=False, a new object will be created without copying the calling object’s data or index (only references to the data and index are copied). Any changes to the data of the original will be reflected in the shallow copy (and vice versa).
+How to create / copy a dataframe without data ?
+
+df_others = pd.DataFrame(data=None, columns=df_source.columns, index=df_source.index)
+It preserves columns, index, and replace all data with NaN, but with object dtypes
+df_others = pd.DataFrame().reindex_like(df)
+It preserves columns, index, and replace all data with NaN, but with float64 dtypes
+df_others = df.copy()[:0]
+It preserves columns and dtypes, but without index and data
+python - Is there a way to copy only the structure (not the data) of a Pandas DataFrame? - Stack Overflow
+https://stackoverflow.com/questions/27467730/is-there-a-way-to-copy-only-the-structure-not-the-data-of-a-pandas-dataframe
+pandas.DataFrame — pandas 0.23.4 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame
+pandas.DataFrame.copy — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.copy.html
+pandas.DataFrame.reindex_like — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reindex_like.html
+Indexing and Selecting Data — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/indexing.html#slicing-ranges
+How to Concatenating a single Series into a string ?
+
+Working with Text Data — pandas 0.23.1 documentation
+http://pandas.pydata.org/pandas-docs/stable/text.html#concatenating-a-single-series-into-a-string
+How to concat dataframe without duplicates ?
+
+Pandas/Python: How to concatenate two dataframes without duplicates? - Stack Overflow
+https://stackoverflow.com/questions/21317384/pandas-python-how-to-concatenate-two-dataframes-without-duplicates
+pandas.concat([df1,df2]).drop_duplicates().reset_index(drop=True)
+Merge, join, and concatenate — pandas 0.23.1 documentation
+
+https://pandas.pydata.org/pandas-docs/stable/merging.html#merge-join-and-concatenate
+python - Pandas: join DataFrames on field with different names? - Stack Overflow
+https://stackoverflow.com/questions/25888207/pandas-join-dataframes-on-field-with-different-names
+pandas.merge(df1, df2, how='left', left_on=['id_key'], right_on=['fk_key'])
+pandas.DataFrame.merge — pandas 0.23.3 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html#pandas-dataframe-merge
+DataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
+how : {‘left’, ‘right’, ‘outer’, ‘inner’}, default ‘inner’
+left: use only keys from left frame, similar to a SQL left outer join; preserve key order
+right: use only keys from right frame, similar to a SQL right outer join; preserve key order
+outer: use union of keys from both frames, similar to a SQL full outer join; sort keys lexicographically
+inner: use intersection of keys from both frames, similar to a SQL inner join; preserve the order of the left keys
+sort : boolean, default False
+Sort the join keys lexicographically in the result DataFrame. If False, the order of the join keys depends on the join type (how keyword)
+pandas.concat — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.concat.html#pandas.concat
+pandas.concat(objs, axis=0, join='outer', join_axes=None, ignore_index=False, keys=None, levels=None, names=None, verify_integrity=False, sort=None, copy=True)
+How to merge two pandas.Series.unique() ?
+
+pandas.Series.unique — pandas 0.23.3 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.unique.html
+Return unique values of Series object.
+Returns: ndarray or Categorical
+The unique values returned as a NumPy array. In case of categorical data type, returned as a Categorical.
+numpy.append — NumPy v1.14 Manual
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.append.html
+Append values to the end of an array.
+np.append([1, 2, 3], [[4, 5, 6], [7, 8, 9]])
+How to work with missing data ?
+
+df['col'].fillna(pandas.Timestamp.min)
+cols = [c for c in df.columns if 'a' in c]
+df[cols] = df[cols].fillna( df[cols].mean() )
+Working with missing data — pandas 0.23.4 documentation
+http://pandas.pydata.org/pandas-docs/stable/missing_data.html?highlight=fill#working-with-missing-data
+pandas.DataFrame.fillna — pandas 0.23.4 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.fillna.html#pandas-dataframe-fillna
+DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None, **kwargs)
+pandas.Timestamp.min — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Timestamp.min.html
+Timestamp.min = Timestamp('1677-09-21 00:12:43.145225')
+How to convert series to list ?
+
+pandas.Series.tolist — pandas 0.23.1 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.tolist.html
+Dataframe information ?
+
+pandas.DataFrame.info — pandas 0.23.3 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html#pandas-dataframe-info
+DataFrame.info(verbose=None, buf=None, max_cols=None, memory_usage=None, null_counts=None)
+pandas.DataFrame.describe — pandas 0.23.3 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html#pandas.DataFrame.describe
+DataFrame.describe(percentiles=None, include=None, exclude=None)
+How to calculate time differences in seconds ?
+
+value = pd.to_datetime(end_timestamp) - pd.to_datetime(start_timestamp)).total_seconds()
+df['duration'] = (df['end_timestamp'] - df['start_timestamp']).dt.seconds
+Time Deltas — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/timedeltas.html#attributes
+Timedeltas are differences in times, expressed in difference units, e.g. days, hours, minutes, seconds. They can be both positive and negative.
+Timedelta is a subclass of datetime.timedelta, and behaves in a similar manner, but allows compatibility with np.timedelta64 types as well as a host of custom representation, parsing, and attributes.
+You can access various components of the Timedelta or TimedeltaIndex directly using the attributes days,seconds,microseconds,nanoseconds. These are identical to the values returned by datetime.timedelta, in that, for example, the .seconds attribute represents the number of seconds >= 0 and < 1 day. These are signed according to whether the Timedelta is signed.
+pandas.Timedelta.total_seconds — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Timedelta.total_seconds.html
+Total duration of timedelta in seconds (to ns precision)
+Time Series / Date functionality — pandas 0.23.4 documentation
+http://pandas.pydata.org/pandas-docs/stable/timeseries.html#
+python - Calculate Pandas DataFrame Time Difference Between Two Columns in Hours and Minutes - Stack Overflow
+https://stackoverflow.com/questions/22923775/calculate-pandas-dataframe-time-difference-between-two-columns-in-hours-and-minu
+.total_seconds()
+pandas.Series.dt.second — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.dt.second.html
+The seconds of the datetime
+How to calculate average value in the last minutes ?
+
+df.set_index(pd.DatetimeIndex(df['timestamp']), inplace=True)
+df['average'] = df_sub_speed['num'].rolling('5min').mean()
+df.reset_index(drop=True, inplace=True)
+pandas.DatetimeIndex — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DatetimeIndex.html
+pandas.DataFrame.set_index — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.set_index.html
+DataFrame.set_index(keys, drop=True, append=False, inplace=False, verify_integrity=False)
+Set the DataFrame index (row labels) using one or more existing columns. By default yields a new object.
+pandas.DataFrame.rolling — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.rolling.html
+DataFrame.rolling(window, min_periods=None, center=False, win_type=None, on=None, axis=0, closed=None)
+Provides rolling window calculations.
+window : int, or offset
+Size of the moving window. This is the number of observations used for calculating the statistic. Each window will be a fixed size.
+If its an offset then this will be the time period of each window. Each window will be a variable sized based on the observations included in the time-period. This is only valid for datetimelike indexes. This is new in 0.19.0
+pandas.Series.mean — pandas 0.23.4 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.mean.html#pandas-series-mean
+Series.mean(axis=None, skipna=None, level=None, numeric_only=None, **kwargs)
+Return the mean of the values for the requested axis
+python - Pandas Set DatetimeIndex - Stack Overflow
+https://stackoverflow.com/questions/17328655/pandas-set-datetimeindex
+How to read / write file with dataframe ?
+
+pandas.read_csv — pandas 0.23.4 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv
+Read CSV (comma-separated) file into DataFrame
+pandas.read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer', names=None, index_col=None, usecols=None, squeeze=False, prefix=None, mangle_dupe_cols=True, dtype=None, engine=None, converters=None, true_values=None, false_values=None, skipinitialspace=False, skiprows=None, nrows=None, na_values=None, keep_default_na=True, na_filter=True, verbose=False, skip_blank_lines=True, parse_dates=False, infer_datetime_format=False, keep_date_col=False, date_parser=None, dayfirst=False, iterator=False, chunksize=None, compression='infer', thousands=None, decimal=b'.', lineterminator=None, quotechar='"', quoting=0, escapechar=None, comment=None, encoding=None, dialect=None, tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True, skipfooter=0, doublequote=True, delim_whitespace=False, low_memory=True, memory_map=False, float_precision=None)
+pandas.DataFrame.to_csv — pandas 0.23.4 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html?highlight=to_csv#pandas.DataFrame.to_csv
+Write DataFrame to a comma-separated values (csv) file
+DataFrame.to_csv(path_or_buf=None, sep=', ', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression=None, quoting=None, quotechar='"', line_terminator='\n', chunksize=None, tupleize_cols=None, date_format=None, doublequote=True, escapechar=None, decimal='.')
+How to add pandas data to an existing csv file? - Stack Overflow
+https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
+with open(filename, 'a') as f:
+df.to_csv(f, header=False)
+How to stop appending a blank line in csv ?
+pandas.DataFrame.to_csv( line_terminator='\n' )
+pandas.DataFrame.to_csv — pandas 0.24.2 documentation
+http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html
+line_terminator : string, optional
+The newline character or character sequence to use in the output file. Defaults to os.linesep, which depends on the OS in which this method is called (‘n’ for linux, ‘rn’ for Windows, i.e.).
+ Changed in version 0.24.0.
+How to fix AssertionError: Number of manager items must equal union of block items ?
+
+It is caused by duplicated columns names in one dataframe, find it out and remove the duplicates.
+Pandas Python: Concatenate dataframes having same columns - Stack Overflow
+https://stackoverflow.com/questions/52204115/pandas-python-concatenate-dataframes-having-same-columns
+How to fix FutureWarning Passing list-likes to .loc or [] with any missing label will raise KeyError in the future, you can use .reindex() as an alternative ?
+
+a = df.loc[ new_index ]
+change loc[] to reindex(). a = df.reindex( new_index )
+Indexing and Selecting Data — pandas 0.23.4 documentation
+http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-with-list-with-missing-labels-is-deprecated
+pandas.DataFrame.reindex — pandas 0.23.4 documentation
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reindex.html?highlight=reindex#pandas-dataframe-reindex
+DataFrame.reindex(labels=None, index=None, columns=None, axis=None, method=None, copy=True, level=None, fill_value=nan, limit=None, tolerance=None)
+How to fix SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame. Try using .loc[row_indexer,col_indexer] = value instead ?
+
+a = df.loc[ new_index]
+a[ 'col1' ] = a[ 'col2' ]
+change a = df.loc[ new_index] to a = df.loc[ new_index].copy()
+Indexing and Selecting Data — pandas 0.23.4 documentation
+http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+python - How to deal with SettingWithCopyWarning in Pandas? - Stack Overflow
+https://stackoverflow.com/questions/20625582/how-to-deal-with-settingwithcopywarning-in-pandas
+If you explicitly copy then no further warning will happen
+.loc[...] = value returns SettingWithCopyWarning · Issue #17476 · pandas-dev/pandas · GitHub
+https://github.com/pandas-dev/pandas/issues/17476
+Pandas isn't 100% sure if you want to assign values to just your df_c slice, or have it propagate all the way back up to the original df. To avoid this when you first assign df_c make sure you tell pandas that it is its own data frame (and not a slice) by using .copy()
+How to fix TypeError: invalid type promotion when plot scatter with timestamp ?
+
+python - Pandas type error trying to plot - Stack Overflow
+https://stackoverflow.com/questions/33676608/pandas-type-error-trying-to-plot
+pandas.DataFrame.astype — pandas 0.22.0 documentation
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.astype.html
+How to fix TypeError: 'instancemethod' object has no attribute '__getitem__' ?
+
+a= df.reindex[ new_index ]
+change [] to (). a= df.reindex( new_index )
+You are using square brackets after an object that doesn't know what to do with the square brackets.
+How to fix TypeError: type object argument after * must be an iterable, not itertools.imap ?
+
+df.drop_duplicates(subset=['position_xy'], inplace=False)
+cast column from type list to tuple
+df['position_xy'] = df['position_xy'].apply(lambda x : tuple(x) if type(x) is list else x)
+python - Pandas drop_duplicates - TypeError: type object argument after * must be a sequence, not map - Stack Overflow
+https://stackoverflow.com/questions/37792999/pandas-drop-duplicates-typeerror-type-object-argument-after-must-be-a-seque
+it's because the list type isn't hashable and that's messing up the duplicated logic. As a workaround you could cast to tuple.
+How to fix ValueError: The truth value of a Series is ambiguous ?
+
+python - Truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all() - Stack Overflow
+https://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o
+The or and and python statements require truth-values. For pandas these are considered ambiguous so you should use "bitwise" | (or) or & (and) operations
+How to fix ValueError: ('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().', u'occurred at index 0') ?
+
+Problem
+cols = [c for c in df.columns if not c.startswith(('a'))]
+df[cols] = df[cols].apply( lambda x : 0 if x < 1e-10 else x, axis=1 )
+It is because list comprehesion is not applicable with Dataframe object.
+Solution 1
+for c in df.columns:
+if not c.startswith(('a')):
+df[c] = df[c].apply( lambda x : 0 if x < 1e-10 else x )
+Solution 2
+df1 = df[cols].copy()
+df1[df1 < 1e-10] = 0
+df[cols] = df1[cols].copy()
+5 ways to apply an IF condition in pandas DataFrame - Data to Fish
+https://datatofish.com/if-condition-in-pandas-dataframe/
+python - Applying a conditional statement to all value of a dataframe - Stack Overflow
+https://stackoverflow.com/questions/43377868/applying-a-conditional-statement-to-all-value-of-a-dataframe
+df[df<3]=0
+How to fix ValueError: can not merge DataFrame with instance of type <class 'pandas.core.series.Series'> ?
+
+df_mean = df.groupby('id').col.mean().rename('mean_col')
+df_min = df.groupby('id').col.min().rename('min_col')
+df_result = pd.concat([df_mean, df_min], axis=1).reset_index()
+python - Merging two DataFrames - Stack Overflow
+https://stackoverflow.com/questions/37968785/merging-two-dataframes
+df1.merge(df2.to_frame(), left_on='id', right_index=True)
+python - Combining two Series into a DataFrame in pandas - Stack Overflow
+https://stackoverflow.com/questions/18062135/combining-two-series-into-a-dataframe-in-pandas
+pd.concat([s1, s2], axis=1).reset_index()
+
 ## FAQ
 
 * What's package and module ?
