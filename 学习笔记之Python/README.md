@@ -3402,12 +3402,12 @@ predicted_values = model.predict(x_test)
 		* angle = np.arctan2(vy, vx) * 180 / np.pi
 * How to use conditional statement on array ?
 	* [(Python) How to use conditional statements on every element of array using [:] syntax? - Stack Overflow](https://stackoverflow.com/questions/45848612/python-how-to-use-conditional-statements-on-every-element-of-array-using-s))
-```python
-all(i == 0 for i in a)
-a[a > 1] = 1
-map(lambda x: 1 if x==0 else x, a)
-a = np.where(a == 0, 1, a)
-```
+	```python
+	all(i == 0 for i in a)
+	a[a > 1] = 1
+	map(lambda x: 1 if x==0 else x, a)
+	a = np.where(a == 0, 1, a)
+	```
 	* [python - Function of Numpy Array with if-statement - Stack Overflow](https://stackoverflow.com/questions/8036878/function-of-numpy-array-with-if-statement)
 		* vfunc = vectorize(func)
 	* [numpy.array — NumPy v1.15 Manual](https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html?highlight=array#numpy.array)
@@ -3435,11 +3435,11 @@ a = np.where(a == 0, 1, a)
 		* [numpy.nan](https://docs.scipy.org/doc/numpy-1.15.1/reference/constants.html?highlight=numpy%20nan#numpy.nan)
 * How to compare list of numpy arrays ?
 	* [How to compare list of arrays in python? - Stack Overflow](https://stackoverflow.com/questions/30773670/how-to-compare-list-of-arrays-in-python)
-```python
-a = [np.array([1, 2, 3]), np.array([1, 2, 3])]
-b = [np.array([1, 2, 3]), np.array([1, 2, 3])]
-all([np.allclose(x, y) for x, y in zip(a, b)]) #True
-```
+	```python
+	a = [np.array([1, 2, 3]), np.array([1, 2, 3])]
+	b = [np.array([1, 2, 3]), np.array([1, 2, 3])]
+	all([np.allclose(x, y) for x, y in zip(a, b)]) #True
+	```
 	* [numpy.all — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/generated/numpy.all.html)
 		* numpy.all(a, axis=None, out=None, keepdims=</no value>, *, where=</no value>)
 		* Test whether all array elements along a given axis evaluate to True.
@@ -3447,10 +3447,10 @@ all([np.allclose(x, y) for x, y in zip(a, b)]) #True
 		* numpy.allclose(a, b, rtol=1e-05, atol=1e-08, equal_nan=False)
 		* Returns True if two arrays are element-wise equal within a tolerance.
 * How to collapse array into one dimension ?
-```python
-a.reshape(-1)
-a.flatten()
-```
+	```python
+	a.reshape(-1)
+	a.flatten()
+	```
 	* [numpy.reshape — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/generated/numpy.reshape.html)
 	* [numpy.ndarray.flatten — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html)
 
