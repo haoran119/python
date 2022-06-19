@@ -3319,6 +3319,141 @@ predicted_values = model.predict(x_test)
   * pyyaml：Python操作YAML文件的库；
   * tracebak：详细追踪错误信息的库。
 
+### [NumPy](http://www.numpy.org/)
+
+* NumPy is the fundamental package for scientific computing with Python.
+* [Test Support (numpy.testing) — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/routines.testing.html)
+* [NumPy - Wikipedia](https://en.wikipedia.org/wiki/NumPy)
+	* NumPy (pronounced /ˈnʌmpaɪ/ (NUM-py) or sometimes /ˈnʌmpi/[1][2] (NUM-pee)) is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays. The ancestor of NumPy, Numeric, was originally created by Jim Hugunin with contributions from several other developers. In 2005, Travis Oliphant created NumPy by incorporating features of the competing Numarray into Numeric, with extensive modifications. NumPy is open-source software and has many contributors.
+* [NumPy - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/NumPy)
+	* NumPy是Python语言的一个扩充程序库。支持高阶大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。NumPy的前身Numeric最早是由Jim Hugunin与其它协作者共同开发，2005年，Travis Oliphant在Numeric中结合了另一个同性质的程序库Numarray的特色，并加入了其它扩展而开发了NumPy。NumPy为开放源代码并且由许多协作者共同维护开发。
+* [Numpy详细教程](https://mp.weixin.qq.com/s/MtwGkIhHvcaU-vmC89FfGA)
+	* NumPy 是一个 Python 包。 它代表 “Numeric Python”。 它是一个由多维数组对象和用于处理数组的例程集合组成的库。
+	* Numeric，即 NumPy 的前身，是由 Jim Hugunin 开发的。 也开发了另一个包 Numarray ，它拥有一些额外的功能。 2005年，Travis Oliphant 通过将 Numarray 的功能集成到 Numeric 包中来创建 NumPy 包。 这个开源项目有很多贡献者。
+	* Numpy基础
+		* 创建数组
+		* 打印数组
+		* 基本运算
+		* 通用函数(ufunc)
+		* 索引，切片和迭代
+		* 形状操作
+		* 组合(stack)不同的数组
+		* 将一个数组分割(split)成几个小数组
+		* 视图(view)和浅复制
+		* 深复制
+		* 函数和方法(method)总览
+	* 进阶
+		* 广播法则(rule)
+		* 花哨的索引和索引技巧
+		* 通过数组索引
+		* 通过布尔数组索引
+		* ix_()函数
+		* 线性代数
+		* 矩阵类
+		* 索引：比较矩阵和二维数组
+	* 技巧和提示
+		* 向量组合(stacking)
+		* 直方图(histogram)
+* 盘一盘 Python 系列 2 - NumPy
+	* https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247486527&idx=1&sn=6364869cab8d474943a211bd54a828c6&chksm=e8908f36dfe706206fc51c5dd35b9bad6d34f2ce4b4fcf9c188edcb48d093bbf236578342263&scene=21#wechat_redirect
+	* https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247486547&idx=1&sn=b3e8816663938f55df8603990c5d42db&chksm=e8908f5adfe7064c8500716ac77e5579077ef186ce9721110cc06c26b11ba7a10b65ea82862a&scene=21#wechat_redirect
+* [图解NumPy](https://mp.weixin.qq.com/s/62dmLB-PaVpxregSv7bwTA)
+* [NumPy能力大评估：这里有70道测试题](https://mp.weixin.qq.com/s/yKC1_58NP2eMf6gtU6gyrw)
+	* https://www.machinelearningplus.com/python/101-numpy-exercises-python/
+* [Numpy多维数组基础及运算详解](https://mp.weixin.qq.com/s/iS33g_li_s2kLNqGxS4elg)
+* [5个高效&简洁的Numpy函数](https://mp.weixin.qq.com/s/0zxsG0KJqYTMBGRZkz1yMQ)
+	* https://towardsdatascience.com/5-smart-python-numpy-functions-dfd1072d2cb4
+* [CuPy | 教你一招将Numpy加速700倍？](https://mp.weixin.qq.com/s/lWqJwgWqDoyFsOCkeek8ew)
+	* https://towardsdatascience.com/heres-how-to-use-cupy-to-make-numpy-700x-faster-4b920dda1f56
+* [快速掌握TensorFlow中张量运算的广播机制](https://mp.weixin.qq.com/s/89DlydoGoiq6x_sFDRfXyA)
+* [12 个 Numpy 和 Pandas 函数，提高效率](https://mp.weixin.qq.com/s/kUzvvYcw8qK80R-ASWsIpQ)
+	* [12 Amazing Pandas & NumPy Functions | by Kunal Dhariwal | Towards Data Science](https://towardsdatascience.com/12-amazing-pandas-numpy-functions-22e5671a45b8)
+	* https://github.com/kunaldhariwal/12-Amazing-Pandas-NumPy-Functions
+	* Numpy 的 6 种高效函数
+		* argpartition()
+		* allclose()
+		* clip()
+		* extract()
+		* where()
+		* percentile()
+	* Pandas 数据统计包的 6 种高效函数
+		* read_csv(nrows=n)
+		* map()
+		* apply()
+		* isin()
+		* copy()
+		* select_dtypes()
+
+#### FAQ
+
+* How to calculate distance between two points ?
+	* dist = numpy.linalg.norm(a-b)
+	* [python - How can the euclidean distance be calculated with numpy? - Stack Overflow](https://stackoverflow.com/questions/1401712/how-can-the-euclidean-distance-be-calculated-with-numpy)
+	* [numpy.linalg.norm — NumPy v1.9 Manual](https://docs.scipy.org/doc/numpy-1.9.3/reference/generated/numpy.linalg.norm.html)
+* How to calculate angle from velocity ?
+	* [2d - Calculating the angular direction from velocity - Game Development Stack Exchange](https://gamedev.stackexchange.com/questions/17340/calculating-the-angular-direction-from-velocity)
+		* angle = atan2 (vy,vx)
+	* [Radian - Wikipedia](https://en.wikipedia.org/wiki/Radian)
+		* The radian (SI symbol rad) is the SI unit for measuring angles, and is the standard unit of angular measure used in many areas of mathematics. The length of an arc of a unit circle is numerically equal to the measurement in radians of the angle that it subtends; one radian is just under 57.3 degrees (expansion at OEIS A072097). The unit was formerly an SI supplementary unit, but this category was abolished in 1995 and the radian is now considered an SI derived unit.
+	* [numpy.arctan2 — NumPy v1.15 Manual](https://docs.scipy.org/doc/numpy/reference/generated/numpy.arctan2.html#numpy.arctan2)
+		* Element-wise arc tangent of x1/x2 choosing the quadrant correctly.
+		* The quadrant (i.e., branch) is chosen so that arctan2(x1, x2) is the signed angle in radians between the ray ending at the origin and passing through the point (1,0), and the ray ending at the origin and passing through the point (x2, x1). (Note the role reversal: the “y-coordinate” is the first function parameter, the “x-coordinate” is the second.) By IEEE convention, this function is defined for x2 = +/-0 and for either or both of x1 and x2 = +/-inf (see Notes for specific values).
+		* This function is not defined for complex-valued arguments; for the so-called argument of complex values, use angle.
+		* angle = np.arctan2(vy, vx) * 180 / np.pi
+* How to use conditional statement on array ?
+	* [(Python) How to use conditional statements on every element of array using [:] syntax? - Stack Overflow](https://stackoverflow.com/questions/45848612/python-how-to-use-conditional-statements-on-every-element-of-array-using-s))
+```python
+all(i == 0 for i in a)
+a[a > 1] = 1
+map(lambda x: 1 if x==0 else x, a)
+a = np.where(a == 0, 1, a)
+```
+	* [python - Function of Numpy Array with if-statement - Stack Overflow](https://stackoverflow.com/questions/8036878/function-of-numpy-array-with-if-statement)
+		* vfunc = vectorize(func)
+	* [numpy.array — NumPy v1.15 Manual](https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html?highlight=array#numpy.array)
+		* numpy.array(object, dtype=None, copy=True, order='K', subok=False, ndmin=0)
+	* [numpy.where — NumPy v1.15 Manual](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html?highlight=numpy%20where#numpy.where)
+		* Return elements, either from x or y, depending on condition.
+		* If only condition is given, return condition.nonzero().
+	* [numpy.vectorize — NumPy v1.15 Manual](https://docs.scipy.org/doc/numpy/reference/generated/numpy.vectorize.html)
+		* class numpy.vectorize(pyfunc, otypes=None, doc=None, excluded=None, cache=False, signature=None)
+		* Define a vectorized function which takes a nested sequence of objects or numpy arrays as inputs and returns an single or tuple of numpy array as output. The vectorized function evaluates pyfunc over successive tuples of the input arrays like the python map function, except it uses the broadcasting rules of numpy.
+		* The data type of the output of vectorized is determined by calling the function with the first element of the input. This can be avoided by specifying the otypes argument.
+* How to convert array into string ?
+	* [numpy.array_str — NumPy v1.9 Manual](http://memobio2015.u-strasbg.fr/conference/FICHIERS/Documentation/doc-numpy-html/reference/generated/numpy.array_str.html)
+* How to compare ?
+	* [numpy.maximum — NumPy v1.15 Manual](https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.maximum.html)
+		* numpy.maximum(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj]) = <ufunc 'maximum'>
+	* [numpy.minimum — NumPy v1.15 Manual](https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.minimum.html)
+		* numpy.minimum(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj]) = <ufunc 'minimum'>
+	* [numpy.nanmax — NumPy v1.15 Manual](https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.nanmax.html)
+		* numpy.nanmax(a, axis=None, out=None, keepdims=</no value>)
+	* [numpy.nanmin — NumPy v1.15 Manual](https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.nanmin.html)
+		* numpy.nanmin(a, axis=None, out=None, keepdims=</no value>)
+	* Constants — NumPy v1.15 Manual
+		* [numpy.inf](https://docs.scipy.org/doc/numpy-1.15.1/reference/constants.html?highlight=numpy%20nan#numpy.inf)
+		* [numpy.nan](https://docs.scipy.org/doc/numpy-1.15.1/reference/constants.html?highlight=numpy%20nan#numpy.nan)
+* How to compare list of numpy arrays ?
+	* [How to compare list of arrays in python? - Stack Overflow](https://stackoverflow.com/questions/30773670/how-to-compare-list-of-arrays-in-python)
+```python
+a = [np.array([1, 2, 3]), np.array([1, 2, 3])]
+b = [np.array([1, 2, 3]), np.array([1, 2, 3])]
+all([np.allclose(x, y) for x, y in zip(a, b)]) #True
+```
+	* [numpy.all — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/generated/numpy.all.html)
+		* numpy.all(a, axis=None, out=None, keepdims=</no value>, *, where=</no value>)
+		* Test whether all array elements along a given axis evaluate to True.
+	* [numpy.allclose — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/generated/numpy.allclose.html)
+		* numpy.allclose(a, b, rtol=1e-05, atol=1e-08, equal_nan=False)
+		* Returns True if two arrays are element-wise equal within a tolerance.
+* How to collapse array into one dimension ?
+```python
+a.reshape(-1)
+a.flatten()
+```
+	* [numpy.reshape — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/generated/numpy.reshape.html)
+	* [numpy.ndarray.flatten — NumPy v1.20 Manual](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html)
+
 ## FAQ
 
 * What's package and module ?
