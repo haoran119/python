@@ -3286,7 +3286,7 @@ predicted_values = model.predict(x_test)
 * [用 Python 实现黑客帝国中的数字雨落既视感](https://mp.weixin.qq.com/s/95MKJwOzPcJCb_4Sn7RqBA)
   * 代码的实现还是比较简单，基本就是使用 pygame 库创建窗口，再定义数字的生成并让其不断的在窗口上面显示
 
-## Third Party Libraries
+## THIRD PARTY LIBRARIES
 
 * [Python算法实现资源汇总](https://mp.weixin.qq.com/s/1ODoGvRXQ0quk58rVPj4yQ)
   * https://github.com/TheAlgorithms/Python
