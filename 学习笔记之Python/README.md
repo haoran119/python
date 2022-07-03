@@ -3286,6 +3286,96 @@ predicted_values = model.predict(x_test)
 * [用 Python 实现黑客帝国中的数字雨落既视感](https://mp.weixin.qq.com/s/95MKJwOzPcJCb_4Sn7RqBA)
   * 代码的实现还是比较简单，基本就是使用 pygame 库创建窗口，再定义数字的生成并让其不断的在窗口上面显示
 
+## FAQ
+
+* What's package and module ?
+  * Python 提供了一个办法，把这些定义存放在文件中，为一些脚本或者交互式的解释器实例使用，这个文件被称为模块。模块是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用 python 标准库的方法。
+  * 包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。在导入一个包的时候，Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录。目录只有包含一个叫做 \_\_init\_\_.py 的文件才会被认作是一个包，主要是为了避免一些滥俗的名字（比如叫做 string）不小心的影响搜索路径中的有效模块。
+* How to install and update python ?
+	* [How to Install Updated Python 3 on Mac](https://osxdaily.com/2018/06/13/how-install-update-python-3x-mac/)
+	* [Download Python | Python.org](https://www.python.org/downloads/)
+* How to set pip install package index ?
+  * Edit ~/.pip/pip.conf to set index-url / extra-index-url
+  * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
+
+### ERROR FIX
+
+* How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
+  * Check the indentation for other class member functions prior to plot_all()
+* How to fix "Invalid syntax" when using python3 feature typing?
+	* add below on the top to specify the env python3
+```python
+#!/usr/bin/env python3
+```
+* How to fix memory error when slicing list ?
+  * One possibility is to use generator
+  * [python - string[i:length] giving memory error - Stack Overflow](https://stackoverflow.com/questions/11471158/stringilength-giving-memory-error)
+  * [exception MemoryError - Built-in Exceptions — Python 3.9.7 documentation](https://docs.python.org/3/library/exceptions.html?highlight=memory%20error#MemoryError)
+  ```python
+  import sys
+
+
+  class Solution:
+      def slicing(self, x : int) -> list:
+          inputs = [10**9] * 10**6
+          results = []
+
+          for i in range(len(inputs) - x):
+              results.append(inputs[i : i + x])   # memory error
+
+          # print(results)
+          print(len(results))
+          print(sys.getsizeof(results[0]))
+          print(sys.getsizeof(results))
+
+
+  if __name__ == '__main__':
+      my_solution = Solution()
+
+      for i in range(5):
+          my_solution.slicing(i)  
+  ```
+* How to fix ModuleNotFoundError: No module named 'a.b' when from a.b.c import d ?
+  * For python2, check if there is /_/_init.py/_/_ under /a
+  * Or
+  * [python - Relative imports - ModuleNotFoundError: No module named x - Stack Overflow](https://stackoverflow.com/questions/43728431/relative-imports-modulenotfounderror-no-module-named-x)
+  * [ModuleNotFoundError: No module named x | Towards Data Science](https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c)
+  * first make sure you are using absolute imports
+  * export the project’s root directory to PYTHONPATH
+```sh
+export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
+```
+* How to fix NameError: name 'var' is not defined when define var in try statement and use it in catch / finally statement ?
+  * Declare the var before try statement with var = None
+  * python - Using a variable in a try,catch,finally statement without declaring it outside - Stack Overflow
+    * https://stackoverflow.com/questions/17195569/using-a-variable-in-a-try-catch-finally-statement-without-declaring-it-outside
+  * python - How to make a variable inside a try/except block public? - Stack Overflow
+    * https://stackoverflow.com/questions/25666853/how-to-make-a-variable-inside-a-try-except-block-public
+* How to fix sqlite3.OperationalError: database is locked ?
+  * SQLite is lightweight database and need to use, e.g. PostgrsSQL, for large number of connections. If the cache db file is in locked even if with one job, use the below cmds to recover it.
+  * sqlite3 — DB-API 2.0 interface for SQLite databases — Python 3.7.4 documentation
+    * https://docs.python.org/3.7/library/sqlite3.html
+    * SQLite is a C library that provides a lightweight disk-based database that doesn’t require a separate server process and allows accessing the database using a nonstandard variant of the SQL query language. Some applications can use SQLite for internal data storage. It’s also possible to prototype an application using SQLite and then port the code to a larger database such as PostgreSQL or Oracle.
+  * SQLite Frequently Asked Questions
+    * https://www.sqlite.org/faq.html
+  * Python SQLite: database is locked - Stack Overflow
+    * https://stackoverflow.com/questions/2740806/python-sqlite-database-is-locked
+    * $ fuser cache.db
+    * $ mv cache.db-journal _cache.db-journal
+    * $ sqlite3 cache.db "pragma integrity_check;"
+      * ok
+    * $ sqlite3 cache.db ".backup cache.db.bak"
+    * $ rm cache.db
+    * $ sqlite3 cache.db.bak ".schema"
+* How to fix TypeError: slice indices must be integers or None or have an __index__ method ?
+  * b = ['a', 'aa', 'aaa', 'b', 'c']
+  * d = [c for c in b if c.startswith( 'a', 'b' )]
+  * It's due to lack of parenthese. Change to 
+  * d = [c for c in b if c.startswith( ('a', 'b') )]
+* How to fix TypeError: 'int' object does not support indexing ?
+  * [python - TypeError: 'int' object does not support indexing - Stack Overflow](https://stackoverflow.com/questions/18345825/typeerror-int-object-does-not-support-indexing)
+  * You should pass query parameters to execute() as a tuple (an iterable, strictly speaking), (some_id,) instead of some_id
+
 ## THIRD PARTY LIBRARIES
 
 * [Python算法实现资源汇总](https://mp.weixin.qq.com/s/1ODoGvRXQ0quk58rVPj4yQ)
@@ -4044,93 +4134,3 @@ df_mean = df.groupby('id').col.mean().rename('mean_col')
 df_min = df.groupby('id').col.min().rename('min_col')
 df_result = pd.concat([df_mean, df_min], axis=1).reset_index()
 ```
-
-## FAQ
-
-* What's package and module ?
-  * Python 提供了一个办法，把这些定义存放在文件中，为一些脚本或者交互式的解释器实例使用，这个文件被称为模块。模块是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用 python 标准库的方法。
-  * 包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。在导入一个包的时候，Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录。目录只有包含一个叫做 \_\_init\_\_.py 的文件才会被认作是一个包，主要是为了避免一些滥俗的名字（比如叫做 string）不小心的影响搜索路径中的有效模块。
-* How to install and update python ?
-	* [How to Install Updated Python 3 on Mac](https://osxdaily.com/2018/06/13/how-install-update-python-3x-mac/)
-	* [Download Python | Python.org](https://www.python.org/downloads/)
-* How to set pip install package index ?
-  * Edit ~/.pip/pip.conf to set index-url / extra-index-url
-  * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
-
-### ERROR FIX
-
-* How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
-  * Check the indentation for other class member functions prior to plot_all()
-* How to fix "Invalid syntax" when using python3 feature typing?
-	* add below on the top to specify the env python3
-```python
-#!/usr/bin/env python3
-```
-* How to fix memory error when slicing list ?
-  * One possibility is to use generator
-  * [python - string[i:length] giving memory error - Stack Overflow](https://stackoverflow.com/questions/11471158/stringilength-giving-memory-error)
-  * [exception MemoryError - Built-in Exceptions — Python 3.9.7 documentation](https://docs.python.org/3/library/exceptions.html?highlight=memory%20error#MemoryError)
-  ```python
-  import sys
-
-
-  class Solution:
-      def slicing(self, x : int) -> list:
-          inputs = [10**9] * 10**6
-          results = []
-
-          for i in range(len(inputs) - x):
-              results.append(inputs[i : i + x])   # memory error
-
-          # print(results)
-          print(len(results))
-          print(sys.getsizeof(results[0]))
-          print(sys.getsizeof(results))
-
-
-  if __name__ == '__main__':
-      my_solution = Solution()
-
-      for i in range(5):
-          my_solution.slicing(i)  
-  ```
-* How to fix ModuleNotFoundError: No module named 'a.b' when from a.b.c import d ?
-  * For python2, check if there is /_/_init.py/_/_ under /a
-  * Or
-  * [python - Relative imports - ModuleNotFoundError: No module named x - Stack Overflow](https://stackoverflow.com/questions/43728431/relative-imports-modulenotfounderror-no-module-named-x)
-  * [ModuleNotFoundError: No module named x | Towards Data Science](https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c)
-  * first make sure you are using absolute imports
-  * export the project’s root directory to PYTHONPATH
-```sh
-export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
-```
-* How to fix NameError: name 'var' is not defined when define var in try statement and use it in catch / finally statement ?
-  * Declare the var before try statement with var = None
-  * python - Using a variable in a try,catch,finally statement without declaring it outside - Stack Overflow
-    * https://stackoverflow.com/questions/17195569/using-a-variable-in-a-try-catch-finally-statement-without-declaring-it-outside
-  * python - How to make a variable inside a try/except block public? - Stack Overflow
-    * https://stackoverflow.com/questions/25666853/how-to-make-a-variable-inside-a-try-except-block-public
-* How to fix sqlite3.OperationalError: database is locked ?
-  * SQLite is lightweight database and need to use, e.g. PostgrsSQL, for large number of connections. If the cache db file is in locked even if with one job, use the below cmds to recover it.
-  * sqlite3 — DB-API 2.0 interface for SQLite databases — Python 3.7.4 documentation
-    * https://docs.python.org/3.7/library/sqlite3.html
-    * SQLite is a C library that provides a lightweight disk-based database that doesn’t require a separate server process and allows accessing the database using a nonstandard variant of the SQL query language. Some applications can use SQLite for internal data storage. It’s also possible to prototype an application using SQLite and then port the code to a larger database such as PostgreSQL or Oracle.
-  * SQLite Frequently Asked Questions
-    * https://www.sqlite.org/faq.html
-  * Python SQLite: database is locked - Stack Overflow
-    * https://stackoverflow.com/questions/2740806/python-sqlite-database-is-locked
-    * $ fuser cache.db
-    * $ mv cache.db-journal _cache.db-journal
-    * $ sqlite3 cache.db "pragma integrity_check;"
-      * ok
-    * $ sqlite3 cache.db ".backup cache.db.bak"
-    * $ rm cache.db
-    * $ sqlite3 cache.db.bak ".schema"
-* How to fix TypeError: slice indices must be integers or None or have an __index__ method ?
-  * b = ['a', 'aa', 'aaa', 'b', 'c']
-  * d = [c for c in b if c.startswith( 'a', 'b' )]
-  * It's due to lack of parenthese. Change to 
-  * d = [c for c in b if c.startswith( ('a', 'b') )]
-* How to fix TypeError: 'int' object does not support indexing ?
-  * [python - TypeError: 'int' object does not support indexing - Stack Overflow](https://stackoverflow.com/questions/18345825/typeerror-int-object-does-not-support-indexing)
-  * You should pass query parameters to execute() as a tuple (an iterable, strictly speaking), (some_id,) instead of some_id
