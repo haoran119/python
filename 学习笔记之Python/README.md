@@ -3605,7 +3605,8 @@ df.dropna().empty
 	* Indexing and Selecting Data — pandas 0.23.1 documentation
 		* http://pandas.pydata.org/pandas-docs/stable/indexing.html#different-choices-for-indexing
 ```python
-# Slice with labels for row and single label for column. As mentioned above, note that both the start and stop of the slice are included.
+# Slice with labels for row and single label for column. 
+# As mentioned above, note that both the start and stop of the slice are included.
 df.loc['cobra':'viper', 'max_speed']
 ```
 * How to get a specific column as series / dataframe ?
@@ -3890,150 +3891,163 @@ df[cols] = df[cols].fillna( df[cols].mean() )
 		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html#pandas.DataFrame.describe
 		* `DataFrame.describe(percentiles=None, include=None, exclude=None)`
 * How to calculate time differences in seconds ?
+	* Time Deltas — pandas 0.23.4 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/timedeltas.html#attributes
+		* Timedeltas are differences in times, expressed in difference units, e.g. days, hours, minutes, seconds. They can be both positive and negative.
+		* Timedelta is a subclass of datetime.timedelta, and behaves in a similar manner, but allows compatibility with np.timedelta64 types as well as a host of custom representation, parsing, and attributes.
+		* You can access various components of the Timedelta or TimedeltaIndex directly using the attributes days,seconds,microseconds,nanoseconds. These are identical to the values returned by datetime.timedelta, in that, for example, the .seconds attribute represents the number of seconds >= 0 and < 1 day. These are signed according to whether the Timedelta is signed.
+	* pandas.Timedelta.total_seconds — pandas 0.23.4 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Timedelta.total_seconds.html
+		* Total duration of timedelta in seconds (to ns precision)
+	* Time Series / Date functionality — pandas 0.23.4 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/timeseries.html#
+	* python - Calculate Pandas DataFrame Time Difference Between Two Columns in Hours and Minutes - Stack Overflow
+		* https://stackoverflow.com/questions/22923775/calculate-pandas-dataframe-time-difference-between-two-columns-in-hours-and-minu
+		* `.total_seconds()`
+	* pandas.Series.dt.second — pandas 0.23.4 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.dt.second.html
+		* The seconds of the datetime
+```python
 value = pd.to_datetime(end_timestamp) - pd.to_datetime(start_timestamp)).total_seconds()
 df['duration'] = (df['end_timestamp'] - df['start_timestamp']).dt.seconds
-Time Deltas — pandas 0.23.4 documentation
-https://pandas.pydata.org/pandas-docs/stable/timedeltas.html#attributes
-Timedeltas are differences in times, expressed in difference units, e.g. days, hours, minutes, seconds. They can be both positive and negative.
-Timedelta is a subclass of datetime.timedelta, and behaves in a similar manner, but allows compatibility with np.timedelta64 types as well as a host of custom representation, parsing, and attributes.
-You can access various components of the Timedelta or TimedeltaIndex directly using the attributes days,seconds,microseconds,nanoseconds. These are identical to the values returned by datetime.timedelta, in that, for example, the .seconds attribute represents the number of seconds >= 0 and < 1 day. These are signed according to whether the Timedelta is signed.
-pandas.Timedelta.total_seconds — pandas 0.23.4 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Timedelta.total_seconds.html
-Total duration of timedelta in seconds (to ns precision)
-Time Series / Date functionality — pandas 0.23.4 documentation
-http://pandas.pydata.org/pandas-docs/stable/timeseries.html#
-python - Calculate Pandas DataFrame Time Difference Between Two Columns in Hours and Minutes - Stack Overflow
-https://stackoverflow.com/questions/22923775/calculate-pandas-dataframe-time-difference-between-two-columns-in-hours-and-minu
-.total_seconds()
-pandas.Series.dt.second — pandas 0.23.4 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.dt.second.html
-The seconds of the datetime
-How to calculate average value in the last minutes ?
-
+```
+* How to calculate average value in the last minutes ?
+	* pandas.DatetimeIndex — pandas 0.23.4 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DatetimeIndex.html
+	* pandas.DataFrame.set_index — pandas 0.23.4 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.set_index.html
+		* `DataFrame.set_index(keys, drop=True, append=False, inplace=False, verify_integrity=False)`
+		* Set the DataFrame index (row labels) using one or more existing columns. By default yields a new object.
+	* pandas.DataFrame.rolling — pandas 0.23.4 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.rolling.html
+		* `DataFrame.rolling(window, min_periods=None, center=False, win_type=None, on=None, axis=0, closed=None)`
+		* Provides rolling window calculations.
+		* window : int, or offset
+			* Size of the moving window. This is the number of observations used for calculating the statistic. Each window will be a fixed size.
+			* If its an offset then this will be the time period of each window. Each window will be a variable sized based on the observations included in the time-period. This is only valid for datetimelike indexes. This is new in 0.19.0
+	* pandas.Series.mean — pandas 0.23.4 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.mean.html#pandas-series-mean
+		* `Series.mean(axis=None, skipna=None, level=None, numeric_only=None, **kwargs)`
+		* Return the mean of the values for the requested axis
+	* python - Pandas Set DatetimeIndex - Stack Overflow
+		* https://stackoverflow.com/questions/17328655/pandas-set-datetimeindex
+```python
 df.set_index(pd.DatetimeIndex(df['timestamp']), inplace=True)
 df['average'] = df_sub_speed['num'].rolling('5min').mean()
 df.reset_index(drop=True, inplace=True)
-pandas.DatetimeIndex — pandas 0.23.4 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DatetimeIndex.html
-pandas.DataFrame.set_index — pandas 0.23.4 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.set_index.html
-DataFrame.set_index(keys, drop=True, append=False, inplace=False, verify_integrity=False)
-Set the DataFrame index (row labels) using one or more existing columns. By default yields a new object.
-pandas.DataFrame.rolling — pandas 0.23.4 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.rolling.html
-DataFrame.rolling(window, min_periods=None, center=False, win_type=None, on=None, axis=0, closed=None)
-Provides rolling window calculations.
-window : int, or offset
-Size of the moving window. This is the number of observations used for calculating the statistic. Each window will be a fixed size.
-If its an offset then this will be the time period of each window. Each window will be a variable sized based on the observations included in the time-period. This is only valid for datetimelike indexes. This is new in 0.19.0
-pandas.Series.mean — pandas 0.23.4 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.mean.html#pandas-series-mean
-Series.mean(axis=None, skipna=None, level=None, numeric_only=None, **kwargs)
-Return the mean of the values for the requested axis
-python - Pandas Set DatetimeIndex - Stack Overflow
-https://stackoverflow.com/questions/17328655/pandas-set-datetimeindex
-How to read / write file with dataframe ?
+```
+* How to read / write file with dataframe ?
+	* pandas.read_csv — pandas 0.23.4 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv
+		* Read CSV (comma-separated) file into DataFrame
+		* `pandas.read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer', names=None, index_col=None, usecols=None, squeeze=False, prefix=None, mangle_dupe_cols=True, dtype=None, engine=None, converters=None, true_values=None, false_values=None, skipinitialspace=False, skiprows=None, nrows=None, na_values=None, keep_default_na=True, na_filter=True, verbose=False, skip_blank_lines=True, parse_dates=False, infer_datetime_format=False, keep_date_col=False, date_parser=None, dayfirst=False, iterator=False, chunksize=None, compression='infer', thousands=None, decimal=b'.', lineterminator=None, quotechar='"', quoting=0, escapechar=None, comment=None, encoding=None, dialect=None, tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True, skipfooter=0, doublequote=True, delim_whitespace=False, low_memory=True, memory_map=False, float_precision=None)`
+	* pandas.DataFrame.to_csv — pandas 0.23.4 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html?highlight=to_csv#pandas.DataFrame.to_csv
+		* Write DataFrame to a comma-separated values (csv) file
+		* `DataFrame.to_csv(path_or_buf=None, sep=', ', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression=None, quoting=None, quotechar='"', line_terminator='\n', chunksize=None, tupleize_cols=None, date_format=None, doublequote=True, escapechar=None, decimal='.')`
+	* How to add pandas data to an existing csv file? - Stack Overflow
+		* https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
+		```python
+		with open(filename, 'a') as f:
+		df.to_csv(f, header=False)
+		```
+	* How to stop appending a blank line in csv ?
+		* `pandas.DataFrame.to_csv( line_terminator='\n' )`
+		* pandas.DataFrame.to_csv — pandas 0.24.2 documentation
+			* http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html
+			* line_terminator : string, optional
+			* The newline character or character sequence to use in the output file. Defaults to os.linesep, which depends on the OS in which this method is called (‘n’ for linux, ‘rn’ for Windows, i.e.).
+			* Changed in version 0.24.0.
 
-pandas.read_csv — pandas 0.23.4 documentation
-http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv
-Read CSV (comma-separated) file into DataFrame
-pandas.read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer', names=None, index_col=None, usecols=None, squeeze=False, prefix=None, mangle_dupe_cols=True, dtype=None, engine=None, converters=None, true_values=None, false_values=None, skipinitialspace=False, skiprows=None, nrows=None, na_values=None, keep_default_na=True, na_filter=True, verbose=False, skip_blank_lines=True, parse_dates=False, infer_datetime_format=False, keep_date_col=False, date_parser=None, dayfirst=False, iterator=False, chunksize=None, compression='infer', thousands=None, decimal=b'.', lineterminator=None, quotechar='"', quoting=0, escapechar=None, comment=None, encoding=None, dialect=None, tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True, skipfooter=0, doublequote=True, delim_whitespace=False, low_memory=True, memory_map=False, float_precision=None)
-pandas.DataFrame.to_csv — pandas 0.23.4 documentation
-http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html?highlight=to_csv#pandas.DataFrame.to_csv
-Write DataFrame to a comma-separated values (csv) file
-DataFrame.to_csv(path_or_buf=None, sep=', ', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression=None, quoting=None, quotechar='"', line_terminator='\n', chunksize=None, tupleize_cols=None, date_format=None, doublequote=True, escapechar=None, decimal='.')
-How to add pandas data to an existing csv file? - Stack Overflow
-https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
-with open(filename, 'a') as f:
-df.to_csv(f, header=False)
-How to stop appending a blank line in csv ?
-pandas.DataFrame.to_csv( line_terminator='\n' )
-pandas.DataFrame.to_csv — pandas 0.24.2 documentation
-http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html
-line_terminator : string, optional
-The newline character or character sequence to use in the output file. Defaults to os.linesep, which depends on the OS in which this method is called (‘n’ for linux, ‘rn’ for Windows, i.e.).
- Changed in version 0.24.0.
-How to fix AssertionError: Number of manager items must equal union of block items ?
+#### ERROR FIX
 
-It is caused by duplicated columns names in one dataframe, find it out and remove the duplicates.
-Pandas Python: Concatenate dataframes having same columns - Stack Overflow
-https://stackoverflow.com/questions/52204115/pandas-python-concatenate-dataframes-having-same-columns
-How to fix FutureWarning Passing list-likes to .loc or [] with any missing label will raise KeyError in the future, you can use .reindex() as an alternative ?
-
+* How to fix AssertionError: Number of manager items must equal union of block items ?
+	* It is caused by duplicated columns names in one dataframe, find it out and remove the duplicates.
+	* Pandas Python: Concatenate dataframes having same columns - Stack Overflow
+	* https://stackoverflow.com/questions/52204115/pandas-python-concatenate-dataframes-having-same-columns
+* How to fix FutureWarning Passing list-likes to .loc or [] with any missing label will raise KeyError in the future, you can use .reindex() as an alternative ?
+	* Indexing and Selecting Data — pandas 0.23.4 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-with-list-with-missing-labels-is-deprecated
+	* pandas.DataFrame.reindex — pandas 0.23.4 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reindex.html?highlight=reindex#pandas-dataframe-reindex
+		* `DataFrame.reindex(labels=None, index=None, columns=None, axis=None, method=None, copy=True, level=None, fill_value=nan, limit=None, tolerance=None)`
+```python
 a = df.loc[ new_index ]
-change loc[] to reindex(). a = df.reindex( new_index )
-Indexing and Selecting Data — pandas 0.23.4 documentation
-http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-with-list-with-missing-labels-is-deprecated
-pandas.DataFrame.reindex — pandas 0.23.4 documentation
-http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reindex.html?highlight=reindex#pandas-dataframe-reindex
-DataFrame.reindex(labels=None, index=None, columns=None, axis=None, method=None, copy=True, level=None, fill_value=nan, limit=None, tolerance=None)
-How to fix SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame. Try using .loc[row_indexer,col_indexer] = value instead ?
-
+# change loc[] to reindex(). a = df.reindex( new_index )
+```
+* How to fix SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame. Try using .loc[row_indexer,col_indexer] = value instead ?
+	* Indexing and Selecting Data — pandas 0.23.4 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+	* python - How to deal with SettingWithCopyWarning in Pandas? - Stack Overflow
+		* https://stackoverflow.com/questions/20625582/how-to-deal-with-settingwithcopywarning-in-pandas
+		* If you explicitly copy then no further warning will happen
+	* .loc[...] = value returns SettingWithCopyWarning · Issue #17476 · pandas-dev/pandas · GitHub
+		* https://github.com/pandas-dev/pandas/issues/17476
+		* Pandas isn't 100% sure if you want to assign values to just your df_c slice, or have it propagate all the way back up to the original df. To avoid this when you first assign df_c make sure you tell pandas that it is its own data frame (and not a slice) by using .copy()
+```python
 a = df.loc[ new_index]
 a[ 'col1' ] = a[ 'col2' ]
-change a = df.loc[ new_index] to a = df.loc[ new_index].copy()
-Indexing and Selecting Data — pandas 0.23.4 documentation
-http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-python - How to deal with SettingWithCopyWarning in Pandas? - Stack Overflow
-https://stackoverflow.com/questions/20625582/how-to-deal-with-settingwithcopywarning-in-pandas
-If you explicitly copy then no further warning will happen
-.loc[...] = value returns SettingWithCopyWarning · Issue #17476 · pandas-dev/pandas · GitHub
-https://github.com/pandas-dev/pandas/issues/17476
-Pandas isn't 100% sure if you want to assign values to just your df_c slice, or have it propagate all the way back up to the original df. To avoid this when you first assign df_c make sure you tell pandas that it is its own data frame (and not a slice) by using .copy()
-How to fix TypeError: invalid type promotion when plot scatter with timestamp ?
-
-python - Pandas type error trying to plot - Stack Overflow
-https://stackoverflow.com/questions/33676608/pandas-type-error-trying-to-plot
-pandas.DataFrame.astype — pandas 0.22.0 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.astype.html
-How to fix TypeError: 'instancemethod' object has no attribute '__getitem__' ?
-
+# change a = df.loc[ new_index] to a = df.loc[ new_index].copy()
+```
+* How to fix TypeError: invalid type promotion when plot scatter with timestamp ?
+	* python - Pandas type error trying to plot - Stack Overflow
+		* https://stackoverflow.com/questions/33676608/pandas-type-error-trying-to-plot
+	* pandas.DataFrame.astype — pandas 0.22.0 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.astype.html
+* How to fix TypeError: 'instancemethod' object has no attribute '__getitem__' ?
+	* You are using square brackets after an object that doesn't know what to do with the square brackets.
+```python
 a= df.reindex[ new_index ]
 change [] to (). a= df.reindex( new_index )
-You are using square brackets after an object that doesn't know what to do with the square brackets.
-How to fix TypeError: type object argument after * must be an iterable, not itertools.imap ?
-
+```
+* How to fix TypeError: type object argument after * must be an iterable, not itertools.imap ?
+	* python - Pandas drop_duplicates - TypeError: type object argument after * must be a sequence, not map - Stack Overflow
+		* https://stackoverflow.com/questions/37792999/pandas-drop-duplicates-typeerror-type-object-argument-after-must-be-a-seque
+		* it's because the list type isn't hashable and that's messing up the duplicated logic. As a workaround you could cast to tuple.
+```python
 df.drop_duplicates(subset=['position_xy'], inplace=False)
 cast column from type list to tuple
 df['position_xy'] = df['position_xy'].apply(lambda x : tuple(x) if type(x) is list else x)
-python - Pandas drop_duplicates - TypeError: type object argument after * must be a sequence, not map - Stack Overflow
-https://stackoverflow.com/questions/37792999/pandas-drop-duplicates-typeerror-type-object-argument-after-must-be-a-seque
-it's because the list type isn't hashable and that's messing up the duplicated logic. As a workaround you could cast to tuple.
-How to fix ValueError: The truth value of a Series is ambiguous ?
-
-python - Truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all() - Stack Overflow
-https://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o
-The or and and python statements require truth-values. For pandas these are considered ambiguous so you should use "bitwise" | (or) or & (and) operations
-How to fix ValueError: ('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().', u'occurred at index 0') ?
-
-Problem
+```
+* How to fix ValueError: The truth value of a Series is ambiguous ?
+	* python - Truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all() - Stack Overflow
+		* https://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o
+		* The or and and python statements require truth-values. For pandas these are considered ambiguous so you should use "bitwise" | (or) or & (and) operations
+* How to fix ValueError: ('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().', u'occurred at index 0') ?
+	* 5 ways to apply an IF condition in pandas DataFrame - Data to Fish
+		* https://datatofish.com/if-condition-in-pandas-dataframe/
+	* python - Applying a conditional statement to all value of a dataframe - Stack Overflow
+		* https://stackoverflow.com/questions/43377868/applying-a-conditional-statement-to-all-value-of-a-dataframe
+		* `df[df<3]=0`
+```python
+# Problem
 cols = [c for c in df.columns if not c.startswith(('a'))]
 df[cols] = df[cols].apply( lambda x : 0 if x < 1e-10 else x, axis=1 )
-It is because list comprehesion is not applicable with Dataframe object.
-Solution 1
+
+# It is because list comprehesion is not applicable with Dataframe object.
+
+# Solution 1
 for c in df.columns:
 if not c.startswith(('a')):
 df[c] = df[c].apply( lambda x : 0 if x < 1e-10 else x )
-Solution 2
+
+# Solution 2
 df1 = df[cols].copy()
 df1[df1 < 1e-10] = 0
 df[cols] = df1[cols].copy()
-5 ways to apply an IF condition in pandas DataFrame - Data to Fish
-https://datatofish.com/if-condition-in-pandas-dataframe/
-python - Applying a conditional statement to all value of a dataframe - Stack Overflow
-https://stackoverflow.com/questions/43377868/applying-a-conditional-statement-to-all-value-of-a-dataframe
-df[df<3]=0
-How to fix ValueError: can not merge DataFrame with instance of type <class 'pandas.core.series.Series'> ?
-
+```
+* How to fix ValueError: can not merge DataFrame with instance of type <class 'pandas.core.series.Series'> ?
+	* python - Merging two DataFrames - Stack Overflow
+		* https://stackoverflow.com/questions/37968785/merging-two-dataframes
+		* `df1.merge(df2.to_frame(), left_on='id', right_index=True)`
+	* python - Combining two Series into a DataFrame in pandas - Stack Overflow
+		* https://stackoverflow.com/questions/18062135/combining-two-series-into-a-dataframe-in-pandas
+		* `pd.concat([s1, s2], axis=1).reset_index()`
+```python
 df_mean = df.groupby('id').col.mean().rename('mean_col')
 df_min = df.groupby('id').col.min().rename('min_col')
 df_result = pd.concat([df_mean, df_min], axis=1).reset_index()
-python - Merging two DataFrames - Stack Overflow
-https://stackoverflow.com/questions/37968785/merging-two-dataframes
-df1.merge(df2.to_frame(), left_on='id', right_index=True)
-python - Combining two Series into a DataFrame in pandas - Stack Overflow
-https://stackoverflow.com/questions/18062135/combining-two-series-into-a-dataframe-in-pandas
-pd.concat([s1, s2], axis=1).reset_index()
+```
 
 ## FAQ
 
@@ -4047,7 +4061,7 @@ pd.concat([s1, s2], axis=1).reset_index()
   * Edit ~/.pip/pip.conf to set index-url / extra-index-url
   * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
 
-### FIX OF ERRORS
+### ERROR FIX
 
 * How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
   * Check the indentation for other class member functions prior to plot_all()
