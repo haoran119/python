@@ -3633,16 +3633,12 @@ df[ [ 'col1' ] ]
 	```
 	* pandas.DataFrame.tail — pandas 0.23.3 documentation
 		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html#pandas.DataFrame.tail
-	```python
-	DataFrame.tail(n=5)
-	```
+		* `DataFrame.tail(n=5)`
 	* pandas.DataFrame.iloc — pandas 0.23.3 documentation
 		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc
 	* python - obtaining last value of dataframe column without index - Stack Overflow
 		* https://stackoverflow.com/questions/34166030/obtaining-last-value-of-dataframe-column-without-index
-	```python
-	df.column.iat[ -1 ]
-	```
+		* `df.column.iat[ -1 ]`
 	* Indexing and Selecting Data — pandas 0.23.3 documentation
 		* http://pandas.pydata.org/pandas-docs/stable/indexing.html#fast-scalar-value-getting-and-setting
 	* python - Loc vs. iloc vs. ix vs. at vs. iat? - Stack Overflow
@@ -3959,7 +3955,7 @@ df.reset_index(drop=True, inplace=True)
 			* The newline character or character sequence to use in the output file. Defaults to os.linesep, which depends on the OS in which this method is called (‘n’ for linux, ‘rn’ for Windows, i.e.).
 			* Changed in version 0.24.0.
 
-#### ERROR FIX
+##### ERROR FIX
 
 * How to fix AssertionError: Number of manager items must equal union of block items ?
 	* It is caused by duplicated columns names in one dataframe, find it out and remove the duplicates.
