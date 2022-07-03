@@ -3788,11 +3788,11 @@ df = df[cols]
 		* https://stackoverflow.com/questions/23667369/drop-all-duplicate-rows-in-python-pandas
 		* Note that it will drop all duplicates. So an issue will occur if you just want to drop consecutive duplicates.
 * How to drop consecutive duplicates ?
-		* pandas.DataFrame.shift — pandas 0.22.0 documentation
-			* https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.shift.html?highlight=shift#pandas.DataFrame.shift
-			* `DataFrame.shift(periods=1, freq=None, axis=0)`
-		* python - Pandas: Drop consecutive duplicates - Stack Overflow
-			* https://stackoverflow.com/questions/19463985/pandas-drop-consecutive-duplicates
+	* pandas.DataFrame.shift — pandas 0.22.0 documentation
+		* https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.shift.html?highlight=shift#pandas.DataFrame.shift
+		* `DataFrame.shift(periods=1, freq=None, axis=0)`
+	* python - Pandas: Drop consecutive duplicates - Stack Overflow
+		* https://stackoverflow.com/questions/19463985/pandas-drop-consecutive-duplicates
 ```python
 a.loc[a.shift() != a]
 de_dup = a[cols].loc[(a[cols].shift() != a[cols]).any(axis=1)]
@@ -3828,72 +3828,68 @@ df[:-1]
 		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reindex_like.html
 	* Indexing and Selecting Data — pandas 0.23.4 documentation
 		*	https://pandas.pydata.org/pandas-docs/stable/indexing.html#slicing-ranges
-How to Concatenating a single Series into a string ?
-
-Working with Text Data — pandas 0.23.1 documentation
-http://pandas.pydata.org/pandas-docs/stable/text.html#concatenating-a-single-series-into-a-string
-How to concat dataframe without duplicates ?
-
-Pandas/Python: How to concatenate two dataframes without duplicates? - Stack Overflow
-https://stackoverflow.com/questions/21317384/pandas-python-how-to-concatenate-two-dataframes-without-duplicates
+*	How to Concatenating a single Series into a string ?
+	*	Working with Text Data — pandas 0.23.1 documentation
+	*	http://pandas.pydata.org/pandas-docs/stable/text.html#concatenating-a-single-series-into-a-string
+*	How to concat dataframe without duplicates ?
+	*	Pandas/Python: How to concatenate two dataframes without duplicates? - Stack Overflow
+		*	https://stackoverflow.com/questions/21317384/pandas-python-how-to-concatenate-two-dataframes-without-duplicates
+```python
 pandas.concat([df1,df2]).drop_duplicates().reset_index(drop=True)
-Merge, join, and concatenate — pandas 0.23.1 documentation
-
-https://pandas.pydata.org/pandas-docs/stable/merging.html#merge-join-and-concatenate
-python - Pandas: join DataFrames on field with different names? - Stack Overflow
-https://stackoverflow.com/questions/25888207/pandas-join-dataframes-on-field-with-different-names
-pandas.merge(df1, df2, how='left', left_on=['id_key'], right_on=['fk_key'])
-pandas.DataFrame.merge — pandas 0.23.3 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html#pandas-dataframe-merge
-DataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
-how : {‘left’, ‘right’, ‘outer’, ‘inner’}, default ‘inner’
-left: use only keys from left frame, similar to a SQL left outer join; preserve key order
-right: use only keys from right frame, similar to a SQL right outer join; preserve key order
-outer: use union of keys from both frames, similar to a SQL full outer join; sort keys lexicographically
-inner: use intersection of keys from both frames, similar to a SQL inner join; preserve the order of the left keys
-sort : boolean, default False
-Sort the join keys lexicographically in the result DataFrame. If False, the order of the join keys depends on the join type (how keyword)
-pandas.concat — pandas 0.23.4 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.concat.html#pandas.concat
-pandas.concat(objs, axis=0, join='outer', join_axes=None, ignore_index=False, keys=None, levels=None, names=None, verify_integrity=False, sort=None, copy=True)
-How to merge two pandas.Series.unique() ?
-
-pandas.Series.unique — pandas 0.23.3 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.unique.html
-Return unique values of Series object.
-Returns: ndarray or Categorical
-The unique values returned as a NumPy array. In case of categorical data type, returned as a Categorical.
-numpy.append — NumPy v1.14 Manual
-https://docs.scipy.org/doc/numpy/reference/generated/numpy.append.html
-Append values to the end of an array.
-np.append([1, 2, 3], [[4, 5, 6], [7, 8, 9]])
-How to work with missing data ?
-
+```
+*	Merge, join, and concatenate — pandas 0.23.1 documentation
+	*	https://pandas.pydata.org/pandas-docs/stable/merging.html#merge-join-and-concatenate
+	*	python - Pandas: join DataFrames on field with different names? - Stack Overflow
+		*	https://stackoverflow.com/questions/25888207/pandas-join-dataframes-on-field-with-different-names
+		*	`pandas.merge(df1, df2, how='left', left_on=['id_key'], right_on=['fk_key'])`
+	*	pandas.DataFrame.merge — pandas 0.23.3 documentation
+		*	https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html#pandas-dataframe-merge
+		*	`DataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)`
+		*	how : {‘left’, ‘right’, ‘outer’, ‘inner’}, default ‘inner’
+			*	left: use only keys from left frame, similar to a SQL left outer join; preserve key order
+			*	right: use only keys from right frame, similar to a SQL right outer join; preserve key order
+			*	outer: use union of keys from both frames, similar to a SQL full outer join; sort keys lexicographically
+			*	inner: use intersection of keys from both frames, similar to a SQL inner join; preserve the order of the left keys
+		*	sort : boolean, default False
+			*	Sort the join keys lexicographically in the result DataFrame. If False, the order of the join keys depends on the join type (how keyword)
+	*	pandas.concat — pandas 0.23.4 documentation
+		*	https://pandas.pydata.org/pandas-docs/stable/generated/pandas.concat.html#pandas.concat
+		*	`pandas.concat(objs, axis=0, join='outer', join_axes=None, ignore_index=False, keys=None, levels=None, names=None, verify_integrity=False, sort=None, copy=True)`
+* How to merge two pandas.Series.unique() ?
+	* pandas.Series.unique — pandas 0.23.3 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.unique.html
+		* Return unique values of Series object.
+		* Returns: ndarray or Categorical
+		* The unique values returned as a NumPy array. In case of categorical data type, returned as a Categorical.
+	* numpy.append — NumPy v1.14 Manual
+		* https://docs.scipy.org/doc/numpy/reference/generated/numpy.append.html
+		* Append values to the end of an array.
+		* `np.append([1, 2, 3], [[4, 5, 6], [7, 8, 9]])`
+* How to work with missing data ?
+	* Working with missing data — pandas 0.23.4 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/missing_data.html?highlight=fill#working-with-missing-data
+	* pandas.DataFrame.fillna — pandas 0.23.4 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.fillna.html#pandas-dataframe-fillna
+		* `DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None, **kwargs)`
+	* pandas.Timestamp.min — pandas 0.23.4 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Timestamp.min.html
+		* `Timestamp.min = Timestamp('1677-09-21 00:12:43.145225')`
+```python
 df['col'].fillna(pandas.Timestamp.min)
 cols = [c for c in df.columns if 'a' in c]
 df[cols] = df[cols].fillna( df[cols].mean() )
-Working with missing data — pandas 0.23.4 documentation
-http://pandas.pydata.org/pandas-docs/stable/missing_data.html?highlight=fill#working-with-missing-data
-pandas.DataFrame.fillna — pandas 0.23.4 documentation
-http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.fillna.html#pandas-dataframe-fillna
-DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None, **kwargs)
-pandas.Timestamp.min — pandas 0.23.4 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Timestamp.min.html
-Timestamp.min = Timestamp('1677-09-21 00:12:43.145225')
-How to convert series to list ?
-
-pandas.Series.tolist — pandas 0.23.1 documentation
-https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.tolist.html
-Dataframe information ?
-
-pandas.DataFrame.info — pandas 0.23.3 documentation
-http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html#pandas-dataframe-info
-DataFrame.info(verbose=None, buf=None, max_cols=None, memory_usage=None, null_counts=None)
-pandas.DataFrame.describe — pandas 0.23.3 documentation
-http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html#pandas.DataFrame.describe
-DataFrame.describe(percentiles=None, include=None, exclude=None)
-How to calculate time differences in seconds ?
-
+```
+* How to convert series to list ?
+	* pandas.Series.tolist — pandas 0.23.1 documentation
+	* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.tolist.html
+* Dataframe information ?
+	* pandas.DataFrame.info — pandas 0.23.3 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html#pandas-dataframe-info
+		* `DataFrame.info(verbose=None, buf=None, max_cols=None, memory_usage=None, null_counts=None)`
+	* pandas.DataFrame.describe — pandas 0.23.3 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html#pandas.DataFrame.describe
+		* `DataFrame.describe(percentiles=None, include=None, exclude=None)`
+* How to calculate time differences in seconds ?
 value = pd.to_datetime(end_timestamp) - pd.to_datetime(start_timestamp)).total_seconds()
 df['duration'] = (df['end_timestamp'] - df['start_timestamp']).dt.seconds
 Time Deltas — pandas 0.23.4 documentation
