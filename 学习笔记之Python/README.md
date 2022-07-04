@@ -3620,6 +3620,13 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 	* https://pbpython.com/styling-pandas.html
 	* Pandas的style用法在大多数教程中见的比较少，它主要是用来美化DataFrame和Series的输出，能够更加直观地显示数据结果。
 
+#### [API reference](https://pandas.pydata.org/docs/reference/index.html)
+
+* [pandas.DataFrame.cumsum](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.cumsum.html)
+	* `DataFrame.cumsum(axis=None, skipna=True, *args, **kwargs)`
+	* Return cumulative sum over a DataFrame or Series axis.
+	* Returns a DataFrame or Series of the same size containing the cumulative sum.
+
 #### BEST PRACTICE
 
 * [利用 Pandas 分析日志数据](https://mp.weixin.qq.com/s/A3lteYWeM2gM8qH75M8rXQ)
