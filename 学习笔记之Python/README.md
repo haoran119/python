@@ -1800,6 +1800,16 @@ def greeting(name: str) -> str:
 
 * This module provides a simple way to time small bits of Python code. It has both a Command-Line Interface as well as a callable one. It avoids a number of common traps for measuring execution times. See also Tim Peters’ introduction to the “Algorithms” chapter in the second edition of Python Cookbook, published by O’Reilly.
 
+### [Software Packaging and Distribution](https://docs.python.org/3/library/distribution.html)
+
+#### [venv — Creation of virtual environments](https://docs.python.org/3/library/venv.html)
+
+* The venv module provides support for creating lightweight “virtual environments” with their own site directories, optionally isolated from system site directories. Each virtual environment has its own Python binary (which matches the version of the binary that was used to create this environment) and can have its own independent set of installed Python packages in its site directories.
+* See [PEP 405](https://www.python.org/dev/peps/pep-0405) for more information about Python virtual environments.
+* See also [Python Packaging User Guide: Creating and using virtual environments](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)
+* [Python Virtual Environments Explained with Examples](https://www.freecodecamp.org/news/python-virtual-environments-explained-with-examples/)
+	* Virtual environments can be described as isolated installation directories. This isolation allows you to localized the installation of your project’s dependencies, without forcing you to install them system-wide.
+
 ## ADVANCE
 
 * [5张图理解Python中的浅拷贝与深拷贝](https://mp.weixin.qq.com/s/em4OBWLdTqC7jdvyCs7Jhg)
