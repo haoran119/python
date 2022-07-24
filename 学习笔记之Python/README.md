@@ -4059,6 +4059,14 @@ df['col'].fillna(pandas.Timestamp.min)
 cols = [c for c in df.columns if 'a' in c]
 df[cols] = df[cols].fillna( df[cols].mean() )
 ```
+* [pandas.DataFrame.isna](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html#pandas.DataFrame.isna)
+	* Detect missing values.
+	* Return a boolean same-sized object indicating if the values are NA. NA values, such as None or numpy.NaN, gets mapped to True values. Everything else gets mapped to False values. Characters such as empty strings '' or numpy.inf are not considered NA values (unless you set pandas.options.mode.use_inf_as_na = True).
+	* Returns
+		* DataFrame
+			* Mask of bool values for each element in DataFrame that indicates whether an element is an NA value.
+* [python - How to check if any value is NaN in a Pandas DataFrame - Stack Overflow](https://stackoverflow.com/questions/29530232/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe)
+	* `df.isnull().values.any()`
 
 ###### [Reshaping, sorting, transposing](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#reshaping-sorting-transposing)
 
