@@ -1282,6 +1282,36 @@ if __name__ == '__main__':
 * [Helper functions](https://docs.python.org/3/library/string.html?#helper-functions)
 	* [string.capwords(s, sep=None)](https://docs.python.org/3/library/string.html?#string.capwords)
 		* Split the argument into words using str.split(), capitalize each word using str.capitalize(), and join the capitalized words using str.join(). If the optional second argument sep is absent or None, runs of whitespace characters are replaced by a single space and leading and trailing whitespace are removed, otherwise sep is used to split and join the words.
+* [7.1. Fancier Output Formatting](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
+	* 7.1.1. Formatted String Literals
+		* Formatted string literals (also called f-strings for short) let you include the value of Python expressions inside a string by prefixing the string with f or F and writing expressions as {expression}.
+```python
+An optional format specifier can follow the expression. This allows greater control over how the value is formatted. The following example rounds pi to three places after the decimal:
+>>>
+>>> import math
+>>> print(f'The value of pi is approximately {math.pi:.3f}.')
+The value of pi is approximately 3.142.
+
+Passing an integer after the ':' will cause that field to be a minimum number of characters wide. This is useful for making columns line up.
+>>>
+>>> table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
+>>> for name, phone in table.items():
+...     print(f'{name:10} ==> {phone:10d}')
+...
+Sjoerd     ==>       4127
+Jack       ==>       4098
+Dcab       ==>       7678
+
+Other modifiers can be used to convert the value before it is formatted. '!a' applies ascii(), '!s' applies str(), and '!r' applies repr():
+>>>
+>>> animals = 'eels'
+>>> print(f'My hovercraft is full of {animals}.')
+My hovercraft is full of eels.
+>>> print(f'My hovercraft is full of {animals!r}.')
+My hovercraft is full of 'eels'.
+
+For a reference on these format specifications, see the reference guide for the Format Specification Mini-Language.
+```
 
 ### [Data Types](https://docs.python.org/3/library/datatypes.html)
 
