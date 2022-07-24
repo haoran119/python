@@ -3640,11 +3640,36 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 
 ###### [Attributes and underlying data](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#attributes-and-underlying-data)
 
+* [pandas.DataFrame.index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html#pandas.DataFrame.index)
+	* The index (row labels) of the DataFrame.
+	* How to get count of rows in dataframe ?
+		* [len - Built-in Functions — Python 3.7.2 documentation](https://docs.python.org/3/library/functions.html#len)
+			* Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
+		* [pandas python how to count the number of records or rows in a dataframe - Stack Overflow](https://stackoverflow.com/questions/17468878/pandas-python-how-to-count-the-number-of-records-or-rows-in-a-dataframe/41968240)
+			* To get the number of rows in a dataframe use:
+			* df.shape[0]
+			* (and df.shape[1] to get the number of columns).
+			* As an alternative you can use
+			* len(df)
+			* or
+			* len(df.index)
+			* (and len(df.columns) for the columns)
+			* shape is more versatile and more convenient than len(), especially for interactive work (just needs to be added at the end), but len is a bit
+			faster 
+			* To avoid: count() because it returns the number of non-NA/null observations over requested axis
+			* len(df.index) is faster
+```python
+len( df )
+```
 * [pandas.DataFrame.columns](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.columns.html)
 	* How to check if a dataframe column exists ?
 		* [python - How to check if a column exists in Pandas - Stack Overflow](https://stackoverflow.com/questions/24870306/how-to-check-if-a-column-exists-in-pandas)
 ```python
 if 'A' in df.columns:
+```
+* How to get all column names of a dataframe?
+```python
+list( df )
 ```
 * How to get a specific column as series / dataframe ?
 ```python
@@ -3700,6 +3725,31 @@ id = df[a==b]['id'].iat[0]
 # Slice with labels for row and single label for column. 
 # As mentioned above, note that both the start and stop of the slice are included.
 df.loc['cobra':'viper', 'max_speed']
+```
+* How to look up the first match element ?
+	* python - lookup first match in Pandas dataframe - Stack Overflow
+		* https://stackoverflow.com/questions/46371391/lookup-first-match-in-pandas-dataframe
+	* pandas.Series.item — pandas 0.23.1 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.item.html
+	* pandas.DataFrame.iat — pandas 0.23.1 documentation
+		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iat.html
+	* pandas.DataFrame.empty — pandas 0.23.1 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.empty.html?highlight=pandas%20dataframe%20empty#pandas-dataframe-empty
+```python
+westcoast.loc[westcoast.state=='Oregon', 'capital'].item()
+s = westcoast.loc[westcoast.state=='Oregon', 'capital']
+s = np.nan if s.empty else s.iat[0]
+```
+
+###### [Function application, GroupBy & window](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#function-application-groupby-window)
+
+* [pandas.DataFrame.apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html)
+	* `DataFrame.apply(func, axis=0, raw=False, result_type=None, args=(), **kwargs)`
+	* Apply a function along an axis of the DataFrame.
+	* Objects passed to the function are Series objects whose index is either the DataFrame’s index (axis=0) or the DataFrame’s columns (axis=1). By default (result_type=None), the final return type is inferred from the return type of the applied function. Otherwise, it depends on the result_type argument.
+	* How to create a new column with applying function on the existing columns ?
+```python
+df['new'] = df.apply(lambda x : myfunc(x['old']), axis='columns')
 ```
 
 ###### [Computations / descriptive stats](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#computations-descriptive-stats)
@@ -3819,54 +3869,9 @@ pd.reset_option('all') #重置所有设置选项
 
 * [Comparison with SQL — pandas 0.23.3 documentation](https://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#)
 	* [How to rewrite your SQL queries in Pandas, and more ?](https://codeburst.io/how-to-rewrite-your-sql-queries-in-pandas-and-more-149d341fc53e)
-* How to get all column names of a dataframe?
-```python
-list( df )
-```
 
-* How to get count of rows in dataframe ?
-	* Built-in Functions — Python 3.7.2 documentation
-		* https://docs.python.org/3/library/functions.html#len
-		* Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
-	* pandas python how to count the number of records or rows in a dataframe - Stack Overflow
-		* https://stackoverflow.com/questions/17468878/pandas-python-how-to-count-the-number-of-records-or-rows-in-a-dataframe/41968240
-		* To get the number of rows in a dataframe use:
-		* df.shape[0]
-		* (and df.shape[1] to get the number of columns).
-		* As an alternative you can use
-		* len(df)
-		* or
-		* len(df.index)
-		* (and len(df.columns) for the columns)
-		* shape is more versatile and more convenient than len(), especially for interactive work (just needs to be added at the end), but len is a bit
-		faster 
-		* To avoid: count() because it returns the number of non-NA/null observations over requested axis
-		* len(df.index) is faster
-```python
-len( df )
-```
-* How to create a new column with applying function on the existing columns ?
-	* pandas.DataFrame.apply — pandas 0.23.4 documentation
-		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.apply.html
-		* `DataFrame.apply(func, axis=0, broadcast=None, raw=False, reduce=None, result_type=None, args=(), **kwds)`
-		* Apply a function along an axis of the DataFrame.
-```python
-df['new'] = df.apply(lambda x : myfunc(x['old']), axis='columns')
-```
-* How to look up the first match element ?
-	* python - lookup first match in Pandas dataframe - Stack Overflow
-		* https://stackoverflow.com/questions/46371391/lookup-first-match-in-pandas-dataframe
-	* pandas.Series.item — pandas 0.23.1 documentation
-		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.item.html
-	* pandas.DataFrame.iat — pandas 0.23.1 documentation
-		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iat.html
-	* pandas.DataFrame.empty — pandas 0.23.1 documentation
-		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.empty.html?highlight=pandas%20dataframe%20empty#pandas-dataframe-empty
-```python
-westcoast.loc[westcoast.state=='Oregon', 'capital'].item()
-s = westcoast.loc[westcoast.state=='Oregon', 'capital']
-s = np.nan if s.empty else s.iat[0]
-```
+
+
 * How to find index where elements should be inserted to maintain order ?
 	* pandas.Series.searchsorted — pandas 0.23.3 documentation
 		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.searchsorted.html?highlight=searchsorted#pandas.Series.searchsorted
