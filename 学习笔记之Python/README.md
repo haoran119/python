@@ -3608,17 +3608,6 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 * 盘一盘 Python 系列 4 - Pandas
 	* https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247486680&idx=1&sn=ee79e798cb2c00ff4dd02609ca9c494d&chksm=e8908fd1dfe706c71f998ceec4e8c6a44a76778b8382313a5f773319765e8b1116bf3dbbeeec&scene=21#wechat_redirect
 	* https://mp.weixin.qq.com/s?__biz=MzIzMjY0MjE1MA==&mid=2247486784&idx=1&sn=50a54067e9d596d4a03beb2b281167fb&chksm=e8908e49dfe7075f3cb3b1d5ef9b6ad149c63d3e33a8a42e503717ed09d82df7aa71e87c1eb1&scene=21#wechat_redirect
-* [常用的46个Pandas方法](https://mp.weixin.qq.com/s/-pazqu03A4ejRvFRCfHoZw)
-* [Pandas 中第二好用的函数是？](https://mp.weixin.qq.com/s/xc3kpVXeYcKu9Xxn5B1gxg)
-* [Pandas数据处理——盘点那些常用的函数（上）](https://mp.weixin.qq.com/s/IVUrb97GN3QvgYsBFdpc2w)
-* [Pandas0.25来了，别错过这10大好用的新功能](https://mp.weixin.qq.com/s/YaVipYsRYBF2eIBq9ps5VA)
-* [一文掌握 Series 和 DataFrame 的基础功能](https://mp.weixin.qq.com/s/5rLI5Vol67tjMeE-YVfBbw)
-	* https://www.zhihu.com/people/zarten/activities
-* [一文详解 merge 数据拼接方法](https://mp.weixin.qq.com/s/-P2dE_gXhbjrlFTC7VSGjA)
-* [一文完全掌握Pandas中的groupby操作](https://mp.weixin.qq.com/s/_H-jEBx_o4qUnruAHqSbOg)
-* [用 Style 方法提高 Pandas 数据的颜值](https://mp.weixin.qq.com/s/Ws09pBW5P2HzapmsxfbMwA)
-	* https://pbpython.com/styling-pandas.html
-	* Pandas的style用法在大多数教程中见的比较少，它主要是用来美化DataFrame和Series的输出，能够更加直观地显示数据结果。
 
 #### [API reference](https://pandas.pydata.org/docs/reference/index.html)
 
@@ -4179,6 +4168,17 @@ pd.reset_option('all') #重置所有设置选项
 
 #### BEST PRACTICE
 
+* [常用的46个Pandas方法](https://mp.weixin.qq.com/s/-pazqu03A4ejRvFRCfHoZw)
+* [Pandas 中第二好用的函数是？](https://mp.weixin.qq.com/s/xc3kpVXeYcKu9Xxn5B1gxg)
+* [Pandas数据处理——盘点那些常用的函数（上）](https://mp.weixin.qq.com/s/IVUrb97GN3QvgYsBFdpc2w)
+* [Pandas0.25来了，别错过这10大好用的新功能](https://mp.weixin.qq.com/s/YaVipYsRYBF2eIBq9ps5VA)
+* [一文掌握 Series 和 DataFrame 的基础功能](https://mp.weixin.qq.com/s/5rLI5Vol67tjMeE-YVfBbw)
+	* https://www.zhihu.com/people/zarten/activities
+* [一文详解 merge 数据拼接方法](https://mp.weixin.qq.com/s/-P2dE_gXhbjrlFTC7VSGjA)
+* [一文完全掌握Pandas中的groupby操作](https://mp.weixin.qq.com/s/_H-jEBx_o4qUnruAHqSbOg)
+* [用 Style 方法提高 Pandas 数据的颜值](https://mp.weixin.qq.com/s/Ws09pBW5P2HzapmsxfbMwA)
+	* https://pbpython.com/styling-pandas.html
+	* Pandas的style用法在大多数教程中见的比较少，它主要是用来美化DataFrame和Series的输出，能够更加直观地显示数据结果。
 * [利用 Pandas 分析日志数据](https://mp.weixin.qq.com/s/A3lteYWeM2gM8qH75M8rXQ)
 * [【技巧】Pandas循环提速7万多倍](https://mp.weixin.qq.com/s/VavtPcBtVzLw_k8KxSdKqw)
 	* https://towardsdatascience.com/how-to-make-your-pandas-loop-71-803-times-faster-805030df4f06
