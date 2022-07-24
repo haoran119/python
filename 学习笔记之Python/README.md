@@ -3556,7 +3556,7 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 
 ### [pandas](https://pandas.pydata.org/)
 
-* Python Data Analysis Library
+* `Python Data Analysis Library`
 * pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 * [pandas: powerful Python data analysis toolkit — pandas 0.22.0 documentation](http://pandas.pydata.org/pandas-docs/stable/index.html)
 * [10 Minutes to pandas — pandas 0.22.0 documentation](http://pandas.pydata.org/pandas-docs/stable/10min.html#)
@@ -3622,7 +3622,23 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 
 #### [API reference](https://pandas.pydata.org/docs/reference/index.html)
 
+##### [General functions](https://pandas.pydata.org/pandas-docs/stable/reference/general_functions.html)
+
+* [pandas.unique](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.unique.html#pandas.unique)
+	* Return unique values based on a hash table.
+	* Uniques are returned in order of appearance. This does NOT sort.
+	* Significantly faster than numpy.unique for long enough sequences. Includes NA values.
+	* How to find unique value in a column of dataframe ?
+		* pandas.Series.tolist — pandas 0.23.1 documentation
+			* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.tolist.html#pandas-series-tolist
+		* List Unique Values In A pandas Column
+			* https://chrisalbon.com/python/data_wrangling/pandas_list_unique_values_in_column/
+
+##### [Series](https://pandas.pydata.org/pandas-docs/stable/reference/series.html)
+
 ##### [DataFrame](https://pandas.pydata.org/docs/reference/frame.html)
+
+###### [Attributes and underlying data](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#attributes-and-underlying-data)
 
 * [pandas.DataFrame.columns](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.columns.html)
 	* How to check if a dataframe column exists ?
@@ -3630,20 +3646,104 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 ```python
 if 'A' in df.columns:
 ```
+* How to get a specific column as series / dataframe ?
+```python
+# series
+df[ 'col1' ] / df.col1
+df[ [c for c in df.columns if c.startswith('a')][0] ]
+# dataframe
+df[ [ 'col1' ] ]
+df[ [c for c in df.columns if c.startswith('a')] ]
+# Choosing columns in pandas DataFrame – Kasia Rachuta – Medium
+# https://medium.com/@kasiarachuta/choosing-columns-in-pandas-dataframe-d0677b34a6ca
+df[ 'col1' ]
+# This command picks a column and returns it as a Series
+df[ [ 'col1' ] ]
+# Here, I chose the column and I get a DataFrame
+```
 * [pandas.DataFrame.empty](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.empty.html)
 	* How to check if a dataframe column / serie is empty ?
 		* [python - How to check if pandas Series is empty? - Stack Overflow](https://stackoverflow.com/questions/24652417/how-to-check-if-pandas-series-is-empty)
-	* [pandas.DataFrame.dropna](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html#pandas-dataframe-dropna)
-		* `DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)`
-		* Remove missing values.
 ```python
 df.empty
 df.dropna().empty
 ```
+
+###### [Indexing, iteration](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#indexing-iteration)
+
+* [pandas.DataFrame.iat](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iat.html#pandas.DataFrame.iat)
+	* Access a single value for a row/column pair by integer position.
+	* Similar to iloc, in that both provide integer-based lookups. Use iat if you only need to get or set a single value in a DataFrame or Series.
+* How to get scalar value of a panel with condition ?
+	* [python - How to get scalar value on a cell using conditional indexing - Stack Overflow](https://stackoverflow.com/questions/30813088/how-to-get-scalar-value-on-a-cell-using-conditional-indexing)
+		* get at the underlying numpy matrix using .values on a series or dataframe
+```python
+id = df.loc[a==b, 'id'].values[0]
+id = df[a==b]['id'].iat[0]
+```
+* [pandas.DataFrame.loc](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html)
+	* Access a group of rows and columns by label(s) or a boolean array.
+	* .loc[] is primarily label based, but may also be used with a boolean array.
+	* Allowed inputs are:
+		* A single label, e.g. 5 or 'a', (note that 5 is interpreted as a label of the index, and never as an integer position along the index).
+		* A list or array of labels, e.g. ['a', 'b', 'c'].
+		* A slice object with labels, e.g. 'a':'f'.
+			* Warning
+				* Note that contrary to usual python slices, both the start and the stop are included
+		* A boolean array of the same length as the axis being sliced, e.g. [True, False, True].
+		* An alignable boolean Series. The index of the key will be aligned before masking.
+		* An alignable Index. The Index of the returned selection will be the input.
+		* A callable function with one argument (the calling Series or DataFrame) and that returns valid output for indexing (one of the above)
+	* How to query a specified column / panel ?	
+		* [Indexing and Selecting Data](http://pandas.pydata.org/pandas-docs/stable/indexing.html#different-choices-for-indexing)
+```python
+# Slice with labels for row and single label for column. 
+# As mentioned above, note that both the start and stop of the slice are included.
+df.loc['cobra':'viper', 'max_speed']
+```
+
+###### [Computations / descriptive stats](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#computations-descriptive-stats)
+
 * [pandas.DataFrame.cumsum](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.cumsum.html)
 	* `DataFrame.cumsum(axis=None, skipna=True, *args, **kwargs)`
 	* Return cumulative sum over a DataFrame or Series axis.
 	* Returns a DataFrame or Series of the same size containing the cumulative sum.
+
+###### [Reindexing / selection / label manipulation](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#reindexing-selection-label-manipulation)
+
+* [pandas.DataFrame.tail](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.tail.html#pandas.DataFrame.tail)
+	* `DataFrame.tail(n=5)`
+	* Return the last n rows.
+	* This function returns last n rows from the object based on position. It is useful for quickly verifying data, for example, after sorting or appending rows.
+	* For negative values of n, this function returns all rows except the first n rows, equivalent to df[n:].
+* How to get the last row / value of dataframe ?
+	* How to get the last n row of pandas dataframe? - Stack Overflow
+		* https://stackoverflow.com/questions/14663004/how-to-get-the-last-n-row-of-pandas-dataframe
+	```python
+	df.iloc[ -1 ]
+	df.tail( 1 )
+	```
+	* pandas.DataFrame.iloc — pandas 0.23.3 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc
+	* [python - obtaining last value of dataframe column without index - Stack Overflow](https://stackoverflow.com/questions/34166030/obtaining-last-value-of-dataframe-column-without-index)
+		* `df.column.iat[ -1 ]`
+	* Indexing and Selecting Data — pandas 0.23.3 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/indexing.html#fast-scalar-value-getting-and-setting
+	* python - Loc vs. iloc vs. ix vs. at vs. iat? - Stack Overflow
+		* https://stackoverflow.com/questions/28757389/loc-vs-iloc-vs-ix-vs-at-vs-iat
+		* loc - label based
+		* iloc - position based
+		* at: get scalar values. It's a very fast loc
+		* iat: Get scalar values. It's a very fast iloc
+ 
+###### [Missing data handling](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#missing-data-handling)
+
+* [pandas.DataFrame.dropna](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html#pandas-dataframe-dropna)
+	* `DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)`
+	* Remove missing values.
+
+###### [Serialization / IO / conversion](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#serialization-io-conversion)
+
 * [pandas.DataFrame.to_string](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html#pandas-dataframe-to-string)
 	* `DataFrame.to_string(buf=None, columns=None, col_space=None, header=True, index=True, na_rep='NaN', formatters=None, float_format=None, sparsify=None, index_names=True, justify=None, max_rows=None, max_cols=None, show_dimensions=False, decimal='.', line_width=None, min_rows=None, max_colwidth=None, encoding=None)`
 	* How to print all elements in a dataframe ? 
@@ -3723,73 +3823,7 @@ pd.reset_option('all') #重置所有设置选项
 ```python
 list( df )
 ```
-* How to find unique value in a column of dataframe ?
-	* pandas.unique — pandas 0.22.0 documentation
-		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.unique.html#pandas.unique
-	* pandas.Series.tolist — pandas 0.23.1 documentation
-		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.tolist.html#pandas-series-tolist
-	* List Unique Values In A pandas Column
-		* https://chrisalbon.com/python/data_wrangling/pandas_list_unique_values_in_column/
-* How to query a specified column / panel ?
-	* pandas.DataFrame.loc — pandas 0.23.0 documentation
-		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.loc.html?highlight=loc#pandas.DataFrame.loc
-	* Indexing and Selecting Data — pandas 0.23.1 documentation
-		* http://pandas.pydata.org/pandas-docs/stable/indexing.html#different-choices-for-indexing
-```python
-# Slice with labels for row and single label for column. 
-# As mentioned above, note that both the start and stop of the slice are included.
-df.loc['cobra':'viper', 'max_speed']
-```
-* How to get a specific column as series / dataframe ?
-```python
-# series
-df[ 'col1' ] / df.col1
-df[ [c for c in df.columns if c.startswith('a')][0] ]
-# dataframe
-df[ [ 'col1' ] ]
-df[ [c for c in df.columns if c.startswith('a')] ]
-# Choosing columns in pandas DataFrame – Kasia Rachuta – Medium
-# https://medium.com/@kasiarachuta/choosing-columns-in-pandas-dataframe-d0677b34a6ca
-df[ 'col1' ]
-# This command picks a column and returns it as a Series
-df[ [ 'col1' ] ]
-# Here, I chose the column and I get a DataFrame
-```
-* How to get the last row / value of dataframe ?
-	* How to get the last n row of pandas dataframe? - Stack Overflow
-		* https://stackoverflow.com/questions/14663004/how-to-get-the-last-n-row-of-pandas-dataframe
-	```python
-	df.iloc[ -1 ]
-	df.tail( 1 )
-	```
-	* pandas.DataFrame.tail — pandas 0.23.3 documentation
-		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html#pandas.DataFrame.tail
-		* `DataFrame.tail(n=5)`
-	* pandas.DataFrame.iloc — pandas 0.23.3 documentation
-		* http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc
-	* python - obtaining last value of dataframe column without index - Stack Overflow
-		* https://stackoverflow.com/questions/34166030/obtaining-last-value-of-dataframe-column-without-index
-		* `df.column.iat[ -1 ]`
-	* Indexing and Selecting Data — pandas 0.23.3 documentation
-		* http://pandas.pydata.org/pandas-docs/stable/indexing.html#fast-scalar-value-getting-and-setting
-	* python - Loc vs. iloc vs. ix vs. at vs. iat? - Stack Overflow
-		* https://stackoverflow.com/questions/28757389/loc-vs-iloc-vs-ix-vs-at-vs-iat
-		* loc - label based
-		* iloc - position based
-		* at: get scalar values. It's a very fast loc
-		* iat: Get scalar values. It's a very fast iloc
-* How to get scalar value of a panel with condition ?
-	* pandas.Panel.iat — pandas 0.23.4 documentation
-		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Panel.iat.html?highlight=iat#pandas.Panel.iat
-		* Access a single value for a row/column pair by integer position.
-		* Similar to iloc, in that both provide integer-based lookups. Use iat if you only need to get or set a single value in a DataFrame or Series.
-	* python - How to get scalar value on a cell using conditional indexing - Stack Overflow
-		* https://stackoverflow.com/questions/30813088/how-to-get-scalar-value-on-a-cell-using-conditional-indexing
-		* get at the underlying numpy matrix using .values on a series or dataframe
-```python
-id = df.loc[a==b, 'id'].values[0]
-id = df[a==b]['id'].iat[0]
-```
+
 * How to get count of rows in dataframe ?
 	* Built-in Functions — Python 3.7.2 documentation
 		* https://docs.python.org/3/library/functions.html#len
