@@ -3627,6 +3627,27 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 	* Return cumulative sum over a DataFrame or Series axis.
 	* Returns a DataFrame or Series of the same size containing the cumulative sum.
 
+##### [General utility functions](https://pandas.pydata.org/pandas-docs/stable/reference/general_utility_functions.html)
+
+* [pandas.set_option — pandas 1.4.3 documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.set_option.html)
+	* [Options and settings — pandas 1.4.3 documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#options-and-settings)
+	* [pandas 8 个常用的 option 设置](https://mp.weixin.qq.com/s/0-i7xwJnPsIOCJewSl1NUA)
+```py
+pd.set_option('display.max_rows',xxx) # 最大行数
+pd.set_option('display.min_rows',xxx) # 最小显示行数
+pd.set_option('display.max_columns',xxx) # 最大显示列数
+pd.set_option ('display.max_colwidth',xxx) #最大列字符数
+pd.set_option( 'display.precision',2) # 浮点型精度
+pd.set_option('display.float_format','{:,}'.format) #逗号分隔数字
+pd.set_option('display.float_format',  '{:,.2f}'.format) #设置浮点精度
+pd.set_option('display.float_format', '{:.2f}%'.format) #百分号格式化
+pd.set_option('plotting.backend', 'altair') # 更改后端绘图方式
+pd.set_option('display.max_info_columns', 200) # info输出最大列数
+pd.set_option('display.max_info_rows', 5) # info计数null时的阈值
+pd.describe_option() #展示所有设置和描述
+pd.reset_option('all') #重置所有设置选项
+```
+
 #### BEST PRACTICE
 
 * [利用 Pandas 分析日志数据](https://mp.weixin.qq.com/s/A3lteYWeM2gM8qH75M8rXQ)
