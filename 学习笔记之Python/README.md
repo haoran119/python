@@ -3622,17 +3622,42 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 
 #### [API reference](https://pandas.pydata.org/docs/reference/index.html)
 
+##### [DataFrame](https://pandas.pydata.org/docs/reference/frame.html)
+
+* [pandas.DataFrame.columns](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.columns.html)
+	* How to check if a dataframe column exists ?
+		* [python - How to check if a column exists in Pandas - Stack Overflow](https://stackoverflow.com/questions/24870306/how-to-check-if-a-column-exists-in-pandas)
+```python
+if 'A' in df.columns:
+```
+* [pandas.DataFrame.empty](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.empty.html)
+	* How to check if a dataframe column / serie is empty ?
+		* [python - How to check if pandas Series is empty? - Stack Overflow](https://stackoverflow.com/questions/24652417/how-to-check-if-pandas-series-is-empty)
+	* [pandas.DataFrame.dropna](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html#pandas-dataframe-dropna)
+		* `DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)`
+		* Remove missing values.
+```python
+df.empty
+df.dropna().empty
+```
 * [pandas.DataFrame.cumsum](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.cumsum.html)
 	* `DataFrame.cumsum(axis=None, skipna=True, *args, **kwargs)`
 	* Return cumulative sum over a DataFrame or Series axis.
 	* Returns a DataFrame or Series of the same size containing the cumulative sum.
+* [pandas.DataFrame.to_string](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html#pandas-dataframe-to-string)
+	* `DataFrame.to_string(buf=None, columns=None, col_space=None, header=True, index=True, na_rep='NaN', formatters=None, float_format=None, sparsify=None, index_names=True, justify=None, max_rows=None, max_cols=None, show_dimensions=False, decimal='.', line_width=None, min_rows=None, max_colwidth=None, encoding=None)`
+	* How to print all elements in a dataframe ? 
+		* [python - Is there a way to pretty print an entire Pandas Series / DataFrame? - Stack Overflow](https://stackoverflow.com/questions/19124601/is-there-a-way-to-pretty-print-an-entire-pandas-series-dataframe)
+```python
+print(df.to_string())
+```
 
 ##### [General utility functions](https://pandas.pydata.org/pandas-docs/stable/reference/general_utility_functions.html)
 
 * [pandas.set_option — pandas 1.4.3 documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.set_option.html)
 	* [Options and settings — pandas 1.4.3 documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#options-and-settings)
 	* [pandas 8 个常用的 option 设置](https://mp.weixin.qq.com/s/0-i7xwJnPsIOCJewSl1NUA)
-```py
+```python
 pd.set_option('display.max_rows',xxx) # 最大行数
 pd.set_option('display.min_rows',xxx) # 最小显示行数
 pd.set_option('display.max_columns',xxx) # 最大显示列数
@@ -3694,31 +3719,9 @@ pd.reset_option('all') #重置所有设置选项
 
 * [Comparison with SQL — pandas 0.23.3 documentation](https://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#)
 	* [How to rewrite your SQL queries in Pandas, and more ?](https://codeburst.io/how-to-rewrite-your-sql-queries-in-pandas-and-more-149d341fc53e)
-* How to print all elements in a dataframe ? 
-	* python - Is there a way to pretty print an entire Pandas Series / DataFrame? - Stack Overflow
-		* https://stackoverflow.com/questions/19124601/is-there-a-way-to-pretty-print-an-entire-pandas-series-dataframe
-```python
-print(df.to_string())
-```
 * How to get all column names of a dataframe?
 ```python
 list( df )
-```
-* How to check if a dataframe column exists ?
-	* python - How to check if a column exists in Pandas - Stack Overflow
-		* https://stackoverflow.com/questions/24870306/how-to-check-if-a-column-exists-in-pandas
-```python
-if 'A' in df.columns:
-```
-* How to check if a dataframe column / serie is empty ?
-	* python - How to check if pandas Series is empty? - Stack Overflow
-		* https://stackoverflow.com/questions/24652417/how-to-check-if-pandas-series-is-empty
-	* pandas.DataFrame.dropna — pandas 0.23.3 documentation
-		* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html#pandas-dataframe-dropna
-		* DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
-```python
-df.empty
-df.dropna().empty
 ```
 * How to find unique value in a column of dataframe ?
 	* pandas.unique — pandas 0.22.0 documentation
