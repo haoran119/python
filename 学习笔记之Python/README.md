@@ -3684,8 +3684,6 @@ pandas.concat([df1,df2]).drop_duplicates().reset_index(drop=True)
 	* Uniques are returned in order of appearance. This does NOT sort.
 	* Significantly faster than numpy.unique for long enough sequences. Includes NA values.
 	* How to find unique value in a column of dataframe ?
-		* pandas.Series.tolist — pandas 0.23.1 documentation
-			* https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.tolist.html#pandas-series-tolist
 		* List Unique Values In A pandas Column
 			* https://chrisalbon.com/python/data_wrangling/pandas_list_unique_values_in_column/
 * [pandas.to_datetime](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime)
@@ -3722,6 +3720,13 @@ df['duration'] = (df['end_timestamp'] - df['start_timestamp']).dt.seconds
 	* These are each a scalar type, which is a Python scalar (for str, int, float) or a pandas scalar (for Timestamp/Timedelta/Interval/Period)
 	* Returns
 		* list
+* [How to Convert Pandas DataFrame into a List - Data to Fish](https://datatofish.com/convert-pandas-dataframe-to-list/)
+	* `df.values.tolist()`
+
+###### [Attributes](https://pandas.pydata.org/pandas-docs/stable/reference/series.html#attributes)
+
+* [pandas.Series.values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.values.html)
+	* Return Series as ndarray or ndarray-like depending on the dtype.
 
 ###### [Computations / descriptive stats](https://pandas.pydata.org/pandas-docs/stable/reference/series.html#computations-descriptive-stats)
 
@@ -3743,6 +3748,12 @@ df['duration'] = (df['end_timestamp'] - df['start_timestamp']).dt.seconds
 	* [numpy.append](https://docs.scipy.org/doc/numpy/reference/generated/numpy.append.html)
 		* Append values to the end of an array.
 		* `np.append([1, 2, 3], [[4, 5, 6], [7, 8, 9]])`
+
+###### [Missing data handling](https://pandas.pydata.org/pandas-docs/stable/reference/series.html#missing-data-handling)
+
+* [pandas.Series.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.fillna.html#pandas.Series.fillna)
+	* `Series.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None)`
+	* Fill NA/NaN values using the specified method.
 
 ###### [Reshaping, sorting](https://pandas.pydata.org/pandas-docs/stable/reference/series.html#reshaping-sorting)
 
@@ -4100,6 +4111,12 @@ df[cols] = df[cols].fillna( df[cols].mean() )
 			* Mask of bool values for each element in DataFrame that indicates whether an element is an NA value.
 * [python - How to check if any value is NaN in a Pandas DataFrame - Stack Overflow](https://stackoverflow.com/questions/29530232/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe)
 	* `df.isnull().values.any()`
+* [pandas.DataFrame.notna](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.notna.html)
+	* Detect existing (non-missing) values.
+	* Return a boolean same-sized object indicating if the values are not NA. Non-missing values get mapped to True. Characters such as empty strings '' or numpy.inf are not considered NA values (unless you set pandas.options.mode.use_inf_as_na = True). NA values, such as None or numpy.NaN, get mapped to False values.
+	* Returns
+		* DataFrame
+			* Mask of bool values for each element in DataFrame that indicates whether an element is not an NA value.
 
 ###### [Reshaping, sorting, transposing](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#reshaping-sorting-transposing)
 
