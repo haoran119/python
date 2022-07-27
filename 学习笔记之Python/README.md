@@ -8,6 +8,20 @@
   * [PEP 8 -- Style Guide for Python Code | Python.org](https://www.python.org/dev/peps/pep-0008/)
   * [Programming FAQ — Python 3.9.6 documentation](https://docs.python.org/3/faq/programming.html)
   * [TimeComplexity - Python Wiki](https://wiki.python.org/moin/TimeComplexity)
+  * [Installing packages using pip and virtual environments — Python Packaging User Guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
+```python
+$ python3 -m pip install --user virtualenv
+$ python3 -m venv env
+$ source ~/env/bin/activate
+(env) $ which python3
+~/env/bin/python3
+(env) $ python3 -m pip install numpy
+(env) $ python3 -m pip install pandas
+(env) $ python3
+>>> import numpy
+>>> import pandas
+(env) $ deactivate
+```
 * [Python（计算机编程语言）_百度百科 (baidu.com)](https://baike.baidu.com/item/Python/407313?fr=aladdin#reference-[12]-21087-wrap)
   * 自从20世纪90年代初Python语言诞生至今，它已被逐渐广泛应用于系统管理任务的处理和Web编程。
   * Python是完全面向对象的语言。函数、模块、数字、字符串都是对象。并且完全支持继承、重载、派生、多继承，有益于增强源代码的复用性。Python支持重载运算符和动态类型。
