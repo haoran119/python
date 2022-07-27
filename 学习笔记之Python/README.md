@@ -4213,6 +4213,41 @@ df[:-1]
 
 ###### [Serialization / IO / conversion](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#serialization-io-conversion)
 
+* [pandas.DataFrame.from_dict](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.from_dict.html#pandas.DataFrame.from_dict)
+	* `classmethod DataFrame.from_dict(data, orient='columns', dtype=None, columns=None)`
+	* Construct DataFrame from dict of array-like or dicts.
+	* Creates DataFrame object from dictionary by columns or by index allowing dtype specification.
+	* Parameters
+		* data : dict
+			* Of the form {field : array-like} or {field : dict}.
+		* orient : {‘columns’, ‘index’, ‘tight’}, default ‘columns’
+			* The “orientation” of the data. If the keys of the passed dict should be the columns of the resulting DataFrame, pass ‘columns’ (default). Otherwise if the keys should be rows, pass ‘index’. If ‘tight’, assume a dict with keys [‘index’, ‘columns’, ‘data’, ‘index_names’, ‘column_names’].
+			* New in version 1.4.0: ‘tight’ as an allowed value for the orient argument
+		* dtype : dtype, default None
+			* Data type to force, otherwise infer.
+		* columns : list, default None
+			* Column labels to use when orient='index'. Raises a ValueError if used with orient='columns' or orient='tight'.
+	* Returns
+		* DataFrame
+* [pandas.DataFrame.from_records](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.from_records.html#pandas.DataFrame.from_records)
+	* `classmethod DataFrame.from_records(data, index=None, exclude=None, columns=None, coerce_float=False, nrows=None)`
+	* Convert structured or record ndarray to DataFrame.
+	* Creates a DataFrame object from a structured ndarray, sequence of tuples or dicts, or DataFrame.
+	* Parameters
+		* data : structured ndarray, sequence of tuples or dicts, or DataFrame
+			* Structured input data.
+		* index : str, list of fields, array-like
+			* Field of array to use as the index, alternately a specific set of input labels to use.
+		* exclude : sequence, default None
+			* Columns or fields to exclude.
+		* columns : sequence, default None
+			* Column names to use. If the passed data do not have names associated with them, this argument provides names for the columns. Otherwise this argument indicates the order of the columns in the result (any names not found in the data will become all-NA columns).
+		* coerce_float : bool, default False
+			* Attempt to convert values of non-string, non-numeric objects (like decimal.Decimal) to floating point, useful for SQL result sets.
+		* nrows : int, default None
+			* Number of rows to read if data is an iterator.
+	* Returns
+		* DataFrame
 * [pandas.DataFrame.to_string](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html#pandas-dataframe-to-string)
 	* `DataFrame.to_string(buf=None, columns=None, col_space=None, header=True, index=True, na_rep='NaN', formatters=None, float_format=None, sparsify=None, index_names=True, justify=None, max_rows=None, max_cols=None, show_dimensions=False, decimal='.', line_width=None, min_rows=None, max_colwidth=None, encoding=None)`
 	* How to print all elements in a dataframe ? 
