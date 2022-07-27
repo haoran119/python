@@ -1195,6 +1195,17 @@ if __name__ == '__main__':
 
     print("{} : {}".format(person, my_dict[person]))    # <__main__.Person object at 0x7f8cd0473ed0> : 123
 ```
+* How to delete an item from dictionary ?
+  * Built-in Types — Python 3.8.2 documentation
+    * https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+    * del d[key]
+      * Remove d[key] from d. Raises a KeyError if key is not in the map.
+    * pop(key[, default])
+      * If key is in the dictionary, remove it and return its value, else return default. If default is not given and key is not in the dictionary, a KeyError is raised.
+  * Dictionary Tutorials & Notes | Python | HackerEarth
+    * https://www.hackerearth.com/practice/python/working-with-data/dictionary/tutorial/
+  * python - Delete a dictionary item if the key exists - Stack Overflow
+    * mydict.pop("key", None)
 * How to find the min value in dictionary ?
   * min(d.items(), key=lambda x: x[1])
   * min(d.items(), key=d.get)
@@ -1223,17 +1234,10 @@ if __name__ == '__main__':
   * Python3 字典 in 操作符 | 菜鸟教程　　
     * https://www.runoob.com/python3/python3-att-dictionary-in-html.html
     * Python 字典 in 操作符用于判断键是否存在于字典中，如果键在字典 dict 里返回 true，否则返回 false。
-* How to delete an item from dictionary ?
-  * Built-in Types — Python 3.8.2 documentation
-    * https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
-    * del d[key]
-      * Remove d[key] from d. Raises a KeyError if key is not in the map.
-    * pop(key[, default])
-      * If key is in the dictionary, remove it and return its value, else return default. If default is not given and key is not in the dictionary, a KeyError is raised.
-  * Dictionary Tutorials & Notes | Python | HackerEarth
-    * https://www.hackerearth.com/practice/python/working-with-data/dictionary/tutorial/
-  * python - Delete a dictionary item if the key exists - Stack Overflow
-    * mydict.pop("key", None)
+* How to sort dict ?
+	* `sorted(mydict.items(), key=lambda x : x[1], reverse=True)`
+	* [python - How do I sort a dictionary by value? - Stack Overflow](https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value)
+	* [Python | Sort Python Dictionaries by Key or Value - GeeksforGeeks](https://www.geeksforgeeks.org/python-sort-python-dictionaries-by-key-or-value/)
 
 ### [Built-in Exceptions](https://docs.python.org/3/library/exceptions.html)
 
