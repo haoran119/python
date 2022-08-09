@@ -3535,6 +3535,23 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 		* copy()
 		* select_dtypes()
 
+#### [API Reference](https://numpy.org/doc/stable/reference/index.html)
+
+##### [Routines](https://numpy.org/doc/stable/reference/routines.html)
+
+###### [Logic functions](https://numpy.org/doc/stable/reference/routines.logic.html)
+
+* [numpy.isclose](https://numpy.org/doc/stable/reference/generated/numpy.isclose.html)
+	* `numpy.isclose(a, b, rtol=1e-05, atol=1e-08, equal_nan=False)`
+	* Returns a boolean array where two arrays are element-wise equal within a tolerance.
+	* The tolerance values are positive, typically very small numbers. The relative difference (rtol * abs(b)) and the absolute difference atol are added together to compare against the absolute difference between a and b.
+* [numpy.equal](https://numpy.org/doc/stable/reference/generated/numpy.equal.html)
+	* `numpy.equal(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj]) = <ufunc 'equal'>`
+	* Return (x1 == x2) element-wise.
+* [numpy.not_equal](https://numpy.org/doc/stable/reference/generated/numpy.not_equal.html)
+	* `numpy.not_equal(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj]) = <ufunc 'not_equal'>`
+	* Return (x1 != x2) element-wise.
+
 #### FAQ
 
 * How to calculate distance between two points ?
