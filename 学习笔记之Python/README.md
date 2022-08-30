@@ -3876,7 +3876,7 @@ df.dropna().empty
 * [pandas.DataFrame.astype](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.astype.html)
 	* `DataFrame.astype(dtype, copy=True, errors='raise')`
 	* Cast a pandas object to a specified dtype dtype.
-* How to convert series to int
+* How to convert series to int ?
 	* [python - Cannot convert the series to <class 'int'> - Stack Overflow](https://stackoverflow.com/questions/51865367/cannot-convert-the-series-to-class-int)
 		* `df['intage'] = df['age'].astype(int)`
 	* [python - convert pandas float series to int - Stack Overflow](https://stackoverflow.com/questions/34145190/convert-pandas-float-series-to-int)
