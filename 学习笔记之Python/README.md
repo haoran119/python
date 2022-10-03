@@ -2729,6 +2729,8 @@ class TestService:
 	* 跨平台的GUI工具库，较为有名的当属GTK+、Qt 和 wxWidgets 了。GTK+是C实现的，由于C语言本身不支持OOP，因而GTK+上手相当困难，写起来也较为复杂艰涩。Qt 和 wxWidgets 则是C++实现的，各自拥有庞大的用户群体。虽然我喜欢wxWidgets，但还是尽可能客观地搜集了关于Qt 和 wxWidgets 的对比评价。
 * [PySimpleGUI/PySimpleGUI](https://github.com/PySimpleGUI/PySimpleGUI)
 	* PySimpleGUI/PySimpleGUI: Launched in 2018. It's 2022 and PySimpleGUI is actively developed & supported. Create complex windows simply. Supports tkinter, Qt, WxPython, Remi (in browser). Create GUI applications trivially with a full set of widgets. Multi-Window applications are also simple. 3.4 to 3.11 supported. 325+ Demo programs & Cookbook for rapid start. Extensive documentation. Examples for Machine Learning(OpenCV Integration, Chatterbot), Rainmeter-like Desktop Widgets, Matplotlib + Pyplot integration, add GUI to command line scripts, PDF & Image Viewer. For both beginning and advanced programmers. docs - PySimpleGUI.org GitHub - PySimpleGUI.com. The Minecraft of GUIs - simple to complex... does them all.
+* [用 Python 制作可视化 GUI 界面，一键实现多种风格的照片处理](https://mp.weixin.qq.com/s/zF_VILOzWLVwWiRVqxeGTg)
+	* 当我们点击“动漫风格”时，程序会针对先前的步骤将上传的图片变成动漫风格的头像，当我们点击“老照片修复”时，会针对上传的照片进行修复，对应的代码是Github上面一个名叫DeOldify的项目，在Github上面获得了15.2K的小星星，可谓是非常的火爆，该作者给我们提供了一个多语言版本的接口，调用这个接口我们可以快速的使用该项目的能力，为老照片上色
 
 ### UnitTest
 
