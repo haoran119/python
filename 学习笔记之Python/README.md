@@ -1889,7 +1889,19 @@ def greeting(name: str) -> str:
 * [Python 进阶：全面解读高级特性之切片](https://mp.weixin.qq.com/s/afhvyDGjt8U2XzHCZHOJJA)
 * [聊一聊 Python 中的闭包](https://mp.weixin.qq.com/s/qYKNGqItnSXq0-Zq2kMCKA)
   * https://segmentfault.com/a/1190000007321972
-* [聊一聊 Python 中的“垃圾”回收](https://www.heroyf.club/2019/10/24/python_gc/)
+* [Python垃圾回收和GC模块](https://mp.weixin.qq.com/s/RG3ik-T2AbOYmylJevnSlA)
+	* https://www.infoworld.com/article/3671673/python-garbage-collection-and-the-gc-module.html
+	* 在这篇文章中，我们将看看Python内存管理是如何工作的，它的垃圾回收系统如何帮助优化Python程序中的内存，以及如何使用标准库和第三方模块来控制内存使用和垃圾回收。
+	* Python如何管理内存
+		* 什么是作用域
+	* Python循环引用
+	* Python垃圾回收器(GC)
+	* 如何使用GC模块
+	* 使用GC调试垃圾回收
+	* 避免Python内存管理中的陷阱
+		* 注意对象作用域
+		* 使用weakref避免循环引用
+		* 手动中断循环引用
 * [Python 中 -m 的典型用法、原理解析与发展演变](https://mp.weixin.qq.com/s/tD3eSb2WdOPN_dKAQ9d6Ag)
 * [IPython 中常用的魔法命令](https://mp.weixin.qq.com/s/5ZyfyR9r9zBod6ZP7scewA)
 
