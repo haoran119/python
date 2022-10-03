@@ -3337,6 +3337,15 @@ predicted_values = model.predict(x_test)
 * [酱香科技！用 Python 分析白酒类基金有多赚钱！](https://mp.weixin.qq.com/s/lNk79g2UK7vzSlIBac2Qcw)
   * 从采集基金数据然后进行分析
   * [招商中证白酒指数](https://danjuanapp.com/funding/161725?channel=1300100141)
+* [一行代码获取股票、基金数据，并绘制K线图](https://mp.weixin.qq.com/s/X_qsurX_DHeOjNWRuy9UQw)
+	* 今天这篇文章和大家分享一下如何利用Python获取股票、基金数据，并进行可视化，为金融分析&可视化先导篇
+	* 2.3 模块基本介绍与使用
+		* 2.3.1 mplfinance
+			* 基本介绍：用于金融数据可视化和可视化分析的 matplotlib 实用程序（接口），基于matplotlibe开发，并且与pandas的DataFrame数据有很好的结合。
+			* 项目地址：https://github.com/matplotlib/mplfinance
+		* 2.3.2 akshare
+			* 基本介绍：AKShare 是一个优雅简单的 Python 金融数据接口库，你可以利用这个库轻松获取到金融财经数据。
+			* 项目地址：https://github.com/jindaxiang/akshare/
 
 #### QUANT
 
