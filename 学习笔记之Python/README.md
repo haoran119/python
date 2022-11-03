@@ -2897,6 +2897,10 @@ if __name__ == '__main__':
 
 ### 运行速度
 
+* [Python 3.11 的速度大幅超越 3.8！](https://mp.weixin.qq.com/s/TULl6EGK708oPbDlf-SkQw)
+	* 而 Python 3.11 只用了 31.98 秒，意味着 3 倍的速度提升！
+	* Bun 的模拟耗时为 0.768 秒，比 Python 3.11 快 41 倍。相信对于任何熟悉 JavaScript 的人来说，这个结果都在意料之中。JavaScript 是一种 JIT 编译语言，拥有多个出色的运行时。
+	* C++ 的模拟耗时为 0.423 秒，比 JavaScript 快 1.8 倍。在我看来，这个数字代表了 Python 之类的语言可以达到的性能“峰值”。
 * [为什么Python这么慢?](https://hackernoon.com/why-is-python-so-slow-e5074b6fe55b)
 * [一行代码让 Python 的运行速度提高100倍](https://mp.weixin.qq.com/s?__biz=MzUyODg4Nzk2MQ==&mid=2247490550&amp;idx=4&amp;sn=3a18cd95623880fd108ac0492bd9ec15&source=41#wechat_redirect)
   * https://mp.weixin.qq.com/s/Vm0BKSljCzMMgRmIBbpxdQ
