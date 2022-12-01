@@ -552,6 +552,7 @@ if __name__ == '__main__':
   * '{:.2f}'.format(0.456) = '0.46'
   * python - Display a decimal in scientific notation - Stack Overflow
     * https://stackoverflow.com/questions/6913532/display-a-decimal-in-scientific-notation
+* [Python Scientific Notation With Suppressing And Conversion - Python Pool](https://www.pythonpool.com/python-scientific-notation/#:~:text=Python%20has%20a%20defined%20syntax,E%20is%20the%20exponent%20symbol.)
 * What's the infinity number ?
   * float('inf')
   * Built-in Types — Python 3.7.4 documentation
