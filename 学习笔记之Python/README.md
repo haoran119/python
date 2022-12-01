@@ -517,6 +517,20 @@ if __name__ == '__main__':
 
 ### [Built-in Constants](https://docs.python.org/3/library/constants.html)
 
+#### [Constants added by the site module](https://docs.python.org/3/library/constants.html#constants-added-by-the-site-module)
+
+* The site module (which is imported automatically during startup, except if the -S command-line option is given) adds several constants to the built-in namespace. They are useful for the interactive interpreter shell and should not be used in programs.
+* quit(code=None)
+* exit(code=None)
+	* Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, and when called, raise SystemExit with the specified exit code.
+* [Python exit commands: quit(), exit(), sys.exit() and os._exit() - GeeksforGeeks](https://www.geeksforgeeks.org/python-exit-commands-quit-exit-sys-exit-and-os-_exit/)
+	* The functions quit(), exit(), sys.exit() and os._exit() have almost the same functionality as they raise the SystemExit exception by which the Python interpreter exits and no stack traceback is printed. We can catch the exception to intercept early exits and perform cleanup activities; if uncaught, the interpreter exits as usual. 
+* copyright
+* credits
+	* Objects that when printed or called, print the text of copyright or credits, respectively.
+* license
+	* Object that when printed, prints the message “Type license() to see the full license text”, and when called, displays the full license text in a pager-like fashion (one screen at a time).
+
 ### [Built-in Types](https://docs.python.org/3/library/stdtypes.html)
 
 * How to check if dictionary/list/string/tuple is empty ?
