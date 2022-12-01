@@ -4083,6 +4083,9 @@ df.reset_index(drop=True, inplace=True)
 	* `DataFrame.cumsum(axis=None, skipna=True, *args, **kwargs)`
 	* Return cumulative sum over a DataFrame or Series axis.
 	* Returns a DataFrame or Series of the same size containing the cumulative sum.
+* [pandas.DataFrame.max](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.max.html)
+	* `DataFrame.max(axis=_NoDefault.no_default, skipna=True, level=None, numeric_only=None, **kwargs)`
+	* Return the maximum of the values over the requested axis.
 
 ###### [Reindexing / selection / label manipulation](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#reindexing-selection-label-manipulation)
 
