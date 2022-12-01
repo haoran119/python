@@ -2974,6 +2974,7 @@ if __name__ == '__main__':
 * [用 Python 自动监测 GitHub 项目更新](https://mp.weixin.qq.com/s/_nkx_cCKxz0VrfgGvWDcrA)
 * [不到 50 行 Python 代码，做个刮刮卡](https://mp.weixin.qq.com/s/4WGYs4GMjObQZlObM2KkNQ)
 * [用 Python 批量下载百度图片](https://mp.weixin.qq.com/s/q-obSiAt1Rs28itlKU2FiA)
+* [PyAutoGUI，轻松搞定图片上传！](https://mp.weixin.qq.com/s/-STFI0ajuJiG9fCkmN-srw)
 * [用 Python 处理 B 站下载视频](https://mp.weixin.qq.com/s/dCTIUNeDQ_HeZqWQr0hesA)
 * [如何用 Python 快速抓取 Google 搜索？](https://mp.weixin.qq.com/s/-GUgWH06Wy7pCzNbMjinXg)
   * https://hackernoon.com/how-to-scrape-google-with-python-bo7d2tal
@@ -3333,6 +3334,7 @@ predicted_values = model.predict(x_test)
 * [用 Python 做了一个全球疫情数据大屏](https://mp.weixin.qq.com/s/IbdEnZmG6UjCZvNVGWJcxg)
   * 爬虫模块负责从腾讯新闻获取数据，之后存入 Redis。Flask 是一个 Web 框架，负责 URL 和后台函数的映射，以及数据的传输。换言之，也就是从 Redis 中获取到原始数据，然后整理成相应的格式之后传递给前端页面，前端页面在拿到数据之后，调用百度的 ECharts 来实现图表的展示即可。
 * [1行代码实现Python数据分析：图表美观清晰，自带对比功能](https://github.com/fbdesignpro/sweetviz)
+* [超实用！整理了34个Python自动化办公库！](https://mp.weixin.qq.com/s/pOqkZ3u39wMxvd6vECZINg)
 
 ### FINANCE
 
@@ -3376,6 +3378,7 @@ predicted_values = model.predict(x_test)
 		* 2.3.2 akshare
 			* 基本介绍：AKShare 是一个优雅简单的 Python 金融数据接口库，你可以利用这个库轻松获取到金融财经数据。
 			* 项目地址：https://github.com/jindaxiang/akshare/
+* [如何应用Python助你在股票中获利？](https://mp.weixin.qq.com/s/_EX69-gjN5GHCd0agRIIJA)
 
 #### QUANT
 
