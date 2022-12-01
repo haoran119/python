@@ -1569,14 +1569,20 @@ For a reference on these format specifications, see the reference guide for the 
       * os.path.isdir()
     * Checking if Either Exist
       * os.path.exists()
+
+### [Generic Operating System Services](https://docs.python.org/3/library/allos.html)
+
+#### [os — Miscellaneous operating system interfaces](https://docs.python.org/3/library/os.html)
+
+* This module provides a portable way of using operating system dependent functionality. If you just want to read or write a file see open(), if you want to manipulate paths, see the os.path module, and if you want to read all the lines in all the files on the command line see the fileinput module. For creating temporary files and directories see the tempfile module, and for high-level file and directory handling see the shutil module.
+
+##### [Files and Directories](https://docs.python.org/3/library/os.html#files-and-directories)
+
+* [os.walk(top, topdown=True, onerror=None, followlinks=False)](https://docs.python.org/3/library/os.html#os.walk)
+	* Generate the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
 * How to iterate directory for files ?
-  * os — Miscellaneous operating system interfaces — Python 3.7.4 documentation
-    * https://docs.python.org/3/library/os.html?highlight=os%20walk#os.walk
-    * Generate the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
-  * Python3 OS 文件/目录方法 | 菜鸟教程
-    * http://www.runoob.com/python3/python3-os-file-methods.html
-  * Python list directory, subdirectory, and files - Stack Overflow
-    * https://stackoverflow.com/questions/2909975/python-list-directory-subdirectory-and-files
+	* [Python3 OS 文件/目录方法 | 菜鸟教程](http://www.runoob.com/python3/python3-os-file-methods.html)
+	* [Python list directory, subdirectory, and files - Stack Overflow](https://stackoverflow.com/questions/2909975/python-list-directory-subdirectory-and-files)
 ```python
 import os
 
@@ -1588,8 +1594,15 @@ for path, subdirs, files in os.walk(root):
             filename = os.path.join(path, name)
             print(filename) # '.\path\test.json'
 ```
-
-### [Generic Operating System Services](https://docs.python.org/3/library/allos.html)
+* [python - In what order does os.walk iterates iterate? - Stack Overflow](https://stackoverflow.com/questions/18282370/in-what-order-does-os-walk-iterates-iterate)
+	* os.walk uses os.listdir. Here is the docstring for os.listdir:
+		* listdir(path) -> list_of_strings
+		* Return a list containing the names of the entries in the directory.
+		* path: path of directory to list
+		* The list is in arbitrary order. It does not include the special entries '.' and '..' even if they are present in the directory.
+	* You could, however, use sort to ensure the order you desire.
+* [How to sort os.walk list?](https://python-forum.io/thread-30142.html)
+	* `for filename in sorted(files):`
 
 #### [io — Core tools for working with streams](https://docs.python.org/3/library/io.html)
 
