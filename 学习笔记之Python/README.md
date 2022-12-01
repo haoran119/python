@@ -1817,6 +1817,16 @@ except Exception as e:
     logger.exception(e)
 ```
 
+### [Concurrent Execution](https://docs.python.org/3/library/concurrency.html)
+
+#### [subprocess — Subprocess management](https://docs.python.org/3/library/subprocess.html)
+
+* The subprocess module allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes. This module intends to replace several older modules and functions:
+	* os.system
+	* os.spawn*
+* [How to Execute Shell Commands With Python?](https://www.the-analytics.club/python-shell-commands#:~:text=If%20you%20need%20to%20execute,arguments%20or%20producing%20text%20output.)
+	* If you need to execute a shell command with Python, there are two ways. You can either use the subprocess module or the command.run() function.
+
 ### [Development Tools](https://docs.python.org/3/library/development.html)
 
 * The modules described in this chapter help you write software. For example, the pydoc module takes a module and generates documentation based on the module’s contents. The doctest and unittest modules contains frameworks for writing unit tests that automatically exercise code and verify that the expected output is produced. 2to3 can translate Python 2.x source code into valid Python 3.x code.
