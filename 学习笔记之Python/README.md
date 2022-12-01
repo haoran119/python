@@ -4308,6 +4308,50 @@ df[:-1]
 			* Number of rows to read if data is an iterator.
 	* Returns
 		* DataFrame
+* [pandas.DataFrame.to_csv](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv)
+	* Write object to a comma-separated values (csv) file.
+	* `DataFrame.to_csv(path_or_buf=None, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', lineterminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)`
+* [How to Append Pandas DataFrame to Existing CSV File? - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-append-pandas-dataframe-to-existing-csv-file/)
+	* `df.to_csv('GFG.csv', mode='a', index=False, header=False)`
+* [pandas.DataFrame.to_excel](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html)
+	* Write object to an Excel sheet.
+	* `DataFrame.to_excel(excel_writer, sheet_name='Sheet1', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, startrow=0, startcol=0, engine=None, merge_cells=True, encoding=_NoDefault.no_default, inf_rep='inf', verbose=_NoDefault.no_default, freeze_panes=None, storage_options=None)`
+* [How to Write Pandas DataFrames to Multiple Excel Sheets? - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-write-pandas-dataframes-to-multiple-excel-sheets/)
+```python
+# import the python pandas package
+import pandas as pd
+
+# create data_frame1 by creating a dictionary
+# in which values are stored as list
+data_frame1 = pd.DataFrame({'Fruits': ['Appple', 'Banana', 'Mango',
+									'Dragon Fruit', 'Musk melon', 'grapes'],
+							'Sales in kg': [20, 30, 15, 10, 50, 40]})
+
+# create data_frame2 by creating a dictionary
+# in which values are stored as list
+data_frame2 = pd.DataFrame({'Vegetables': ['tomato', 'Onion', 'ladies finger',
+										'beans', 'bedroot', 'carrot'],
+							'Sales in kg': [200, 310, 115, 110, 55, 45]})
+
+# create data_frame3 by creating a dictionary
+# in which values are stored as list
+data_frame3 = pd.DataFrame({'Baked Items': ['Cakes', 'biscuits', 'muffins',
+											'Rusk', 'puffs', 'cupcakes'],
+							'Sales in kg': [120, 130, 159, 310, 150, 140]})
+
+print(data_frame1)
+print(data_frame2)
+print(data_frame3)
+
+# create a excel writer object
+with pd.ExcelWriter("path to file\filename.xlsx") as writer:
+
+	# use to_excel function and specify the sheet_name and index
+	# to store the dataframe in specified sheet
+	data_frame1.to_excel(writer, sheet_name="Fruits", index=False)
+	data_frame2.to_excel(writer, sheet_name="Vegetables", index=False)
+	data_frame3.to_excel(writer, sheet_name="Baked Items", index=False)
+```
 * [pandas.DataFrame.to_string](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html#pandas-dataframe-to-string)
 	* `DataFrame.to_string(buf=None, columns=None, col_space=None, header=True, index=True, na_rep='NaN', formatters=None, float_format=None, sparsify=None, index_names=True, justify=None, max_rows=None, max_cols=None, show_dimensions=False, decimal='.', line_width=None, min_rows=None, max_colwidth=None, encoding=None)`
 	* How to print all elements in a dataframe ? 
