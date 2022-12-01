@@ -3836,6 +3836,14 @@ df['duration'] = (df['end_timestamp'] - df['start_timestamp']).dt.seconds
 
 ##### [DataFrame](https://pandas.pydata.org/docs/reference/frame.html)
 
+###### [Constructor](https://pandas.pydata.org/docs/reference/frame.html#constructor)
+
+* [pandas.DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame)
+	* Two-dimensional, size-mutable, potentially heterogeneous tabular data.
+	* `class pandas.DataFrame(data=None, index=None, columns=None, dtype=None, copy=None)`
+* [How to create an empty DataFrame and append rows & columns to it in Pandas? - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-create-an-empty-dataframe-and-append-rows-columns-to-it-in-pandas/)
+	* `df = pd.DataFrame()`
+
 ###### [Attributes and underlying data](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#attributes-and-underlying-data)
 
 * [pandas.DataFrame.index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html#pandas.DataFrame.index)
