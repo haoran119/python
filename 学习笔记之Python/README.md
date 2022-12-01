@@ -3742,22 +3742,9 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 	* Read a comma-separated values (csv) file into DataFrame.
 	* Also supports optionally iterating or breaking of the file into chunks.
 	* Additional help can be found in the online docs for IO Tools.
-* [pandas.DataFrame.to_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv)
-	* `DataFrame.to_csv(path_or_buf=None, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', line_terminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)`
-	* Write object to a comma-separated values (csv) file.
-* How to add pandas data to an existing csv file? - Stack Overflow
-	* https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
-	```python
-	with open(filename, 'a') as f:
-	df.to_csv(f, header=False)
-	```
-* How to stop appending a blank line in csv ?
-	* `pandas.DataFrame.to_csv( line_terminator='\n' )`
-	* pandas.DataFrame.to_csv — pandas 0.24.2 documentation
-		* http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html
-		* line_terminator : string, optional
-		* The newline character or character sequence to use in the output file. Defaults to os.linesep, which depends on the OS in which this method is called (‘n’ for linux, ‘rn’ for Windows, i.e.).
-		* Changed in version 0.24.0.
+* [pandas.ExcelWriter](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.ExcelWriter.html#pandas.ExcelWriter)
+	* `class pandas.ExcelWriter(path, engine=None, date_format=None, datetime_format=None, mode='w', storage_options=None, if_sheet_exists=None, engine_kwargs=None, **kwargs)`
+	* Class for writing DataFrame objects into excel sheets.
 
 ##### [General functions](https://pandas.pydata.org/pandas-docs/stable/reference/general_functions.html)
 
@@ -4340,10 +4327,23 @@ df[:-1]
 	* Returns
 		* DataFrame
 * [pandas.DataFrame.to_csv](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv)
+	* `DataFrame.to_csv(path_or_buf=None, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', line_terminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)`
 	* Write object to a comma-separated values (csv) file.
-	* `DataFrame.to_csv(path_or_buf=None, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', lineterminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)`
+* How to add pandas data to an existing csv file? - Stack Overflow
+	* https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
+	```python
+	with open(filename, 'a') as f:
+	df.to_csv(f, header=False)
+	```
 * [How to Append Pandas DataFrame to Existing CSV File? - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-append-pandas-dataframe-to-existing-csv-file/)
 	* `df.to_csv('GFG.csv', mode='a', index=False, header=False)`
+* How to stop appending a blank line in csv ?
+	* `pandas.DataFrame.to_csv( line_terminator='\n' )`
+	* pandas.DataFrame.to_csv — pandas 0.24.2 documentation
+		* http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html
+		* line_terminator : string, optional
+		* The newline character or character sequence to use in the output file. Defaults to os.linesep, which depends on the OS in which this method is called (‘n’ for linux, ‘rn’ for Windows, i.e.).
+		* Changed in version 0.24.0.
 * [pandas.DataFrame.to_excel](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html)
 	* Write object to an Excel sheet.
 	* `DataFrame.to_excel(excel_writer, sheet_name='Sheet1', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, startrow=0, startcol=0, engine=None, merge_cells=True, encoding=_NoDefault.no_default, inf_rep='inf', verbose=_NoDefault.no_default, freeze_panes=None, storage_options=None)`
@@ -4382,6 +4382,26 @@ with pd.ExcelWriter("path to file\filename.xlsx") as writer:
 	data_frame1.to_excel(writer, sheet_name="Fruits", index=False)
 	data_frame2.to_excel(writer, sheet_name="Vegetables", index=False)
 	data_frame3.to_excel(writer, sheet_name="Baked Items", index=False)
+```
+* [No module named 'openpyxl' - Python 3.4 - Ubuntu - Stack Overflow](https://stackoverflow.com/questions/34509198/no-module-named-openpyxl-python-3-4-ubuntu)
+	* pip refers to Python 2 as a default in Ubuntu, this means that pip install x will install the module for Python 2 and not for 3
+	* pip3 refers to Python 3, it will install the module for Python 3
+	* `pip3 install openpyxl`
+* How to clear existing excel sheets and append new sheets ? 
+```python
+import pandas as pd
+
+with pd.ExcelWriter(output_file) as writer:
+	df = pd.DataFrame()
+	df.to_excel(writer, sheet_name='Sheet1', index=False)
+
+...
+
+with pd.ExcelWriter(output_file,
+					mode='a',
+					if_sheet_exists='replace'
+) as writer:
+	df_new.to_excel(writer, sheet_name='Sheet2', index=False)
 ```
 * [pandas.DataFrame.to_string](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html#pandas-dataframe-to-string)
 	* `DataFrame.to_string(buf=None, columns=None, col_space=None, header=True, index=True, na_rep='NaN', formatters=None, float_format=None, sparsify=None, index_names=True, justify=None, max_rows=None, max_cols=None, show_dimensions=False, decimal='.', line_width=None, min_rows=None, max_colwidth=None, encoding=None)`
