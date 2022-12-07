@@ -4594,3 +4594,5 @@ df_mean = df.groupby('id').col.mean().rename('mean_col')
 df_min = df.groupby('id').col.min().rename('min_col')
 df_result = pd.concat([df_mean, df_min], axis=1).reset_index()
 ```
+
+# END
