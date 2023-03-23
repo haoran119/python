@@ -3430,6 +3430,10 @@ predicted_values = model.predict(x_test)
 
 ### ERROR FIX
 
+* How to fix error `cannot find PyString_Check` in python 3 ?
+    * Use `PyUnicode_Check` in Python 3 to replace deprecated `PyString_Check`
+    * [py3c reference — py3c 1.4 documentation](https://py3c.readthedocs.io/en/latest/reference.html)
+    * [changes for python3 · caqtdm/caqtdm@ba63473](https://github.com/caqtdm/caqtdm/commit/ba634736325789cf3e1408fa679113da7e7c6a33)
 * How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
   * Check the indentation for other class member functions prior to plot_all()
 * How to fix "Invalid syntax" when using python3 feature typing?
