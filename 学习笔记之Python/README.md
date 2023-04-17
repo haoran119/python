@@ -3436,6 +3436,8 @@ predicted_values = model.predict(x_test)
     * [changes for python3 · caqtdm/caqtdm@ba63473](https://github.com/caqtdm/caqtdm/commit/ba634736325789cf3e1408fa679113da7e7c6a33)
 * How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
   * Check the indentation for other class member functions prior to plot_all()
+* How to fix `ImportError: dynamic module does not define module export function`?
+    * [python - Unable to solve "ImportError: dynamic module does not define module export function" - Stack Overflow](https://stackoverflow.com/questions/55277328/unable-to-solve-importerror-dynamic-module-does-not-define-module-export-funct)
 * How to fix "Invalid syntax" when using python3 feature typing?
 	* add below on the top to specify the env python3
 ```python
