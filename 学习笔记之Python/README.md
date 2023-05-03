@@ -3419,14 +3419,20 @@ predicted_values = model.predict(x_test)
 ## FAQ
 
 * What's package and module ?
-  * Python 提供了一个办法，把这些定义存放在文件中，为一些脚本或者交互式的解释器实例使用，这个文件被称为模块。模块是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用 python 标准库的方法。
-  * 包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。在导入一个包的时候，Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录。目录只有包含一个叫做 \_\_init\_\_.py 的文件才会被认作是一个包，主要是为了避免一些滥俗的名字（比如叫做 string）不小心的影响搜索路径中的有效模块。
+    * Python 提供了一个办法，把这些定义存放在文件中，为一些脚本或者交互式的解释器实例使用，这个文件被称为模块。模块是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用 python 标准库的方法。
+    * 包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。在导入一个包的时候，Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录。目录只有包含一个叫做 \_\_init\_\_.py 的文件才会被认作是一个包，主要是为了避免一些滥俗的名字（比如叫做 string）不小心的影响搜索路径中的有效模块。
+* What's `.pyd` file ?
+    * A `.pyd` file is a compiled binary extension module for Python on Windows. It is equivalent to a `.so` or `.dll` file on other platforms.
+    * The `.pyd` extension stands for `Python Dynamic-link Library`. It contains compiled Python code that can be imported into a Python program using the import statement. The `.pyd` file is essentially a shared library that is loaded by the Python interpreter at runtime.
+    * To create a `.pyd` file, you typically need to use a C or C++ compiler and link against the Python library. You can use a variety of tools and libraries to help with this, including distutils, setuptools, and Cython.
+    * Once you have compiled your extension module into a `.pyd` file, you can distribute it to other users who can then import it into their own Python programs. When your module is imported, Python will automatically load the .pyd file and make its functions and classes available for use.
+    * In summary, a `.pyd` file is a compiled binary extension module for Python on Windows, used to provide additional functionality to Python programs.
 * How to install and update python ?
 	* [How to Install Updated Python 3 on Mac](https://osxdaily.com/2018/06/13/how-install-update-python-3x-mac/)
 	* [Download Python | Python.org](https://www.python.org/downloads/)
 * How to set pip install package index ?
-  * Edit ~/.pip/pip.conf to set index-url / extra-index-url
-  * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
+    * Edit ~/.pip/pip.conf to set index-url / extra-index-url
+    * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
 
 ### ERROR FIX
 
