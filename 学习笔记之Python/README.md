@@ -230,6 +230,28 @@ $ source ~/env/bin/activate
     print(next(f()))    # 5
     ```
 
+### [Python HOWTOs](https://docs.python.org/3/howto/index.html)
+
+#### [Porting Python 2 Code to Python 3](https://docs.python.org/3/howto/pyporting.html)
+
+##### Learn the differences between Python 2 & 3
+
+* Typically the two best ways of doing that is reading the [“What’s New”](https://docs.python.org/3/whatsnew/index.html#whatsnew-index) doc for each release of Python 3 and the [Porting to Python 3](http://python3porting.com/) book (which is free online). There is also a handy [cheat sheet](https://python-future.org/compatible_idioms.html) from the Python-Future project.
+
+##### MISC
+
+* How to fix `[ERROR] 'Exception' object has no attribute 'message' in py3`?
+    * In Python 2, exceptions had a message attribute where you could find the error message. However, this attribute was deprecated in Python 2.6 and removed in Python 3.
+    * To get the message from an exception in Python 3, you should use the `str()` function or the `args` attribute.
+```python
+try:
+    errorMsg = "Verification failed"
+    raise Exception(errorMsg)
+except Exception as e:
+    print(str(e))  # use str function to print the error message
+    print(e.args)  # or use args attribute which is a tuple containing all arguments passed to the exception
+```
+
 ### [Basic Operators](https://www.tutorialspoint.com/python3/python_basic_operators.htm)
 
 * [6.12. Assignment expressions - 6. Expressions — Python 3.9.7 documentation](https://docs.python.org/3/reference/expressions.html?highlight=walrus#assignment-expressions)
