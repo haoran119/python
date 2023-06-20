@@ -1378,6 +1378,25 @@ if __name__ == '__main__':
   * python - Importing modules from parent folder - Stack Overflow
     * https://stackoverflow.com/questions/714063/importing-modules-from-parent-folder
   * [学了半天，import 到底在干啥？](https://mp.weixin.qq.com/s/FN__-XO_-htH36jPLiiTZg)
+* `import lib` vs `from lib import *`
+    * These two Python import statements are used to import modules, but they do so in slightly different ways:
+        * `import lib`: This imports the module `lib`, and creates a reference to that module in the current namespace. After this statement is executed, you can use `lib.name` to refer to things defined in the module.
+        * `from lib import *`: This imports all items from the `lib` module directly into the current namespace. This means you can refer to them directly without the `lib.` prefix. However, if there are any naming conflicts between identifiers in the current namespace and in the module, the module's identifiers will overwrite the ones in the current namespace.
+        * Here's a simple example to illustrate the difference:
+        ```python
+        # Suppose lib has a function named foo
+        
+        # using import
+        import lib
+        lib.foo()  # correct
+        foo()  # NameError: name 'foo' is not defined
+        
+        # using from import
+        from lib import *
+        foo()  # correct
+        lib.foo()  # NameError: name 'lib' is not defined, because 'lib' itself is not imported
+        ```
+        * As a best practice, it is generally better to use `import lib` or `from lib import specific_item` rather than `from lib import *`, because the latter can cause naming conflicts and make it unclear where certain functions or attributes are coming from, which can make the code harder to read and debug.
 * [深入探讨Python的import机制：实现远程导入模块 | CSDN博文精选](https://mp.weixin.qq.com/s/Sx_WyKUpoZrnFtV9epAfpg)
 * 你常常看到的 \_\_init\_\_.py 到底是个啥？
   * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
