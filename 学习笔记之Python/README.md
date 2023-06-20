@@ -240,6 +240,14 @@ $ source ~/env/bin/activate
 
 ##### MISC
 
+* What's the difference of default encoding between py2 and py3?
+    * In Python, the default string encoding can vary between different versions:
+        * Python 2: The default string in Python 2 is `ASCII`. This means that when you type a string directly into your Python 2 code, it's treated as an ASCII string. If you want to include non-ASCII characters in your string, you have to mark it as a Unicode string using the `u` prefix, like `u"こんにちは"`. For file encoding, Python 2 uses ASCII as well.
+        * Python 3: Python 3 changed to use `UTF-8` as the default source code encoding. This means you can include non-ASCII characters in your strings without needing a special prefix. Moreover, the `str` type in Python 3 is equivalent to the `unicode` type in Python 2, and Python 3 introduced a separate `bytes` type for handling raw binary data. For file encoding, Python 3 uses `UTF-8` by default.
+    * This change was part of Python's overall move towards better Unicode support in Python 3, which makes it easier to write code that handles international characters and works consistently across different languages and platforms.
+    * Do note that while these are the defaults, Python both 2 and 3 allow you to specify a different encoding for a source code file using a special comment at the top of the file:
+    * `# -*- coding: encoding -*-`
+    * Replace encoding with the name of the encoding you want to use, like 'utf-8' or 'latin-1'. This will override the default encoding for that file.
 * How to fix `[ERROR] 'Exception' object has no attribute 'message' in py3`?
     * In Python 2, exceptions had a message attribute where you could find the error message. However, this attribute was deprecated in Python 2.6 and removed in Python 3.
     * To get the message from an exception in Python 3, you should use the `str()` function or the `args` attribute.
