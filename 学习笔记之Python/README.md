@@ -248,6 +248,8 @@ $ source ~/env/bin/activate
     * Do note that while these are the defaults, Python both 2 and 3 allow you to specify a different encoding for a source code file using a special comment at the top of the file:
     * `# -*- coding: encoding -*-`
     * Replace encoding with the name of the encoding you want to use, like 'utf-8' or 'latin-1'. This will override the default encoding for that file.
+* How to fix `exec("import lib") in globals()` in Python 3?
+    * `exec("import lib", globals())`
 * How to fix `[ERROR] 'Exception' object has no attribute 'message' in py3`?
     * In Python 2, exceptions had a message attribute where you could find the error message. However, this attribute was deprecated in Python 2.6 and removed in Python 3.
     * To get the message from an exception in Python 3, you should use the `str()` function or the `args` attribute.
