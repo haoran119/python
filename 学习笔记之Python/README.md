@@ -251,6 +251,57 @@ except Exception as e:
     print(str(e))  # use str function to print the error message
     print(e.args)  # or use args attribute which is a tuple containing all arguments passed to the exception
 ```
+* What's the difference of using string.replace() with bytes object between py2 and py3?
+    * There is indeed a key difference between how Python 2 and Python 3 handle strings and bytes, and this does affect the `replace()` method.
+    * In Python 2, there's a `str` type, which is a sequence of bytes, and a `unicode` type, which is a sequence of Unicode characters.
+    * In Python 3, however, the `str` type is a sequence of Unicode characters (equivalent to Python 2's `unicode`), and there's a new `bytes` type that's a sequence of bytes (equivalent to Python 2's `str`).
+    * This means that if you want to use `replace()` on a bytes object in Python 3, you need to give it bytes arguments, not string arguments. Here's an example:
+    ```python
+    # Python 3
+    b = b'Hello, world!'
+    b = b.replace(b'world', b'Python')
+    print(b)  # Outputs: b'Hello, Python!'
+    ```
+    * If you tried to give it string arguments, like `b.replace('world', 'Python')`, it would give you a `TypeError`, because it's expecting bytes, not strings.
+    * In Python 2, the equivalent code would be:
+    ```python
+    # Python 2
+    s = 'Hello, world!'
+    s = s.replace('world', 'Python')
+    print(s)  # Outputs: 'Hello, Python!'
+    ```
+    * This works with strings in Python 2 because Python 2's `str` type is a sequence of bytes. If you wanted to use Unicode strings in Python 2, you would use the `unicode` type and the `u` prefix.
+    * Please note that for Python 2 code, to print a non-ASCII string in the console, you may need to encode it to an appropriate encoding (such as UTF-8).
+* How to use lxml.etree.tostring() in Python 3?
+    * Using the `lxml.etree.tostring()` function in Python 3 is very similar to using it in Python 2. The function is used to create a string representation of an XML `Element` or `ElementTree`. Here's a basic example:
+    ```python
+    from lxml import etree
+    
+    # Create a root element
+    root = etree.Element("root")
+    
+    # Add child elements
+    child1 = etree.SubElement(root, "child1")
+    child2 = etree.SubElement(root, "child2")
+    
+    # Add text to the child elements
+    child1.text = "Text for child 1"
+    child2.text = "Text for child 2"
+    
+    # Convert the root Element to a string
+    output = etree.tostring(root, pretty_print=True, encoding='unicode')
+    
+    print(output)
+    ```
+    * This script will output:
+    ```xml
+    <root>
+      <child1>Text for child 1</child1>
+      <child2>Text for child 2</child2>
+    </root>
+    ```
+    * In this example, `encoding='unicode'` is used to ensure that the `tostring` function returns a Python `str` object rather than a `bytes` object. If you omit this argument, `tostring` will return a bytes object, and you may need to decode it to a string using the `bytes.decode()` method.
+    * The `pretty_print=True` argument is used to format the output with indents and newlines to make it easier to read. If you omit this argument or set it to `False`, the output will be a single line without any extra whitespace.
 
 ### [Basic Operators](https://www.tutorialspoint.com/python3/python_basic_operators.htm)
 
