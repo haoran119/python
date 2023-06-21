@@ -652,10 +652,37 @@ __import__()
 * `Note` The built-in functions globals() and locals() return the current global and local dictionary, respectively, which may be useful to pass around for use as the second and third argument to exec().
 * `Note` The default locals act as described for function locals() below: modifications to the default locals dictionary should not be attempted. Pass an explicit locals dictionary if you need to see effects of the code on locals after function exec() returns.
 * Changed in version 3.11: Added the closure parameter.
+* How to use exec()?
+    * In Python, the `exec()` function is used to execute dynamically created program, which is either a string or object code. If it is a string, the string is parsed as a suite of Python statements which is then executed (unless a syntax error occurs). If it is an object code, it is simply executed. Here is a simple example of its usage:
+    ```python
+    program = 'a = 5\nb=10\nprint("Sum =", a+b)'
+    exec(program)
+    ```
+    * In this case, the string `program` is a valid Python program, and when passed to `exec()`, it's executed just as if you had typed it into a Python script.
+    * Please be aware that the use of `exec()` comes with security considerations, especially if you're executing code from an untrusted source. It can execute arbitrary Python code, which could potentially do harmful things to your system. Therefore, you should be very careful about using it in a secure context, and it's generally best to avoid its use if possible.
 
 #### [globals()](https://docs.python.org/3/library/functions.html?highlight=exec#globals)
 
 * Return the dictionary implementing the current module namespace. For code within functions, this is set when the function is defined and remains the same regardless of where the function is called.
+* How to use globals()?
+    * In Python, `globals()` is a built-in function that returns a dictionary representing the current global symbol table, which is always the dictionary of the current module (inside a function or method, this is the module where it is defined, not the module from which it is called).
+    * This dictionary will contain all global variables. Here's a simple example:
+    ```python
+    x = 10
+    y = 20
+    
+    def show_globals():
+        print(globals())
+    
+    show_globals()
+    ```
+    * In this example, `show_globals()` will print out a dictionary containing all global variables, including `x` and `y`.
+    * Keep in mind that `globals()` gives you access to all global variables, so modifying this dictionary will affect those variables. For example:
+    ```python
+    globals()['x'] = 25
+    print(x)  # This will print 25
+    ```
+    * Again, as with `exec()`, be aware that modifying global variables can have far-reaching effects, and should be done with care. Modifying the output of `globals()` should be done sparingly and cautiously, if at all.
 
 #### [locals()](https://docs.python.org/3/library/functions.html?highlight=exec#locals)
 
