@@ -531,6 +531,7 @@ if __name__ == '__main__':
 ### [Built-in Functions](https://docs.python.org/3/library/functions.html)
 
 * The Python interpreter has a number of functions and types built into it that are always available. They are listed here in alphabetical order.
+
 A
 abs()
 aiter()
@@ -640,8 +641,9 @@ zip()
 _
 __import__()
 
-#### [exec(object, globals=None, locals=None, /, *, closure=None)](https://docs.python.org/3/library/functions.html?highlight=exec#exec)
+#### [exec](https://docs.python.org/3/library/functions.html?highlight=exec#exec)
 
+* `exec(object, globals=None, locals=None, /, *, closure=None)`
 * This function supports dynamic execution of Python code. object must be either a string or a code object. If it is a string, the string is parsed as a suite of Python statements which is then executed (unless a syntax error occurs). 1 If it is a code object, it is simply executed. In all cases, the code that’s executed is expected to be valid as file input (see the section File input in the Reference Manual). Be aware that the nonlocal, yield, and return statements may not be used outside of function definitions even within the context of code passed to the exec() function. The return value is None.
 * In all cases, if the optional parts are omitted, the code is executed in the current scope. If only globals is provided, it must be a dictionary (and not a subclass of dictionary), which will be used for both the global and the local variables. If globals and locals are given, they are used for the global and local variables, respectively. If provided, locals can be any mapping object. Remember that at the module level, globals and locals are the same dictionary. If exec gets two separate objects as globals and locals, the code will be executed as if it were embedded in a class definition.
 * If the globals dictionary does not contain a value for the key __builtins__, a reference to the dictionary of the built-in module builtins is inserted under that key. That way you can control what builtins are available to the executed code by inserting your own __builtins__ dictionary into globals before passing it to exec().
@@ -660,20 +662,25 @@ __import__()
 * Update and return a dictionary representing the current local symbol table. Free variables are returned by locals() when it is called in function blocks, but not in class blocks. Note that at the module level, locals() and globals() are the same dictionary.
 * `Note` The contents of this dictionary should not be modified; changes may not affect the values of local and free variables used by the interpreter.
 
-#### [open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)](https://docs.python.org/3/library/functions.html#open)
+#### [open](https://docs.python.org/3/library/functions.html#open)
 
+* `open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)`
 * Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
 
-#### [ord(c)](https://docs.python.org/3/library/functions.html#ord)
+#### [ord](https://docs.python.org/3/library/functions.html#ord)
 
+* `ord(c)`
 * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
 
-#### [reversed(seq)](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
+#### [reversed](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
 
+* `reversed(seq)`
 * Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
 
 #### [zip](https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip)
 
+* `zip(*iterables, strict=False)`
+* Iterate over several iterables in parallel, producing tuples with an item from each one.
 * Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
 
 #### MISC
