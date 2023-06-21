@@ -530,6 +530,154 @@ if __name__ == '__main__':
 
 ### [Built-in Functions](https://docs.python.org/3/library/functions.html)
 
+* The Python interpreter has a number of functions and types built into it that are always available. They are listed here in alphabetical order.
+A
+abs()
+aiter()
+all()
+any()
+anext()
+ascii()
+
+B
+bin()
+bool()
+breakpoint()
+bytearray()
+bytes()
+
+C
+callable()
+chr()
+classmethod()
+compile()
+complex()
+
+D
+delattr()
+dict()
+dir()
+divmod()
+
+E
+enumerate()
+eval()
+exec()
+
+F
+filter()
+float()
+format()
+frozenset()
+
+G
+getattr()
+globals()
+
+H
+hasattr()
+hash()
+help()
+hex()
+
+I
+id()
+input()
+int()
+isinstance()
+issubclass()
+iter()
+L
+len()
+list()
+locals()
+
+M
+map()
+max()
+memoryview()
+min()
+
+N
+next()
+
+O
+object()
+oct()
+open()
+ord()
+
+P
+pow()
+print()
+property()
+
+R
+range()
+repr()
+reversed()
+round()
+
+S
+set()
+setattr()
+slice()
+sorted()
+staticmethod()
+str()
+sum()
+super()
+
+T
+tuple()
+type()
+
+V
+vars()
+
+Z
+zip()
+_
+__import__()
+
+#### [exec(object, globals=None, locals=None, /, *, closure=None)](https://docs.python.org/3/library/functions.html?highlight=exec#exec)
+
+* This function supports dynamic execution of Python code. object must be either a string or a code object. If it is a string, the string is parsed as a suite of Python statements which is then executed (unless a syntax error occurs). 1 If it is a code object, it is simply executed. In all cases, the code that’s executed is expected to be valid as file input (see the section File input in the Reference Manual). Be aware that the nonlocal, yield, and return statements may not be used outside of function definitions even within the context of code passed to the exec() function. The return value is None.
+* In all cases, if the optional parts are omitted, the code is executed in the current scope. If only globals is provided, it must be a dictionary (and not a subclass of dictionary), which will be used for both the global and the local variables. If globals and locals are given, they are used for the global and local variables, respectively. If provided, locals can be any mapping object. Remember that at the module level, globals and locals are the same dictionary. If exec gets two separate objects as globals and locals, the code will be executed as if it were embedded in a class definition.
+* If the globals dictionary does not contain a value for the key __builtins__, a reference to the dictionary of the built-in module builtins is inserted under that key. That way you can control what builtins are available to the executed code by inserting your own __builtins__ dictionary into globals before passing it to exec().
+* The closure argument specifies a closure–a tuple of cellvars. It’s only valid when the object is a code object containing free variables. The length of the tuple must exactly match the number of free variables referenced by the code object.
+* Raises an auditing event exec with the code object as the argument. Code compilation events may also be raised.
+* `Note` The built-in functions globals() and locals() return the current global and local dictionary, respectively, which may be useful to pass around for use as the second and third argument to exec().
+* `Note` The default locals act as described for function locals() below: modifications to the default locals dictionary should not be attempted. Pass an explicit locals dictionary if you need to see effects of the code on locals after function exec() returns.
+* Changed in version 3.11: Added the closure parameter.
+
+#### [globals()](https://docs.python.org/3/library/functions.html?highlight=exec#globals)
+
+* Return the dictionary implementing the current module namespace. For code within functions, this is set when the function is defined and remains the same regardless of where the function is called.
+
+#### [locals()](https://docs.python.org/3/library/functions.html?highlight=exec#locals)
+
+* Update and return a dictionary representing the current local symbol table. Free variables are returned by locals() when it is called in function blocks, but not in class blocks. Note that at the module level, locals() and globals() are the same dictionary.
+* `Note` The contents of this dictionary should not be modified; changes may not affect the values of local and free variables used by the interpreter.
+
+#### [open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)](https://docs.python.org/3/library/functions.html#open)
+
+* Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
+
+#### [ord(c)](https://docs.python.org/3/library/functions.html#ord)
+
+* Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
+
+#### [reversed(seq)](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
+
+* Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
+
+#### [zip](https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip)
+
+* Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
+
+#### MISC
+
 * [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
 * Python 69个内置函数分8类总结
   * [Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html)
@@ -574,15 +722,6 @@ if __name__ == '__main__':
   * How to know if an object has an attribute in Python - Stack Overflow
     * https://stackoverflow.com/questions/610883/how-to-know-if-an-object-has-an-attribute-in-python
 * [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
-* [open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)](https://docs.python.org/3/library/functions.html#open)
-	* Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
-* [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
-  * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
-* [reversed(seq)](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
-	* Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
-* zip
-  * https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip
-  * Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
 
 ### [Functions](https://www.tutorialspoint.com/python/python_functions.htm)
 
