@@ -234,6 +234,10 @@ $ source ~/env/bin/activate
 
 #### [Porting Python 2 Code to Python 3](https://docs.python.org/3/howto/pyporting.html)
 
+* [2to3 — Automated Python 2 to 3 code translation](https://docs.python.org/3/library/2to3.html?highlight=exec#to3fixer-exec)
+    * 2to3 is a Python program that reads Python 2.x source code and applies a series of fixers to transform it into valid Python 3.x code. The standard library contains a rich set of fixers that will handle almost all code. 2to3 supporting library lib2to3 is, however, a flexible and generic library, so it is possible to write your own fixers for 2to3.
+    * Deprecated since version 3.11, will be removed in version 3.13: The lib2to3 module was marked pending for deprecation in Python 3.9 (raising PendingDeprecationWarning on import) and fully deprecated in Python 3.11 (raising DeprecationWarning). The 2to3 tool is part of that. It will be removed in Python 3.13.
+
 ##### Learn the differences between Python 2 & 3
 
 * Typically the two best ways of doing that is reading the [“What’s New”](https://docs.python.org/3/whatsnew/index.html#whatsnew-index) doc for each release of Python 3 and the [Porting to Python 3](http://python3porting.com/) book (which is free online). There is also a handy [cheat sheet](https://python-future.org/compatible_idioms.html) from the Python-Future project.
