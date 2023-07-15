@@ -287,6 +287,7 @@ except Exception as e:
     * This works with strings in Python 2 because Python 2's `str` type is a sequence of bytes. If you wanted to use Unicode strings in Python 2, you would use the `unicode` type and the `u` prefix.
     * Please note that for Python 2 code, to print a non-ASCII string in the console, you may need to encode it to an appropriate encoding (such as UTF-8).
 * How to use lxml.etree.tostring() in Python 3?
+    * https://lxml.de/tutorial.html
     * Using the `lxml.etree.tostring()` function in Python 3 is very similar to using it in Python 2. The function is used to create a string representation of an XML `Element` or `ElementTree`. Here's a basic example:
     ```python
     from lxml import etree
