@@ -3833,6 +3833,8 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 ### [Django](https://www.djangoproject.com/)
 
 * [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
+* [Python for Web Development – Crash Course [API, SQL Databases, Virtual Environment, Flask, Django] - YouTube](https://www.youtube.com/watch?v=WNvxR8RFzBg&list=WL&index=16)
+* [Python Backend Web Development Course (with Django) - YouTube](https://www.youtube.com/watch?v=jBzwzrDvZ18)
 
 ### [NumPy](http://www.numpy.org/)
 
