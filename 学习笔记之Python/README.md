@@ -40,7 +40,6 @@ $ source ~/env/bin/activate
 * [学习笔记之盘一盘 Python 系列 1 & 2 - 入门篇 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11289321.html)
 * [学习笔记之Python开发环境 IDE ( Anaconda / PyCharm ) - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/8915306.html)
 * [学习笔记之Python 3 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/10825575.html)
-* [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
 * [《Python入门必备指南》之如何系统地自学 Python？_腾讯课堂](https://ke.qq.com/course/217064)
   * 通过实例知道下list，dict实际使用中一些技巧
   * 了解web编程的学习线路图，知识网络
@@ -3830,6 +3829,10 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
   * tqdm: 可以显示循环的进度条;
   * pyyaml：Python操作YAML文件的库；
   * tracebak：详细追踪错误信息的库。
+
+### [Django](https://www.djangoproject.com/)
+
+* [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
 
 ### [NumPy](http://www.numpy.org/)
 
