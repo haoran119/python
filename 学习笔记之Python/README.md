@@ -3840,6 +3840,8 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 
 #### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
 
+* [Installation — Django Debug Toolbar 4.1.0 documentation](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html)
+
 #### [Django documentation](https://docs.djangoproject.com/en/4.2/)
 
 ### [NumPy](http://www.numpy.org/)
