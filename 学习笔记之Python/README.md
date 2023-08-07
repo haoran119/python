@@ -3844,6 +3844,15 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 
 #### [Django documentation](https://docs.djangoproject.com/en/4.2/)
 
+#### MISC
+
+* [如何轻松了解 Python 必学的 django 框架？](https://mp.weixin.qq.com/s/FpYeYUoED7ii4VJ8F2YzPw)
+    * https://docs.djangoproject.com/zh-hans/2.2/ref/contrib/admin/actions/
+* [Django 模板语言基础来啦](https://mp.weixin.qq.com/s/aJYsloNye78TZVYzRcFN0A)
+* [轻松搞定 Django 模板语言进阶！](https://mp.weixin.qq.com/s/UrQJoGKnrHqRUY238IqdNg)
+* [Flask 和 requests 搭建一个简单的API服务](https://mp.weixin.qq.com/s/OAyJ7UdeS-aFWkHWvVUISA)
+* [Python 四大主流 Web 编程框架](https://blog.csdn.net/chenqiuge1984/article/details/80127498)
+
 ### [NumPy](http://www.numpy.org/)
 
 * NumPy is the fundamental package for scientific computing with Python.
