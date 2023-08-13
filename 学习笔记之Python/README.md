@@ -3065,11 +3065,38 @@ class TestService:
 ### UnitTest
 
 * [Python中的两个测试工具](https://mp.weixin.qq.com/s/IUCoUkws923ojK__HPe3kA)
-  * unittest: 一个通用的测试框架
-  * doctest: 一个更简单的模块，是为检查文档而设计的，但也非常适合用来编写单元测试
+    * unittest: 一个通用的测试框架
+    * doctest: 一个更简单的模块，是为检查文档而设计的，但也非常适合用来编写单元测试
+    * unittest
+        * unittest类似于流行的Java测试框架JUnit，它比doctest更灵活，更强大，能够帮助你以结构化的方式来编写庞大而详尽的测试集。
+```py
+import unittest, my_math
+
+class ProductTestcase(unittest.TestCase):
+
+    def setUp(self):
+        print('begin test')
+
+    def test_integers(self):
+        for x in range(-10, 10):
+            for y in range(-10, 10):
+                p = my_math.product(x, y)
+                self.assertEqual(p, x*y, 'integer multiplication failed')
+
+    def test_floats(self):
+        for x in range(-10, 10):
+            for y in range(-10, 10):
+                x = x/10
+                y = y/10
+                p = my_math.product(x, y)
+                self.assertEqual(p, x * y, 'integer multiplication failed')
+
+if __name__ == '__main__':
+    unittest.main()
+```
 * [用 coverage 模块提高 Python 开发效率](https://mp.weixin.qq.com/s/fP_mQtQnrssdzOOw6yPzQA)
-  * Test with Coverage
-  * Mock　
+    * Test with Coverage
+    * Mock　
 
 #### [unittest](https://docs.python.org/3/library/unittest.html)
 
