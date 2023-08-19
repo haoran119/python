@@ -3135,6 +3135,75 @@ if __name__ == '__main__':
 
 ##### Command-Line Interface
 
+* How to use ?
+    * Discovery: By default, unittest will discover tests (search for test files) in the current directory and its subdirectories.
+        * `python -m unittest discover`
+    * Run Specific Test Case or Test Method: You can specify a particular test case or test method to run.
+        * `python -m unittest test_module.TestCaseName`
+        * `python -m unittest test_module.TestCaseName.test_method`
+    * Verbose Mode: If you want more detailed output, you can use the -v or --verbose option.
+        * `python -m unittest -v test_module`
+    * Fail Fast: Using the --failfast option will stop the test run on the first failed test.
+        * `python -m unittest --failfast test_module`
+    * Catch Breakpoints: With the --pdb option, the test run will enter the post-mortem debugger on test failures or errors.
+        * `python -m unittest --pdb test_module`
+    * Buffer Output: By using the --buffer option, the output from passing tests will be discarded, and only the output from failing tests will be shown.
+        * `python -m unittest --buffer test_module`
+     
+##### [Test Discovery](https://docs.python.org/3/library/unittest.html#test-discovery)
+
+* Unittest supports simple test discovery. In order to be compatible with test discovery, all of the test files must be modules or packages importable from the top-level directory of the project (this means that their filenames must be valid identifiers).
+* Test discovery is implemented in `TestLoader.discover()`, but can also be used from the command line. The basic command-line usage is:
+```py
+cd project_directory
+python -m unittest discover
+```
+* `Note As a shortcut, python -m unittest is the equivalent of python -m unittest discover. If you want to pass arguments to test discovery the discover sub-command must be used explicitly.`
+* The discover sub-command has the following options:
+    * `-v, --verbose`
+        * Verbose output
+    * `-s, --start-directory directory`
+        * Directory to start discovery (. default)
+    * `-p, --pattern pattern`
+        * Pattern to match test files (`test*.py` default)
+    * `-t, --top-level-directory directory`
+        * Top level directory of project (defaults to start directory)
+     
+##### [Classes and functions](https://docs.python.org/3/library/unittest.html#classes-and-functions)
+
+* This section describes in depth the API of unittest.
+
+###### [Test cases](https://docs.python.org/3/library/unittest.html#test-cases)
+
+* `class unittest.TestCase(methodName='runTest')`
+    * Instances of the TestCase class represent the logical test units in the unittest universe. This class is intended to be used as a base class, with specific tests being implemented by concrete subclasses. This class implements the interface needed by the test runner to allow it to drive the tests, and methods that the test code can use to check for and report various kinds of failure.
+    * Each instance of TestCase will run a single base method: the method named methodName. In most uses of TestCase, you will neither change the methodName nor reimplement the default runTest() method.
+    * Changed in version 3.2: TestCase can be instantiated successfully without providing a methodName. This makes it easier to experiment with TestCase from the interactive interpreter.
+    * TestCase instances provide three groups of methods: one group used to run the test, another used by the test implementation to check conditions and report failures, and some inquiry methods allowing information about the test itself to be gathered.
+    * Methods in the first group (running the test) are:
+    * `setUp()`
+        * Method called to prepare the test fixture. This is called immediately before calling the test method; other than AssertionError or SkipTest, any exception raised by this method will be considered an error rather than a test failure. The default implementation does nothing.
+    * `tearDown()`
+        * Method called immediately after the test method has been called and the result recorded. This is called even if the test method raised an exception, so the implementation in subclasses may need to be particularly careful about checking internal state. Any exception, other than AssertionError or SkipTest, raised by this method will be considered an additional error rather than a test failure (thus increasing the total number of reported errors). This method will only be called if the setUp() succeeds, regardless of the outcome of the test method. The default implementation does nothing.
+    * `setUpClass()`
+        * A class method called before tests in an individual class are run. setUpClass is called with the class as the only argument and must be decorated as a classmethod():
+        ```py
+        @classmethod
+        def setUpClass(cls):
+            ...
+        ```
+    * `tearDownClass()`
+        * A class method called after tests in an individual class have run. tearDownClass is called with the class as the only argument and must be decorated as a classmethod():
+        ```py
+        @classmethod
+        def tearDownClass(cls):
+            ...
+        ```
+* The TestCase class provides several assert methods to check for and report failures. The following table lists the most commonly used methods (see the tables below for more assert methods):
+    * `assertTrue(expr, msg=None)`
+    * `assertFalse(expr, msg=None)`
+        * Test that expr is true (or false).
+        * Note that this is equivalent to `bool(expr) is True` and not to `expr is True` (use `assertIs(expr, True)` for the latter). This method should also be avoided when more specific methods are available (e.g. `assertEqual(a, b)` instead of `assertTrue(a == b)`), because they provide a better error message in case of failure.
 
 #### [pytest](https://docs.pytest.org/en/stable/)
 
