@@ -3200,11 +3200,23 @@ python -m unittest discover
             ...
         ```
 * The TestCase class provides several assert methods to check for and report failures. The following table lists the most commonly used methods (see the tables below for more assert methods):
+* All the assert methods accept a `msg` argument that, if specified, is used as the error message on failure (see also [longMessage](https://docs.python.org/3/library/unittest.html#unittest.TestCase.longMessage)). Note that the msg keyword argument can be passed to assertRaises(), assertRaisesRegex(), assertWarns(), assertWarnsRegex() only when they are used as a context manager.
     * `assertTrue(expr, msg=None)`
     * `assertFalse(expr, msg=None)`
         * Test that expr is true (or false).
         * Note that this is equivalent to `bool(expr) is True` and not to `expr is True` (use `assertIs(expr, True)` for the latter). This method should also be avoided when more specific methods are available (e.g. `assertEqual(a, b)` instead of `assertTrue(a == b)`), because they provide a better error message in case of failure.
-
+* It is also possible to check the production of exceptions, warnings, and log messages using the following methods:
+* There are also other methods used to perform more specific checks, such as:
+    * `assertGreater(first, second, msg=None)`
+    * `assertGreaterEqual(first, second, msg=None)`
+    * `assertLess(first, second, msg=None)`
+    * `assertLessEqual(first, second, msg=None)`
+        * Test that first is respectively >, >=, < or <= than second depending on the method name. If not, the test will fail:
+        ```py
+        self.assertGreaterEqual(3, 4)
+        AssertionError: "3" unexpectedly not greater than or equal to "4"
+        ```
+        
 #### [pytest](https://docs.pytest.org/en/stable/)
 
 * [学习笔记之pytest - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13769672.html)
