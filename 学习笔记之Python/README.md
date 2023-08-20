@@ -3229,7 +3229,38 @@ python -m unittest discover
 
 ###### [setUpClass and tearDownClass](https://docs.python.org/3/library/unittest.html#setupclass-and-teardownclass)
 
+* These must be implemented as class methods:
+```py
+import unittest
+
+class Test(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls._connection = createExpensiveConnectionObject()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls._connection.destroy()
+```
+* If you want the setUpClass and tearDownClass on base classes called then you must call up to them yourself. The implementations in TestCase are empty.
+* If an exception is raised during a setUpClass then the tests in the class are not run and the tearDownClass is not run. Skipped classes will not have setUpClass or tearDownClass run. If the exception is a [SkipTest](https://docs.python.org/3/library/unittest.html#unittest.SkipTest) exception then the class will be reported as having been skipped instead of as an error.
+
 ###### [setUpModule and tearDownModule](https://docs.python.org/3/library/unittest.html#setupmodule-and-teardownmodule)
+
+* These should be implemented as functions:
+```py
+def setUpModule():
+    createConnection()
+
+def tearDownModule():
+    closeConnection()
+```
+* If an exception is raised in a setUpModule then none of the tests in the module will be run and the tearDownModule will not be run. If the exception is a SkipTest exception then the module will be reported as having been skipped instead of as an error.
+* To add cleanup code that must be run even in the case of an exception, use addModuleCleanup:
+    * [`unittest.addModuleCleanup(function, /, *args, **kwargs)`](https://docs.python.org/3/library/unittest.html#unittest.addModuleCleanup)
+        * Add a function to be called after tearDownModule() to cleanup resources used during the test class. Functions will be called in reverse order to the order they are added (LIFO). They are called with any arguments and keyword arguments passed into addModuleCleanup() when they are added.
+        * If setUpModule() fails, meaning that tearDownModule() is not called, then any cleanup functions added will still be called.
+        * New in version 3.8.
         
 #### [pytest](https://docs.pytest.org/en/stable/)
 
