@@ -4056,8 +4056,13 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 
 ### [Django](https://www.djangoproject.com/)
 
+* Django makes it easier to build better web apps more quickly and with less code.
 * [Getting started with Django | Django](https://www.djangoproject.com/start/)
     * [Quick install guide | Django documentation | Django](https://docs.djangoproject.com/en/4.2/intro/install/)
+* [Django (web framework) - Wikipedia](https://en.wikipedia.org/wiki/Django_(web_framework))
+    * Django (/ˈdʒæŋɡoʊ/ JANG-goh; stylised as django)[4] is a Python-based free and open-source web framework, which follows the model-template-view (MTV) architectural pattern.[5][6] It is maintained by the Django Software Foundation (DSF), an independent organization established as a 501(c)(3) non-profit.
+    * Django's primary goal is to ease the creation of complex, database-driven websites. The framework emphasizes reusability and "pluggability" of components, less code, low coupling, rapid development, and the principle of don't repeat yourself.[7] Python is used throughout, even for settings files and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models.
+    * Some well-known sites that use Django include the Public Broadcasting Service,[8] Instagram,[9] Mozilla,[10] The Washington Times,[11] Disqus,[12] Bitbucket,[13] and Nextdoor.[14] It was used on Pinterest,[15] but later the site moved to a framework built over Flask.
 * [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
 * [Python for Web Development – Crash Course [API, SQL Databases, Virtual Environment, Flask, Django] - YouTube](https://www.youtube.com/watch?v=WNvxR8RFzBg&list=WL&index=16)
 * [Python Backend Web Development Course (with Django) - YouTube](https://www.youtube.com/watch?v=jBzwzrDvZ18)
