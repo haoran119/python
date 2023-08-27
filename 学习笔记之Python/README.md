@@ -4066,6 +4066,9 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 * [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
 * [Python for Web Development – Crash Course [API, SQL Databases, Virtual Environment, Flask, Django] - YouTube](https://www.youtube.com/watch?v=WNvxR8RFzBg&list=WL&index=16)
 * [Python Backend Web Development Course (with Django) - YouTube](https://www.youtube.com/watch?v=jBzwzrDvZ18)
+* [CRM App Development with Django, Python, and MySQL](https://www.freecodecamp.org/news/crm-app-development-with-django-python-and-mysql/)
+    * [Django Project – Code a CRM App Tutorial - YouTube](https://www.youtube.com/watch?v=t10QcFx7d5k)
+    * https://github.com/flatplanet/Django-CRM
 
 #### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
 
