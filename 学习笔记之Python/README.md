@@ -22,6 +22,9 @@ $ source ~/env/bin/activate
 >>> import pandas
 (env) $ deactivate
 ```
+* [PyPI – the Python Package Index · PyPI](https://pypi.org/)
+    * Find, install and publish Python packages with the Python Package Index
+    * The Python Package Index (PyPI) is a repository of software for the Python programming language.
 * [Python（计算机编程语言）_百度百科 (baidu.com)](https://baike.baidu.com/item/Python/407313?fr=aladdin#reference-[12]-21087-wrap)
   * 自从20世纪90年代初Python语言诞生至今，它已被逐渐广泛应用于系统管理任务的处理和Web编程。
   * Python是完全面向对象的语言。函数、模块、数字、字符串都是对象。并且完全支持继承、重载、派生、多继承，有益于增强源代码的复用性。Python支持重载运算符和动态类型。
