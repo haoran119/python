@@ -4073,6 +4073,7 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 * [CRM App Development with Django, Python, and MySQL](https://www.freecodecamp.org/news/crm-app-development-with-django-python-and-mysql/)
     * [Django Project – Code a CRM App Tutorial - YouTube](https://www.youtube.com/watch?v=t10QcFx7d5k)
         * [Get started with Bootstrap · Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+        * [MySQL :: Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
     * https://github.com/flatplanet/Django-CRM
 
 #### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
