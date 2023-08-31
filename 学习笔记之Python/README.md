@@ -4075,6 +4075,10 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
         * [Get started with Bootstrap · Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
         * [MySQL :: Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
     * https://github.com/flatplanet/Django-CRM
+* [Getting Started With Django Tutorial // Build a CRM - YouTube](https://www.youtube.com/watch?v=fOukA4Qh9QA)
+    * https://github.com/justdjango/getting-started-with-django
+    * [Courses | JustDjango](https://justdjango.com/courses)
+    * https://github.com/github/gitignore/blob/main/Python.gitignore
 
 #### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
 
