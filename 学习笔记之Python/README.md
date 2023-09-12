@@ -22,6 +22,9 @@ $ source ~/env/bin/activate
 >>> import pandas
 (env) $ deactivate
 ```
+* [PyPI – the Python Package Index · PyPI](https://pypi.org/)
+    * Find, install and publish Python packages with the Python Package Index
+    * The Python Package Index (PyPI) is a repository of software for the Python programming language.
 * [Python（计算机编程语言）_百度百科 (baidu.com)](https://baike.baidu.com/item/Python/407313?fr=aladdin#reference-[12]-21087-wrap)
   * 自从20世纪90年代初Python语言诞生至今，它已被逐渐广泛应用于系统管理任务的处理和Web编程。
   * Python是完全面向对象的语言。函数、模块、数字、字符串都是对象。并且完全支持继承、重载、派生、多继承，有益于增强源代码的复用性。Python支持重载运算符和动态类型。
@@ -40,7 +43,6 @@ $ source ~/env/bin/activate
 * [学习笔记之盘一盘 Python 系列 1 & 2 - 入门篇 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11289321.html)
 * [学习笔记之Python开发环境 IDE ( Anaconda / PyCharm ) - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/8915306.html)
 * [学习笔记之Python 3 - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/10825575.html)
-* [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
 * [《Python入门必备指南》之如何系统地自学 Python？_腾讯课堂](https://ke.qq.com/course/217064)
   * 通过实例知道下list，dict实际使用中一些技巧
   * 了解web编程的学习线路图，知识网络
@@ -229,6 +231,94 @@ $ source ~/env/bin/activate
     print(f())  # <generator object f at 0x7facfc885f50>
     print(next(f()))    # 5
     ```
+
+### [Python HOWTOs](https://docs.python.org/3/howto/index.html)
+
+#### [Porting Python 2 Code to Python 3](https://docs.python.org/3/howto/pyporting.html)
+
+* [2to3 — Automated Python 2 to 3 code translation](https://docs.python.org/3/library/2to3.html)
+    * 2to3 is a Python program that reads Python 2.x source code and applies a series of fixers to transform it into valid Python 3.x code. The standard library contains a rich set of fixers that will handle almost all code. 2to3 supporting library lib2to3 is, however, a flexible and generic library, so it is possible to write your own fixers for 2to3.
+    * Deprecated since version 3.11, will be removed in version 3.13: The lib2to3 module was marked pending for deprecation in Python 3.9 (raising PendingDeprecationWarning on import) and fully deprecated in Python 3.11 (raising DeprecationWarning). The 2to3 tool is part of that. It will be removed in Python 3.13.
+
+##### Learn the differences between Python 2 & 3
+
+* Typically the two best ways of doing that is reading the [“What’s New”](https://docs.python.org/3/whatsnew/index.html#whatsnew-index) doc for each release of Python 3 and the [Porting to Python 3](http://python3porting.com/) book (which is free online). There is also a handy [cheat sheet](https://python-future.org/compatible_idioms.html) from the Python-Future project.
+
+##### MISC
+
+* What's the difference of default encoding between py2 and py3?
+    * In Python, the default string encoding can vary between different versions:
+        * Python 2: The default string in Python 2 is `ASCII`. This means that when you type a string directly into your Python 2 code, it's treated as an ASCII string. If you want to include non-ASCII characters in your string, you have to mark it as a Unicode string using the `u` prefix, like `u"こんにちは"`. For file encoding, Python 2 uses ASCII as well.
+        * Python 3: Python 3 changed to use `UTF-8` as the default source code encoding. This means you can include non-ASCII characters in your strings without needing a special prefix. Moreover, the `str` type in Python 3 is equivalent to the `unicode` type in Python 2, and Python 3 introduced a separate `bytes` type for handling raw binary data. For file encoding, Python 3 uses `UTF-8` by default.
+    * This change was part of Python's overall move towards better Unicode support in Python 3, which makes it easier to write code that handles international characters and works consistently across different languages and platforms.
+    * Do note that while these are the defaults, Python both 2 and 3 allow you to specify a different encoding for a source code file using a special comment at the top of the file:
+    * `# -*- coding: encoding -*-`
+    * Replace encoding with the name of the encoding you want to use, like 'utf-8' or 'latin-1'. This will override the default encoding for that file.
+* How to fix `exec("import lib") in globals()` in Python 3?
+    * `exec("import lib", globals())`
+* How to fix `[ERROR] 'Exception' object has no attribute 'message' in py3`?
+    * In Python 2, exceptions had a message attribute where you could find the error message. However, this attribute was deprecated in Python 2.6 and removed in Python 3.
+    * To get the message from an exception in Python 3, you should use the `str()` function or the `args` attribute.
+```python
+try:
+    errorMsg = "Verification failed"
+    raise Exception(errorMsg)
+except Exception as e:
+    print(str(e))  # use str function to print the error message
+    print(e.args)  # or use args attribute which is a tuple containing all arguments passed to the exception
+```
+* What's the difference of using string.replace() with bytes object between py2 and py3?
+    * There is indeed a key difference between how Python 2 and Python 3 handle strings and bytes, and this does affect the `replace()` method.
+    * In Python 2, there's a `str` type, which is a sequence of bytes, and a `unicode` type, which is a sequence of Unicode characters.
+    * In Python 3, however, the `str` type is a sequence of Unicode characters (equivalent to Python 2's `unicode`), and there's a new `bytes` type that's a sequence of bytes (equivalent to Python 2's `str`).
+    * This means that if you want to use `replace()` on a bytes object in Python 3, you need to give it bytes arguments, not string arguments. Here's an example:
+    ```python
+    # Python 3
+    b = b'Hello, world!'
+    b = b.replace(b'world', b'Python')
+    print(b)  # Outputs: b'Hello, Python!'
+    ```
+    * If you tried to give it string arguments, like `b.replace('world', 'Python')`, it would give you a `TypeError`, because it's expecting bytes, not strings.
+    * In Python 2, the equivalent code would be:
+    ```python
+    # Python 2
+    s = 'Hello, world!'
+    s = s.replace('world', 'Python')
+    print(s)  # Outputs: 'Hello, Python!'
+    ```
+    * This works with strings in Python 2 because Python 2's `str` type is a sequence of bytes. If you wanted to use Unicode strings in Python 2, you would use the `unicode` type and the `u` prefix.
+    * Please note that for Python 2 code, to print a non-ASCII string in the console, you may need to encode it to an appropriate encoding (such as UTF-8).
+* How to use lxml.etree.tostring() in Python 3?
+    * https://lxml.de/tutorial.html
+    * Using the `lxml.etree.tostring()` function in Python 3 is very similar to using it in Python 2. The function is used to create a string representation of an XML `Element` or `ElementTree`. Here's a basic example:
+    ```python
+    from lxml import etree
+    
+    # Create a root element
+    root = etree.Element("root")
+    
+    # Add child elements
+    child1 = etree.SubElement(root, "child1")
+    child2 = etree.SubElement(root, "child2")
+    
+    # Add text to the child elements
+    child1.text = "Text for child 1"
+    child2.text = "Text for child 2"
+    
+    # Convert the root Element to a string
+    output = etree.tostring(root, pretty_print=True, encoding='unicode')
+    
+    print(output)
+    ```
+    * This script will output:
+    ```xml
+    <root>
+      <child1>Text for child 1</child1>
+      <child2>Text for child 2</child2>
+    </root>
+    ```
+    * In this example, `encoding='unicode'` is used to ensure that the `tostring` function returns a Python `str` object rather than a `bytes` object. If you omit this argument, `tostring` will return a bytes object, and you may need to decode it to a string using the `bytes.decode()` method.
+    * The `pretty_print=True` argument is used to format the output with indents and newlines to make it easier to read. If you omit this argument or set it to `False`, the output will be a single line without any extra whitespace.
 
 ### [Basic Operators](https://www.tutorialspoint.com/python3/python_basic_operators.htm)
 
@@ -443,6 +533,188 @@ if __name__ == '__main__':
 
 ### [Built-in Functions](https://docs.python.org/3/library/functions.html)
 
+* The Python interpreter has a number of functions and types built into it that are always available. They are listed here in alphabetical order.
+
+A
+abs()
+aiter()
+all()
+any()
+anext()
+ascii()
+
+B
+bin()
+bool()
+breakpoint()
+bytearray()
+bytes()
+
+C
+callable()
+chr()
+classmethod()
+compile()
+complex()
+
+D
+delattr()
+dict()
+dir()
+divmod()
+
+E
+enumerate()
+eval()
+exec()
+
+F
+filter()
+float()
+format()
+frozenset()
+
+G
+getattr()
+globals()
+
+H
+hasattr()
+hash()
+help()
+hex()
+
+I
+id()
+input()
+int()
+isinstance()
+issubclass()
+iter()
+L
+len()
+list()
+locals()
+
+M
+map()
+max()
+memoryview()
+min()
+
+N
+next()
+
+O
+object()
+oct()
+open()
+ord()
+
+P
+pow()
+print()
+property()
+
+R
+range()
+repr()
+reversed()
+round()
+
+S
+set()
+setattr()
+slice()
+sorted()
+staticmethod()
+str()
+sum()
+super()
+
+T
+tuple()
+type()
+
+V
+vars()
+
+Z
+zip()
+_
+__import__()
+
+#### [exec](https://docs.python.org/3/library/functions.html?highlight=exec#exec)
+
+* `exec(object, globals=None, locals=None, /, *, closure=None)`
+* This function supports dynamic execution of Python code. object must be either a string or a code object. If it is a string, the string is parsed as a suite of Python statements which is then executed (unless a syntax error occurs). 1 If it is a code object, it is simply executed. In all cases, the code that’s executed is expected to be valid as file input (see the section File input in the Reference Manual). Be aware that the nonlocal, yield, and return statements may not be used outside of function definitions even within the context of code passed to the exec() function. The return value is None.
+* In all cases, if the optional parts are omitted, the code is executed in the current scope. If only globals is provided, it must be a dictionary (and not a subclass of dictionary), which will be used for both the global and the local variables. If globals and locals are given, they are used for the global and local variables, respectively. If provided, locals can be any mapping object. Remember that at the module level, globals and locals are the same dictionary. If exec gets two separate objects as globals and locals, the code will be executed as if it were embedded in a class definition.
+* If the globals dictionary does not contain a value for the key __builtins__, a reference to the dictionary of the built-in module builtins is inserted under that key. That way you can control what builtins are available to the executed code by inserting your own __builtins__ dictionary into globals before passing it to exec().
+* The closure argument specifies a closure–a tuple of cellvars. It’s only valid when the object is a code object containing free variables. The length of the tuple must exactly match the number of free variables referenced by the code object.
+* Raises an auditing event exec with the code object as the argument. Code compilation events may also be raised.
+* `Note` The built-in functions globals() and locals() return the current global and local dictionary, respectively, which may be useful to pass around for use as the second and third argument to exec().
+* `Note` The default locals act as described for function locals() below: modifications to the default locals dictionary should not be attempted. Pass an explicit locals dictionary if you need to see effects of the code on locals after function exec() returns.
+* Changed in version 3.11: Added the closure parameter.
+* How to use exec()?
+    * In Python, the `exec()` function is used to execute dynamically created program, which is either a string or object code. If it is a string, the string is parsed as a suite of Python statements which is then executed (unless a syntax error occurs). If it is an object code, it is simply executed. Here is a simple example of its usage:
+    ```python
+    program = 'a = 5\nb=10\nprint("Sum =", a+b)'
+    exec(program)
+    ```
+    * In this case, the string `program` is a valid Python program, and when passed to `exec()`, it's executed just as if you had typed it into a Python script.
+    * Please be aware that the use of `exec()` comes with security considerations, especially if you're executing code from an untrusted source. It can execute arbitrary Python code, which could potentially do harmful things to your system. Therefore, you should be very careful about using it in a secure context, and it's generally best to avoid its use if possible.
+
+#### [globals()](https://docs.python.org/3/library/functions.html?highlight=exec#globals)
+
+* Return the dictionary implementing the current module namespace. For code within functions, this is set when the function is defined and remains the same regardless of where the function is called.
+* How to use globals()?
+    * In Python, `globals()` is a built-in function that returns a dictionary representing the current global symbol table, which is always the dictionary of the current module (inside a function or method, this is the module where it is defined, not the module from which it is called).
+    * This dictionary will contain all global variables. Here's a simple example:
+    ```python
+    x = 10
+    y = 20
+    
+    def show_globals():
+        print(globals())
+    
+    show_globals()
+    ```
+    * In this example, `show_globals()` will print out a dictionary containing all global variables, including `x` and `y`.
+    * Keep in mind that `globals()` gives you access to all global variables, so modifying this dictionary will affect those variables. For example:
+    ```python
+    globals()['x'] = 25
+    print(x)  # This will print 25
+    ```
+    * Again, as with `exec()`, be aware that modifying global variables can have far-reaching effects, and should be done with care. Modifying the output of `globals()` should be done sparingly and cautiously, if at all.
+
+#### [locals()](https://docs.python.org/3/library/functions.html?highlight=exec#locals)
+
+* Update and return a dictionary representing the current local symbol table. Free variables are returned by locals() when it is called in function blocks, but not in class blocks. Note that at the module level, locals() and globals() are the same dictionary.
+* `Note` The contents of this dictionary should not be modified; changes may not affect the values of local and free variables used by the interpreter.
+
+#### [open](https://docs.python.org/3/library/functions.html#open)
+
+* `open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)`
+* Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
+
+#### [ord](https://docs.python.org/3/library/functions.html#ord)
+
+* `ord(c)`
+* Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
+
+#### [reversed](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
+
+* `reversed(seq)`
+* Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
+
+#### [zip](https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip)
+
+* `zip(*iterables, strict=False)`
+* Iterate over several iterables in parallel, producing tuples with an item from each one.
+* Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
+
+#### MISC
+
 * [图解 Python 函数](https://mp.weixin.qq.com/s/9AxWUaYaK15N4hsQMjlBjA)
 * Python 69个内置函数分8类总结
   * [Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html)
@@ -487,15 +759,6 @@ if __name__ == '__main__':
   * How to know if an object has an attribute in Python - Stack Overflow
     * https://stackoverflow.com/questions/610883/how-to-know-if-an-object-has-an-attribute-in-python
 * [len(x) 击败 x.len()，从内置函数看 Python 的设计思想 (qq.com)](https://mp.weixin.qq.com/s/IRMplJCoWtH98uNtAeFKxg)
-* [open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)](https://docs.python.org/3/library/functions.html#open)
-	* Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised. See Reading and Writing Files for more examples of how to use this function.
-* [ord(c) - Built-in Functions — Python 3.9.7 documentation](https://docs.python.org/3/library/functions.html#ord)
-  * Given a string representing one Unicode character, return an integer representing the Unicode code point of that character. For example, ord('a') returns the integer 97 and ord('€') (Euro sign) returns 8364. This is the inverse of [chr()](https://docs.python.org/3/library/functions.html#chr).
-* [reversed(seq)](https://docs.python.org/3/library/functions.html?highlight=reversed#reversed)
-	* Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
-* zip
-  * https://docs.python.org/3/library/2to3.html?highlight=zip#2to3fixer-zip
-  * Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
 
 ### [Functions](https://www.tutorialspoint.com/python/python_functions.htm)
 
@@ -1297,6 +1560,25 @@ if __name__ == '__main__':
   * python - Importing modules from parent folder - Stack Overflow
     * https://stackoverflow.com/questions/714063/importing-modules-from-parent-folder
   * [学了半天，import 到底在干啥？](https://mp.weixin.qq.com/s/FN__-XO_-htH36jPLiiTZg)
+* `import lib` vs `from lib import *`
+    * These two Python import statements are used to import modules, but they do so in slightly different ways:
+        * `import lib`: This imports the module `lib`, and creates a reference to that module in the current namespace. After this statement is executed, you can use `lib.name` to refer to things defined in the module.
+        * `from lib import *`: This imports all items from the `lib` module directly into the current namespace. This means you can refer to them directly without the `lib.` prefix. However, if there are any naming conflicts between identifiers in the current namespace and in the module, the module's identifiers will overwrite the ones in the current namespace.
+        * Here's a simple example to illustrate the difference:
+        ```python
+        # Suppose lib has a function named foo
+        
+        # using import
+        import lib
+        lib.foo()  # correct
+        foo()  # NameError: name 'foo' is not defined
+        
+        # using from import
+        from lib import *
+        foo()  # correct
+        lib.foo()  # NameError: name 'lib' is not defined, because 'lib' itself is not imported
+        ```
+        * As a best practice, it is generally better to use `import lib` or `from lib import specific_item` rather than `from lib import *`, because the latter can cause naming conflicts and make it unclear where certain functions or attributes are coming from, which can make the code harder to read and debug.
 * [深入探讨Python的import机制：实现远程导入模块 | CSDN博文精选](https://mp.weixin.qq.com/s/Sx_WyKUpoZrnFtV9epAfpg)
 * 你常常看到的 \_\_init\_\_.py 到底是个啥？
   * 综上，\_\_init\_\_.py 会在 import 的时候被执行，而空的 \_\_init\_\_.py 在 Python 新版本中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径，但是如果你想要做一些初始化操作，或者像我们刚刚说的预先导入相关的模块，那么定义 \_\_init\_\_.py 还是很有必要的哟。
@@ -1854,6 +2136,39 @@ except Exception as e:
 	* os.spawn*
 * [How to Execute Shell Commands With Python?](https://www.the-analytics.club/python-shell-commands#:~:text=If%20you%20need%20to%20execute,arguments%20or%20producing%20text%20output.)
 	* If you need to execute a shell command with Python, there are two ways. You can either use the subprocess module or the command.run() function.
+
+##### [Using the subprocess Module](https://docs.python.org/3/library/subprocess.html#using-the-subprocess-module)
+
+* The recommended approach to invoking subprocesses is to use the run() function for all use cases it can handle. For more advanced use cases, the underlying Popen interface can be used directly.
+
+###### [subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None, capture_output=False, shell=False, cwd=None, timeout=None, check=False, encoding=None, errors=None, text=None, env=None, universal_newlines=None, **other_popen_kwargs)](https://docs.python.org/3/library/subprocess.html#subprocess.run)
+
+* Run the command described by args. Wait for command to complete, then return a [CompletedProcess](https://docs.python.org/3/library/subprocess.html#subprocess.CompletedProcess) instance.
+* The arguments shown above are merely the most common ones, described below in Frequently Used Arguments (hence the use of keyword-only notation in the abbreviated signature). The full function signature is largely the same as that of the Popen constructor - most of the arguments to this function are passed through to that interface. (timeout, input, check, and capture_output are not.)
+* If `capture_output` is true, stdout and stderr will be captured. When used, the internal Popen object is automatically created with stdout=PIPE and stderr=PIPE. The stdout and stderr arguments may not be supplied at the same time as capture_output. If you wish to capture and combine both streams into one, use stdout=PIPE and stderr=STDOUT instead of capture_output.
+* The `timeout` argument is passed to Popen.communicate(). If the timeout expires, the child process will be killed and waited for. The TimeoutExpired exception will be re-raised after the child process has terminated.
+* The `input` argument is passed to Popen.communicate() and thus to the subprocess’s stdin. If used it must be a byte sequence, or a string if encoding or errors is specified or text is true. When used, the internal Popen object is automatically created with stdin=PIPE, and the stdin argument may not be used as well.
+* If `check` is true, and the process exits with a non-zero exit code, a CalledProcessError exception will be raised. Attributes of that exception hold the arguments, the exit code, and stdout and stderr if they were captured.
+* If `encoding` or `errors` are specified, or text is true, file objects for stdin, stdout and stderr are opened in text mode using the specified encoding and errors or the io.TextIOWrapper default. The universal_newlines argument is equivalent to text and is provided for backwards compatibility. By default, file objects are opened in binary mode.
+* If `env` is not None, it must be a mapping that defines the environment variables for the new process; these are used instead of the default behavior of inheriting the current process’ environment. It is passed directly to Popen. This mapping can be str to str on any platform or bytes to bytes on POSIX platforms much like os.environ or os.environb.
+* Examples:
+```py
+subprocess.run(["ls", "-l"])  # doesn't capture output
+CompletedProcess(args=['ls', '-l'], returncode=0)
+
+subprocess.run("exit 1", shell=True, check=True)
+Traceback (most recent call last):
+  ...
+subprocess.CalledProcessError: Command 'exit 1' returned non-zero exit status 1
+
+subprocess.run(["ls", "-l", "/dev/null"], capture_output=True)
+CompletedProcess(args=['ls', '-l', '/dev/null'], returncode=0,
+stdout=b'crw-rw-rw- 1 root root 1, 3 Jan 23 16:23 /dev/null\n', stderr=b'')
+```
+
+###### [class subprocess.CompletedProcess](https://docs.python.org/3/library/subprocess.html#subprocess.CompletedProcess)
+
+* The return value from [run()](https://docs.python.org/3/library/subprocess.html#subprocess.run), representing a process that has finished.
 
 ### [Development Tools](https://docs.python.org/3/library/development.html)
 
@@ -2786,12 +3101,203 @@ class TestService:
 ### UnitTest
 
 * [Python中的两个测试工具](https://mp.weixin.qq.com/s/IUCoUkws923ojK__HPe3kA)
-  * unittest: 一个通用的测试框架
-  * doctest: 一个更简单的模块，是为检查文档而设计的，但也非常适合用来编写单元测试
-* [用 coverage 模块提高 Python 开发效率](https://mp.weixin.qq.com/s/fP_mQtQnrssdzOOw6yPzQA)
-  * Test with Coverage
-  * Mock　
+    * unittest: 一个通用的测试框架
+    * doctest: 一个更简单的模块，是为检查文档而设计的，但也非常适合用来编写单元测试
+    * unittest
+        * unittest类似于流行的Java测试框架JUnit，它比doctest更灵活，更强大，能够帮助你以结构化的方式来编写庞大而详尽的测试集。
+```py
+import unittest, my_math
 
+class ProductTestcase(unittest.TestCase):
+
+    def setUp(self):
+        print('begin test')
+
+    def test_integers(self):
+        for x in range(-10, 10):
+            for y in range(-10, 10):
+                p = my_math.product(x, y)
+                self.assertEqual(p, x*y, 'integer multiplication failed')
+
+    def test_floats(self):
+        for x in range(-10, 10):
+            for y in range(-10, 10):
+                x = x/10
+                y = y/10
+                p = my_math.product(x, y)
+                self.assertEqual(p, x * y, 'integer multiplication failed')
+
+if __name__ == '__main__':
+    unittest.main()
+```
+* [用 coverage 模块提高 Python 开发效率](https://mp.weixin.qq.com/s/fP_mQtQnrssdzOOw6yPzQA)
+    * Test with Coverage
+    * Mock　
+
+#### [unittest](https://docs.python.org/3/library/unittest.html)
+
+* The unittest unit testing framework was originally inspired by JUnit and has a similar flavor as major unit testing frameworks in other languages. It supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections, and independence of the tests from the reporting framework.
+* To achieve this, unittest supports some important concepts in an object-oriented way:
+* test fixture
+    * A test fixture represents the preparation needed to perform one or more tests, and any associated cleanup actions. This may involve, for example, creating temporary or proxy databases, directories, or starting a server process.
+* test case
+    * A test case is the individual unit of testing. It checks for a specific response to a particular set of inputs. unittest provides a base class, [TestCase](https://docs.python.org/3/library/unittest.html#unittest.TestCase), which may be used to create new test cases.
+* test suite
+    * A test suite is a collection of test cases, test suites, or both. It is used to aggregate tests that should be executed together.
+* test runner
+    * A test runner is a component which orchestrates the execution of tests and provides the outcome to the user. The runner may use a graphical interface, a textual interface, or return a special value to indicate the results of executing the tests.
+```python
+import unittest
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+
+    def test_split(self):
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        # check that s.split fails when the separator is not a string
+        with self.assertRaises(TypeError):
+            s.split(2)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+##### Command-Line Interface
+
+* How to use ?
+    * Discovery: By default, unittest will discover tests (search for test files) in the current directory and its subdirectories.
+        * `python -m unittest discover`
+    * Run Specific Test Case or Test Method: You can specify a particular test case or test method to run.
+        * `python -m unittest test_module.TestCaseName`
+        * `python -m unittest test_module.TestCaseName.test_method`
+    * Verbose Mode: If you want more detailed output, you can use the -v or --verbose option.
+        * `python -m unittest -v test_module`
+    * Fail Fast: Using the --failfast option will stop the test run on the first failed test.
+        * `python -m unittest --failfast test_module`
+    * Catch Breakpoints: With the --pdb option, the test run will enter the post-mortem debugger on test failures or errors.
+        * `python -m unittest --pdb test_module`
+    * Buffer Output: By using the --buffer option, the output from passing tests will be discarded, and only the output from failing tests will be shown.
+        * `python -m unittest --buffer test_module`
+     
+##### [Test Discovery](https://docs.python.org/3/library/unittest.html#test-discovery)
+
+* Unittest supports simple test discovery. In order to be compatible with test discovery, all of the test files must be modules or packages importable from the top-level directory of the project (this means that their filenames must be valid identifiers).
+* Test discovery is implemented in `TestLoader.discover()`, but can also be used from the command line. The basic command-line usage is:
+```py
+cd project_directory
+python -m unittest discover
+```
+* `Note As a shortcut, python -m unittest is the equivalent of python -m unittest discover. If you want to pass arguments to test discovery the discover sub-command must be used explicitly.`
+* The discover sub-command has the following options:
+    * `-v, --verbose`
+        * Verbose output
+    * `-s, --start-directory directory`
+        * Directory to start discovery (. default)
+    * `-p, --pattern pattern`
+        * Pattern to match test files (`test*.py` default)
+    * `-t, --top-level-directory directory`
+        * Top level directory of project (defaults to start directory)
+     
+##### [Classes and functions](https://docs.python.org/3/library/unittest.html#classes-and-functions)
+
+* This section describes in depth the API of unittest.
+
+###### [Test cases](https://docs.python.org/3/library/unittest.html#test-cases)
+
+* `class unittest.TestCase(methodName='runTest')`
+    * Instances of the TestCase class represent the logical test units in the unittest universe. This class is intended to be used as a base class, with specific tests being implemented by concrete subclasses. This class implements the interface needed by the test runner to allow it to drive the tests, and methods that the test code can use to check for and report various kinds of failure.
+    * Each instance of TestCase will run a single base method: the method named methodName. In most uses of TestCase, you will neither change the methodName nor reimplement the default runTest() method.
+    * Changed in version 3.2: TestCase can be instantiated successfully without providing a methodName. This makes it easier to experiment with TestCase from the interactive interpreter.
+    * TestCase instances provide three groups of methods: one group used to run the test, another used by the test implementation to check conditions and report failures, and some inquiry methods allowing information about the test itself to be gathered.
+    * Methods in the first group (running the test) are:
+    * `setUp()`
+        * Method called to prepare the test fixture. This is called immediately before calling the test method; other than AssertionError or SkipTest, any exception raised by this method will be considered an error rather than a test failure. The default implementation does nothing.
+    * `tearDown()`
+        * Method called immediately after the test method has been called and the result recorded. This is called even if the test method raised an exception, so the implementation in subclasses may need to be particularly careful about checking internal state. Any exception, other than AssertionError or SkipTest, raised by this method will be considered an additional error rather than a test failure (thus increasing the total number of reported errors). This method will only be called if the setUp() succeeds, regardless of the outcome of the test method. The default implementation does nothing.
+    * `setUpClass()`
+        * A class method called before tests in an individual class are run. setUpClass is called with the class as the only argument and must be decorated as a classmethod():
+        ```py
+        @classmethod
+        def setUpClass(cls):
+            ...
+        ```
+    * `tearDownClass()`
+        * A class method called after tests in an individual class have run. tearDownClass is called with the class as the only argument and must be decorated as a classmethod():
+        ```py
+        @classmethod
+        def tearDownClass(cls):
+            ...
+        ```
+* The TestCase class provides several assert methods to check for and report failures. The following table lists the most commonly used methods (see the tables below for more assert methods):
+* All the assert methods accept a `msg` argument that, if specified, is used as the error message on failure (see also [longMessage](https://docs.python.org/3/library/unittest.html#unittest.TestCase.longMessage)). Note that the msg keyword argument can be passed to assertRaises(), assertRaisesRegex(), assertWarns(), assertWarnsRegex() only when they are used as a context manager.
+    * `assertTrue(expr, msg=None)`
+    * `assertFalse(expr, msg=None)`
+        * Test that expr is true (or false).
+        * Note that this is equivalent to `bool(expr) is True` and not to `expr is True` (use `assertIs(expr, True)` for the latter). This method should also be avoided when more specific methods are available (e.g. `assertEqual(a, b)` instead of `assertTrue(a == b)`), because they provide a better error message in case of failure.
+* It is also possible to check the production of exceptions, warnings, and log messages using the following methods:
+* There are also other methods used to perform more specific checks, such as:
+    * `assertGreater(first, second, msg=None)`
+    * `assertGreaterEqual(first, second, msg=None)`
+    * `assertLess(first, second, msg=None)`
+    * `assertLessEqual(first, second, msg=None)`
+        * Test that first is respectively >, >=, < or <= than second depending on the method name. If not, the test will fail:
+        ```py
+        self.assertGreaterEqual(3, 4)
+        AssertionError: "3" unexpectedly not greater than or equal to "4"
+        ```
+
+##### [Class and Module Fixtures](https://docs.python.org/3/library/unittest.html#class-and-module-fixtures)
+
+* Class and module level fixtures are implemented in [TestSuite](https://docs.python.org/3/library/unittest.html#unittest.TestSuite). When the test suite encounters a test from a new class then tearDownClass() from the previous class (if there is one) is called, followed by setUpClass() from the new class.
+* Similarly if a test is from a different module from the previous test then tearDownModule from the previous module is run, followed by setUpModule from the new module.
+* After all the tests have run the final tearDownClass and tearDownModule are run.
+* Note that shared fixtures do not play well with `[potential]` features like test parallelization and they break test isolation. They should be used with care.
+* The default ordering of tests created by the unittest test loaders is to group all tests from the same modules and classes together. This will lead to setUpClass / setUpModule (etc) being called exactly once per class and module. If you randomize the order, so that tests from different modules and classes are adjacent to each other, then these shared fixture functions may be called multiple times in a single test run.
+* Shared fixtures are not intended to work with suites with non-standard ordering. A BaseTestSuite still exists for frameworks that don’t want to support shared fixtures.
+* If there are any exceptions raised during one of the shared fixture functions the test is reported as an error. Because there is no corresponding test instance an _ErrorHolder object (that has the same interface as a [TestCase](https://docs.python.org/3/library/unittest.html#unittest.TestCase)) is created to represent the error. If you are just using the standard unittest test runner then this detail doesn’t matter, but if you are a framework author it may be relevant.
+
+###### [setUpClass and tearDownClass](https://docs.python.org/3/library/unittest.html#setupclass-and-teardownclass)
+
+* These must be implemented as class methods:
+```py
+import unittest
+
+class Test(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls._connection = createExpensiveConnectionObject()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls._connection.destroy()
+```
+* If you want the setUpClass and tearDownClass on base classes called then you must call up to them yourself. The implementations in TestCase are empty.
+* If an exception is raised during a setUpClass then the tests in the class are not run and the tearDownClass is not run. Skipped classes will not have setUpClass or tearDownClass run. If the exception is a [SkipTest](https://docs.python.org/3/library/unittest.html#unittest.SkipTest) exception then the class will be reported as having been skipped instead of as an error.
+
+###### [setUpModule and tearDownModule](https://docs.python.org/3/library/unittest.html#setupmodule-and-teardownmodule)
+
+* These should be implemented as functions:
+```py
+def setUpModule():
+    createConnection()
+
+def tearDownModule():
+    closeConnection()
+```
+* If an exception is raised in a setUpModule then none of the tests in the module will be run and the tearDownModule will not be run. If the exception is a SkipTest exception then the module will be reported as having been skipped instead of as an error.
+* To add cleanup code that must be run even in the case of an exception, use addModuleCleanup:
+    * [`unittest.addModuleCleanup(function, /, *args, **kwargs)`](https://docs.python.org/3/library/unittest.html#unittest.addModuleCleanup)
+        * Add a function to be called after tearDownModule() to cleanup resources used during the test class. Functions will be called in reverse order to the order they are added (LIFO). They are called with any arguments and keyword arguments passed into addModuleCleanup() when they are added.
+        * If setUpModule() fails, meaning that tearDownModule() is not called, then any cleanup functions added will still be called.
+        * New in version 3.8.
+        
 #### [pytest](https://docs.pytest.org/en/stable/)
 
 * [学习笔记之pytest - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13769672.html)
@@ -3419,19 +3925,31 @@ predicted_values = model.predict(x_test)
 ## FAQ
 
 * What's package and module ?
-  * Python 提供了一个办法，把这些定义存放在文件中，为一些脚本或者交互式的解释器实例使用，这个文件被称为模块。模块是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用 python 标准库的方法。
-  * 包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。在导入一个包的时候，Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录。目录只有包含一个叫做 \_\_init\_\_.py 的文件才会被认作是一个包，主要是为了避免一些滥俗的名字（比如叫做 string）不小心的影响搜索路径中的有效模块。
+    * Python 提供了一个办法，把这些定义存放在文件中，为一些脚本或者交互式的解释器实例使用，这个文件被称为模块。模块是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用 python 标准库的方法。
+    * 包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。在导入一个包的时候，Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录。目录只有包含一个叫做 \_\_init\_\_.py 的文件才会被认作是一个包，主要是为了避免一些滥俗的名字（比如叫做 string）不小心的影响搜索路径中的有效模块。
+* What's `.pyd` file ?
+    * A `.pyd` file is a compiled binary extension module for Python on Windows. It is equivalent to a `.so` or `.dll` file on other platforms.
+    * The `.pyd` extension stands for `Python Dynamic-link Library`. It contains compiled Python code that can be imported into a Python program using the import statement. The `.pyd` file is essentially a shared library that is loaded by the Python interpreter at runtime.
+    * To create a `.pyd` file, you typically need to use a C or C++ compiler and link against the Python library. You can use a variety of tools and libraries to help with this, including distutils, setuptools, and Cython.
+    * Once you have compiled your extension module into a `.pyd` file, you can distribute it to other users who can then import it into their own Python programs. When your module is imported, Python will automatically load the .pyd file and make its functions and classes available for use.
+    * In summary, a `.pyd` file is a compiled binary extension module for Python on Windows, used to provide additional functionality to Python programs.
 * How to install and update python ?
 	* [How to Install Updated Python 3 on Mac](https://osxdaily.com/2018/06/13/how-install-update-python-3x-mac/)
 	* [Download Python | Python.org](https://www.python.org/downloads/)
 * How to set pip install package index ?
-  * Edit ~/.pip/pip.conf to set index-url / extra-index-url
-  * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
+    * Edit ~/.pip/pip.conf to set index-url / extra-index-url
+    * [User Guide — pip 20.2.4 documentation (pypa.io)](https://pip.pypa.io/en/stable/user_guide/#configuration)
 
 ### ERROR FIX
 
+* How to fix error `cannot find PyString_Check` in python 3 ?
+    * Use `PyUnicode_Check` in Python 3 to replace deprecated `PyString_Check`
+    * [py3c reference — py3c 1.4 documentation](https://py3c.readthedocs.io/en/latest/reference.html)
+    * [changes for python3 · caqtdm/caqtdm@ba63473](https://github.com/caqtdm/caqtdm/commit/ba634736325789cf3e1408fa679113da7e7c6a33)
 * How to fix AttributeError: MyBokeh instance has no attribute 'plot_all' ?
   * Check the indentation for other class member functions prior to plot_all()
+* How to fix `ImportError: dynamic module does not define module export function`?
+    * [python - Unable to solve "ImportError: dynamic module does not define module export function" - Stack Overflow](https://stackoverflow.com/questions/55277328/unable-to-solve-importerror-dynamic-module-does-not-define-module-export-funct)
 * How to fix "Invalid syntax" when using python3 feature typing?
 	* add below on the top to specify the env python3
 ```python
@@ -3538,6 +4056,44 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
   * tqdm: 可以显示循环的进度条;
   * pyyaml：Python操作YAML文件的库；
   * tracebak：详细追踪错误信息的库。
+
+### [Django](https://www.djangoproject.com/)
+
+* Django makes it easier to build better web apps more quickly and with less code.
+* [Getting started with Django | Django](https://www.djangoproject.com/start/)
+    * [Quick install guide | Django documentation | Django](https://docs.djangoproject.com/en/4.2/intro/install/)
+* [Django (web framework) - Wikipedia](https://en.wikipedia.org/wiki/Django_(web_framework))
+    * Django (/ˈdʒæŋɡoʊ/ JANG-goh; stylised as django)[4] is a Python-based free and open-source web framework, which follows the model-template-view (MTV) architectural pattern.[5][6] It is maintained by the Django Software Foundation (DSF), an independent organization established as a 501(c)(3) non-profit.
+    * Django's primary goal is to ease the creation of complex, database-driven websites. The framework emphasizes reusability and "pluggability" of components, less code, low coupling, rapid development, and the principle of don't repeat yourself.[7] Python is used throughout, even for settings files and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models.
+    * Some well-known sites that use Django include the Public Broadcasting Service,[8] Instagram,[9] Mozilla,[10] The Washington Times,[11] Disqus,[12] Bitbucket,[13] and Nextdoor.[14] It was used on Pinterest,[15] but later the site moved to a framework built over Flask.
+* [学习笔记之Django - 浩然119 - 博客园 (cnblogs.com)](https://www.cnblogs.com/pegasus923/p/11556233.html)
+* [Python for Web Development – Crash Course [API, SQL Databases, Virtual Environment, Flask, Django] - YouTube](https://www.youtube.com/watch?v=WNvxR8RFzBg&list=WL&index=16)
+* [Python Backend Web Development Course (with Django) - YouTube](https://www.youtube.com/watch?v=jBzwzrDvZ18)
+    * [Bootstrap Templates | Premium & Free Download | BootstrapMade](https://bootstrapmade.com/)
+* [CRM App Development with Django, Python, and MySQL](https://www.freecodecamp.org/news/crm-app-development-with-django-python-and-mysql/)
+    * [Django Project – Code a CRM App Tutorial - YouTube](https://www.youtube.com/watch?v=t10QcFx7d5k)
+        * [Get started with Bootstrap · Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+        * [MySQL :: Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
+    * https://github.com/flatplanet/Django-CRM
+* [Getting Started With Django Tutorial // Build a CRM - YouTube](https://www.youtube.com/watch?v=fOukA4Qh9QA)
+    * https://github.com/justdjango/getting-started-with-django
+    * [Courses | JustDjango](https://justdjango.com/courses)
+    * https://github.com/github/gitignore/blob/main/Python.gitignore
+
+#### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
+
+* [Installation — Django Debug Toolbar 4.1.0 documentation](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html)
+
+#### [Django documentation](https://docs.djangoproject.com/en/4.2/)
+
+#### MISC
+
+* [如何轻松了解 Python 必学的 django 框架？](https://mp.weixin.qq.com/s/FpYeYUoED7ii4VJ8F2YzPw)
+    * https://docs.djangoproject.com/zh-hans/2.2/ref/contrib/admin/actions/
+* [Django 模板语言基础来啦](https://mp.weixin.qq.com/s/aJYsloNye78TZVYzRcFN0A)
+* [轻松搞定 Django 模板语言进阶！](https://mp.weixin.qq.com/s/UrQJoGKnrHqRUY238IqdNg)
+* [Flask 和 requests 搭建一个简单的API服务](https://mp.weixin.qq.com/s/OAyJ7UdeS-aFWkHWvVUISA)
+* [Python 四大主流 Web 编程框架](https://blog.csdn.net/chenqiuge1984/article/details/80127498)
 
 ### [NumPy](http://www.numpy.org/)
 
