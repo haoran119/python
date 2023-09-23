@@ -4088,6 +4088,8 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 
 #### MISC
 
+* [网易公开课-上好人生每一课](https://open.163.com/newview/search/%20Django)
+    * [Django从入门到实战-.快速创建一个网页-网易公开课](https://open.163.com/newview/movie/free?pid=HEV171PR4&mid=JEV171Q0S)
 * [如何轻松了解 Python 必学的 django 框架？](https://mp.weixin.qq.com/s/FpYeYUoED7ii4VJ8F2YzPw)
     * https://docs.djangoproject.com/zh-hans/2.2/ref/contrib/admin/actions/
 * [Django 模板语言基础来啦](https://mp.weixin.qq.com/s/aJYsloNye78TZVYzRcFN0A)
