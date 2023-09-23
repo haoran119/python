@@ -4096,6 +4096,18 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 * [轻松搞定 Django 模板语言进阶！](https://mp.weixin.qq.com/s/UrQJoGKnrHqRUY238IqdNg)
 * [Flask 和 requests 搭建一个简单的API服务](https://mp.weixin.qq.com/s/OAyJ7UdeS-aFWkHWvVUISA)
 * [Python 四大主流 Web 编程框架](https://blog.csdn.net/chenqiuge1984/article/details/80127498)
+* [用 Django 开发一个 Python Web API](https://mp.weixin.qq.com/s/3-RkHGsl_bPcNKqjXYJyhw)
+    * Django 是 Python 编程语言驱动的一个开源模型-视图-控制器（MVC）风格的 Web 应用程序框架。它是Python API开发中最受欢迎的名称之一，自2005年成立以来，其知名度迅速提升。
+    * Django由Django软件基金会（Django Software Foundation）维护，并获得了社区的大力支持，在全球拥有11,600多个成员。在Stack Overflow上，Django大约有191,000个带标签的问题。Spotify，YouTube和Instagram等网站都依赖Django进行应用程序和数据管理。
+    * 本文演示了使用HTTP协议的GET方法从服务器获取数据的简单API。
+    * 建立一个项目
+    * 安装Django和Django REST框架
+    * 实例化一个新的Django项目
+    * 在Django中创建用户
+    * 在Django中实现序列化组件和视图层
+    * 使用Django生成URL
+    * 调整您的Django项目设置
+    * 测试您的Django API
 
 ### [NumPy](http://www.numpy.org/)
 
