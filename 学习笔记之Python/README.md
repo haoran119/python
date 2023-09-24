@@ -4079,6 +4079,14 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
     * https://github.com/justdjango/getting-started-with-django
     * [Courses | JustDjango](https://justdjango.com/courses)
     * https://github.com/github/gitignore/blob/main/Python.gitignore
+    * [Django - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django)
+        * Beautiful syntax and scoped snippets for perfectionists with deadlines
+    * [Django - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bigonesystems.django)
+        * Django Templates and Backend snippets
+    * [Django Template - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bibhasdn.django-html)
+        * Django template language support for Visual Studio Code
+    * [SQLite - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
+        * Explore and query SQLite databases.
 
 #### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
 
