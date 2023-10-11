@@ -4087,6 +4087,13 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
         * Django template language support for Visual Studio Code
     * [SQLite - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
         * Explore and query SQLite databases.
+```py
+$ pip install django==3.1.4
+$ pip freeze > requirements.txt
+$ django-admin startproject djcrm .
+$ python manage.py runserver
+$ python manage.py migrate
+```     
 
 #### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
 
