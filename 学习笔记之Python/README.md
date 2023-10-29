@@ -4097,6 +4097,7 @@ $ source env/bin/activate
 (env) $ django-admin startproject djcrm .
 (env) $ python manage.py runserver
 (env) $ python manage.py migrate
+(env) $ deactivate
 ```     
 
 #### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
