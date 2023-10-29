@@ -4088,11 +4088,15 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
     * [SQLite - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
         * Explore and query SQLite databases.
 ```py
-$ pip install django==3.1.4
-$ pip freeze > requirements.txt
-$ django-admin startproject djcrm .
-$ python manage.py runserver
-$ python manage.py migrate
+$ python3 -m pip install --user virtualenv
+$ python3 -m venv env
+$ source env/bin/activate
+(env) $ which python3
+(env) $ pip install django==3.1.4
+(env) $ pip freeze > requirements.txt
+(env) $ django-admin startproject djcrm .
+(env) $ python manage.py runserver
+(env) $ python manage.py migrate
 ```     
 
 #### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
