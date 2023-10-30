@@ -4098,6 +4098,7 @@ $ source env/bin/activate
 (env) $ django-admin startproject djcrm .
 (env) $ python manage.py runserver
 (env) $ python manage.py migrate
+(env) $ python manage.py makemigrations
 (env) $ deactivate
 ```     
 
