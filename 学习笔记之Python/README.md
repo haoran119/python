@@ -306,6 +306,37 @@ python -m timeit -s "setup here" "benchmarked code here"
 python -m timeit -h # for details
 ```
 * Raises an auditing event cpython.run_module with argument module-name.
+* [Python 中 -m 的典型用法、原理解析与发展演变](https://mp.weixin.qq.com/s/tD3eSb2WdOPN_dKAQ9d6Ag)
+    * 本文想要聊聊比较特殊的“-m”选项：关于它的典型用法、原理解析与发展演变的过程。
+    * 首先，让我们用“--help”来看看它的解释：
+        * `-m  mod run library module as a script (terminates option list)`
+        * "mod"是“module”的缩写，即“-m”选项后面的内容是 module（模块），其作用是把模块当成脚本来运行。
+        * “terminates option list”意味着“-m”之后的其它选项不起作用，在这点上它跟“-c”是一样的，都是“终极选项”。官方把它们定义为“接口选项”（Interface options），需要区别于其它的普通选项或通用选项。
+    * -m 选项的五个典型用法
+        * 在 Python3 中，只需一行命令就能实现一个简单的 HTTP 服务：
+            * `python -m http.server 8000`
+            * 执行后，在本机打开“http://localhost:8000”，或者在局域网内的其它机器上打开“http://本机ip:8000”，就能访问到执行目录下的内容
+        * 与此类似，我们只需要一行命令`python -m pydoc -p xxx`，就能生成 HTML 格式的官方帮助文档，可以在浏览器中访问。
+        * 它的第三个常见用法是执行 pdb 的调试命令`python -m pdb xxx.py`，以调试模式来执行“xxx.py”脚本：
+        * 第四个同样挺有用的场景是用 timeit 在命令行中测试一小段代码的运行时间。
+            * `python -m timeit "'.'.join(str(n) for n in range(100))"`
+        * 最后，还有一种常常被人忽略的场景：`python -m pip install xxx`。我们可能会习惯性地使用`pip install xxx`，或者做了版本区分时用`pip3 install xxx`，总之不在前面用`python -m`做指定。但这种写法可能会出问题。
+            * 很巧合的是，在本月初（2019.11.01），Python 的核心开发者、第一届指导委员会五人成员之一的 Brett Cannon 专门写了一篇博客《Why you should use "python -m pip"》，提出应该使用`python -m pip`的方式，并做了详细的解释。
+            * 他的主要观点是：在存在多个 Python 版本的环境中，这种写法可以精确地控制三方库的安装位置。例如用`python3.8 -m pip`，可以明确指定给 3.8 版本安装，而不会混淆成其它的版本。
+    * -m 选项的两种原理解析
+        * 对于`python -m name`，一句话解释：Python 会检索sys.path ，查找名字为“name”的模块或者包（含命名空间包），并将其内容当成`__main__`模块来执行。
+        * 1、对于普通模块
+            * 以“.py”为后缀的文件就是一个模块，在“-m”之后使用时，只需要使用模块名，不需要写出后缀，但前提是该模块名是有效的，且不能是用 C 语言写成的模块。
+            * 在“-m”之后，如果是一个无效的模块名，则会报错“No module named xxx”。
+            * 如果是一个带后缀的模块，则首先会导入该模块，然后可能报错：Error while finding module specification for 'xxx.py' (AttributeError: module 'xxx' has no attribute '__path__'。
+            * 由此差异，我们其实可以总结出“-m”的用法：已知一个模块的名字，但不知道它的文件路径，那么使用“-m”就意味着交给解释器自行查找，若找到，则当成脚本执行。
+            * 那么，“-m”方式与直接运行脚本相比，在实现上有什么不同呢？
+                * 直接运行脚本时，相当于给出了脚本的完整路径（不管是绝对路径还是相对路径），解释器根据文件系统的查找机制， 定位到该脚本，然后执行
+                * 使用“-m”方式时，解释器需要在不 import 的情况下，在所有模块命名空间 中查找，定位到脚本的路径，然后执行。为了实现这个过程，解释器会借助两个模块：`pkgutil` 和 `runpy`，前者用来获取所有的模块列表，后者根据模块名来定位并执行脚本
+        * 2、对于包内模块
+            * 如果“-m”之后要执行的是一个包，那么解释器经过前面提到的查找过程，先定位到该包，然后会去执行它的“__main__”子模块，也就是说，在包目录下需要实现一个“__main__.py”文件。
+            * 换句话说，假设有个包的名称是“pname”，那么，`python -m pname`，其实就等效于`python -m pname.__main__`。
+    * -m 选项的十年演变过程
 
 ### [Python HOWTOs](https://docs.python.org/3/howto/index.html)
 
@@ -2331,7 +2362,6 @@ def greeting(name: str) -> str:
 		* 注意对象作用域
 		* 使用weakref避免循环引用
 		* 手动中断循环引用
-* [Python 中 -m 的典型用法、原理解析与发展演变](https://mp.weixin.qq.com/s/tD3eSb2WdOPN_dKAQ9d6Ag)
 * [IPython 中常用的魔法命令](https://mp.weixin.qq.com/s/5ZyfyR9r9zBod6ZP7scewA)
 
 ### [Classes / Object Oriented](https://www.tutorialspoint.com/python/python_classes_objects.htm)
