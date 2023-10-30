@@ -4094,6 +4094,7 @@ $ source env/bin/activate
 (env) $ which python3
 (env) $ pip install django==3.1.4
 (env) $ pip freeze > requirements.txt
+(env) $ pip install -r requirements.txt 
 (env) $ django-admin startproject djcrm .
 (env) $ python manage.py runserver
 (env) $ python manage.py migrate
