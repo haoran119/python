@@ -4087,6 +4087,11 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
         * Django template language support for Visual Studio Code
     * [SQLite - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
         * Explore and query SQLite databases.
+    * Getting Started
+        * To run this project you will need to set your environment variables.
+            * Create a new file named `.env` inside the `djcrm` folder
+            * Copy all of the variables inside `djcrm/.template.env` and assign your own values to them
+            * Run `export READ_DOT_ENV_FILE=True` inside your terminal so that your environment variables file will be read.
 ```py
 $ python3 -m pip install --user virtualenv
 $ python3 -m venv env
