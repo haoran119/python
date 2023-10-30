@@ -23,7 +23,8 @@ $ source ~/env/bin/activate
 (env) $ deactivate
 
 $ python -h
-usage: /Library/Frameworks/Python.framework/Versions/3.11/Resources/Python.app/Contents/MacOS/Python [option] ... [-c cmd | -m mod | file | -] [arg] ...
+usage: /Library/Frameworks/Python.framework/Versions/3.11/Resources/Python.app/Contents/MacOS/Python
+[option] ... [-c cmd | -m mod | file | -] [arg] ...
 Options (and corresponding environment variables):
 -b     : issue warnings about str(bytes_instance), str(bytearray_instance)
          and comparing bytes/bytearray with str. (-bb: issue errors)
