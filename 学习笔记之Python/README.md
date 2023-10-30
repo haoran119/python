@@ -276,6 +276,37 @@ arg ...: arguments passed to program in sys.argv[1:]
     print(next(f()))    # 5
     ```
 
+### [Python Setup and Usage](https://docs.python.org/3/using/index.html)
+
+#### [1. Command line and environment](https://docs.python.org/3/using/cmdline.html)
+
+* The CPython interpreter scans the command line and the environment for various settings.
+
+##### [1.1. Command line](https://docs.python.org/3/using/cmdline.html#command-line)
+
+* When invoking Python, you may specify any of these options:
+    * `python [-bBdEhiIOqsSuvVWx?] [-c command | -m module-name | script | - ] [args]`
+* The most common use case is, of course, a simple invocation of a script:
+    * `python myscript.py`
+
+###### 1.1.1. Interface options
+
+#
+[`-m <module-name>`](https://docs.python.org/3/using/cmdline.html#cmdoption-m)
+
+* Search [sys.path](https://docs.python.org/3/library/sys.html#sys.path) for the named module and execute its contents as the [__main__](https://docs.python.org/3/library/__main__.html#module-__main__) module.
+* Since the argument is a module name, you must not give a file extension (`.py`). The module name should be a valid absolute Python module name, but the implementation may not always enforce this (e.g. it may allow you to use a name that includes a hyphen).
+* Package names (including namespace packages) are also permitted. When a package name is supplied instead of a normal module, the interpreter will execute `<pkg>.__main__` as the main module. This behaviour is deliberately similar to the handling of directories and zipfiles that are passed to the interpreter as the script argument.
+* `Note This option cannot be used with built-in modules and extension modules written in C, since they do not have Python module files. However, it can still be used for precompiled modules, even if the original source file is not available.`
+* If this option is given, the first element of sys.argv will be the full path to the module file (while the module file is being located, the first element will be set to `"-m"`). As with the -c option, the current directory will be added to the start of sys.path.
+* -I option can be used to run the script in isolated mode where sys.path contains neither the current directory nor the user’s site-packages directory. All PYTHON* environment variables are ignored, too.
+* Many standard library modules contain code that is invoked on their execution as a script. An example is the timeit module:
+```py
+python -m timeit -s "setup here" "benchmarked code here"
+python -m timeit -h # for details
+```
+* Raises an auditing event cpython.run_module with argument module-name.
+
 ### [Python HOWTOs](https://docs.python.org/3/howto/index.html)
 
 #### [Porting Python 2 Code to Python 3](https://docs.python.org/3/howto/pyporting.html)
