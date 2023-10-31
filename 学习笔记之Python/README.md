@@ -4209,6 +4209,7 @@ $ source env/bin/activate
 (env) $ python manage.py runserver
 (env) $ python manage.py migrate
 (env) $ python manage.py makemigrations
+(env) $ python manage.py shell
 (env) $ deactivate
 ```     
 
