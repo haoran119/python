@@ -4210,6 +4210,13 @@ $ source env/bin/activate
 (env) $ python manage.py migrate
 (env) $ python manage.py makemigrations
 (env) $ python manage.py shell
+>>> from leads.models import Lead
+>>> Lead.objects.all()
+(env) $ python manage.py createsuperuser
+(env) $ python manage.py shell
+>>> from django.contrib.auth import get_user_model
+>>> User = get_user_model()
+>>> User.objects.all()
 (env) $ deactivate
 ```     
 
