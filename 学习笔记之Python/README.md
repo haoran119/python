@@ -4192,6 +4192,9 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
         * Django template language support for Visual Studio Code
     * [SQLite - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
         * Explore and query SQLite databases.
+    * [Bootstrap · The most popular HTML, CSS, and JS library in the world.](https://getbootstrap.com/)
+    * [Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.](https://tailwindcss.com/)
+        * [aniftyco/awesome-tailwindcss: 😎 Awesome things related to Tailwind CSS](https://github.com/aniftyco/awesome-tailwindcss)
     * Getting Started
         * To run this project you will need to set your environment variables.
             * Create a new file named `.env` inside the `djcrm` folder
