@@ -92,7 +92,7 @@ arg ...: arguments passed to program in sys.argv[1:]
   * 了解web编程的学习线路图，知识网络
   * get(key[, default])
     * https://docs.python.org/3/library/stdtypes.html?highlight=get#dict.get
-    * Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError. 
+    * Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError.
   * [sorted(iterable, *, key=None, reverse=False)](https://docs.python.org/3/library/functions.html?highlight=sorted#sorted)
     * Return a new sorted list from the items in iterable.
     * key specifies a function of one argument that is used to extract a comparison key from each element in iterable (for example, key=str.lower). The default value is None (compare the elements directly).
@@ -100,7 +100,7 @@ arg ...: arguments passed to program in sys.argv[1:]
     * Use functools.cmp_to_key() to convert an old-style cmp function to a key function.
     * [functools — Higher-order functions and operations on callable objects — Python 3.9.6 documentation](https://docs.python.org/3/library/functools.html#functools.cmp_to_key)
       * Transform an old-style comparison function to a key function. Used with tools that accept key functions (such as sorted(), min(), max(), heapq.nlargest(), heapq.nsmallest(), itertools.groupby()). This function is primarily used as a transition tool for programs being converted from Python 2 which supported the use of comparison functions.
-      * A comparison function is any callable that accept two arguments, compares them, and returns a negative number for less-than, zero for equality, or a positive number for greater-than. A key function is a callable that accepts one argument and returns another value to be used as the sort key. 
+      * A comparison function is any callable that accept two arguments, compares them, and returns a negative number for less-than, zero for equality, or a positive number for greater-than. A key function is a callable that accepts one argument and returns another value to be used as the sort key.
     * [key function - Glossary — Python 3.9.6 documentation](https://docs.python.org/3/glossary.html#term-key-function)
       * A key function or collation function is a callable that returns a value used for sorting or ordering. For example, locale.strxfrm() is used to produce a sort key that is aware of locale specific sort conventions.
     * [Sorting HOW TO — Python 3.9.6 documentation](https://docs.python.org/3/howto/sorting.html#sortinghowto)
@@ -148,6 +148,30 @@ arg ...: arguments passed to program in sys.argv[1:]
     * 计数减少：
       * 函数运行结束时，局部变量就被自动销毁，对象引用计数减少；
       * 变量被赋值给其他变量。x = 3; y = x; x = 4;
+
+### [Python Cookbook, 3rd Edition](https://www.oreilly.com/library/view/python-cookbook-3rd/9781449357337/?_gl=1*4lnmwr*_ga*MTU3ODMwNTU5Ny4xNzQzNTAwNjk2*_ga_092EL089CH*MTc0MzUwMDY5NS4xLjEuMTc0MzUwMDcyMS4zNC4wLjA.)
+
+* by David Beazley, Brian K. Jones
+* Released May 2013
+* Book description
+  * If you need help writing programs in Python 3, or want to update older Python 2 code, this book is just the ticket. Packed with practical recipes written and tested with Python 3.3, this unique cookbook is for experienced Python programmers who want to focus on modern tools and idioms.
+  * Inside, you’ll find complete recipes for more than a dozen topics, covering the core Python language as well as tasks common to a wide variety of application domains. Each recipe contains code samples you can use in your projects right away, along with a discussion about how and why the solution works.
+* Topics include:
+  * Data Structures and Algorithms
+  * Strings and Text
+  * Numbers, Dates, and Times
+  * Iterators and Generators
+  * Files and I/O
+  * Data Encoding and Processing
+  * Functions
+  * Classes and Objects
+  * Metaprogramming
+  * Modules and Packages
+  * Network and Web Programming
+  * Concurrency
+  * Utility Scripting and System Administration
+  * Testing, Debugging, and Exceptions
+  * C Extensions
 
 ## RESOURCES
 
@@ -219,7 +243,7 @@ arg ...: arguments passed to program in sys.argv[1:]
         finally:
             print("无论如何，都会执行！")
 
-    func(10)  # 结果是：10 
+    func(10)  # 结果是：10
     func(0)   # 无论如何，都会执行！
     ```
   * 11、lambda
@@ -399,21 +423,21 @@ except Exception as e:
     * Using the `lxml.etree.tostring()` function in Python 3 is very similar to using it in Python 2. The function is used to create a string representation of an XML `Element` or `ElementTree`. Here's a basic example:
     ```python
     from lxml import etree
-    
+
     # Create a root element
     root = etree.Element("root")
-    
+
     # Add child elements
     child1 = etree.SubElement(root, "child1")
     child2 = etree.SubElement(root, "child2")
-    
+
     # Add text to the child elements
     child1.text = "Text for child 1"
     child2.text = "Text for child 2"
-    
+
     # Convert the root Element to a string
     output = etree.tostring(root, pretty_print=True, encoding='unicode')
-    
+
     print(output)
     ```
     * This script will output:
@@ -440,7 +464,7 @@ except Exception as e:
   ```python
   while chunk := file.read(9000):
       process(chunk)
-  ```   
+  ```
 * Comparisons
   * 6. Expressions — Python 3.7.4 documentation
     * https://docs.python.org/3/reference/expressions.html#comparisons
@@ -473,7 +497,7 @@ except Exception as e:
   * 主要介绍 Python 里的两大利「器」，生成器 (generator) 和迭代器 (iterator)。
   * 生成器
     * 定义生成器 (generator) 有两种方法：
-      * 使用函数 (function) 
+      * 使用函数 (function)
       * 使用表达式 (expression)
     * 如何来看生成器里的元素呢？有两种方法：1. 转换成 list；2. 用 next()。
     * 总结：生成器可以用生成函数 (generator function) 来定义，记住要用 yield 而不是 return。
@@ -612,7 +636,7 @@ except Exception as e:
     * 生成器用来创建迭代器
     * 当你想要个可用惰性计算的可迭代对象时，考虑用迭代器。
     * 当你想创建迭代器时，考虑用生成器。
-    * 当你想创建生成器时，考虑用生成函数 (用 yield) 或生成表达式 (用小括号 ())。    
+    * 当你想创建生成器时，考虑用生成函数 (用 yield) 或生成表达式 (用小括号 ())。
 * [Python 迭代器与生成器](http://www.langzi.fun/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html)
 * [Python 迭代器和 C++ 迭代器最大的不同](https://mp.weixin.qq.com/s/2qoNY-UNLf8vW7CGj8BQ2A)
 * [带你彻底搞懂Python生成器](https://mp.weixin.qq.com/s/2HAPquA-VZNNRHYRN8E2bg)
@@ -779,10 +803,10 @@ __import__()
     ```python
     x = 10
     y = 20
-    
+
     def show_globals():
         print(globals())
-    
+
     show_globals()
     ```
     * In this example, `show_globals()` will print out a dictionary containing all global variables, including `x` and `y`.
@@ -817,7 +841,7 @@ __import__()
 
 * `zip(*iterables, strict=False)`
 * Iterate over several iterables in parallel, producing tuples with an item from each one.
-* Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears. 
+* Wraps zip() usage in a list call. This is disabled when from future_builtins import zip appears.
 
 #### MISC
 
@@ -841,7 +865,7 @@ __import__()
     * sorted/sort
     * zip
 * [Python | fabs() vs abs() - GeeksforGeeks](https://www.geeksforgeeks.org/python-fabs-vs-abs/)
-  * Both the abs() and the fabs() function is used to find the absolute value of a number, i.e., remove the negative sign of a number. 
+  * Both the abs() and the fabs() function is used to find the absolute value of a number, i.e., remove the negative sign of a number.
   * Both will return the absolute value of a number.
   * The difference is that math.fabs(number) will always return a floating-point number even if the argument is an integer, whereas abs() will return a floating-point or an integer depending upon the argument.
   * In case the argument is a complex number, abs() will return the magnitude part whereas fabs() will return an error.
@@ -873,7 +897,7 @@ __import__()
 	* Special Symbols Used for passing arguments:
 	* 1.)*args (Non-Keyword Arguments)
 	* 2.)**kwargs (Keyword Arguments)
-* [Python中的*args和**kwargs是什么？该如何使用？](https://mp.weixin.qq.com/s/s7PFVE_wcAMZaRUds2MJDQ) 
+* [Python中的*args和**kwargs是什么？该如何使用？](https://mp.weixin.qq.com/s/s7PFVE_wcAMZaRUds2MJDQ)
   * https://medium.com/better-programming/what-are-args-and-kwargs-in-python-6aaf9e3cad73
 * [为什么 Python 没有 main 函数？](https://mp.weixin.qq.com/s/Nr1nD6qKKRd-C55PCV-sGw)
   * https://towardsdatascience.com/why-doesnt-python-have-a-main-function-3afe6a8d093
@@ -893,7 +917,7 @@ __import__()
 * exit(code=None)
 	* Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, and when called, raise SystemExit with the specified exit code.
 * [Python exit commands: quit(), exit(), sys.exit() and os._exit() - GeeksforGeeks](https://www.geeksforgeeks.org/python-exit-commands-quit-exit-sys-exit-and-os-_exit/)
-	* The functions quit(), exit(), sys.exit() and os._exit() have almost the same functionality as they raise the SystemExit exception by which the Python interpreter exits and no stack traceback is printed. We can catch the exception to intercept early exits and perform cleanup activities; if uncaught, the interpreter exits as usual. 
+	* The functions quit(), exit(), sys.exit() and os._exit() have almost the same functionality as they raise the SystemExit exception by which the Python interpreter exits and no stack traceback is printed. We can catch the exception to intercept early exits and perform cleanup activities; if uncaught, the interpreter exits as usual.
 * copyright
 * credits
 	* Objects that when printed or called, print the text of copyright or credits, respectively.
@@ -1074,7 +1098,7 @@ print(b)    # [1, 3]
     * https://stackoverflow.com/questions/54974579/change-values-in-a-list-using-a-for-loop-python
 ```python
 list_a = [0] * 10
- 
+
 for index, value in enumerate(list_a):
     if index > 5:
         list_a[index] = -1
@@ -1099,7 +1123,7 @@ for index, value in enumerate(list_a):
     * YES: A = [[None] * w for i in range(h)]
     * NO: A = [[None] * 2] * 3
     * https://docs.python.org/3/library/stdtypes.html?highlight=list#typesseq-common
-      * What has happened is that [[]] is a one-element list containing an empty list, so all three elements of [[]] * 3 are references to this single empty list. Modifying any of the elements of lists modifies this single list. 
+      * What has happened is that [[]] is a one-element list containing an empty list, so all three elements of [[]] * 3 are references to this single empty list. Modifying any of the elements of lists modifies this single list.
       * YES: lists = [[] for i in range(3)]
       * NO: lists = [[]] * 3
 * How to remove duplicates in lists ?
@@ -1531,7 +1555,7 @@ def fun2(s: str) -> str:
     * Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
   * Does Python have a string 'contains' substring method? - Stack Overflow
     * https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method
-    * if "blah" not in somestring: 
+    * if "blah" not in somestring:
 * How to replace characters / substring in a string ?
   * 'www.example.com'.strip('cmowz.')
   * str.replace('html', 'log')
@@ -1546,7 +1570,7 @@ def fun2(s: str) -> str:
   * [How to sort the letters in a string alphabetically in Python - Stack Overflow](https://stackoverflow.com/questions/15046242/how-to-sort-the-letters-in-a-string-alphabetically-in-python)
   * ''.join(sorted(a))
 * How to split string ?
-  * [str.split(sep=None, maxsplit=-1) - Built-in Types — Python 3.9.6 documentation](https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split) 
+  * [str.split(sep=None, maxsplit=-1) - Built-in Types — Python 3.9.6 documentation](https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split)
     * Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).
     * If sep is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings (for example, '1,,2'.split(',') returns ['1', '', '2']). The sep argument may consist of multiple characters (for example, '1<>2<>3'.split('<>') returns ['1', '2', '3']). Splitting an empty string with a specified separator returns [''].
   * [python中split()和split(' ')的区别 - 少年与python - 博客园](https://www.cnblogs.com/python-coder/p/10073329.html)
@@ -1673,12 +1697,12 @@ if __name__ == '__main__':
         * Here's a simple example to illustrate the difference:
         ```python
         # Suppose lib has a function named foo
-        
+
         # using import
         import lib
         lib.foo()  # correct
         foo()  # NameError: name 'foo' is not defined
-        
+
         # using from import
         from lib import *
         foo()  # correct
@@ -1708,14 +1732,14 @@ if __name__ == '__main__':
 	* 7.1.1. Formatted String Literals
 		* Formatted string literals (also called f-strings for short) let you include the value of Python expressions inside a string by prefixing the string with f or F and writing expressions as {expression}.
 ```python
-An optional format specifier can follow the expression. This allows greater control over how the value is formatted. The 
+An optional format specifier can follow the expression. This allows greater control over how the value is formatted. The
 following example rounds pi to three places after the decimal:
 >>>
 >>> import math
 >>> print(f'The value of pi is approximately {math.pi:.3f}.')
 The value of pi is approximately 3.142.
 
-Passing an integer after the ':' will cause that field to be a minimum number of characters wide. This is useful for making 
+Passing an integer after the ':' will cause that field to be a minimum number of characters wide. This is useful for making
 columns line up.
 >>>
 >>> table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
@@ -1726,7 +1750,7 @@ Sjoerd     ==>       4127
 Jack       ==>       4098
 Dcab       ==>       7678
 
-Other modifiers can be used to convert the value before it is formatted. '!a' applies ascii(), '!s' applies str(), and '!r' 
+Other modifiers can be used to convert the value before it is formatted. '!a' applies ascii(), '!s' applies str(), and '!r'
 applies repr():
 >>>
 >>> animals = 'eels'
@@ -1781,7 +1805,7 @@ For a reference on these format specifications, see the reference guide for the 
   * Counter：字典的子类，提供了可哈希对象的计数功能。
     * [class collections.Counter([iterable-or-mapping])](https://docs.python.org/3/library/collections.html#collections.Counter)
       * A Counter is a dict subclass for counting hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values. Counts are allowed to be any integer value including zero or negative counts. The Counter class is similar to bags or multisets in other languages.
-      * Elements are counted from an iterable or initialized from another mapping (or counter) 
+      * Elements are counted from an iterable or initialized from another mapping (or counter)
       * most_common([n])
         * Return a list of the n most common elements and their counts from the most common to the least. If n is omitted or None, most_common() returns all elements in the counter. Elements with equal counts are ordered in the order first encountered
 			```python
@@ -1909,20 +1933,20 @@ For a reference on these format specifications, see the reference guide for the 
     * Return successive r length permutations of elements in the iterable.
     * [Permutation and Combination in Python - GeeksforGeeks](https://www.geeksforgeeks.org/permutation-and-combination-in-python/)
 * Infinite iterators:
-  
+
 | Iterator | Arguments | Results | Example |
 | - | - | - | - |
 | count() | start, [step] | start, start+step, start+2*step, … | count(10) --> 10 11 12 13 14 ... |
-| cycle() | p | p0, p1, … plast, p0, p1, … | cycle('ABCD') --> A B C D A B C D ... | 
-| repeat() | elem [,n] | elem, elem, elem, … endlessly or up to n times | repeat(10, 3) --> 10 10 10 | 
+| cycle() | p | p0, p1, … plast, p0, p1, … | cycle('ABCD') --> A B C D A B C D ... |
+| repeat() | elem [,n] | elem, elem, elem, … endlessly or up to n times | repeat(10, 3) --> 10 10 10 |
 
 * Iterators terminating on the shortest input sequence:
 
-| Iterator | Arguments | Results | Example | 
+| Iterator | Arguments | Results | Example |
 | - | - | - | - |
-| accumulate() | p [,func] | p0, p0+p1, p0+p1+p2, … | accumulate([1,2,3,4,5]) --> 1 3 6 10 15 | 
-| chain() | p, q, … | p0, p1, … plast, q0, q1, … | chain('ABC', 'DEF') --> A B C D E F | 
-| chain.from_iterable() | iterable | p0, p1, … plast, q0, q1, … | chain.from_iterable(['ABC', 'DEF']) --> A B C D E F | 
+| accumulate() | p [,func] | p0, p0+p1, p0+p1+p2, … | accumulate([1,2,3,4,5]) --> 1 3 6 10 15 |
+| chain() | p, q, … | p0, p1, … plast, q0, q1, … | chain('ABC', 'DEF') --> A B C D E F |
+| chain.from_iterable() | iterable | p0, p1, … plast, q0, q1, … | chain.from_iterable(['ABC', 'DEF']) --> A B C D E F |
 | compress() | data, selectors | (d[0] if s[0]), (d[1] if s[1]), … | compress('ABCDEF', [1,0,1,0,1,1]) --> A C E F
 | dropwhile() | pred, seq | seq[n], seq[n+1], starting when pred fails | dropwhile(lambda x: x<5, [1,4,6,4,1]) --> 6 4 1
 | filterfalse() | pred, seq | elements of seq where pred(elem) is false | filterfalse(lambda x: x%2, range(10)) --> 0 2 4 6 8
@@ -2070,7 +2094,7 @@ if __name__ == '__main__':
     * If sort_keys is true (default: False), then the output of dictionaries will be sorted by key.
   * How to write datetime object to json file ?
     * [python - How to overcome "datetime.datetime not JSON serializable"? - Stack Overflow](https://stackoverflow.com/questions/11875770/how-to-overcome-datetime-datetime-not-json-serializable/36142844#36142844)
-      * $ json.dumps(my_dictionary, indent=4, sort_keys=True, default=str) 
+      * $ json.dumps(my_dictionary, indent=4, sort_keys=True, default=str)
     * [How to write a datetime object to JSON in Python (kite.com)](https://www.kite.com/python/answers/how-to-write-a-datetime-object-to-json-in-python#)
       * Call datetime.datetime.isoformat() to convert datetime.datetime into a ISO date format, which is compatible with JSON.
 ```python
@@ -3035,7 +3059,7 @@ if __name__ == "__main__":
 ### [Multithreaded Programming](https://www.tutorialspoint.com/python3/python_multithreading.htm)
 
 * [Concurrent Execution — Python 3.10.2 documentation](https://docs.python.org/3/library/concurrency.html)
-	* The modules described in this chapter provide support for concurrent execution of code. The appropriate choice of tool will depend on the task to be executed (CPU bound vs IO bound) and preferred style of development (event driven cooperative multitasking vs preemptive multitasking). 
+	* The modules described in this chapter provide support for concurrent execution of code. The appropriate choice of tool will depend on the task to be executed (CPU bound vs IO bound) and preferred style of development (event driven cooperative multitasking vs preemptive multitasking).
 	* [threading — Thread-based parallelism — Python 3.10.2 documentation](https://docs.python.org/3/library/threading.html)
 		* This module constructs higher-level threading interfaces on top of the lower level \_thread module. See also the queue module.
 		* CPython implementation detail: In CPython, due to the Global Interpreter Lock, only one thread can execute Python code at once (even though certain performance-oriented libraries might overcome this limitation). If you want your application to make better use of the computational resources of multi-core machines, you are advised to use multiprocessing or concurrent.futures.ProcessPoolExecutor. However, threading is still an appropriate model if you want to run multiple I/O-bound tasks simultaneously.
@@ -3153,7 +3177,7 @@ class TestService:
 			* 而对于语言而言，代码运行的效率对于计算密集型任务也是至关重要，因此，类似于Python这样的高级语言往往不适合，而像C这样的底层语言的效率就会更高。好在Python处理这类任务时用的往往是用C编写的库，但若是要自己实现这类任务的底层计算功能，还是以C为主比较好。
 			* IO密集型的特点则是要进行大量的输入输出，涉及到网络、磁盘IO的任务往往都是IO密集型任务，这类任务消耗CPU的资源并不高，往往时间都是花在等待IO操作完成，因为IO操作的速度往往都比CPU和内存运行的速度要慢很多。对于IO密集型任务，多任务执行提升的效率就会很高，但当然，任务数量还是有一个限度的。
 			* 而对于这类任务使用的编程语言，Python这类开发效率高的语言就会更适合，因为能减少代码量，而C语言效果就很差，因为写起来很麻烦。
-			* 现代操作系统对IO操作进行了巨大的改进，其提供了异步IO的操作来实现单进程单线程执行多任务的方式，它在单核CPU上采用单进程模型可以高效地支持多任务。而在多核CPU上也可以运行多个进程（数量与CPU核心数相同）来充分地利用多核CPU。通过异步IO编程模型来实现多任务是目前的主流趋势。而在Python中，单进程的异步编程模型称为协程。 
+			* 现代操作系统对IO操作进行了巨大的改进，其提供了异步IO的操作来实现单进程单线程执行多任务的方式，它在单核CPU上采用单进程模型可以高效地支持多任务。而在多核CPU上也可以运行多个进程（数量与CPU核心数相同）来充分地利用多核CPU。通过异步IO编程模型来实现多任务是目前的主流趋势。而在Python中，单进程的异步编程模型称为协程。
 * [入门 | 三行Python代码，让数据预处理速度提高2到6倍](https://mp.weixin.qq.com/s/DgKuNIa_m-CsXWgHIz_3rQ)
   * https://towardsdatascience.com/heres-how-you-can-get-a-2-6x-speed-up-on-your-data-pre-processing-with-python-847887e63be5
 * [Python 线程为什么要搞个 setDaemon ？](https://mp.weixin.qq.com/s/tRaQftWQNzE2a_ZKDLGE4w)
@@ -3290,7 +3314,7 @@ if __name__ == '__main__':
         * `python -m unittest --pdb test_module`
     * Buffer Output: By using the --buffer option, the output from passing tests will be discarded, and only the output from failing tests will be shown.
         * `python -m unittest --buffer test_module`
-     
+
 ##### [Test Discovery](https://docs.python.org/3/library/unittest.html#test-discovery)
 
 * Unittest supports simple test discovery. In order to be compatible with test discovery, all of the test files must be modules or packages importable from the top-level directory of the project (this means that their filenames must be valid identifiers).
@@ -3309,7 +3333,7 @@ python -m unittest discover
         * Pattern to match test files (`test*.py` default)
     * `-t, --top-level-directory directory`
         * Top level directory of project (defaults to start directory)
-     
+
 ##### [Classes and functions](https://docs.python.org/3/library/unittest.html#classes-and-functions)
 
 * This section describes in depth the API of unittest.
@@ -3402,7 +3426,7 @@ def tearDownModule():
         * Add a function to be called after tearDownModule() to cleanup resources used during the test class. Functions will be called in reverse order to the order they are added (LIFO). They are called with any arguments and keyword arguments passed into addModuleCleanup() when they are added.
         * If setUpModule() fails, meaning that tearDownModule() is not called, then any cleanup functions added will still be called.
         * New in version 3.8.
-        
+
 #### [pytest](https://docs.pytest.org/en/stable/)
 
 * [学习笔记之pytest - 浩然119 - 博客园](https://www.cnblogs.com/pegasus923/p/13769672.html)
@@ -4086,7 +4110,7 @@ predicted_values = model.predict(x_test)
       my_solution = Solution()
 
       for i in range(5):
-          my_solution.slicing(i)  
+          my_solution.slicing(i)
   ```
 * How to fix ModuleNotFoundError: No module named 'a.b' when from a.b.c import d ?
   * For python2, check if there is /_/_init.py/_/_ under /a
@@ -4123,7 +4147,7 @@ export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 * How to fix TypeError: slice indices must be integers or None or have an __index__ method ?
   * b = ['a', 'aa', 'aaa', 'b', 'c']
   * d = [c for c in b if c.startswith( 'a', 'b' )]
-  * It's due to lack of parenthese. Change to 
+  * It's due to lack of parenthese. Change to
   * d = [c for c in b if c.startswith( ('a', 'b') )]
 * How to fix TypeError: 'int' object does not support indexing ?
   * [python - TypeError: 'int' object does not support indexing - Stack Overflow](https://stackoverflow.com/questions/18345825/typeerror-int-object-does-not-support-indexing)
@@ -4207,7 +4231,7 @@ $ source env/bin/activate
 (env) $ which python3
 (env) $ pip install django==3.1.4
 (env) $ pip freeze > requirements.txt
-(env) $ pip install -r requirements.txt 
+(env) $ pip install -r requirements.txt
 (env) $ django-admin startproject djcrm .
 (env) $ python manage.py runserver
 (env) $ python manage.py migrate
@@ -4221,7 +4245,7 @@ $ source env/bin/activate
 >>> User = get_user_model()
 >>> User.objects.all()
 (env) $ deactivate
-```     
+```
 
 #### [Writing your first Django app](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
 
@@ -4602,7 +4626,7 @@ df['duration'] = (df['end_timestamp'] - df['start_timestamp']).dt.seconds
 			* len(df.index)
 			* (and len(df.columns) for the columns)
 			* shape is more versatile and more convenient than len(), especially for interactive work (just needs to be added at the end), but len is a bit
-			faster 
+			faster
 			* To avoid: count() because it returns the number of non-NA/null observations over requested axis
 			* len(df.index) is faster
 ```python
@@ -4661,7 +4685,7 @@ df.dropna().empty
 	* `DataFrame.copy(deep=True)`
 	* Make a copy of this object’s indices and data.
 	* When deep=True (default), a new object will be created with a copy of the calling object’s data and indices. Modifications to the data or indices of the copy will not be reflected in the original object (see notes below).
-	* When deep=False, a new object will be created without copying the calling object’s data or index (only references to the data and index are copied). Any changes to the data of the original will be reflected in the shallow copy (and vice versa). 
+	* When deep=False, a new object will be created without copying the calling object’s data or index (only references to the data and index are copied). Any changes to the data of the original will be reflected in the shallow copy (and vice versa).
 	* Parameters
 		* deep : bool, default True
 			* Make a deep copy, including a copy of the data and the indices. With deep=False neither the indices nor the data are copied.
@@ -4714,10 +4738,10 @@ id = df[a==b]['id'].iat[0]
 		* An alignable boolean Series. The index of the key will be aligned before masking.
 		* An alignable Index. The Index of the returned selection will be the input.
 		* A callable function with one argument (the calling Series or DataFrame) and that returns valid output for indexing (one of the above)
-	* How to query a specified column / panel ?	
+	* How to query a specified column / panel ?
 		* [Indexing and Selecting Data](http://pandas.pydata.org/pandas-docs/stable/indexing.html#different-choices-for-indexing)
 ```python
-# Slice with labels for row and single label for column. 
+# Slice with labels for row and single label for column.
 # As mentioned above, note that both the start and stop of the slice are included.
 df.loc['cobra':'viper', 'max_speed']
 ```
@@ -4905,7 +4929,7 @@ df = df[cols]
 		* iloc - position based
 		* at: get scalar values. It's a very fast loc
 		* iat: Get scalar values. It's a very fast iloc
- 
+
 ###### [Missing data handling](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#missing-data-handling)
 
 * [pandas.DataFrame.dropna](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html#pandas-dataframe-dropna)
@@ -5113,7 +5137,7 @@ with pd.ExcelWriter("path to file\filename.xlsx") as writer:
 	* pip refers to Python 2 as a default in Ubuntu, this means that pip install x will install the module for Python 2 and not for 3
 	* pip3 refers to Python 3, it will install the module for Python 3
 	* `pip3 install openpyxl`
-* How to clear existing excel sheets and append new sheets ? 
+* How to clear existing excel sheets and append new sheets ?
 ```python
 import pandas as pd
 
@@ -5131,7 +5155,7 @@ with pd.ExcelWriter(output_file,
 ```
 * [pandas.DataFrame.to_string](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html#pandas-dataframe-to-string)
 	* `DataFrame.to_string(buf=None, columns=None, col_space=None, header=True, index=True, na_rep='NaN', formatters=None, float_format=None, sparsify=None, index_names=True, justify=None, max_rows=None, max_cols=None, show_dimensions=False, decimal='.', line_width=None, min_rows=None, max_colwidth=None, encoding=None)`
-	* How to print all elements in a dataframe ? 
+	* How to print all elements in a dataframe ?
 		* [python - Is there a way to pretty print an entire Pandas Series / DataFrame? - Stack Overflow](https://stackoverflow.com/questions/19124601/is-there-a-way-to-pretty-print-an-entire-pandas-series-dataframe)
 ```python
 print(df.to_string())
