@@ -151,6 +151,7 @@ arg ...: arguments passed to program in sys.argv[1:]
 
 ### [Python Cookbook, 3rd Edition](https://www.oreilly.com/library/view/python-cookbook-3rd/9781449357337/?_gl=1*4lnmwr*_ga*MTU3ODMwNTU5Ny4xNzQzNTAwNjk2*_ga_092EL089CH*MTc0MzUwMDY5NS4xLjEuMTc0MzUwMDcyMS4zNC4wLjA.)
 
+* [dabeaz/python-cookbook: Code samples from the "Python Cookbook, 3rd Edition", published by O'Reilly & Associates, May, 2013.](https://github.com/dabeaz/python-cookbook/tree/master)
 * by David Beazley, Brian K. Jones
 * Released May 2013
 * Book description
