@@ -174,6 +174,36 @@ arg ...: arguments passed to program in sys.argv[1:]
   * Testing, Debugging, and Exceptions
   * C Extensions
 
+#### Data Structures and Algorithms
+
+##### 1.2. Unpacking Elements from Iterables of Arbitrary Length
+
+* You need to unpack N elements from an iterable, but the iterable may be longer than N elements, causing a “too many values to unpack” exception.
+```python
+# example.py
+#
+# Unpacking of tagged tuples of varying sizes
+
+records = [
+     ('foo', 1, 2),
+     ('bar', 'hello'),
+     ('foo', 3, 4),
+]
+
+def do_foo(x,y):
+    print('foo', x, y)
+
+def do_bar(s):
+    print('bar', s)
+
+for tag, *args in records:
+    if tag == 'foo':
+        do_foo(*args)
+    elif tag == 'bar':
+        do_bar(*args)
+```
+
+
 ## RESOURCES
 
 * [在 Windows 上使用 Python 进行开发 - Windows apps | Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/python/)
