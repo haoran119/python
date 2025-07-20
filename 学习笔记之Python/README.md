@@ -10,17 +10,30 @@
   * [TimeComplexity - Python Wiki](https://wiki.python.org/moin/TimeComplexity)
   * [Installing packages using pip and virtual environments — Python Packaging User Guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
 ```python
+# MacOS
 $ python3 -m pip install --user virtualenv
-$ python3 -m venv env
-$ source ~/env/bin/activate
-(env) $ which python3
-~/env/bin/python3
-(env) $ python3 -m pip install numpy
-(env) $ python3 -m pip install pandas
-(env) $ python3
+$ python3 -m venv .venv
+$ source ~/.venv/bin/activate
+(.venv) $ which python3
+~/.venv/bin/python3
+(.venv) $ python3 -m pip install numpy
+(.venv) $ python3 -m pip install pandas
+(.venv) $ python3
 >>> import numpy
 >>> import pandas
-(env) $ deactivate
+(.venv) $ deactivate
+
+# Windows
+$ py -m venv .venv
+$ source .venv/Scripts/activate
+$ py -m pip install --upgrade pip
+$ py -m pip --version
+$ py -m pip install requests
+$ py -m pip install "requests==2.18.4"
+$ py -m pip install "requests>=2.0.0,<3.0.0"
+$ py -m pip install --upgrade requests
+$ py -m pip install -r requirements.txt
+$ py -m pip freeze
 
 $ python -h
 usage: /Library/Frameworks/Python.framework/Versions/3.11/Resources/Python.app/Contents/MacOS/Python
