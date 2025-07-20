@@ -9,7 +9,7 @@
   * [Programming FAQ — Python 3.9.6 documentation](https://docs.python.org/3/faq/programming.html)
   * [TimeComplexity - Python Wiki](https://wiki.python.org/moin/TimeComplexity)
   * [Installing packages using pip and virtual environments — Python Packaging User Guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
-```python
+```shell
 # MacOS
 $ python3 -m pip install --user virtualenv
 $ python3 -m venv .venv
@@ -4335,6 +4335,41 @@ $ source env/bin/activate
     * Short: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.
     * Robust: Get production-ready code. With automatic interactive documentation.
     * Standards-based: Based on (and fully compatible with) the open standards for APIs: OpenAPI (previously known as Swagger) and JSON Schema.
+```shell
+$ py -m venv .venv
+$ source .venv/Scripts/activate
+$ which python
+$ pip install "fastapi[standard]"
+$ pip list
+$ fastapi dev main.py
+
+   FastAPI   Starting development server 🚀
+
+             Searching for package file structure from directories with __init__.py files
+             Importing from C:\hao\Documents\GitHub\fastapi
+
+    module   🐍 main.py
+
+      code   Importing the FastAPI app object from the module with the following code:
+
+             from main import app
+
+       app   Using import string: main:app
+
+    server   Server started at http://127.0.0.1:8000
+    server   Documentation at http://127.0.0.1:8000/docs
+
+       tip   Running in development mode, for production use: fastapi run
+
+             Logs:
+
+      INFO   Will watch for changes in these directories: ['C:\\hao\\Documents\\GitHub\\fastapi']
+      INFO   Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+      INFO   Started reloader process [29064] using WatchFiles
+      INFO   Started server process [30044]
+      INFO   Waiting for application startup.
+      INFO   Application startup complete.
+```
 
 #### [Learn - FastAPI](https://fastapi.tiangolo.com/learn/)
 
