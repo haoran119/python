@@ -4342,6 +4342,10 @@ $ source env/bin/activate
 
 ##### [Advanced User Guide](https://fastapi.tiangolo.com/advanced/)
 
+##### [FastAPI CLI](https://fastapi.tiangolo.com/fastapi-cli/)
+
+##### [Deployment](https://fastapi.tiangolo.com/deployment/)
+
 ##### [How To - Recipes](https://fastapi.tiangolo.com/how-to/)
 
 #### [Reference - FastAPI](https://fastapi.tiangolo.com/reference/)
