@@ -4339,6 +4339,7 @@ $ source env/bin/activate
 $ py -m venv .venv
 $ source .venv/Scripts/activate
 $ which python
+$ which pip
 $ pip install "fastapi[standard]"
 $ pip list
 $ fastapi dev main.py
@@ -4370,6 +4371,7 @@ $ fastapi dev main.py
       INFO   Waiting for application startup.
       INFO   Application startup complete.
 $ uvicorn main:app --reload
+$ deactivate
 ```
 
 #### [Learn - FastAPI](https://fastapi.tiangolo.com/learn/)
