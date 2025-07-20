@@ -4369,6 +4369,7 @@ $ fastapi dev main.py
       INFO   Started server process [30044]
       INFO   Waiting for application startup.
       INFO   Application startup complete.
+$ uvicorn main:app --reload
 ```
 
 #### [Learn - FastAPI](https://fastapi.tiangolo.com/learn/)
