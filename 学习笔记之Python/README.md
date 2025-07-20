@@ -4373,6 +4373,10 @@ $ fastapi dev main.py
 
 #### [Learn - FastAPI](https://fastapi.tiangolo.com/learn/)
 
+##### [Python Types Intro](https://fastapi.tiangolo.com/python-types/)
+
+* [Type hints cheat sheet - mypy](https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html)
+
 ##### [Tutorial - User Guide](https://fastapi.tiangolo.com/tutorial/)
 
 ##### [Advanced User Guide](https://fastapi.tiangolo.com/advanced/)
