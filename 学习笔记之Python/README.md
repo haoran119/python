@@ -4419,6 +4419,184 @@ $ deactivate
 * 🚢 Deployment instructions using Docker Compose, including how to set up a frontend Traefik proxy to handle automatic HTTPS certificates.
 * 🏭 CI (continuous integration) and CD (continuous deployment) based on GitHub Actions.
 
+#### FAQ
+
+* How to debug FASTAPI app in VS Code?
+Here’s a quick, battle‑tested guide to debug your **FastAPI** app in **VS Code** on Windows 11 (works locally, with WSL, and in Docker/Dev Containers).
+
+---
+
+0) Prep
+
+* Install VS Code extensions: **Python** (ms-python.python), **Pylance**, and (optional) **Dev Containers** + **WSL**.
+* Ensure your app entrypoint is like `app/main.py` with `app = FastAPI()`.
+
+Directory example:
+
+```
+your-project/
+  .env
+  app/
+    main.py
+  requirements.txt  (or pyproject.toml if you use uv/poetry)
+```
+
+---
+
+1) Easiest: Launch Uvicorn from VS Code (no reload)
+
+This is the most reliable way for breakpoints to hit (reload spawns a child process and can confuse the debugger).
+
+**.vscode/launch.json**
+
+```jsonc
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FastAPI (uvicorn, no-reload)",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--host", "0.0.0.0", "--port", "8000"],
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
+```
+
+Run with F5, hit `http://localhost:8000`.
+Breakpoints in your FastAPI routes should trigger.
+
+---
+
+2) If you NEED auto‑reload: attach to a debugpy launcher
+
+Auto‑reload (`--reload`) spawns a worker; the trick is to **launch with debugpy** and **attach**.
+
+**Terminal (start the app):**
+
+```bash
+python -m debugpy --listen 5678 --wait-for-client -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+**.vscode/launch.json (attach):**
+
+```jsonc
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach to FastAPI (debugpy 5678)",
+      "type": "python",
+      "request": "attach",
+      "connect": { "host": "localhost", "port": 5678 },
+      "justMyCode": true
+    }
+  ]
+}
+```
+
+* Press **F5** with the *Attach* config after the server prints “Waiting for client…”.
+* Now you keep hot‑reload and working breakpoints.
+
+---
+
+3) WSL (Ubuntu) workflow
+
+If you code inside WSL (recommended for speed):
+
+* Open the folder in VS Code via **Remote – WSL**.
+* Use the same **launch.json** as above.
+* Everything runs in Linux, breakpoints work the same.
+
+Tip: put the project under `\\wsl$\Ubuntu\home\<you>\src\project` (not on `C:\`) for fast file‑watching.
+
+---
+
+4) VS Code Dev Containers (Docker) workflow
+
+If you develop inside a container:
+
+**Option A: Launch inside container**
+
+* Add a **Dev Container** and open the folder in container.
+* Use the same *no‑reload* config (#1) and run inside the container.
+
+**Option B: Attach from host to debugpy inside container**
+
+1. Start the app in the container with debugpy:
+
+   ```bash
+   python -m debugpy --listen 0.0.0.0:5678 -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   ```
+2. In `docker-compose.yml`, map port `5678:5678`.
+3. Attach from VS Code on the host with:
+
+   ```jsonc
+   {
+     "name": "Attach to Container (5678)",
+     "type": "python",
+     "request": "attach",
+     "connect": { "host": "localhost", "port": 5678 }
+   }
+   ```
+
+---
+
+5) Good starter code to test breakpoints
+
+```python
+# app/main.py
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/hello")
+def hello(name: str = "world"):
+    msg = f"Hello, {name}!"  # <— put a breakpoint here
+    return {"message": msg}
+```
+
+---
+
+6) Common gotchas (and fixes)
+
+* **Breakpoints don’t hit with `--reload`** → Use the **debugpy attach** method (#2).
+* **Multiple Python interpreters** → Bottom‑right of VS Code, pick the interpreter/venv used to run Uvicorn.
+* **.env not loading** → Ensure `"envFile": "${workspaceFolder}/.env"` in launch.json, or export vars in terminal.
+* **CRLF scripts failing in Linux** → `git config core.autocrlf false` (or convert files to LF).
+* **Docker bind mounts slow on Windows** → Prefer WSL filesystem or Dev Containers.
+* **Just My Code hides frames** → Temporarily set `"justMyCode": false` to step through third‑party libs.
+
+---
+
+7) Bonus: integrated tasks (optional)
+
+Add a task to run the debugpy command, then “Attach.”
+
+**.vscode/tasks.json**
+
+```jsonc
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run FastAPI with debugpy (reload)",
+      "type": "shell",
+      "command": "python -m debugpy --listen 5678 --wait-for-client -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+      "problemMatcher": []
+    }
+  ]
+}
+```
+
+Run task → then use the **Attach** config.
+
+---
+
 ### [NumPy](http://www.numpy.org/)
 
 * NumPy is the fundamental package for scientific computing with Python.
