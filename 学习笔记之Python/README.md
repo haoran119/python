@@ -4422,6 +4422,7 @@ $ deactivate
 #### FAQ
 
 * How to debug FASTAPI app in VS Code?
+
 Here’s a quick, battle‑tested guide to debug your **FastAPI** app in **VS Code** on Windows 11 (works locally, with WSL, and in Docker/Dev Containers).
 
 ---
